@@ -94,7 +94,7 @@ namespace game_framework {
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
-		Monster monster = Monster(new Point(0,0), new Vec(1, 0), std::vector<game_framework::CMovingBitmap>());
+		Monster monster = Monster();
 		INT cameraX = 0;
 		INT cameraY = 0;
 	};

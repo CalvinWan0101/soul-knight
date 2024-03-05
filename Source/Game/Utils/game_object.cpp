@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "game_object.h"
 
-GameObject::GameObject(Point point, Vec speed, std::vector<game_framework::CMovingBitmap> cMovingBitmaps) :
-    point(point), speed(speed), cMovingBitmaps(cMovingBitmaps)
-{
-    index = 0;
-}
+// GameObject::GameObject(Point point, Vec speed, std::vector<game_framework::CMovingBitmap> cMovingBitmaps) :
+//     point(point), speed(speed), cMovingBitmaps(cMovingBitmaps)
+// {
+//     index = 0;
+// }
 
 // GameObject::GameObject(Point point, Vec speed)
 // {
@@ -16,6 +16,10 @@ GameObject::GameObject(Point point, Vec speed, std::vector<game_framework::CMovi
 // {
 //     this(point, Vec(0.0, 0.0), std::vector<game_framework::CMovingBitmap>());
 // }
+
+GameObject::GameObject()
+{
+}
 
 GameObject::~GameObject()
 {
@@ -28,10 +32,10 @@ void GameObject::Show(Point screenPositoin)
     cMovingBitmaps[index].ShowBitmap();
 }
 
-void GameObject::LoadBitmapByString(vector<string> filepaths, COLORREF color)
-{
-    cMovingBitmaps[cMovingBitmaps.size()].LoadBitmapByString(filepaths, color);
-}
+// void GameObject::LoadBitmapByString(vector<string> filepaths, COLORREF color)
+// {
+//     cMovingBitmaps[cMovingBitmaps.size() - 1].LoadBitmapByString(filepaths, color);
+// }
 
 Point GameObject::GetPoint()
 {
