@@ -30,6 +30,9 @@ void CGameStateInit::OnInit()
 	//
 	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
 	//
+	loadBackground();
+	// ShowInitProgress(66, "Initialize...");
+
 }
 
 void CGameStateInit::OnBeginState()
@@ -48,4 +51,26 @@ void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGameStateInit::OnShow()
 {
+	background.ShowBitmap();
+}
+
+void CGameStateInit::loadBackground()
+{
+	background.LoadBitmapByString({ "Resources/Start/first_page_1.bmp" });
+	background.SetTopLeft(0, 0);
+	
+}
+void CGameStateInit::drawText()
+{
+	CDC *pDC = CDDraw::GetBackCDC();
+
+	/* Print title */
+	CTextDraw::ChangeFontLog(pDC, 36, "微軟正黑體", RGB(255, 255, 255));
+	CTextDraw::Print(pDC, 79, 228, "Game Framework Practice");
+
+	/* Print info */
+	CTextDraw::ChangeFontLog(pDC,  24, "微軟正黑體", RGB(255, 255, 255));
+	CTextDraw::Print(pDC, 182, 431, "Press any key to start");
+
+	CDDraw::ReleaseBackCDC();
 }

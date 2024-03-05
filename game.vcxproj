@@ -247,6 +247,7 @@
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
     <ClCompile Include="Source\Game\Utils\game_object.cpp" />
+    <ClCompile Include="Source\Game\Utils\monster.cpp" />
     <ClCompile Include="Source\Game\Utils\point.cpp" />
     <ClCompile Include="Source\Game\Utils\vec.cpp" />
     <ClCompile Include="Source\Library\audio.cpp" />
@@ -263,6 +264,7 @@
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
     <ClInclude Include="Source\Game\Utils\game_object.h" />
+    <ClInclude Include="Source\Game\Utils\monster.h" />
     <ClInclude Include="Source\Game\Utils\point.h" />
     <ClInclude Include="Source\Game\Utils\vec.h" />
     <ClInclude Include="Source\Library\audio.h" />
@@ -281,6 +283,13 @@
     <Image Include="Resources\GAME_FRAMEWORK.ico" />
     <Image Include="resources\icon1.ico" />
     <Image Include="resources\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ball\ball-1.bmp" />
+    <Content Include="Resources\ball\ball-2.bmp" />
+    <Content Include="Resources\ball\ball-3.bmp" />
+    <Content Include="Resources\door\door_close.bmp" />
+    <Content Include="Resources\door\door_open.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

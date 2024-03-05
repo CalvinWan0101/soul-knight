@@ -7,6 +7,12 @@ Point::Point(double x, double y)
     this->y = y;
 }
 
+Point::Point(Point* point)
+{
+    this->x = point->GetX();
+    this->y = point->GetY();
+}
+
 Point::~Point()
 {
     
@@ -36,6 +42,16 @@ void Point::SetPoint(double x, double y)
 {
     this->x = x;
     this->y = y;
+}
+
+Point Point::operator + (Point &point) const
+{
+    return Point(x + point.GetX(), y + point.GetY());
+}
+
+Point Point::operator - (Point &point) const
+{
+    return Point(x - point.GetX(), y - point.GetY());
 }
 
 Point Point::operator + (Vec &vec) const

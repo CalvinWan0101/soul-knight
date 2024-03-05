@@ -39,6 +39,9 @@
 */
 
 
+#include "Utils/game_object.h"
+#include "Utils/monster.h"
+
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
 	// Constants
@@ -65,7 +68,9 @@ namespace game_framework {
 	protected:
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		CMovingBitmap logo;								// csie的logo
+		void loadBackground();
+		void drawText();
+		CMovingBitmap background;								// csie的logo
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
@@ -89,6 +94,9 @@ namespace game_framework {
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
+		Monster monster = Monster(new Point(0,0), new Vec(1, 0), std::vector<game_framework::CMovingBitmap>());
+		INT cameraX = 0;
+		INT cameraY = 0;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
