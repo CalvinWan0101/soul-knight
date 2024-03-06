@@ -6,6 +6,7 @@ public:
     Vec(double x, double y);
     Vec(Vec* vec, double val);
     Vec(Vec* vec);
+    Vec();
     ~Vec();
     double GetX();
     double GetY();

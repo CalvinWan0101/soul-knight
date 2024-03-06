@@ -38,16 +38,16 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	if(nChar == VK_LEFT) {
-		cameraX -= 10;
+		screenX -= 10;
 	}
 	if(nChar == VK_RIGHT) {
-		cameraX += 10;
+		screenX += 10;
 	}
 	if(nChar == VK_UP) {
-		cameraY -= 10;
+		screenY -= 10;
 	}
 	if(nChar == VK_DOWN) {
-		cameraY += 10;
+		screenY += 10;
 	}
 	monster.Update();
 }
@@ -79,5 +79,5 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 
 void CGameStateRun::OnShow()
 {
-	monster.Show(Point(cameraX, cameraY));
+	monster.Show(Point(screenX, screenY));
 }

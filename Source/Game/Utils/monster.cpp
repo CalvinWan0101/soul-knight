@@ -2,10 +2,6 @@
 #include "monster.h"
 #include <iostream>
 
-// Monster::Monster(Point point, Vec speed, std::vector<game_framework::CMovingBitmap> cMovingBitmaps) :
-//     GameObject(point, speed, cMovingBitmaps)
-// {
-// }
 
 Monster::Monster()
 {

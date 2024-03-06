@@ -12,14 +12,20 @@ Vec::Vec(double x, double y)
 Vec::Vec(Vec* vec, double val)
 {
     double ratio = val / vec->GetLength();
-    x = vec->GetX() * ratio;
-    y = vec->GetY() * ratio;
+    x = vec->x * ratio;
+    y = vec->y * ratio;
 }
 
 Vec::Vec(Vec* vec)
 {
-    x = vec->GetX();
-    y = vec->GetY();
+    x = vec->x;
+    y = vec->y;
+}
+
+Vec::Vec()
+{
+    x = 0;
+    y = 0;
 }
 
 Vec::~Vec()
@@ -61,14 +67,14 @@ void Vec::SetVec(double x, double y)
 void Vec::SetVec(Vec* vec, double val)
 {
     double ratio = val / vec->GetLength();
-    x = vec->GetX() * ratio;
-    y = vec->GetY() * ratio;
+    x = vec->x * ratio;
+    y = vec->y * ratio;
 }
 
 void Vec::SetVec(Vec* vec)
 {
-    x = vec->GetX();
-    y = vec->GetY();
+    x = vec->x;
+    y = vec->y;
 }
 
 void Vec::SetLength(double length)
@@ -80,10 +86,10 @@ void Vec::SetLength(double length)
 
 Vec Vec::operator+(Vec& vec) const
 {
-    return Vec(x + vec.GetX() , y + vec.GetY());
+    return Vec{x + vec.x , y + vec.y};
 }
 
 Vec Vec::operator - (Vec& vec) const
 {
-    return Vec(x - vec.GetX() , y - vec.GetY());
+    return Vec{x - vec.x , y - vec.y};
 }
