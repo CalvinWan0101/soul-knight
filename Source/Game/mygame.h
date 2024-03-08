@@ -38,9 +38,7 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
-
-#include "Utils/game_object.h"
-#include "Utils/monster.h"
+#include "Object/monster.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
