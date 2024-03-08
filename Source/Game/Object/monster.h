@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "game_object.h"
-#include "../event/event.h"
+#include "..\event\event.hpp"
 
 class Monster : public game_framework::GameObject
 {
