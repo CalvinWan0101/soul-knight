@@ -393,20 +393,11 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bitmap1.bmp" />
-    <Image Include="Resources\Game Framework.png" />
     <Image Include="resources\game.ico" />
     <Image Include="resources\gameDoc.ico" />
     <Image Include="Resources\GAME_FRAMEWORK.bmp" />
-    <Image Include="Resources\GAME_FRAMEWORK.ico" />
     <Image Include="resources\icon1.ico" />
     <Image Include="resources\Toolbar.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\ball\ball-1.bmp" />
-    <Content Include="Resources\ball\ball-2.bmp" />
-    <Content Include="Resources\ball\ball-3.bmp" />
-    <Content Include="Resources\door\door_close.bmp" />
-    <Content Include="Resources\door\door_open.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

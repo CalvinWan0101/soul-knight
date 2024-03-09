@@ -56,7 +56,7 @@ void CGameStateInit::OnShow()
 
 void CGameStateInit::loadBackground()
 {
-	background.LoadBitmapByString({ "Resources/Start/first_page_1.bmp" });
+	background.LoadBitmapByString({ "Resources/Start/first_page.bmp" });
 	background.SetTopLeft(0, 0);
 	
 }

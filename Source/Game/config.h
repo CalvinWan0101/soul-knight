@@ -4,15 +4,15 @@
 
 #define GAME_TITLE           "Game"
 //! 設定遊戲畫面的解析度（寬度）
-#define SIZE_X				 1400	
+#define SIZE_X				 1024
 //! 設定遊戲畫面的解析度（高度）
-#define SIZE_Y				 900
+#define SIZE_Y				 1024
 //! 是否以全螢幕方式開啟遊戲
 #define OPEN_AS_FULLSCREEN	 false		
 //! 是否顯示loading(OnInit)的進度
 #define SHOW_LOAD_PROGRESS   true		
 // 遊戲畫面預設的背景顏色(黑色)
-#define DEFAULT_BG_COLOR	 RGB(0, 0, 0)	
+#define DEFAULT_BG_COLOR	 RGB(233, 233, 233)	
 //! 每33ms跑一次Move及Show(每秒30次)
 #define GAME_CYCLE_TIME		 15		    
 //! 是否在debug mode顯示cycle time
