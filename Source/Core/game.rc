@@ -62,7 +62,7 @@ END
 // Cursor
 //
 
-IDC_GAMECURSOR          CURSOR                  "..\\..\\resources\\gamecurs.cur"
+IDC_GAMECURSOR          CURSOR                  "..\\..\\resources\\game\\gamecurs.cur"
 
 #endif    // Chinese (Traditional, Taiwan) resources
 /////////////////////////////////////////////////////////////////////////////
@@ -80,9 +80,9 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Bitmap
 //
 
-IDR_MAINFRAME           BITMAP                  "..\\..\\resources\\Toolbar.bmp"
+IDR_MAINFRAME           BITMAP                  "..\\..\\resources\\game\\Toolbar.bmp"
 
-IDB_GAME_FRAMEWORK_LOGO BITMAP                  "..\\..\\resources\\GAME_FRAMEWORK.bmp"
+IDB_GAME_FRAMEWORK_LOGO BITMAP                  "..\\..\\resources\\game\\GAME_FRAMEWORK.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -92,9 +92,9 @@ IDB_GAME_FRAMEWORK_LOGO BITMAP                  "..\\..\\resources\\GAME_FRAMEWO
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "..\\..\\resources\\game.ico"
+IDR_MAINFRAME           ICON                    "..\\..\\resources\\game\\game.ico"
 
-IDR_GAMETYPE            ICON                    "..\\..\\resources\\gameDoc.ico"
+IDR_GAMETYPE            ICON                    "..\\..\\resources\\game\\gameDoc.ico"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -413,7 +413,7 @@ END
 LANGUAGE 9, 1
 #pragma code_page(1252)
 #endif
-#include "Resources\game.rc2"  // non-Microsoft Visual C++ edited resources
+#include "Resources\game\game.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"         // Standard components
 #include "afxprint.rc"       // printing/print preview resources
 #endif
