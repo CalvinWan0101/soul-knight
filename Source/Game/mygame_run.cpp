@@ -30,7 +30,7 @@ void CGameStateRun::OnBeginState()
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
-	
+	monster.DefaultUpdate();
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -56,7 +56,6 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if(nChar == VK_DOWN) {
 		screenY += 10;
 	}
-	monster.Update();
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
