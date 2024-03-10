@@ -60,21 +60,30 @@ namespace game_framework
 
     void GameObject::AddFontChild(GameObject* gameObject)
     {
+        gameObject->Start();
         fontGameObjects.emplace_back(gameObject);
     }
 
     void GameObject::AddBackChild(GameObject* gameObject)
     {
+        gameObject->Start();
         backGameObjects.emplace_back(gameObject);
     }
     
-    Point GameObject::GetPoint()
+    Point& GameObject::GetPoint()
     {
         return point;
     }
-
-    Vec GameObject::GetSpeed()
+    
+    Vec& GameObject::GetSpeed()
     {
         return speed;
     }
+
+
+    void GameObject::SetSpeed(Vec speed)
+    {
+        this->speed = speed;
+    }
+
 }

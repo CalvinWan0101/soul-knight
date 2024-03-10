@@ -19,8 +19,9 @@ namespace game_framework
         void AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once);
         void AddFontChild(GameObject* gameObject);
         void AddBackChild(GameObject* gameObject);
-        Point GetPoint();
-        Vec GetSpeed();
+        Point& GetPoint();
+        Vec& GetSpeed();
+        void SetSpeed(Vec speed);
 
     protected:
         Point point;

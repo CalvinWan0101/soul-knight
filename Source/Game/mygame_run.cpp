@@ -5,6 +5,7 @@
 #include <ostream>
 #include <iostream>
 
+#include "config.h"
 #include "../Library/audio.h"
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
@@ -31,6 +32,7 @@ void CGameStateRun::OnBeginState()
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
 	monster.DefaultUpdate();
+	player->DefaultUpdate();
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -40,27 +42,39 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 		cout << object->GetPoint().GetX() << "\n";
 	});
 	monster.Start();
+	player->Start();
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	if(nChar == VK_LEFT) {
-		screenX -= 10;
+	if(nChar == 'A') {
+		player->GetSpeed().SetX(player->GetSpeed().GetX() - 10);
 	}
-	if(nChar == VK_RIGHT) {
-		screenX += 10;
+	if(nChar == 'D') {
+		player->GetSpeed().SetX(player->GetSpeed().GetX() + 10);
 	}
-	if(nChar == VK_UP) {
-		screenY -= 10;
+	if(nChar == 'W') {
+		player->GetSpeed().SetY(player->GetSpeed().GetY() - 10);
 	}
-	if(nChar == VK_DOWN) {
-		screenY += 10;
+	if(nChar == 'S') {
+		player->GetSpeed().SetY(player->GetSpeed().GetY() + 10);
 	}
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	
+	if(nChar == 'A') {
+		player->GetSpeed().SetX(player->GetSpeed().GetX() + 10);
+	}
+	if(nChar == 'D') {
+		player->GetSpeed().SetX(player->GetSpeed().GetX() - 10);
+	}
+	if(nChar == 'W') {
+		player->GetSpeed().SetY(player->GetSpeed().GetY() + 10);
+	}
+	if(nChar == 'S') {
+		player->GetSpeed().SetY(player->GetSpeed().GetY() - 10);
+	}
 }
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
@@ -85,5 +99,8 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 
 void CGameStateRun::OnShow()
 {
+	screenX = (int)player->GetPoint().GetX() - SIZE_X / 2;
+	screenY = (int)player->GetPoint().GetY() - SIZE_Y / 2;
 	monster.Show(Point(screenX, screenY));
+	player->Show(Point(screenX, screenY));
 }

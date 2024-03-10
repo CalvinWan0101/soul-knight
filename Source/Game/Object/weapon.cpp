@@ -3,7 +3,7 @@
 
 Weapon::Weapon()
 {
-    this->Start();
+
 }
 
 
