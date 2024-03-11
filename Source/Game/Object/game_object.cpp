@@ -6,6 +6,7 @@ namespace game_framework
     GameObject::GameObject()
     {
         index = 0;
+        factor = 2;
     }
 
     GameObject::~GameObject()
@@ -19,6 +20,13 @@ namespace game_framework
             delete gameObject;
         }
     }
+
+    void GameObject::DefaultStart()
+    {
+        this->Start();
+        this->SetCenter();
+    }
+
 
     void GameObject::DefaultUpdate()
     {
@@ -42,8 +50,8 @@ namespace game_framework
         {
             gameObject->Show(Point(-screenX , -screenY));
         }
-        cMovingBitmaps[index].SetTopLeft(static_cast<int>(screenX), static_cast<int>(screenY));
-        cMovingBitmaps[index].ShowBitmap();
+        cMovingBitmaps[index].SetTopLeft(static_cast<int>(screenX - centerOffset.GetX()), static_cast<int>(screenY - centerOffset.GetY()));
+        cMovingBitmaps[index].ShowBitmap(factor);
         for (auto gameObject : fontGameObjects)
         {
             gameObject->Show(Point(-screenX , -screenY));
@@ -60,13 +68,13 @@ namespace game_framework
 
     void GameObject::AddFontChild(GameObject* gameObject)
     {
-        gameObject->Start();
+        gameObject->DefaultStart();
         fontGameObjects.emplace_back(gameObject);
     }
 
     void GameObject::AddBackChild(GameObject* gameObject)
     {
-        gameObject->Start();
+        gameObject->DefaultStart();
         backGameObjects.emplace_back(gameObject);
     }
     
@@ -79,11 +87,19 @@ namespace game_framework
     {
         return speed;
     }
-
-
+    
     void GameObject::SetSpeed(Vec speed)
     {
         this->speed = speed;
     }
+
+    void GameObject::SetCenter()
+    {
+        if (! this->cMovingBitmaps.empty())
+        {
+            this->centerOffset.SetVec((double)this->cMovingBitmaps[0].GetWidth() * (factor / 2) , (double)this->cMovingBitmaps[0].GetHeight() * (factor / 2));
+        }
+    }
+
 
 }

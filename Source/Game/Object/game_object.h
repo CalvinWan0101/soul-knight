@@ -11,6 +11,7 @@ namespace game_framework
     public:
         GameObject();
         virtual ~GameObject();
+        void DefaultStart();
         virtual void Start() = 0;
         void DefaultUpdate();
         virtual void Update() = 0;
@@ -25,10 +26,15 @@ namespace game_framework
 
     protected:
         Point point;
+        Vec centerOffset;
         Vec speed;
         std::vector<CMovingBitmap> cMovingBitmaps;
         int index;
         std::vector<GameObject*> fontGameObjects;
         std::vector<GameObject*> backGameObjects;
+        virtual void SetCenter();
+
+    private:
+        double factor;
     };
 }

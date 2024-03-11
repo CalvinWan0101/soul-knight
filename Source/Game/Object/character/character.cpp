@@ -3,7 +3,10 @@
 
 Character::Character()
 {
-
+    hp = 1;
+    maxHp = 1;
+    face = RIGHT;
+    state = IDLE;
 }
 
 void Character::Start()

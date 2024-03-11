@@ -41,8 +41,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	{
 		cout << object->GetPoint().GetX() << "\n";
 	});
-	monster.Start();
-	player->Start();
+	monster.DefaultStart();
+	player->DefaultStart();
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)

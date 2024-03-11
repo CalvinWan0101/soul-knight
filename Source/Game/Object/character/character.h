@@ -12,8 +12,8 @@ public:
     int GetMaxHP();
 protected:
     void CheckState();
-    int hp = 1;
-    int maxHp = 1;
+    int hp;
+    int maxHp;
     enum Face
     {
         RIGHT,
@@ -26,6 +26,6 @@ protected:
         DEAD,
         READY
     };
-    Face face = RIGHT;
-    State state = IDLE;
+    Face face;
+    State state;
 };
