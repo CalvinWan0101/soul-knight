@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "vec.h"
 
+#define PI 3.14159265359
 #include <cmath>
+#include <complex>
+#include <valarray>
 
 Vec::Vec(double x, double y)
 {
@@ -51,6 +54,36 @@ double Vec::GetLength()
 {
     return sqrt(x * x + y * y);
 }
+
+double Vec::GetRadian()
+{
+    double length = GetLength();
+    if (length == 0.0)
+    {
+        return 0.0;
+    }
+    else
+    {
+        return std::acos(y / length) + (x < 0 ? PI : 0);
+    }
+}
+
+double Vec::Angle(Vec* vec)
+{
+    return vec->GetRadian() - this->GetRadian();
+}
+
+
+void Vec::Rotate(double radian)
+{
+    double cosRadian = cos(radian);
+    double sinRadian = sin(radian);
+    double newX = x * cosRadian - y * sinRadian;
+    double newY = x * sinRadian + y * cosRadian;
+    x = newX;
+    y = newY;
+}
+
 
 void Vec::SetX(double x)
 {

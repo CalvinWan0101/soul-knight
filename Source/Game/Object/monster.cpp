@@ -29,10 +29,14 @@ void Monster::Start()
     this->AddFontChild((GameObject*)(new Weapon()));
 }
 
-double t = 0; // TODO delete useless code
 void Monster::Update()
 {
-    t += 0.1;
-    fontGameObjects[0]->GetPoint().SetPoint(90*cos(t) ,  90*sin(t));
+    Vec v = fontGameObjects[0]->GetPoint() - Point(0, 0);
+    v.Rotate(0.1);
+    if (v.GetRadian() > 6)
+    {
+        v.SetLength(v.GetLength() + 10);
+    }
+    fontGameObjects[0]->GetPoint() = Point(0, 0) + v;
     run.Notify(this);
 }

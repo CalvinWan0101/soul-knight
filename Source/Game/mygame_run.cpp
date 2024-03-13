@@ -23,6 +23,7 @@ CGameStateRun::CGameStateRun(CGame *g) : CGameState(g)
 
 CGameStateRun::~CGameStateRun()
 {
+	delete player;
 }
 
 void CGameStateRun::OnBeginState()
