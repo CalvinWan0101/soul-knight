@@ -13,6 +13,8 @@ public:
     int GetMaxMP();
     int GetShield();
     int GetMaxShield();
+
+    void SetVision(Vec vision);
 protected:
     int mp;
     int maxMp;

@@ -3,6 +3,7 @@
 
 #include "../Utils/point.h"
 #include "../../Library/gameutil.h"
+#include "../Utils/hit_box.h"
 
 namespace game_framework
 {
@@ -27,6 +28,7 @@ namespace game_framework
     protected:
         Point point;
         Vec centerOffset;
+        HitBox hitBox;
         Vec speed;
         std::vector<CMovingBitmap> cMovingBitmaps;
         int index;

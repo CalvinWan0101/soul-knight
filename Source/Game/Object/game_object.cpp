@@ -3,7 +3,7 @@
 
 namespace game_framework
 {
-    GameObject::GameObject()
+    GameObject::GameObject() : hitBox(point)
     {
         index = 0;
         factor = 2;

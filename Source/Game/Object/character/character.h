@@ -28,4 +28,5 @@ protected:
     };
     Face face;
     State state;
+    Vec vision;
 };

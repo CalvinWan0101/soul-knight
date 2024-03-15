@@ -480,6 +480,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\Object\weapon.cpp" />
+    <ClCompile Include="Source\Game\Utils\hit_box.cpp" />
     <ClCompile Include="Source\Game\Utils\point.cpp" />
     <ClCompile Include="Source\Game\Utils\vec.cpp" />
     <ClCompile Include="Source\Library\audio.cpp" />
@@ -502,6 +503,7 @@
     <ClInclude Include="Source\Game\Object\game_object.h" />
     <ClInclude Include="Source\Game\Object\monster.h" />
     <ClInclude Include="Source\Game\Object\weapon.h" />
+    <ClInclude Include="Source\Game\Utils\hit_box.h" />
     <ClInclude Include="Source\Game\Utils\point.h" />
     <ClInclude Include="Source\Game\Utils\vec.h" />
     <ClInclude Include="Source\Library\audio.h" />

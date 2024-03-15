@@ -40,3 +40,7 @@ int Player::GetMaxShield()
     return maxShild;
 }
 
+void Player::SetVision(Vec vision)
+{
+    this->vision = vision;
+}

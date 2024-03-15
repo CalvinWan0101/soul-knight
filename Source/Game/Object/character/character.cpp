@@ -35,11 +35,11 @@ int Character::GetMaxHP()
 
 void Character::CheckState()
 {
-    if (speed.GetX() > 0)
+    if (vision.GetX() > 0)
     {
         face = RIGHT;
     }
-    else if (speed.GetX() < 0)
+    else if (vision.GetX() < 0)
     {
         face = LEFT;
     }
