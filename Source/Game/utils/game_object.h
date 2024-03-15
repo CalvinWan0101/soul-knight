@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 
-#include "../Utils/point.h"
+#include "../utils/point.h"
 #include "../../Library/gameutil.h"
-#include "../Utils/hit_box.h"
+#include "../utils/hit_box.h"
 
 namespace game_framework
 {
@@ -17,7 +17,7 @@ namespace game_framework
         void DefaultUpdate();
         virtual void Update() = 0;
         virtual void Show(Point screenPositoin);
-        
+
         void AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once);
         void AddFontChild(GameObject* gameObject);
         void AddBackChild(GameObject* gameObject);

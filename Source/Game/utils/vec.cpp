@@ -37,7 +37,6 @@ Vec::Vec()
 
 Vec::~Vec()
 {
-    
 }
 
 double Vec::GetX()
@@ -127,10 +126,10 @@ void Vec::SetLength(double length)
 
 Vec Vec::operator+(Vec& vec) const
 {
-    return Vec{x + vec.x , y + vec.y};
+    return Vec{x + vec.x, y + vec.y};
 }
 
-Vec Vec::operator - (Vec& vec) const
+Vec Vec::operator -(Vec& vec) const
 {
-    return Vec{x - vec.x , y - vec.y};
+    return Vec{x - vec.x, y - vec.y};
 }

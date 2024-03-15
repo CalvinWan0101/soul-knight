@@ -1,10 +1,12 @@
 #pragma once
-#include "game_object.h"
+#include "player.h"
 
-class Weapon : game_framework::GameObject
+class Knight : public Player
 {
 public:
-    Weapon();
+    Knight();
     void Start() override;
     void Update() override;
+
+private:
 };

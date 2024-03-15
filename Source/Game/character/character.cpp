@@ -11,7 +11,6 @@ Character::Character()
 
 void Character::Start()
 {
-    
 }
 
 void Character::Update()
@@ -57,7 +56,3 @@ void Character::CheckState()
         state = DEAD;
     }
 }
-
-
-
-

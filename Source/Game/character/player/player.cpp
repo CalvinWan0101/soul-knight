@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "player.h"
-
-#include "../../config.h"
-#include "character.h"
+#include "../character.h"
 
 Player::Player()
 {
@@ -12,7 +10,6 @@ Player::Player()
 
 void Player::Start()
 {
-    
 }
 
 void Player::Update()
@@ -27,7 +24,7 @@ int Player::GetMP()
 
 int Player::GetMaxMP()
 {
-    return  maxMp;
+    return maxMp;
 }
 
 int Player::GetShield()

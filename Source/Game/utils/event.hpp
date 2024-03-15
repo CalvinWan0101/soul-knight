@@ -2,7 +2,7 @@
 #include <functional>
 #include <vector>
 
-template <typename R , typename... P>
+template <typename R, typename... P>
 class Event
 {
 public:
@@ -13,21 +13,24 @@ public:
             func(parameter...);
         }
     }
-    
+
     void Subscribe(std::function<R(P...)> func)
     {
         subscriber.emplace_back(func);
     }
-    
+
     void UnSubscribe(std::function<R(P...)> func)
     {
-        for (auto it = subscriber.begin(); it != subscriber.end(); ++it) {
-            if (it->target_type() == func.target_type()) {
+        for (auto it = subscriber.begin(); it != subscriber.end(); ++it)
+        {
+            if (it->target_type() == func.target_type())
+            {
                 subscriber.erase(it);
                 break;
             }
         }
     }
+
 private:
     std::vector<std::function<R(P...)>> subscriber;
 };

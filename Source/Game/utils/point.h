@@ -14,11 +14,11 @@ public:
     void SetX(double x);
     void SetY(double y);
     void SetPoint(double x, double y);
-    
-    Point operator + (Point &point) const;
-    Vec operator - (Point &point) const;
-    Point operator + (Vec &vec) const;
-    Point operator - (Vec &vec) const;
+
+    Point operator +(Point& point) const;
+    Vec operator -(Point& point) const;
+    Point operator +(Vec& vec) const;
+    Point operator -(Vec& vec) const;
 
 private:
     double x;

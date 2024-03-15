@@ -21,15 +21,17 @@ bool HitBox::IsCollision(HitBox* otherHitBox)
 {
     bool XOverLap = false;
     bool YOverLap = false;
-    if (this->authorPoint.GetX() - otherHitBox->authorPoint.GetX() < this->halfWidth + otherHitBox->halfWidth || otherHitBox->authorPoint.GetX() - this->authorPoint.GetX() < this->halfWidth + otherHitBox->halfWidth)
+    if (this->authorPoint.GetX() - otherHitBox->authorPoint.GetX() < this->halfWidth + otherHitBox->halfWidth ||
+        otherHitBox->authorPoint.GetX() - this->authorPoint.GetX() < this->halfWidth + otherHitBox->halfWidth)
     {
         XOverLap = true;
     }
-    if (this->authorPoint.GetY() - otherHitBox->authorPoint.GetY() < this->halfHeight + otherHitBox->halfHeight || otherHitBox->authorPoint.GetY() - this->authorPoint.GetY() < this->halfHeight + otherHitBox->halfHeight)
+    if (this->authorPoint.GetY() - otherHitBox->authorPoint.GetY() < this->halfHeight + otherHitBox->halfHeight ||
+        otherHitBox->authorPoint.GetY() - this->authorPoint.GetY() < this->halfHeight + otherHitBox->halfHeight)
     {
         YOverLap = true;
     }
-    if(XOverLap && YOverLap)
+    if (XOverLap && YOverLap)
     {
         return true;
     }
