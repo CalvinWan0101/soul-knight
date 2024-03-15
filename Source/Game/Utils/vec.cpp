@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "vec.h"
 
+#define PI 3.14159265359
 #include <cmath>
+#include <complex>
+#include <valarray>
 
 Vec::Vec(double x, double y)
 {
@@ -11,9 +14,13 @@ Vec::Vec(double x, double y)
 
 Vec::Vec(Vec* vec, double val)
 {
-    double ratio = val / vec->GetLength();
-    x = vec->x * ratio;
-    y = vec->y * ratio;
+    double length = vec->GetLength();
+    if (length != 0.0)
+    {
+        double ratio = val / length;
+        x = vec->x * ratio;
+        y = vec->y * ratio;
+    }
 }
 
 Vec::Vec(Vec* vec)
@@ -48,6 +55,36 @@ double Vec::GetLength()
     return sqrt(x * x + y * y);
 }
 
+double Vec::GetRadian()
+{
+    double length = GetLength();
+    if (length == 0.0)
+    {
+        return 0.0;
+    }
+    else
+    {
+        return std::acos(y / length) + (x < 0 ? PI : 0);
+    }
+}
+
+double Vec::Angle(Vec* vec)
+{
+    return vec->GetRadian() - this->GetRadian();
+}
+
+
+void Vec::Rotate(double radian)
+{
+    double cosRadian = cos(radian);
+    double sinRadian = sin(radian);
+    double newX = x * cosRadian - y * sinRadian;
+    double newY = x * sinRadian + y * cosRadian;
+    x = newX;
+    y = newY;
+}
+
+
 void Vec::SetX(double x)
 {
     this->x = x;
@@ -79,9 +116,13 @@ void Vec::SetVec(Vec* vec)
 
 void Vec::SetLength(double length)
 {
-    double ratio = length / this->GetLength();
-    x = x * ratio;
-    y = y * ratio;
+    double selfLength = this->GetLength();
+    if (selfLength != 0.0)
+    {
+        double ratio = length / selfLength;
+        x = this->x * ratio;
+        y = this->y * ratio;
+    }
 }
 
 Vec Vec::operator+(Vec& vec) const
