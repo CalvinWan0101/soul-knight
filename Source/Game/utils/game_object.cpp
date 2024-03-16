@@ -11,7 +11,7 @@ namespace game_framework
 
     GameObject::~GameObject()
     {
-        for (auto gameObject : fontGameObjects)
+        for (auto gameObject : frontGameObjects)
         {
             delete gameObject;
         }
@@ -35,7 +35,7 @@ namespace game_framework
         {
             gameObject->DefaultUpdate();
         }
-        for (auto gameObject : fontGameObjects)
+        for (auto gameObject : frontGameObjects)
         {
             gameObject->DefaultUpdate();
         }
@@ -53,7 +53,7 @@ namespace game_framework
         cMovingBitmaps[index].SetTopLeft(static_cast<int>(screenX - centerOffset.GetX()),
                                          static_cast<int>(screenY - centerOffset.GetY()));
         cMovingBitmaps[index].ShowBitmap(factor);
-        for (auto gameObject : fontGameObjects)
+        for (auto gameObject : frontGameObjects)
         {
             gameObject->Show(Point(-screenX, -screenY));
         }
@@ -67,10 +67,10 @@ namespace game_framework
         cMovingBitmaps.emplace_back(cMovingBitmap);
     }
 
-    void GameObject::AddFontChild(GameObject* gameObject)
+    void GameObject::AddFrontChild(GameObject* gameObject)
     {
         gameObject->DefaultStart();
-        fontGameObjects.emplace_back(gameObject);
+        frontGameObjects.emplace_back(gameObject);
     }
 
     void GameObject::AddBackChild(GameObject* gameObject)

@@ -1288,6 +1288,9 @@
     <Content Include="Resources\weapon\bad_pistol\template\bad_pistol.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\flip_bad_pistol.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source\Game\character\monster\floor_1\" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

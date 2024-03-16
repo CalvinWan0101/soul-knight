@@ -25,17 +25,17 @@ void Monster::Start()
                        }, RGB(255, 255, 255), 100, false);
     this->index = 0;
     this->speed.SetVec(1, 1);
-    this->AddFontChild((GameObject*)(new Weapon()));
+    this->AddFrontChild((GameObject*)(new Weapon()));
 }
 
 void Monster::Update()
 {
-    Vec v = fontGameObjects[0]->GetPoint() - Point(0, 0);
+    Vec v = frontGameObjects[0]->GetPoint() - Point(0, 0);
     v.Rotate(0.1);
     if (v.GetRadian() > 6)
     {
         v.SetLength(v.GetLength() + 10);
     }
-    fontGameObjects[0]->GetPoint() = Point(0, 0) + v;
+    frontGameObjects[0]->GetPoint() = Point(0, 0) + v;
     run.Notify(this);
 }

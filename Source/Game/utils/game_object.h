@@ -19,7 +19,7 @@ namespace game_framework
         virtual void Show(Point screenPositoin);
 
         void AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once);
-        void AddFontChild(GameObject* gameObject);
+        void AddFrontChild(GameObject* gameObject);
         void AddBackChild(GameObject* gameObject);
         Point& GetPoint();
         Vec& GetSpeed();
@@ -32,7 +32,7 @@ namespace game_framework
         Vec speed;
         std::vector<CMovingBitmap> cMovingBitmaps;
         int index;
-        std::vector<GameObject*> fontGameObjects;
+        std::vector<GameObject*> frontGameObjects;
         std::vector<GameObject*> backGameObjects;
         virtual void SetCenter();
 
