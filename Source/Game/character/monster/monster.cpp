@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+#include "../../weapon/BadPistol.h"
+
 Monster::Monster()
 {
 }
@@ -25,17 +27,17 @@ void Monster::Start()
                        }, RGB(255, 255, 255), 100, false);
     this->index = 0;
     this->speed.SetVec(1, 1);
-    this->AddFrontChild((GameObject*)(new Weapon()));
+    this->AddFrontChild((GameObject*)(new BadPistol()));
 }
 
 void Monster::Update()
 {
-    Vec v = frontGameObjects[0]->GetPoint() - Point(0, 0);
-    v.Rotate(0.1);
-    if (v.GetRadian() > 6)
-    {
-        v.SetLength(v.GetLength() + 10);
-    }
-    frontGameObjects[0]->GetPoint() = Point(0, 0) + v;
-    run.Notify(this);
+    // Vec v = frontGameObjects[0]->GetPoint() - Point(0, 0);
+    // v.Rotate(0.1);
+    // if (v.GetRadian() > 6)
+    // {
+    //     v.SetLength(v.GetLength() + 10);
+    // }
+    // frontGameObjects[0]->GetPoint() = Point(0, 0) + v;
+    // run.Notify(this);
 }
