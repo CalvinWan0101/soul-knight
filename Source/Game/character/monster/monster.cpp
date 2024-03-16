@@ -26,8 +26,8 @@ void Monster::Start()
                            "resources/monster/floor_1/goblin_giant/run/4.bmp"
                        }, RGB(255, 255, 255), 100, false);
     this->index = 0;
-    this->speed.SetVec(1, 1);
-    this->AddFrontChild((GameObject*)(new BadPistol()));
+    this->speed.SetVec(0.0, 0.0);
+    this->AddFrontChild(static_cast<Weapon*>(new BadPistol()));
 }
 
 void Monster::Update()

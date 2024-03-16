@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "weapon.h"
+#include "../utils/rotatable_object.h"
 
 class Gun : public Weapon
 {
@@ -8,9 +9,4 @@ public:
     void Start() override = 0;
     void Update() override = 0;
     void Attack() override = 0;
-    void Rotate(double radian);
-    void SetRotation(Vec* radian);
-    Vec GetRotation() const;
-private:
-    Vec rotation;
 };

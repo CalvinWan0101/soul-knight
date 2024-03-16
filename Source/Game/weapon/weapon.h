@@ -1,7 +1,7 @@
 #pragma once
-#include "../utils/game_object.h"
+#include "../utils/rotatable_object.h"
 
-class Weapon : public game_framework::GameObject 
+class Weapon : public RotatableObject
 {
 public:
     Weapon();

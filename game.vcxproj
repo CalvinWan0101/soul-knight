@@ -539,6 +539,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\utils\hit_box.cpp" />
     <ClCompile Include="Source\Game\utils\point.cpp" />
+    <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
     <ClCompile Include="Source\Game\weapon\BadPistol.cpp" />
     <ClCompile Include="Source\Game\weapon\gun.cpp" />
@@ -622,6 +623,7 @@
     <ClInclude Include="Source\Game\utils\game_object.h" />
     <ClInclude Include="Source\Game\utils\hit_box.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
+    <ClInclude Include="Source\Game\utils\rotatable_object.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
     <ClInclude Include="Source\Game\weapon\BadPistol.h" />
     <ClInclude Include="Source\Game\weapon\gun.h" />
