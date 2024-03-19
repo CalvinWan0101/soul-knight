@@ -18,12 +18,7 @@ void BadPistol::Start()
 
 void BadPistol::Update()
 {
-    i += 0.05;
-    if(i>6.28)
-    {
-        i = 0;
-    }
-    SetFrameIndexOfBitmap(i);
+    SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
 void BadPistol::Attack()

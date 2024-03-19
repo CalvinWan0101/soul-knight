@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "knight.h"
 
+#include "../../weapon/BadPistol.h"
+
 Knight::Knight()
 {
     state = IDLE;
@@ -8,6 +10,7 @@ Knight::Knight()
 
 void Knight::Start()
 {
+    this->AddFrontChild(new BadPistol());
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",
@@ -48,4 +51,5 @@ void Knight::Start()
 void Knight::Update()
 {
     Player::Update();
+    dynamic_cast<Weapon *>(frontGameObjects[0])->SetRotation(& vision);
 }

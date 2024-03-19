@@ -12,6 +12,11 @@ RotatableObject::RotatableObject()
     rotation = Vec(1, 0);
 }
 
+void RotatableObject::Rotate(double radian)
+{
+    rotation.Rotate(radian);
+}
+
 void RotatableObject::SetRotation(Vec* radian)
 {
     rotation = Vec(radian);

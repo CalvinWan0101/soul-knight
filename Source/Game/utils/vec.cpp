@@ -63,7 +63,7 @@ double Vec::GetRadian()
     }
     else
     {
-        return std::acos(y / length) + (x < 0 ? PI : 0);
+        return (x < 0 ? std::acos(y / length) : std::acos(-y / length) + PI);
     }
 }
 
@@ -71,7 +71,6 @@ double Vec::Angle(Vec* vec)
 {
     return vec->GetRadian() - this->GetRadian();
 }
-
 
 void Vec::Rotate(double radian)
 {
