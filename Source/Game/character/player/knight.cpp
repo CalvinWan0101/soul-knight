@@ -11,6 +11,7 @@ Knight::Knight()
 void Knight::Start()
 {
     this->AddFrontChild(new BadPistol());
+    frontGameObjects[0]->GetPoint().SetPoint(7 , 7);
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",
@@ -52,4 +53,12 @@ void Knight::Update()
 {
     Player::Update();
     dynamic_cast<Weapon *>(frontGameObjects[0])->SetRotation(& vision);
+    if (face == RIGHT)
+    {
+        frontGameObjects[0]->GetPoint().SetX(7);
+    }
+    else if (face == LEFT)
+    {
+        frontGameObjects[0]->GetPoint().SetX(-7);
+    }
 }
