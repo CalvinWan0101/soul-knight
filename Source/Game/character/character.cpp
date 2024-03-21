@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "character.h"
+#include "../weapon/Weapon.h"
 
 Character::Character()
 {
@@ -19,6 +20,15 @@ void Character::Update()
     if (state <= 1)
     {
         index = state + 2 * face;
+    }
+    dynamic_cast<Weapon *>(frontGameObjects[0])->SetRotation(& vision);
+    if (face == RIGHT)
+    {
+        frontGameObjects[0]->GetPoint().SetX(7);
+    }
+    else if (face == LEFT)
+    {
+        frontGameObjects[0]->GetPoint().SetX(-7);
     }
 }
 

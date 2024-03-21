@@ -52,13 +52,4 @@ void Knight::Start()
 void Knight::Update()
 {
     Player::Update();
-    dynamic_cast<Weapon *>(frontGameObjects[0])->SetRotation(& vision);
-    if (face == RIGHT)
-    {
-        frontGameObjects[0]->GetPoint().SetX(7);
-    }
-    else if (face == LEFT)
-    {
-        frontGameObjects[0]->GetPoint().SetX(-7);
-    }
 }
