@@ -541,7 +541,7 @@
     <ClCompile Include="Source\Game\utils\point.cpp" />
     <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
-    <ClCompile Include="Source\Game\weapon\BadPistol.cpp" />
+    <ClCompile Include="Source\Game\weapon\bad_pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\gun.cpp" />
     <ClCompile Include="Source\Game\weapon\weapon.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -625,7 +625,7 @@
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
-    <ClInclude Include="Source\Game\weapon\BadPistol.h" />
+    <ClInclude Include="Source\Game\weapon\bad_pistol.h" />
     <ClInclude Include="Source\Game\weapon\gun.h" />
     <ClInclude Include="Source\Game\weapon\weapon.h" />
     <ClInclude Include="Source\Library\audio.h" />

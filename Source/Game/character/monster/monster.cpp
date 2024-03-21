@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-#include "../../weapon/BadPistol.h"
+#include "..\..\weapon\bad_pistol.h"
 
 Monster::Monster()
 {

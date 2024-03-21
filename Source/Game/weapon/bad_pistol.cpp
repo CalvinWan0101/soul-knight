@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "BadPistol.h"
+#include "bad_pistol.h"
 
 BadPistol::BadPistol()
 {
