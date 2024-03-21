@@ -24,7 +24,9 @@ namespace game_framework
         // TODO: Fixed the bug of revised the value by reference directly
         Point& GetPoint();
         Vec GetSpeed();
+        void SetSpeed(Vec direction , double value);
         void SetSpeed(Vec speed);
+        void SetSpeed(double value);
         void SetSpeedX(double x);
         void SetSpeedY(double y);
 

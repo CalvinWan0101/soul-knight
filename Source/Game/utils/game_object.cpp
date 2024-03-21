@@ -89,9 +89,20 @@ namespace game_framework
         return speed;
     }
 
+    void GameObject::SetSpeed(Vec direction, double value)
+    {
+        direction.SetLength(value);
+        this->speed = direction;
+    }
+
     void GameObject::SetSpeed(Vec speed)
     {
         this->speed = speed;
+    }
+
+    void GameObject::SetSpeed(double value)
+    {
+        this->speed.SetLength(value);
     }
 
     void GameObject::SetSpeedX(double x)
