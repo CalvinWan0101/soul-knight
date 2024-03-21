@@ -19,6 +19,7 @@ void Arrow::Start()
 void Arrow::Update()
 {
     SetRotation(& speed);
+    SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
 

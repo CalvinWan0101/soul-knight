@@ -22,12 +22,12 @@ void BadPistol::Start()
 void BadPistol::Update()
 {
     SetFrameIndexOfBitmap(rotation.GetRadian());
-    Attack();
 }
 
 void BadPistol::Attack()
 {
     Bullet* bullet = new Arrow();
-    bullet->SetSpeed(rotation);
-    ObjectManager::Instance()->AddPlayerBullets(bullet);
+    bullet->SetSpeed(rotation , 10);
+    Vec offset = Vec(&rotation , 6);
+    ObjectManager::Instance()->AddPlayerBullets(bullet, offset);
 }

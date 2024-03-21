@@ -50,9 +50,10 @@ void ObjectManager::AddMonster(Monster* monster)
     objects.emplace_back(monster);
 }
 
-void ObjectManager::AddPlayerBullets(Bullet* bullet)
+void ObjectManager::AddPlayerBullets(Bullet* bullet, Vec offset)
 {
     bullet->DefaultStart();
+    bullet->GetPoint() = player->GetPoint() + offset;
     playerBullets.emplace_back(bullet);
     objects.emplace_back(bullet);
 }

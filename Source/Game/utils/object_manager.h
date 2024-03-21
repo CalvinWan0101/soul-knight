@@ -15,7 +15,7 @@ public:
     ~ObjectManager();
     void SetPlayer(Player* player);
     void AddMonster(Monster* monster);
-    void AddPlayerBullets(Bullet* bullet);
+    void AddPlayerBullets(Bullet* bullet, Vec offset);
     void Start();
     void Update();
     void Show();
