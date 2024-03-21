@@ -41,10 +41,7 @@ void ObjectManager::SetPlayer(Player* player)
 void ObjectManager::AddMonster(Monster* monster)
 {
     monsters.push_back(monster);
-    for (auto monster : monsters)
-    {
-        objects.push_back(monster);
-    }
+    objects.push_back(monster);
 }
 
 void ObjectManager::Start()
