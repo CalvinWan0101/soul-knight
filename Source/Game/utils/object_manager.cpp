@@ -54,21 +54,21 @@ void ObjectManager::Start() {
 }
 
 void ObjectManager::Update() {
-    player->DefaultUpdate();
+    // player->DefaultUpdate();
     if (LButtonPressed) {
         player->Attack();
     }
-    for (auto monster : monsters) {
-        monster->DefaultUpdate();
-    }
-    for (auto bullet : playerBullets) {
-        bullet->DefaultUpdate();
-    }
-    // TODO: object error
-    // for(auto object : objects)
-    // {
-    //     object->DefaultUpdate();
+    // for (auto monster : monsters) {
+    //     monster->DefaultUpdate();
     // }
+    // for (auto bullet : playerBullets) {
+    //     bullet->DefaultUpdate();
+    // }
+    // TODO: maybe have error ?
+    for(auto object : objects)
+    {
+        object->DefaultUpdate();
+    }
 }
 
 void ObjectManager::Show() {
