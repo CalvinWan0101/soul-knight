@@ -6,6 +6,6 @@ class Gun : public Weapon {
 public:
     Gun();
     void Start() override = 0;
-    void Update() override = 0;
+    void Update() override;
     void Attack() override = 0;
 };

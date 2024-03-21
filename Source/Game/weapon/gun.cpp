@@ -3,3 +3,8 @@
 
 Gun::Gun() {
 }
+
+void Gun::Update() {
+    Weapon::Update();
+}
+
