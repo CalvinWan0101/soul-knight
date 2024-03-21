@@ -42,6 +42,7 @@
 #include "character/player/player.h"
 #include "character/monster/monster.h"
 #include "character/monster/floor_1/goblin_giant.h"
+#include "utils/object_manager.h"
 
 namespace game_framework
 {
@@ -102,10 +103,7 @@ namespace game_framework
     protected:
         void OnMove(); // 移動遊戲元素
         void OnShow(); // 顯示這個狀態的遊戲畫面
-        Monster* monster = new GoblinGiant();
-        Player* player = new Knight();
-        INT screenX = 0;
-        INT screenY = 0;
+        ObjectManager* objectManager = ObjectManager::Instance();
     };
 
     /////////////////////////////////////////////////////////////////////////////

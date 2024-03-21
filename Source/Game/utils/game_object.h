@@ -21,9 +21,12 @@ namespace game_framework
         void AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once);
         void AddFrontChild(GameObject* gameObject);
         void AddBackChild(GameObject* gameObject);
+        // TODO: Fixed the bug of revised the value by reference directly
         Point& GetPoint();
-        Vec& GetSpeed();
+        Vec GetSpeed();
         void SetSpeed(Vec speed);
+        void SetSpeedX(double x);
+        void SetSpeedY(double y);
 
     protected:
         Point point;

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "vec.h"
+#include "../config.h"
 
-#define PI 3.14159265359
 #include <cmath>
 #include <complex>
 #include <valarray>

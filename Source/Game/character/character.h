@@ -5,8 +5,8 @@ class Character : public game_framework::GameObject
 {
 public:
     Character();
-    virtual void Start() override;
-    virtual void Update() override;
+    void Start() override;
+    void Update() override;
 
     int GetHP();
     int GetMaxHP();

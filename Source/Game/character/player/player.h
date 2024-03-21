@@ -6,8 +6,8 @@ class Player : public Character
 {
 public:
     Player();
-    virtual void Start() override;
-    virtual void Update() override;
+    void Start() override;
+    void Update() override;
 
     int GetMP();
     int GetMaxMP();

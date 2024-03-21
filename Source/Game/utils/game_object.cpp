@@ -84,7 +84,7 @@ namespace game_framework
         return point;
     }
 
-    Vec& GameObject::GetSpeed()
+    Vec GameObject::GetSpeed()
     {
         return speed;
     }
@@ -92,6 +92,16 @@ namespace game_framework
     void GameObject::SetSpeed(Vec speed)
     {
         this->speed = speed;
+    }
+
+    void GameObject::SetSpeedX(double x)
+    {
+        this->speed.SetX(x);
+    }
+
+    void GameObject::SetSpeedY(double y)
+    {
+        this->speed.SetY(y);
     }
 
     void GameObject::SetCenter()
