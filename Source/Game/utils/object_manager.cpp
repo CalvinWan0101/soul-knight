@@ -25,32 +25,40 @@ ObjectManager::ObjectManager()
 
 ObjectManager::~ObjectManager()
 {
-    delete player;
-    for (auto monster : monsters)
+    // delete player;
+    // for (auto monster : monsters)
+    // {
+    //     delete monster;
+    // }
+    for(auto object : objects)
     {
-        delete monster;
+        delete object;
     }
 }
 
 void ObjectManager::SetPlayer(Player* player)
 {
+    player->DefaultStart();
     this->player = player;
-    objects.push_back(player);
+    objects.emplace_back(player);
 }
 
 void ObjectManager::AddMonster(Monster* monster)
 {
-    monsters.push_back(monster);
-    objects.push_back(monster);
+    monster->DefaultStart();
+    monsters.emplace_back(monster);
+    objects.emplace_back(monster);
+}
+
+void ObjectManager::AddPlayerBullets(Bullet* bullet)
+{
+    bullet->DefaultStart();
+    playerBullets.emplace_back(bullet);
+    objects.emplace_back(bullet);
 }
 
 void ObjectManager::Start()
 {
-    player->DefaultStart();
-    for (auto monster : monsters)
-    {
-        monster->DefaultStart();
-    }
 }
 
 void ObjectManager::Update()
@@ -60,6 +68,15 @@ void ObjectManager::Update()
     {
         monster->DefaultUpdate();
     }
+    for (auto bullet : playerBullets)
+    {
+        bullet->DefaultUpdate();
+    }
+    // TODO: object error
+    // for(auto object : objects)
+    // {
+    //     object->DefaultUpdate();
+    // }
 }
 
 void ObjectManager::Show()

@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "game_object.h"
+#include "../bullet/bullet.h"
 
 class Monster;
 class Player;
@@ -14,6 +15,7 @@ public:
     ~ObjectManager();
     void SetPlayer(Player* player);
     void AddMonster(Monster* monster);
+    void AddPlayerBullets(Bullet* bullet);
     void Start();
     void Update();
     void Show();
@@ -27,6 +29,7 @@ private:
     static ObjectManager* instance;
     Player* player;
     std::vector<Monster*> monsters;
+    std::vector<Bullet*> playerBullets;
     std::vector<game_framework::GameObject*> objects;
     // TODO: Process the collision of different objects
     // std::vector<game_framework::GameObject*> objectsToDelete;
