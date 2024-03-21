@@ -55,6 +55,9 @@ void ObjectManager::Start() {
 
 void ObjectManager::Update() {
     player->DefaultUpdate();
+    if (LButtonPressed) {
+        player->Attack();
+    }
     for (auto monster : monsters) {
         monster->DefaultUpdate();
     }
@@ -111,6 +114,10 @@ void ObjectManager::KeyUp(char key) {
         player->SetSpeedY(player->GetSpeed().GetY() - 10);
         break;
     }
+}
+
+void ObjectManager::SetLButtonPress(bool isPress) {
+    LButtonPressed = isPress;
 }
 
 void ObjectManager::SetPlayerVision(Vec vision) {

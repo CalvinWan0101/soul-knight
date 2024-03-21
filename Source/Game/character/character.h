@@ -1,5 +1,6 @@
 #pragma once
 #include "../utils/game_object.h"
+#include "../weapon/weapon.h"
 
 class Character : public game_framework::GameObject {
 public:
@@ -9,6 +10,7 @@ public:
 
     int GetHP();
     int GetMaxHP();
+    void Attack();
 
 protected:
     void CheckState();
@@ -30,4 +32,5 @@ protected:
     Face face;
     State state;
     Vec vision;
+    Weapon* weapon;
 };

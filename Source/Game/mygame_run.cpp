@@ -50,10 +50,12 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) {
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point) // 處理滑鼠的動作
 {
+    objectManager->SetLButtonPress(true);
 }
 
 void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point) // 處理滑鼠的動作
 {
+    objectManager->SetLButtonPress(false);
 }
 
 void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point) // 處理滑鼠的動作

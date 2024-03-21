@@ -8,7 +8,7 @@ BadPistol::BadPistol() {
 }
 
 void BadPistol::Start() {
-    cd = 0.1;
+    cd = 0.5;
     vector<string> filepaths;
     for (int i = 0; i <= 360; i += 3) {
         filepaths.push_back("Resources/weapon/bad_pistol/" + to_string(i) + ".bmp");
@@ -20,12 +20,11 @@ void BadPistol::Start() {
 void BadPistol::Update() {
     Gun::Update();
     SetFrameIndexOfBitmap(rotation.GetRadian());
-    DefaultAttack();
 }
 
 void BadPistol::Attack() {
     Bullet* bullet = new Arrow();
-    bullet->SetSpeed(rotation, 100);
+    bullet->SetSpeed(rotation, 20);
     Vec offset = Vec(&rotation, 6);
     ObjectManager::Instance()->AddPlayerBullets(bullet, offset);
 }

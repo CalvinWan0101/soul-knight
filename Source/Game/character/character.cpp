@@ -34,6 +34,13 @@ int Character::GetMaxHP() {
     return maxHp;
 }
 
+void Character::Attack() {
+    if (weapon == nullptr) {
+        throw exception("Do not have weapon.");
+    }
+    weapon->DefaultAttack();
+}
+
 void Character::CheckState() {
     if (vision.GetX() > 0) {
         face = RIGHT;

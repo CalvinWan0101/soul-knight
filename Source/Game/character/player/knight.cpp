@@ -8,8 +8,9 @@ Knight::Knight() {
 }
 
 void Knight::Start() {
-    this->AddFrontChild(new BadPistol());
-    frontGameObjects[0]->GetPoint().SetPoint(7, 7);
+    weapon = new BadPistol();
+    weapon->GetPoint().SetPoint(7, 7);
+    this->AddFrontChild(weapon);
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",

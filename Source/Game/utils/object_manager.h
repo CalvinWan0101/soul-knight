@@ -20,11 +20,13 @@ public:
     void Show();
     void KeyDown(char key);
     void KeyUp(char key);
+    void SetLButtonPress(bool isPressed);
     void SetPlayerVision(Vec vision);
 
 private:
     int screenX = 0;
     int screenY = 0;
+    bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
     std::vector<Monster*> monsters;
