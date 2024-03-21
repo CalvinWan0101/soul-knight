@@ -1,6 +1,5 @@
 ﻿#include "stdafx.h"
 #include "monster.h"
 
-Monster::Monster()
-{
+Monster::Monster() {
 }

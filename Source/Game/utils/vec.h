@@ -1,7 +1,6 @@
 #pragma once
 
-class Vec
-{
+class Vec {
 public:
     Vec(double x, double y);
     Vec(Vec* vec, double val);

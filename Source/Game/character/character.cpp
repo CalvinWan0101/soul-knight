@@ -2,67 +2,53 @@
 #include "character.h"
 #include "../weapon/Weapon.h"
 
-Character::Character()
-{
+Character::Character() {
     hp = 1;
     maxHp = 1;
     face = RIGHT;
     state = IDLE;
 }
 
-void Character::Start()
-{
+void Character::Start() {
 }
 
-void Character::Update()
-{
+void Character::Update() {
     CheckState();
-    if (state <= 1)
-    {
+    if (state <= 1) {
         index = state + 2 * face;
     }
-    dynamic_cast<Weapon *>(frontGameObjects[0])->SetRotation(& vision);
-    if (face == RIGHT)
-    {
+    dynamic_cast<Weapon*>(frontGameObjects[0])->SetRotation(&vision);
+    if (face == RIGHT) {
         frontGameObjects[0]->GetPoint().SetX(7);
     }
-    else if (face == LEFT)
-    {
+    else if (face == LEFT) {
         frontGameObjects[0]->GetPoint().SetX(-7);
     }
 }
 
-int Character::GetHP()
-{
+int Character::GetHP() {
     return hp;
 }
 
-int Character::GetMaxHP()
-{
+int Character::GetMaxHP() {
     return maxHp;
 }
 
-void Character::CheckState()
-{
-    if (vision.GetX() > 0)
-    {
+void Character::CheckState() {
+    if (vision.GetX() > 0) {
         face = RIGHT;
     }
-    else if (vision.GetX() < 0)
-    {
+    else if (vision.GetX() < 0) {
         face = LEFT;
     }
 
-    if (speed.GetLength() == 0.0)
-    {
+    if (speed.GetLength() == 0.0) {
         state = IDLE;
     }
-    else if (speed.GetLength() != 0.0)
-    {
+    else if (speed.GetLength() != 0.0) {
         state = RUN;
     }
-    if (hp == 0)
-    {
+    if (hp == 0) {
         state = DEAD;
     }
 }

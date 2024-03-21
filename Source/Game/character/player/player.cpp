@@ -2,42 +2,34 @@
 #include "player.h"
 #include "../character.h"
 
-Player::Player()
-{
+Player::Player() {
     mp = 0;
     shield = 0;
 }
 
-void Player::Start()
-{
+void Player::Start() {
 }
 
-void Player::Update()
-{
+void Player::Update() {
     Character::Update();
 }
 
-int Player::GetMP()
-{
+int Player::GetMP() {
     return mp;
 }
 
-int Player::GetMaxMP()
-{
+int Player::GetMaxMP() {
     return maxMp;
 }
 
-int Player::GetShield()
-{
+int Player::GetShield() {
     return shield;
 }
 
-int Player::GetMaxShield()
-{
+int Player::GetMaxShield() {
     return maxShild;
 }
 
-void Player::SetVision(Vec vision)
-{
+void Player::SetVision(Vec vision) {
     this->vision = vision;
 }

@@ -12,12 +12,10 @@ using namespace game_framework;
 // 這個class為遊戲的遊戲開頭畫面物件
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateInit::CGameStateInit(CGame* g) : CGameState(g)
-{
+CGameStateInit::CGameStateInit(CGame* g) : CGameState(g) {
 }
 
-void CGameStateInit::OnInit()
-{
+void CGameStateInit::OnInit() {
     //
     // 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
     //     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -32,38 +30,31 @@ void CGameStateInit::OnInit()
     //
     // ShowInitProgress(66, "Initialize...");
     LoadBackground();
-    
 }
 
-void CGameStateInit::OnBeginState()
-{
+void CGameStateInit::OnBeginState() {
 }
 
-void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
-{
+void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) {
 }
 
-void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
-{
+void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point) {
     GotoGameState(GAME_STATE_RUN); // 切換至GAME_STATE_RUN
 }
 
-void CGameStateInit::OnShow()
-{
+void CGameStateInit::OnShow() {
     background.ShowBitmap();
     DrawText();
 }
 
-void CGameStateInit::LoadBackground()
-{
+void CGameStateInit::LoadBackground() {
     background.LoadBitmapByString({"Resources/Start/first_page.bmp"});
     background.SetTopLeft(0, 0);
 }
 
-void CGameStateInit::DrawText()
-{
+void CGameStateInit::DrawText() {
     CDC* pDC = CDDraw::GetBackCDC();
-    
+
     CTextDraw::ChangeFontLog(pDC, 50, "Arial", RGB(255, 255, 255));
     CTextDraw::Print(pDC, 250, 600, "CLICK TO START...");
 

@@ -3,15 +3,13 @@
 
 #include "..\..\weapon\bad_pistol.h"
 
-Knight::Knight()
-{
+Knight::Knight() {
     state = IDLE;
 }
 
-void Knight::Start()
-{
+void Knight::Start() {
     this->AddFrontChild(new BadPistol());
-    frontGameObjects[0]->GetPoint().SetPoint(7 , 7);
+    frontGameObjects[0]->GetPoint().SetPoint(7, 7);
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",
@@ -49,7 +47,6 @@ void Knight::Start()
                        }, RGB(255, 255, 255), 100, true);
 }
 
-void Knight::Update()
-{
+void Knight::Update() {
     Player::Update();
 }

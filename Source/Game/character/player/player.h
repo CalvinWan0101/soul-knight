@@ -2,8 +2,7 @@
 #include "../../utils/game_object.h"
 #include "../../character/character.h"
 
-class Player : public Character
-{
+class Player : public Character {
 public:
     Player();
     void Start() override;

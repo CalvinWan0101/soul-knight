@@ -17,17 +17,14 @@ using namespace game_framework;
 // 這個class為遊戲的遊戲執行物件，主要的遊戲程式都在這裡
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateRun::CGameStateRun(CGame* g) : CGameState(g)
-{
+CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
 }
 
-CGameStateRun::~CGameStateRun()
-{
+CGameStateRun::~CGameStateRun() {
     delete objectManager;
 }
 
-void CGameStateRun::OnBeginState()
-{
+void CGameStateRun::OnBeginState() {
 }
 
 void CGameStateRun::OnMove() // 移動遊戲元素
@@ -42,14 +39,12 @@ void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
     objectManager->Start();
 }
 
-void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
-{
+void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
     // TODO: Fixed the bug of pressing more than one key
     objectManager->KeyDown(nChar);
 }
 
-void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
-{
+void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) {
     objectManager->KeyUp(nChar);
 }
 
@@ -74,7 +69,6 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // 處理滑鼠的動作
 {
 }
 
-void CGameStateRun::OnShow()
-{
+void CGameStateRun::OnShow() {
     objectManager->Show();
 }

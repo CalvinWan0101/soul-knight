@@ -1,8 +1,7 @@
 ﻿#pragma once
 #include "gun.h"
 
-class BadPistol : public Gun
-{
+class BadPistol : public Gun {
 public:
     BadPistol();
     void Start() override;

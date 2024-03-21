@@ -44,14 +44,12 @@
 #include "character/monster/floor_1/goblin_giant.h"
 #include "utils/object_manager.h"
 
-namespace game_framework
-{
+namespace game_framework {
     /////////////////////////////////////////////////////////////////////////////
     // Constants
     /////////////////////////////////////////////////////////////////////////////
 
-    enum AUDIO_ID
-    {
+    enum AUDIO_ID {
         // ﹚竡贺絪腹
         AUDIO_DING,
         // 0
@@ -65,8 +63,7 @@ namespace game_framework
     // –Member functionImplementation常璶来
     /////////////////////////////////////////////////////////////////////////////
 
-    class CGameStateInit : public CGameState
-    {
+    class CGameStateInit : public CGameState {
     public:
         CGameStateInit(CGame* g);
         void OnInit(); // 笴栏の瓜砞﹚
@@ -86,8 +83,7 @@ namespace game_framework
     // –Member functionImplementation常璶来
     /////////////////////////////////////////////////////////////////////////////
 
-    class CGameStateRun : public CGameState
-    {
+    class CGameStateRun : public CGameState {
     public:
         CGameStateRun(CGame* g);
         ~CGameStateRun();
@@ -111,8 +107,7 @@ namespace game_framework
     // –Member functionImplementation常璶来
     /////////////////////////////////////////////////////////////////////////////
 
-    class CGameStateOver : public CGameState
-    {
+    class CGameStateOver : public CGameState {
     public:
         CGameStateOver(CGame* g);
         void OnBeginState(); // 砞﹚–Ω┮惠跑计

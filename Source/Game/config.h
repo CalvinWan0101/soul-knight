@@ -36,4 +36,3 @@
 #define SIZE_X_HALF          SIZE_X / 2
 #define SIZE_Y_HALF          SIZE_Y / 2
 #define PI                   3.14159265359
-

@@ -1,8 +1,7 @@
 #pragma once
 #include "../utils/rotatable_object.h"
 
-class Weapon : public RotatableObject
-{
+class Weapon : public RotatableObject {
 public:
     Weapon();
     void Start() override = 0;
@@ -11,11 +10,9 @@ public:
     int GetCd();
     int GetDamage();
     int GetMpCost();
-    
+
 private:
     int cd;
     int damage;
     int mpCost;
-    
-    
 };

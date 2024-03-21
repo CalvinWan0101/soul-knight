@@ -2,8 +2,7 @@
 #include "weapon.h"
 #include "../utils/rotatable_object.h"
 
-class Gun : public Weapon
-{
+class Gun : public Weapon {
 public:
     Gun();
     void Start() override = 0;

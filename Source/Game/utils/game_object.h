@@ -5,10 +5,8 @@
 #include "../../Library/gameutil.h"
 #include "../utils/hit_box.h"
 
-namespace game_framework
-{
-    class GameObject
-    {
+namespace game_framework {
+    class GameObject {
     public:
         GameObject();
         virtual ~GameObject();
@@ -24,7 +22,7 @@ namespace game_framework
         // TODO: Fixed the bug of revised the value by reference directly
         Point& GetPoint();
         Vec GetSpeed();
-        void SetSpeed(Vec direction , double value);
+        void SetSpeed(Vec direction, double value);
         void SetSpeed(Vec speed);
         void SetSpeed(double value);
         void SetSpeedX(double x);

@@ -7,10 +7,9 @@
 class Monster;
 class Player;
 
-class ObjectManager
-{
+class ObjectManager {
 public:
-    static ObjectManager *Instance();
+    static ObjectManager* Instance();
     ObjectManager();
     ~ObjectManager();
     void SetPlayer(Player* player);

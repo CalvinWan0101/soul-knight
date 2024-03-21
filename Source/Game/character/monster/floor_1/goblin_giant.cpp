@@ -1,8 +1,7 @@
 ﻿#include "stdafx.h"
 #include "goblin_giant.h"
 
-void GoblinGiant::Start()
-{
+void GoblinGiant::Start() {
     this->AddAnimation({
                            "resources/monster/floor_1/goblin_giant/idle/1.bmp",
                            "resources/monster/floor_1/goblin_giant/idle/2.bmp",
@@ -20,7 +19,6 @@ void GoblinGiant::Start()
     // TODO: Replace bad pistol with the correct weapon
     // this->AddFrontChild(static_cast<Weapon*>(new BadPistol()));
 }
-void GoblinGiant::Update()
-{
-    
+
+void GoblinGiant::Update() {
 }

@@ -1,21 +1,17 @@
 #include "stdafx.h"
 #include "weapon.h"
 
-Weapon::Weapon()
-{
+Weapon::Weapon() {
 }
 
-int Weapon::GetCd()
-{
+int Weapon::GetCd() {
     return cd;
 }
 
-int Weapon::GetDamage()
-{
+int Weapon::GetDamage() {
     return damage;
 }
 
-int Weapon::GetMpCost()
-{
+int Weapon::GetMpCost() {
     return mpCost;
 }

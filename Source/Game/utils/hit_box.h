@@ -1,8 +1,7 @@
 #pragma once
 #include "point.h"
 
-class HitBox
-{
+class HitBox {
 public:
     HitBox(Point& authorPoint);
     void SetWidth(int width);

@@ -7,8 +7,7 @@
 #include "game_object.h"
 #include "vec.h"
 
-class RotatableObject : public game_framework::GameObject
-{
+class RotatableObject : public game_framework::GameObject {
 public:
     RotatableObject();
     void Start() override = 0;
@@ -16,6 +15,7 @@ public:
     void Rotate(double radian);
     void SetRotation(Vec* radian);
     Vec GetRotation() const;
+
 protected:
     Vec rotation;
     void SetImages(std::vector<std::string> filepaths, COLORREF color);

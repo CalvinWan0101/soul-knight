@@ -1,124 +1,100 @@
 #include "stdafx.h"
 #include "game_object.h"
 
-namespace game_framework
-{
-    GameObject::GameObject() : hitBox(point)
-    {
+namespace game_framework {
+    GameObject::GameObject() : hitBox(point) {
         index = 0;
         factor = 1;
     }
 
-    GameObject::~GameObject()
-    {
-        for (auto gameObject : frontGameObjects)
-        {
+    GameObject::~GameObject() {
+        for (auto gameObject : frontGameObjects) {
             delete gameObject;
         }
-        for (auto gameObject : backGameObjects)
-        {
+        for (auto gameObject : backGameObjects) {
             delete gameObject;
         }
     }
 
-    void GameObject::DefaultStart()
-    {
+    void GameObject::DefaultStart() {
         this->Start();
         this->SetCenter();
     }
 
 
-    void GameObject::DefaultUpdate()
-    {
+    void GameObject::DefaultUpdate() {
         this->point = this->point + this->speed;
-        for (auto gameObject : backGameObjects)
-        {
+        for (auto gameObject : backGameObjects) {
             gameObject->DefaultUpdate();
         }
-        for (auto gameObject : frontGameObjects)
-        {
+        for (auto gameObject : frontGameObjects) {
             gameObject->DefaultUpdate();
         }
         this->Update();
     }
 
-    void GameObject::Show(Point screenPositoin)
-    {
+    void GameObject::Show(Point screenPositoin) {
         double screenX = this->point.GetX() - screenPositoin.GetX();
         double screenY = this->point.GetY() - screenPositoin.GetY();
-        for (auto gameObject : backGameObjects)
-        {
+        for (auto gameObject : backGameObjects) {
             gameObject->Show(Point(-screenX, -screenY));
         }
         cMovingBitmaps[index].SetTopLeft(static_cast<int>(screenX - centerOffset.GetX()),
                                          static_cast<int>(screenY - centerOffset.GetY()));
         cMovingBitmaps[index].ShowBitmap(factor);
-        for (auto gameObject : frontGameObjects)
-        {
+        for (auto gameObject : frontGameObjects) {
             gameObject->Show(Point(-screenX, -screenY));
         }
     }
 
-    void GameObject::AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once)
-    {
+    void GameObject::AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once) {
         CMovingBitmap cMovingBitmap = CMovingBitmap();
         cMovingBitmap.LoadBitmapByString(filepaths, color);
         cMovingBitmap.SetAnimation(delay, once);
         cMovingBitmaps.emplace_back(cMovingBitmap);
     }
 
-    void GameObject::AddFrontChild(GameObject* gameObject)
-    {
+    void GameObject::AddFrontChild(GameObject* gameObject) {
         gameObject->DefaultStart();
         frontGameObjects.emplace_back(gameObject);
     }
 
-    void GameObject::AddBackChild(GameObject* gameObject)
-    {
+    void GameObject::AddBackChild(GameObject* gameObject) {
         gameObject->DefaultStart();
         backGameObjects.emplace_back(gameObject);
     }
 
-    Point& GameObject::GetPoint()
-    {
+    Point& GameObject::GetPoint() {
         return point;
     }
 
-    Vec GameObject::GetSpeed()
-    {
+    Vec GameObject::GetSpeed() {
         return speed;
     }
 
-    void GameObject::SetSpeed(Vec direction, double value)
-    {
+    void GameObject::SetSpeed(Vec direction, double value) {
         direction.SetLength(value);
         this->speed = direction;
     }
 
-    void GameObject::SetSpeed(Vec speed)
-    {
+    void GameObject::SetSpeed(Vec speed) {
         this->speed = speed;
     }
 
-    void GameObject::SetSpeed(double value)
-    {
+    void GameObject::SetSpeed(double value) {
         this->speed.SetLength(value);
     }
 
-    void GameObject::SetSpeedX(double x)
-    {
+    void GameObject::SetSpeedX(double x) {
         this->speed.SetX(x);
     }
 
-    void GameObject::SetSpeedY(double y)
-    {
+    void GameObject::SetSpeedY(double y) {
         this->speed.SetY(y);
     }
 
-    void GameObject::SetCenter()
-    {
-        if (!this->cMovingBitmaps.empty())
-        {
+    void GameObject::SetCenter() {
+        if (!this->cMovingBitmaps.empty()) {
             this->centerOffset.SetVec((double)this->cMovingBitmaps[0].GetWidth() * (factor / 2),
                                       (double)this->cMovingBitmaps[0].GetHeight() * (factor / 2));
         }

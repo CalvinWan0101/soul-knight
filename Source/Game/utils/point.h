@@ -1,8 +1,7 @@
 #pragma once
 #include "vec.h"
 
-class Point
-{
+class Point {
 public:
     Point(double x, double y);
     Point(Point* point);
