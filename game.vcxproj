@@ -298,6 +298,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\monster\floor_1\goblin_giant.cpp" />
     <ClCompile Include="Source\Game\character\monster\monster.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -538,6 +539,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\utils\hit_box.cpp" />
+    <ClCompile Include="Source\Game\utils\object_manager.cpp" />
     <ClCompile Include="Source\Game\utils\point.cpp" />
     <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
@@ -614,6 +616,7 @@
     <ClInclude Include="Source\Core\Resource.h" />
     <ClInclude Include="Source\Core\StdAfx.h" />
     <ClInclude Include="Source\Game\character\character.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\goblin_giant.h" />
     <ClInclude Include="Source\Game\character\monster\monster.h" />
     <ClInclude Include="Source\Game\character\player\knight.h" />
     <ClInclude Include="Source\Game\character\player\player.h" />
@@ -622,6 +625,7 @@
     <ClInclude Include="Source\Game\utils\event.hpp" />
     <ClInclude Include="Source\Game\utils\game_object.h" />
     <ClInclude Include="Source\Game\utils\hit_box.h" />
+    <ClInclude Include="Source\Game\utils\object_manager.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
@@ -1172,9 +1176,6 @@
     <Content Include="Resources\weapon\bad_pistol\99.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\bad_pistol.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\flip_bad_pistol.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Source\Game\character\monster\floor_1\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
