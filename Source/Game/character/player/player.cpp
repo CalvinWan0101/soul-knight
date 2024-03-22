@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "player.h"
 #include "../character.h"
+#include "../../utils/object_manager.h"
 
 Player::Player() {
     mp = 0;
@@ -33,3 +34,14 @@ int Player::GetMaxShield() {
 void Player::SetVision(Vec vision) {
     this->vision = vision;
 }
+
+void Player::ChangeWeapon(Weapon* newWeapon) {
+    if (this->weapon != nullptr) {
+        this->weapon->GetPoint() = this->point;
+        RemoveFrontChile(this->weapon);
+        ObjectManager::Instance()->AddObject(this->weapon);
+    }
+    this->weapon = newWeapon;
+    this->AddFrontChild(newWeapon);
+}
+

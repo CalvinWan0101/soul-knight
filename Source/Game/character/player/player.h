@@ -14,6 +14,7 @@ public:
     int GetMaxShield();
 
     void SetVision(Vec vision);
+    void ChangeWeapon(Weapon* newWeapon);
 
 protected:
     int mp;

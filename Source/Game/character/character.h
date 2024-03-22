@@ -33,4 +33,6 @@ protected:
     State state;
     Vec vision;
     Weapon* weapon;
+    double weaponOffsetX;
+    double weaponOffsetY;
 };
