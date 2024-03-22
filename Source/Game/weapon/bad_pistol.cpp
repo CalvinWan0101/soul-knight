@@ -9,12 +9,7 @@ BadPistol::BadPistol() {
 
 void BadPistol::Start() {
     cd = 0.5;
-    vector<string> filepaths;
-    for (int i = 0; i <= 360; i += 3) {
-        filepaths.push_back("Resources/weapon/bad_pistol/" + to_string(i) + ".bmp");
-    }
-    SetImages(filepaths, RGB(255, 255, 255));
-    // point.SetPoint(30, 0);
+    SetImages("Resources/weapon/bad_pistol/", 3, RGB(255, 255, 255));
 }
 
 void BadPistol::Update() {

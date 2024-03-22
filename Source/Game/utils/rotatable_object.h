@@ -18,6 +18,6 @@ public:
 
 protected:
     Vec rotation;
-    void SetImages(std::vector<std::string> filepaths, COLORREF color);
+    void SetImages(string filePath, int index, COLORREF color);
     void SetFrameIndexOfBitmap(double radian);
 };

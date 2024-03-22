@@ -5,11 +5,7 @@ Arrow::Arrow() {
 }
 
 void Arrow::Start() {
-    vector<string> filepaths;
-    for (int i = 0; i <= 360; i += 3) {
-        filepaths.push_back("Resources/bullet/bad_bullet/" + to_string(i) + ".bmp");
-    }
-    SetImages(filepaths, RGB(255, 255, 255));
+    SetImages("Resources/bullet/bad_bullet/", 3, RGB(255, 255, 255));
 }
 
 void Arrow::Update() {

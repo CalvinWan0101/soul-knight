@@ -25,7 +25,11 @@ Vec RotatableObject::GetRotation() const {
     return rotation;
 }
 
-void RotatableObject::SetImages(std::vector<std::string> filepaths, COLORREF color) {
+void RotatableObject::SetImages(string filePath, int index, COLORREF color) {
+    vector<string> filepaths;
+    for (int i = 0; i <= 360; i += index) {
+        filepaths.push_back(filePath + to_string(i) + ".bmp");
+    }
     game_framework::CMovingBitmap cMovingBitmap = game_framework::CMovingBitmap();
     cMovingBitmap.LoadBitmapByString(filepaths, color);
     cMovingBitmaps.push_back(cMovingBitmap);
