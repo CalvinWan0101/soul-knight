@@ -7,6 +7,7 @@
 #include "../config.h"
 #include "../character/player/player.h"
 #include "../character/monster/monster.h"
+#include "../weapon/bad_pistol.h"
 
 ObjectManager* ObjectManager::instance = nullptr;
 
@@ -39,8 +40,26 @@ void ObjectManager::SetPlayer(Player* player) {
 
 void ObjectManager::AddMonster(Monster* monster) {
     monster->DefaultStart();
-    monsters.emplace_back(monster);
     objects.emplace_back(monster);
+}
+
+void ObjectManager::AddObject(GameObject* object) {
+    object->DefaultStart();
+    objects.emplace_back(object);
+}
+
+void ObjectManager::RemoveObject(GameObject* object) {
+    size_t objectSize = objects.size();
+    objects.erase(std::remove_if(objects.begin(), objects.end(), [object](const GameObject* obj) {
+        // 返回true表示要刪除該物件
+        return object == obj;
+    }), objects.end());
+    if (objectSize > objects.size()) {
+        objectsToDelete.emplace_back(object);
+    }
+    else {
+        throw exception("GameObject Not Found.");
+    }
 }
 
 void ObjectManager::AddPlayerBullets(Bullet* bullet, Vec offset) {

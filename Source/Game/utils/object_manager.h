@@ -4,6 +4,8 @@
 #include "game_object.h"
 #include "../bullet/bullet.h"
 
+using game_framework::GameObject;
+
 class Monster;
 class Player;
 
@@ -15,6 +17,8 @@ public:
     void SetPlayer(Player* player);
     void AddMonster(Monster* monster);
     void AddPlayerBullets(Bullet* bullet, Vec offset);
+    void AddObject(GameObject* object);
+    void RemoveObject(GameObject* object);
     void Start();
     void Update();
     void Show();
@@ -29,9 +33,8 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    std::vector<Monster*> monsters;
     std::vector<Bullet*> playerBullets;
     std::vector<game_framework::GameObject*> objects;
     // TODO: Process the collision of different objects
-    // std::vector<game_framework::GameObject*> objectsToDelete;
+    std::vector<game_framework::GameObject*> objectsToDelete;
 };
