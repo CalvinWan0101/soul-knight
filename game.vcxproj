@@ -690,6 +690,7 @@
     <ClInclude Include="Source\Game\utils\object_manager.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
+    <ClInclude Include="Source\Game\utils\tag.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
     <ClInclude Include="Source\Game\weapon\bad_pistol.h" />
     <ClInclude Include="Source\Game\weapon\gun.h" />

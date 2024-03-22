@@ -1,9 +1,12 @@
 #pragma once
 #include <vector>
 
+#include "tag.h"
 #include "../utils/point.h"
 #include "../../Library/gameutil.h"
 #include "../utils/hit_box.h"
+
+using std::vector;
 
 namespace game_framework {
     class GameObject {
@@ -33,10 +36,11 @@ namespace game_framework {
         Vec centerOffset;
         HitBox hitBox;
         Vec speed;
-        std::vector<CMovingBitmap> cMovingBitmaps;
+        vector<Tag::Type> tag;
+        vector<CMovingBitmap> cMovingBitmaps;
         int index;
-        std::vector<GameObject*> frontGameObjects;
-        std::vector<GameObject*> backGameObjects;
+        vector<GameObject*> frontGameObjects;
+        vector<GameObject*> backGameObjects;
         virtual void SetCenter();
 
     private:
