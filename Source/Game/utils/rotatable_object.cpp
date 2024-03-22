@@ -13,10 +13,12 @@ RotatableObject::RotatableObject() {
 
 void RotatableObject::Rotate(double radian) {
     rotation.Rotate(radian);
+    SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
 void RotatableObject::SetRotation(Vec* radian) {
     rotation = Vec(radian);
+    SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
 Vec RotatableObject::GetRotation() const {
@@ -29,6 +31,6 @@ void RotatableObject::SetImages(std::vector<std::string> filepaths, COLORREF col
     cMovingBitmaps.push_back(cMovingBitmap);
 }
 
-void RotatableObject::SetFrameIndexOfBitmap(double radian) {
-    cMovingBitmaps[0].SetFrameIndexOfBitmap((int)(radian / PI * 60));
+void RotatableObject::SetFrameIndexOfBitmap(double radian) { // TODO: Binding Bitmap index to rotation
+    cMovingBitmaps[0].SetFrameIndexOfBitmap(static_cast<int>((radian / (2 * PI) ) * static_cast<double>(cMovingBitmaps[0].GetFrameSizeOfBitmap())));
 }
