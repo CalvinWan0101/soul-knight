@@ -22,6 +22,8 @@ namespace game_framework {
         void AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once);
         void AddFrontChild(GameObject* gameObject);
         void AddBackChild(GameObject* gameObject);
+        void RemoveFrontChile(GameObject* frontChild);
+        void RemoveBackChild(GameObject* backChild);
         // TODO: Fixed the bug of revised the value by reference directly
         Point& GetPoint();
         Vec GetSpeed();

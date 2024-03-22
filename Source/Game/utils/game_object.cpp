@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "game_object.h"
 
+#include <algorithm>
+
 namespace game_framework {
     GameObject::GameObject() : hitBox(point) {
         index = 0;
@@ -62,6 +64,26 @@ namespace game_framework {
     void GameObject::AddBackChild(GameObject* gameObject) {
         gameObject->DefaultStart();
         backGameObjects.emplace_back(gameObject);
+    }
+
+    void GameObject::RemoveFrontChile(GameObject* frontChild) {
+        size_t frontObjects = frontGameObjects.size();
+        frontGameObjects.erase(std::remove_if(frontGameObjects.begin(), frontGameObjects.end(), [frontChild](const GameObject* obj) {
+            return frontChild == obj;
+        }), frontGameObjects.end());
+        if (frontObjects <= frontGameObjects.size()) {
+            throw exception("GameObject Not Found.");
+        }
+    }
+
+    void GameObject::RemoveBackChild(GameObject* backChild) {
+        size_t backObjects = backGameObjects.size();
+        backGameObjects.erase(std::remove_if(backGameObjects.begin(), backGameObjects.end(), [backChild](const GameObject* obj) {
+            return backChild == obj;
+        }), backGameObjects.end());
+        if (backObjects <= backGameObjects.size()) {
+            throw exception("GameObject Not Found.");
+        }
     }
 
     Point& GameObject::GetPoint() {
