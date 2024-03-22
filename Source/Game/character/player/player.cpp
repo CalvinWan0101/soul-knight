@@ -6,6 +6,7 @@
 Player::Player() {
     mp = 0;
     shield = 0;
+    AddTag(Tag::PLAYER);
 }
 
 void Player::Start() {

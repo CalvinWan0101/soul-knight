@@ -1,4 +1,5 @@
 #pragma once
+#include <bitset>
 #include <vector>
 
 #include "tag.h"
@@ -32,13 +33,16 @@ namespace game_framework {
         void SetSpeed(double value);
         void SetSpeedX(double x);
         void SetSpeedY(double y);
+        void AddTag(Tag tag);
+        void RemoveTag(Tag tag);
+        bool HasTag(Tag tag);
 
     protected:
         Point point;
         Vec centerOffset;
         HitBox hitBox;
         Vec speed;
-        vector<Tag::Type> tag;
+        bitset<static_cast<int>(Tag::Count)> tags;
         vector<CMovingBitmap> cMovingBitmaps;
         int index;
         vector<GameObject*> frontGameObjects;

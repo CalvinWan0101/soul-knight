@@ -121,4 +121,17 @@ namespace game_framework {
                                       (double)this->cMovingBitmaps[0].GetHeight() * (factor / 2));
         }
     }
+
+    void GameObject::AddTag(Tag tag) {
+        tags[static_cast<int>(tag)] = true;
+    }
+
+    void GameObject::RemoveTag(Tag tag) {
+        tags[static_cast<int>(tag)] = false;
+    }
+
+    bool GameObject::HasTag(Tag tag) {
+        return tags[static_cast<int>(tag)];
+    }
+    
 }
