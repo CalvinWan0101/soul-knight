@@ -19,6 +19,6 @@ void BadPistol::Update() {
 void BadPistol::Attack() {
     Bullet* bullet = new Arrow();
     bullet->SetSpeed(rotation, 1);
-    bullet->GetPoint() = this->point + Vec(&rotation, 7);
+    bullet->SetPoint(&(this->point + Vec(&rotation, 7))) ;
     ObjectManager::Instance()->AddObject(bullet);
 }

@@ -86,8 +86,24 @@ namespace game_framework {
         }
     }
 
-    Point& GameObject::GetPoint() {
+    Point GameObject::GetPoint() {
         return point;
+    }
+
+    void GameObject::SetPoint(double x, double y) {
+        this->point.SetPoint(x, y);
+    }
+
+    void GameObject::SetPoint(Point* point) {
+        this->point.SetPoint(point->GetX(), point->GetY());
+    }
+
+    void GameObject::SetX(double x) {
+        this->point.SetX(x);
+    }
+
+    void GameObject::SetY(double y) {
+        this->point.SetY(y);
     }
 
     Vec GameObject::GetSpeed() {

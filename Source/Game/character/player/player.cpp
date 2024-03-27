@@ -38,7 +38,7 @@ void Player::SetVision(Vec vision) {
 
 void Player::ChangeWeapon(Weapon* newWeapon) {
     if (this->weapon != nullptr) {
-        this->weapon->GetPoint() = this->point;
+        this->weapon->SetPoint(&this->point);
         RemoveFrontChile(this->weapon);
         ObjectManager::Instance()->AddObject(this->weapon);
     }
