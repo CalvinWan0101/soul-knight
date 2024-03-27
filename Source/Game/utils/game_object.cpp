@@ -39,13 +39,13 @@ namespace game_framework {
         double screenX = this->point.GetX() - screenPositoin.GetX();
         double screenY = this->point.GetY() - screenPositoin.GetY();
         for (auto gameObject : backGameObjects) {
-            gameObject->Show(Point(-screenX, -screenY));
+            gameObject->Show(screenPositoin);
         }
         cMovingBitmaps[index].SetTopLeft(static_cast<int>(screenX - centerOffset.GetX()),
                                          static_cast<int>(screenY - centerOffset.GetY()));
         cMovingBitmaps[index].ShowBitmap(factor);
         for (auto gameObject : frontGameObjects) {
-            gameObject->Show(Point(-screenX, -screenY));
+            gameObject->Show(screenPositoin);
         }
     }
 

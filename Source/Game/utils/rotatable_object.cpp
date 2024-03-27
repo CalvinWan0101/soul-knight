@@ -35,6 +35,6 @@ void RotatableObject::SetImages(string filePath, int index, COLORREF color) {
     cMovingBitmaps.push_back(cMovingBitmap);
 }
 
-void RotatableObject::SetFrameIndexOfBitmap(double radian) { // TODO: Binding Bitmap index to rotation
+void RotatableObject::SetFrameIndexOfBitmap(double radian) {
     cMovingBitmaps[0].SetFrameIndexOfBitmap(static_cast<int>((radian / (2 * PI) ) * static_cast<double>(cMovingBitmaps[0].GetFrameSizeOfBitmap())));
 }

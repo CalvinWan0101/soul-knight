@@ -22,10 +22,10 @@ void Character::Update() {
     }
     weapon->SetRotation(&vision);
     if (face == RIGHT) {
-        weapon->GetPoint() = Point(weaponOffsetX , weaponOffsetY);
+        weapon->GetPoint() = this->point + Vec(weaponOffsetX , weaponOffsetY);
     }
     else if (face == LEFT) {
-        weapon->GetPoint() = Point(-weaponOffsetX , weaponOffsetY);
+        weapon->GetPoint() = this->point + Vec(-weaponOffsetX , weaponOffsetY);
     }
 }
 

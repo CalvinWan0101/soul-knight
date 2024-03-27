@@ -16,7 +16,6 @@ public:
     ~ObjectManager();
     void SetPlayer(Player* player);
     void AddMonster(Monster* monster);
-    void AddPlayerBullets(Bullet* bullet, Vec offset);
     void AddObject(GameObject* object);
     void RemoveObject(GameObject* object);
     void Start();
@@ -33,8 +32,6 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    std::vector<Bullet*> playerBullets;
     std::vector<game_framework::GameObject*> objects;
-    // TODO: Process the collision of different objects
     std::vector<game_framework::GameObject*> objectsToDelete;
 };
