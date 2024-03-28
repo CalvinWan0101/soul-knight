@@ -17,7 +17,6 @@ public:
     void SetPlayer(Player* player);
     void AddMonster(Monster* monster);
     void AddObject(GameObject* object);
-    void RemoveObject(GameObject* object);
     void Start();
     void Update();
     void Show();
@@ -33,5 +32,4 @@ private:
     static ObjectManager* instance;
     Player* player;
     std::vector<game_framework::GameObject*> objects;
-    std::vector<game_framework::GameObject*> objectsToDelete;
 };

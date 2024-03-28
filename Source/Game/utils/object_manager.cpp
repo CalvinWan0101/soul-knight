@@ -48,20 +48,6 @@ void ObjectManager::AddObject(GameObject* object) {
     objects.emplace_back(object);
 }
 
-void ObjectManager::RemoveObject(GameObject* object) {
-    size_t objectSize = objects.size();
-    objects.erase(std::remove_if(objects.begin(), objects.end(), [object](const GameObject* obj) {
-        // 返回true表示要刪除該物件
-        return object == obj;
-    }), objects.end());
-    if (objectSize > objects.size()) {
-        objectsToDelete.emplace_back(object);
-    }
-    else {
-        throw exception("GameObject Not Found.");
-    }
-}
-
 void ObjectManager::Start() {
 }
 
