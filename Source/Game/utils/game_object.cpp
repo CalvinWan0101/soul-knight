@@ -154,7 +154,7 @@ namespace game_framework {
 
     void GameObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
         hitBox.SetHeight(static_cast<double>(cMovingBitmaps[0].GetHeight()) * heightRatio);
-        hitBox.SetHeight(static_cast<double>(cMovingBitmaps[0].GetWidth()) * widthRatio);
+        hitBox.SetWidth(static_cast<double>(cMovingBitmaps[0].GetWidth()) * widthRatio);
     }
 
     HitBox GameObject::GetHitBox() {
