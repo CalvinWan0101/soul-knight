@@ -8,7 +8,7 @@ public:
     void Update() override;
     void DefaultAttack();
     virtual void Attack() = 0;
-    int GetCd();
+    double GetCd();
     int GetDamage();
     int GetMpCost();
     

@@ -2,7 +2,7 @@
 #include "bullet.h"
 
 Bullet::Bullet() {
-    damage = 0;;
+    damage = 0;
 }
 
 void Bullet::Start() {
@@ -12,6 +12,13 @@ void Bullet::Start() {
 
 void Bullet::Update() {
     RotatableObject::Update();
+}
+
+void Bullet::Collision(GameObject* gameObject) {
+    if ( (gameObject->HasTag(Tag::PLAYER) && this->HasTag(Tag::MONSTER_BULLET)) ||
+        (gameObject->HasTag(Tag::MONSTER) && this->HasTag(Tag::PLAYER_BULLET)) ) {
+        this->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
 }
 
 void Bullet::SetDamage(int damage) {

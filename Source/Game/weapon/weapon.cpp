@@ -23,7 +23,7 @@ void Weapon::DefaultAttack() {
     }
 }
 
-int Weapon::GetCd() {
+double Weapon::GetCd() {
     return cd;
 }
 

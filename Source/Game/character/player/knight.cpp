@@ -5,7 +5,7 @@
 
 Knight::Knight() {
     state = IDLE;
-    maxHp = 1000;
+    maxHp = 30;
     hp = maxHp;
 }
 

@@ -23,6 +23,6 @@ void BadPistol::Attack() {
     bullet->SetSpeed(rotation, 1);
     bullet->SetPoint(&(this->point + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
-    bullet->AddTag(Tag::MONSTER_BULLET);
+    bullet->AddTag(Tag::PLAYER_BULLET);
     ObjectManager::Instance()->AddObject(bullet);
 }
