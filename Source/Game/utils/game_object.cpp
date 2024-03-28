@@ -149,5 +149,19 @@ namespace game_framework {
     bool GameObject::HasTag(Tag tag) {
         return tags[static_cast<int>(tag)];
     }
+
+    void GameObject::SetHitBox(double height, double width) {
+        hitBox.SetHeight(height);
+        hitBox.SetWidth(width);
+    }
+
+    void GameObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
+        hitBox.SetHeight(static_cast<double>(cMovingBitmaps[0].GetHeight()) * heightRatio);
+        hitBox.SetHeight(static_cast<double>(cMovingBitmaps[0].GetWidth()) * widthRatio);
+    }
+
+    HitBox GameObject::GetHitBox() {
+        return hitBox;
+    }
     
 }

@@ -6,11 +6,11 @@ HitBox::HitBox(Point& authorPoint) : authorPoint(authorPoint) {
     halfHeight = 0;
 }
 
-void HitBox::SetWidth(int width) {
+void HitBox::SetWidth(double width) {
     this->halfWidth = width / 2;
 }
 
-void HitBox::SetHeight(int height) {
+void HitBox::SetHeight(double height) {
     this->halfHeight = height / 2;
 }
 

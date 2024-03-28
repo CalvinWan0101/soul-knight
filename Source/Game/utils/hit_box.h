@@ -4,12 +4,12 @@
 class HitBox {
 public:
     HitBox(Point& authorPoint);
-    void SetWidth(int width);
-    void SetHeight(int height);
+    void SetWidth(double width);
+    void SetHeight(double height);
     bool IsCollision(HitBox* otherHitBox);
 
 private:
     Point& authorPoint;
-    int halfWidth;
-    int halfHeight;
+    double halfWidth;
+    double halfHeight;
 };

@@ -40,6 +40,9 @@ namespace game_framework {
         void AddTag(Tag tag);
         void RemoveTag(Tag tag);
         bool HasTag(Tag tag);
+        void SetHitBox(double height, double width);
+        void SetHitBoxByRatio(double heightRatio, double widthRatio);
+        HitBox GetHitBox();
 
     protected:
         Point point;
