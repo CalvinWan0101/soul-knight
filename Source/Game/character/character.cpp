@@ -17,9 +17,7 @@ void Character::Start() {
 
 void Character::Update() {
     CheckState();
-    if (state <= 1) {
-        index = state + 2 * face;
-    }
+    index = state * 2 + face;
     weapon->SetRotation(&vision);
     if (face == RIGHT) {
         weapon->SetPoint(&(this->point + Vec(weaponOffsetX , weaponOffsetY)));
@@ -58,7 +56,7 @@ void Character::CheckState() {
     else if (speed.GetLength() != 0.0) {
         state = RUN;
     }
-    if (hp == 0) {
+    if (hp <= 0) {
         state = DEAD;
     }
 }

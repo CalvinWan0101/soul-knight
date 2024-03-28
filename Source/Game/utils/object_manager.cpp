@@ -22,11 +22,6 @@ ObjectManager::ObjectManager() {
 }
 
 ObjectManager::~ObjectManager() {
-    // delete player;
-    // for (auto monster : monsters)
-    // {
-    //     delete monster;
-    // }
     for (auto object : objects) {
         delete object;
     }

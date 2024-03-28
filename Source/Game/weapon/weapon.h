@@ -14,9 +14,9 @@ public:
     
 protected:
     double cd; // second
+    int damage;
+    int mpCost;
     
 private:
     int cdCounter;
-    int damage;
-    int mpCost;
 };

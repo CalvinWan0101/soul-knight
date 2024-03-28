@@ -10,10 +10,18 @@ Player::Player() {
 }
 
 void Player::Start() {
+    SetHitBoxByRatio(0.8, 0.3);
+    Character::Start();
 }
 
 void Player::Update() {
     Character::Update();
+}
+
+void Player::Collision(GameObject* gameObject) {
+    if (gameObject->HasTag(Tag::MONSTER_BULLET)) {
+        this->hp = this->hp - static_cast<Bullet*>(gameObject)->GetDamage();
+    }
 }
 
 int Player::GetMP() {

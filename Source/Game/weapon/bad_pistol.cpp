@@ -9,6 +9,7 @@ BadPistol::BadPistol() {
 
 void BadPistol::Start() {
     cd = 0.5;
+    damage = 3;
     SetImages("Resources/weapon/bad_pistol/", 3, RGB(255, 255, 255));
 }
 
@@ -19,6 +20,8 @@ void BadPistol::Update() {
 void BadPistol::Attack() {
     Bullet* bullet = new Arrow();
     bullet->SetSpeed(rotation, 1);
-    bullet->SetPoint(&(this->point + Vec(&rotation, 7))) ;
+    bullet->SetPoint(&(this->point + Vec(&rotation, 7)));
+    bullet->SetDamage(this->GetDamage());
+    bullet->AddTag(Tag::MONSTER_BULLET);
     ObjectManager::Instance()->AddObject(bullet);
 }
