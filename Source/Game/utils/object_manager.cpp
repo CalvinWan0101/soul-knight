@@ -33,11 +33,6 @@ void ObjectManager::SetPlayer(Player* player) {
     objects.emplace_back(player);
 }
 
-void ObjectManager::AddMonster(Monster* monster) {
-    monster->DefaultStart();
-    objects.emplace_back(monster);
-}
-
 void ObjectManager::AddObject(GameObject* object) {
     object->DefaultStart();
     objects.emplace_back(object);

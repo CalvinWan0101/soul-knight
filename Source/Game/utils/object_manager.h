@@ -16,7 +16,6 @@ public:
     ObjectManager();
     ~ObjectManager();
     void SetPlayer(Player* player);
-    void AddMonster(Monster* monster);
     void AddObject(GameObject* object);
     void Start();
     void Update();
