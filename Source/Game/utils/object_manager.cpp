@@ -120,6 +120,7 @@ void ObjectManager::CollisionDetection() {
 void ObjectManager::DeleteObsoleteElements() {
     for (vector<GameObject*>::iterator object = objects.begin() ; object != objects.end() ;) {
         if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
+            delete *object;
             object = objects.erase(object);
         } else { ++object; } 
     }
