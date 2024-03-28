@@ -16,6 +16,7 @@ public:
     ObjectManager();
     ~ObjectManager();
     void SetPlayer(Player* player);
+    void SetGameMap(GameObject* gameMap);
     void AddObject(GameObject* object);
     void Start();
     void Update();
@@ -31,6 +32,7 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
+    GameObject* gameMap;
     vector<GameObject*> objects;
     
     void DeleteObsoleteElements();

@@ -539,6 +539,7 @@
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
+    <ClCompile Include="Source\Game\utils\game_map.cpp" />
     <ClCompile Include="Source\Game\utils\game_object.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -685,6 +686,7 @@
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
     <ClInclude Include="Source\Game\utils\event.hpp" />
+    <ClInclude Include="Source\Game\utils\game_map.h" />
     <ClInclude Include="Source\Game\utils\game_object.h" />
     <ClInclude Include="Source\Game\utils\hit_box.h" />
     <ClInclude Include="Source\Game\utils\object_manager.h" />
@@ -835,6 +837,7 @@
     <Content Include="Resources\game\gameDoc.ico" />
     <Content Include="Resources\game\GAME_FRAMEWORK.bmp" />
     <Content Include="Resources\game\Toolbar.bmp" />
+    <Content Include="Resources\map.bmp" />
     <Content Include="Resources\monster\floor_1\boar\dead.bmp" />
     <Content Include="Resources\monster\floor_1\boar\flip_dead.bmp" />
     <Content Include="Resources\monster\floor_1\boar\idle\1.bmp" />

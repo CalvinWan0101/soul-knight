@@ -33,6 +33,11 @@ void ObjectManager::SetPlayer(Player* player) {
     objects.emplace_back(player);
 }
 
+void ObjectManager::SetGameMap(GameObject* gameMap) {
+    gameMap->Start();
+    this->gameMap = gameMap;
+}
+
 void ObjectManager::AddObject(GameObject* object) {
     object->Start();
     objects.emplace_back(object);
@@ -46,14 +51,14 @@ void ObjectManager::Update() {
     if (LButtonPressed) {
         player->Attack();
     }
-    for(auto object : objects)
-    {
+    for (auto object : objects) {
         object->Update();
     }
     CollisionDetection();
 }
 
 void ObjectManager::Show() {
+    gameMap->Show(Point(screenX, screenY));
     std::sort(objects.begin(), objects.end(), [](game_framework::GameObject* a, game_framework::GameObject* b) {
         return a->GetPoint().GetY() < b->GetPoint().GetY();
     });
@@ -107,9 +112,9 @@ void ObjectManager::SetPlayerVision(Vec vision) {
 }
 
 void ObjectManager::CollisionDetection() {
-    for (unsigned int i = 0 ; i < objects.size() - 1 ; i++) {
-        for (unsigned int j = i + 1 ; j < objects.size() ; j++) {
-            if (objects[i]->GetHitBox().IsCollision(& objects[j]->GetHitBox())) {
+    for (unsigned int i = 0; i < objects.size() - 1; i++) {
+        for (unsigned int j = i + 1; j < objects.size(); j++) {
+            if (objects[i]->GetHitBox().IsCollision(&objects[j]->GetHitBox())) {
                 objects[i]->Collision(objects[j]);
                 objects[j]->Collision(objects[i]);
             }
@@ -118,10 +123,11 @@ void ObjectManager::CollisionDetection() {
 }
 
 void ObjectManager::DeleteObsoleteElements() {
-    for (vector<GameObject*>::iterator object = objects.begin() ; object != objects.end() ;) {
+    for (vector<GameObject*>::iterator object = objects.begin(); object != objects.end();) {
         if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
             delete *object;
             object = objects.erase(object);
-        } else { ++object; } 
+        }
+        else { ++object; }
     }
 }
