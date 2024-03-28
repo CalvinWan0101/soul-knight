@@ -48,6 +48,7 @@ void Knight::Start() {
     this->AddAnimation({
                            "resources/player/knight/flip_dead.bmp",
                        }, RGB(255, 255, 255), 100, true);
+    Player::Start();
 }
 
 void Knight::Update() {

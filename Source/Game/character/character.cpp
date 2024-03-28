@@ -13,9 +13,11 @@ Character::Character() {
 }
 
 void Character::Start() {
+    GameObject::Start();
 }
 
 void Character::Update() {
+    GameObject::Update();
     CheckState();
     index = state * 2 + face;
     weapon->SetRotation(&vision);

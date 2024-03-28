@@ -5,7 +5,7 @@ class Bullet : public RotatableObject {
 public:
     Bullet();
     void Start() override;
-    void Update() override = 0;
+    void Update() override;
 
     void SetDamage(int damage);
     int GetDamage();

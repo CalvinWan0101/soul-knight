@@ -7,8 +7,12 @@ Bullet::Bullet() {
 
 void Bullet::Start() {
     SetHitBoxByRatio(0.3, 0.3);
+    RotatableObject::Start();
 }
 
+void Bullet::Update() {
+    RotatableObject::Update();
+}
 
 void Bullet::SetDamage(int damage) {
     this->damage = damage;

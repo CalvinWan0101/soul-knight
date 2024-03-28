@@ -10,5 +10,6 @@ void Arrow::Start() {
 }
 
 void Arrow::Update() {
+    Bullet::Update();
     SetRotation(&speed);
 }

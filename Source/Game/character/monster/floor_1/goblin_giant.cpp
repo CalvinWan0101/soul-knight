@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include "goblin_giant.h"
+#include "../../../weapon/bad_pistol.h"
 
 void GoblinGiant::Start() {
     this->AddAnimation({
@@ -17,8 +18,10 @@ void GoblinGiant::Start() {
     this->index = 0;
     this->speed.SetVec(0.0, 0.0);
     // TODO: Replace bad pistol with the correct weapon
-    // this->AddFrontChild(static_cast<Weapon*>(new BadPistol()));
+    this->SetWeapon(new BadPistol());
+    Monster::Start();
 }
 
 void GoblinGiant::Update() {
+    Monster::Update();
 }

@@ -4,7 +4,7 @@
 class Weapon : public RotatableObject {
 public:
     Weapon();
-    void Start() override = 0;
+    void Start() override;
     void Update() override;
     void DefaultAttack();
     virtual void Attack() = 0;

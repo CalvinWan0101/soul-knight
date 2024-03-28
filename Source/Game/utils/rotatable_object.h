@@ -10,8 +10,8 @@
 class RotatableObject : public game_framework::GameObject {
 public:
     RotatableObject();
-    void Start() override = 0;
-    void Update() override = 0;
+    void Start() override;
+    void Update() override;
     void Rotate(double radian);
     void SetRotation(Vec* radian);
     Vec GetRotation() const;

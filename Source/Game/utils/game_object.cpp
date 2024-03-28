@@ -17,22 +17,19 @@ namespace game_framework {
             delete gameObject;
         }
     }
-
-    void GameObject::DefaultStart() {
-        this->Start();
-        this->SetCenter();
+    
+    void GameObject::Start() {
+        SetCenter();
     }
 
-
-    void GameObject::DefaultUpdate() {
+    void GameObject::Update() {
         this->point = this->point + this->speed;
         for (auto gameObject : backGameObjects) {
-            gameObject->DefaultUpdate();
+            gameObject->Update();
         }
         for (auto gameObject : frontGameObjects) {
-            gameObject->DefaultUpdate();
+            gameObject->Update();
         }
-        this->Update();
     }
 
     void GameObject::Show(Point screenPositoin) {
@@ -57,12 +54,12 @@ namespace game_framework {
     }
 
     void GameObject::AddFrontChild(GameObject* gameObject) {
-        gameObject->DefaultStart();
+        gameObject->Start();
         frontGameObjects.emplace_back(gameObject);
     }
 
     void GameObject::AddBackChild(GameObject* gameObject) {
-        gameObject->DefaultStart();
+        gameObject->Update();
         backGameObjects.emplace_back(gameObject);
     }
 

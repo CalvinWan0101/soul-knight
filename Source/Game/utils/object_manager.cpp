@@ -28,13 +28,13 @@ ObjectManager::~ObjectManager() {
 }
 
 void ObjectManager::SetPlayer(Player* player) {
-    player->DefaultStart();
+    player->Start();
     this->player = player;
     objects.emplace_back(player);
 }
 
 void ObjectManager::AddObject(GameObject* object) {
-    object->DefaultStart();
+    object->Start();
     objects.emplace_back(object);
 }
 
@@ -48,7 +48,7 @@ void ObjectManager::Update() {
     }
     for(auto object : objects)
     {
-        object->DefaultUpdate();
+        object->Update();
     }
     CollisionDetection();
 }

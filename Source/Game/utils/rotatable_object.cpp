@@ -11,6 +11,14 @@ RotatableObject::RotatableObject() {
     rotation = Vec(1, 0);
 }
 
+void RotatableObject::Start() {
+    GameObject::Start();
+}
+
+void RotatableObject::Update() {
+    GameObject::Update();
+}
+
 void RotatableObject::Rotate(double radian) {
     rotation.Rotate(radian);
     SetFrameIndexOfBitmap(rotation.GetRadian());

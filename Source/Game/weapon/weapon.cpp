@@ -5,7 +5,12 @@ Weapon::Weapon() {
     cdCounter = 0;
 }
 
+void Weapon::Start() {
+    RotatableObject::Start();
+}
+
 void Weapon::Update() {
+    RotatableObject::Update();
     if (cdCounter > 0) {
         cdCounter--;
     }

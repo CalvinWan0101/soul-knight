@@ -14,10 +14,8 @@ namespace game_framework {
     public:
         GameObject();
         virtual ~GameObject();
-        void DefaultStart();
-        virtual void Start() = 0;
-        void DefaultUpdate();
-        virtual void Update() = 0;
+        virtual void Start();
+        virtual void Update();
         virtual void Show(Point screenPositoin);
 
         void AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once);

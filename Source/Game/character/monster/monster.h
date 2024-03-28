@@ -1,10 +1,12 @@
 ﻿#pragma once
-#include "../../utils/game_object.h"
+#include "../character.h"
 
-class Monster : public game_framework::GameObject
+class Monster : public Character
 {
 public:
     Monster();
-    void Start() override = 0;
-    void Update() override = 0;
+    void Start() override;
+    void Update() override;
+
+    void SetWeapon(Weapon* weapon);
 };
