@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "hit_box.h"
+#include <cmath>
 
 HitBox::HitBox(Point& authorPoint) : authorPoint(authorPoint) {
     halfWidth = 0;
@@ -17,12 +18,10 @@ void HitBox::SetHeight(double height) {
 bool HitBox::IsCollision(HitBox* otherHitBox) {
     bool XOverLap = false;
     bool YOverLap = false;
-    if (this->authorPoint.GetX() - otherHitBox->authorPoint.GetX() < this->halfWidth + otherHitBox->halfWidth ||
-        otherHitBox->authorPoint.GetX() - this->authorPoint.GetX() < this->halfWidth + otherHitBox->halfWidth) {
+    if (abs(this->authorPoint.GetX() - otherHitBox->authorPoint.GetX()) < this->halfWidth + otherHitBox->halfWidth) {
         XOverLap = true;
     }
-    if (this->authorPoint.GetY() - otherHitBox->authorPoint.GetY() < this->halfHeight + otherHitBox->halfHeight ||
-        otherHitBox->authorPoint.GetY() - this->authorPoint.GetY() < this->halfHeight + otherHitBox->halfHeight) {
+    if (abs(this->authorPoint.GetY() - otherHitBox->authorPoint.GetY()) < this->halfHeight + otherHitBox->halfHeight) {
         YOverLap = true;
     }
     if (XOverLap && YOverLap) {
