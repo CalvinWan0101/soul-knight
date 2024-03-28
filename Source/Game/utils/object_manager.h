@@ -5,6 +5,7 @@
 #include "../bullet/bullet.h"
 
 using game_framework::GameObject;
+using std::vector;
 
 class Monster;
 class Player;
@@ -31,5 +32,8 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    std::vector<game_framework::GameObject*> objects;
+    vector<GameObject*> objects;
+    
+    void DeleteObsoleteElements();
+    void CollisionDetection();
 };

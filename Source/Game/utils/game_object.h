@@ -43,6 +43,7 @@ namespace game_framework {
         void SetHitBox(double height, double width);
         void SetHitBoxByRatio(double heightRatio, double widthRatio);
         HitBox GetHitBox();
+        virtual void Collision(GameObject* gameObject);
 
     protected:
         Point point;

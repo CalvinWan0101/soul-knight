@@ -52,21 +52,15 @@ void ObjectManager::Start() {
 }
 
 void ObjectManager::Update() {
-    // player->DefaultUpdate();
+    DeleteObsoleteElements();
     if (LButtonPressed) {
         player->Attack();
     }
-    // for (auto monster : monsters) {
-    //     monster->DefaultUpdate();
-    // }
-    // for (auto bullet : playerBullets) {
-    //     bullet->DefaultUpdate();
-    // }
-    // TODO: maybe have error ?
     for(auto object : objects)
     {
         object->DefaultUpdate();
     }
+    CollisionDetection();
 }
 
 void ObjectManager::Show() {
@@ -120,4 +114,23 @@ void ObjectManager::SetLButtonPress(bool isPress) {
 
 void ObjectManager::SetPlayerVision(Vec vision) {
     player->SetVision(vision);
+}
+
+void ObjectManager::CollisionDetection() {
+    for (unsigned int i = 0 ; i < objects.size() - 1 ; i++) {
+        for (unsigned int j = i + 1 ; j < objects.size() ; j++) {
+            if (objects[i]->GetHitBox().IsCollision(& objects[j]->GetHitBox())) {
+                objects[i]->Collision(objects[j]);
+                objects[j]->Collision(objects[i]);
+            }
+        }
+    }
+}
+
+void ObjectManager::DeleteObsoleteElements() {
+    for (vector<GameObject*>::iterator object = objects.begin() ; object != objects.end() ;) {
+        if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
+            object = objects.erase(object);
+        } else { ++object; } 
+    }
 }

@@ -163,5 +163,9 @@ namespace game_framework {
     HitBox GameObject::GetHitBox() {
         return hitBox;
     }
-    
+
+    void GameObject::Collision(GameObject* gameObject) {
+        // TODO: Override by derived class.
+    }
+
 }
