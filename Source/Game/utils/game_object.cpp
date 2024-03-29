@@ -130,8 +130,8 @@ namespace game_framework {
 
     void GameObject::SetCenter() {
         if (!this->cMovingBitmaps.empty()) {
-            this->centerOffset.SetVec((double)this->cMovingBitmaps[0].GetWidth() * (factor / 2),
-                                      (double)this->cMovingBitmaps[0].GetHeight() * (factor / 2));
+            this->centerOffset.SetVec(static_cast<double>(cMovingBitmaps[0].GetWidth()) * (factor / 2.0),
+                                      static_cast<double>(cMovingBitmaps[0].GetHeight()) * (factor / 2.0));
         }
     }
 

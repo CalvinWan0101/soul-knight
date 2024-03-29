@@ -12,7 +12,7 @@
 //! 是否顯示loading(OnInit)的進度
 #define SHOW_LOAD_PROGRESS   true
 // 遊戲畫面預設的背景顏色(黑色)
-#define DEFAULT_BG_COLOR	 RGB(233, 233, 233)
+#define DEFAULT_BG_COLOR	 RGB(45,54,85)
 //! 每33ms跑一次Move及Show(每秒30次)
 #define GAME_CYCLE_TIME		 20
 //! 是否在debug mode顯示cycle time
