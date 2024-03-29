@@ -58,12 +58,12 @@ void ObjectManager::Update() {
 }
 
 void ObjectManager::Show() {
-    gameMap->Show(Point(screenX, screenY));
     std::sort(objects.begin(), objects.end(), [](game_framework::GameObject* a, game_framework::GameObject* b) {
         return a->GetPoint().GetY() < b->GetPoint().GetY();
     });
     screenX = (int)player->GetPoint().GetX() - SIZE_X_HALF;
     screenY = (int)player->GetPoint().GetY() - SIZE_Y_HALF;
+    gameMap->Show(Point(screenX, screenY));
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
