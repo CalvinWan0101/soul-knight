@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 
+#include "draw.h"
 #include "../config.h"
 #include "../character/player/player.h"
 #include "../character/monster/monster.h"
@@ -25,6 +26,7 @@ ObjectManager::~ObjectManager() {
     for (auto object : objects) {
         delete object;
     }
+    delete gameMap;
 }
 
 void ObjectManager::SetPlayer(Player* player) {
@@ -67,6 +69,7 @@ void ObjectManager::Show() {
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
+    game_framework::Draw::EmptyRectangle(player->GetPoint(), player->GetPoint() + player->GetPoint(),RGB(221,142,12), Point(20,20));
 }
 
 void ObjectManager::KeyDown(char key) {

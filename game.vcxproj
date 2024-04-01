@@ -539,6 +539,7 @@
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
+    <ClCompile Include="Source\Game\utils\draw.cpp" />
     <ClCompile Include="Source\Game\utils\game_map.cpp" />
     <ClCompile Include="Source\Game\utils\game_object.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -685,6 +686,7 @@
     <ClInclude Include="Source\Game\character\player\player.h" />
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
+    <ClInclude Include="Source\Game\utils\draw.h" />
     <ClInclude Include="Source\Game\utils\event.hpp" />
     <ClInclude Include="Source\Game\utils\game_map.h" />
     <ClInclude Include="Source\Game\utils\game_object.h" />
