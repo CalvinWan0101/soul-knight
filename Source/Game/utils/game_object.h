@@ -40,7 +40,7 @@ namespace game_framework {
         bool HasTag(Tag tag);
         void SetHitBox(double height, double width);
         void SetHitBoxByRatio(double heightRatio, double widthRatio);
-        HitBox GetHitBox();
+        HitBox& GetHitBox();
         virtual void Collision(GameObject* gameObject);
 
     protected:

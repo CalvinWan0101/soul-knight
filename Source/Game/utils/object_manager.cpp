@@ -69,6 +69,9 @@ void ObjectManager::Show() {
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
+    for (auto object : objects) {
+        object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
+    }
     game_framework::Draw::EmptyRectangle(player->GetPoint(), player->GetPoint() + player->GetPoint(),RGB(221,142,12), Point(20,20));
 }
 

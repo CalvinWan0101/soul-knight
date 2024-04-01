@@ -157,7 +157,7 @@ namespace game_framework {
         hitBox.SetWidth(static_cast<double>(cMovingBitmaps[0].GetWidth()) * widthRatio);
     }
 
-    HitBox GameObject::GetHitBox() {
+    HitBox& GameObject::GetHitBox() {
         return hitBox;
     }
 
