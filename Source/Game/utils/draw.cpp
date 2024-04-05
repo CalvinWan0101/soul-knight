@@ -22,20 +22,23 @@ namespace game_framework {
 
     
     void Draw::Rectangle(Point point1, Point point2, COLORREF color, Point radius) {
-        CDC *cdc = CDDraw::GetBackCDC(); // get CDC
-        DrawCommand* command = new DrawRectangleCommand(point1, point2, color, radius);
-        command->Execute(cdc);
-        delete command;
-        CDDraw::ReleaseBackCDC();
+        this->drawCommands.emplace_back(new DrawRectangleCommand(point1, point2, color, radius));
     }
     
     void Draw::EmptyRectangle(Point point1, Point point2, COLORREF color, Point radius, int thickness) {
+        this->drawCommands.emplace_back(new DrawEmptyRectangleCommand(point1, point2, color, radius, thickness));
+    }
+
+    void Draw::Show() {
         CDC *cdc = CDDraw::GetBackCDC(); // get CDC
-        DrawCommand* command = new DrawEmptyRectangleCommand(point1, point2, color, radius, thickness);
-        command->Execute(cdc);
-        delete command;
+        for(int i = static_cast<int>(drawCommands.size()) - 1 ; i >= 0 ; i--) {
+            drawCommands[i]->Execute(cdc);
+            delete drawCommands[i];
+            drawCommands.pop_back();
+        }
         CDDraw::ReleaseBackCDC();
     }
+
 
 }
 
