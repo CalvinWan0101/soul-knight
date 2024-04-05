@@ -27,6 +27,7 @@ ObjectManager::~ObjectManager() {
         delete object;
     }
     delete gameMap;
+    delete game_framework::Draw::Instance();
 }
 
 void ObjectManager::SetPlayer(Player* player) {
@@ -72,7 +73,7 @@ void ObjectManager::Show() {
     for (auto object : objects) {
         object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
     }
-    game_framework::Draw::EmptyRectangle(player->GetPoint(), player->GetPoint() + player->GetPoint(),RGB(221,142,12), Point(20,20));
+    game_framework::Draw::Instance()->EmptyRectangle(player->GetPoint(), player->GetPoint() + player->GetPoint(),RGB(221,142,12), Point(20,20));
 }
 
 void ObjectManager::KeyDown(char key) {

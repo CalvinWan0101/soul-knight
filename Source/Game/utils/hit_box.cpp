@@ -8,6 +8,7 @@
 HitBox::HitBox(Point& authorPoint) : authorPoint(authorPoint) {
     halfWidth = 0;
     halfHeight = 0;
+    isCollisionInThisFrame = false;
 }
 
 void HitBox::SetWidth(double width) {
@@ -41,7 +42,7 @@ void HitBox::Show(Point screenPositoin) {
     double screenX = this->authorPoint.GetX() - screenPositoin.GetX();
     double screenY = this->authorPoint.GetY() - screenPositoin.GetY();
     if (screenX > 0 && screenX < SIZE_X && screenY > 0 && screenY < SIZE_Y) {
-        game_framework::Draw::EmptyRectangle(
+        game_framework::Draw::Instance()->EmptyRectangle(
         Point(screenX - halfWidth, screenY - halfHeight),
         Point(screenX + halfWidth, screenY + halfHeight),
         (isCollisionInThisFrame ? RGB(235,16,0) : RGB(8,249,24))

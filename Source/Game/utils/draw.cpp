@@ -11,6 +11,16 @@
 
 
 namespace game_framework {
+    Draw* Draw::instance = nullptr;
+    
+    Draw* Draw::Instance() {
+        if (instance == nullptr) {
+            instance = new Draw();
+        }
+        return instance;
+    }
+
+    
     void Draw::Rectangle(Point point1, Point point2, COLORREF color, Point radius) {
         CDC *cdc = CDDraw::GetBackCDC(); // get CDC
         DrawCommand* command = new DrawRectangleCommand(point1, point2, color, radius);
