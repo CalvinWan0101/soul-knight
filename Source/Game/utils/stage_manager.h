@@ -7,6 +7,7 @@ public:
     ~StageManager();
     int GetLevel();
     int GetStage();
+    void Initiliaze();
     void NextStage();
 private:
     static StageManager* instance;

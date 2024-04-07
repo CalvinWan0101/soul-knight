@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "draw.h"
+#include "stage_manager.h"
 #include "../config.h"
 #include "../character/player/player.h"
 #include "../character/monster/monster.h"
@@ -56,6 +57,7 @@ void ObjectManager::AddObject(GameObject* object) {
 void ObjectManager::Start() {
     gameMap->Start();
     transferGate->Start();
+    StageManager::Instance()->Initiliaze();
     objects.emplace_back(transferGate);
 }
 

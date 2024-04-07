@@ -17,8 +17,6 @@ StageManager* StageManager::Instance() {
 StageManager::StageManager() {
     level = 1;
     stage = 1;
-    // ObjectManager::Instance()->UpdateGameMap(level, stage);
-    // UpdatePlayerPosition();
 }
 
 StageManager::~StageManager() {
@@ -30,6 +28,11 @@ int StageManager::GetLevel() {
 
 int StageManager::GetStage() {
     return stage;
+}
+
+void StageManager::Initiliaze() {
+    ObjectManager::Instance()->UpdateGameMap(level, stage);
+    UpdatePlayerPosition();
 }
 
 void StageManager::NextStage() {
