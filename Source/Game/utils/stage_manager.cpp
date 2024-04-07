@@ -103,28 +103,28 @@ void StageManager::UpdatePlayerPosition() {
     }
     else if (3 == level) {
         if (stage == 1) {
-            transferGate->SetPoint(-900, -300);
-            player->SetPoint(345, 300);
+            transferGate->SetPoint(345, 850);
+            player->SetPoint(-295, 930);
         }
         else if (stage == 2) {
-            transferGate->SetPoint(-790, 340);
-            player->SetPoint(-875, -300);
+            transferGate->SetPoint(-790, 935);
+            player->SetPoint(-230, -350);
         }
         else if (stage == 3) {
-            transferGate->SetPoint(330, 340);
-            player->SetPoint(410, 980);
+            transferGate->SetPoint(330, -345);
+            player->SetPoint(-230, 930);
         }
         else if (stage == 4) {
-            transferGate->SetPoint(-230, -220);
-            player->SetPoint(330, 340);
+            transferGate->SetPoint(410, 905);
+            player->SetPoint(-880, 340);
         }
         else if (stage == 5) {
-            transferGate->SetPoint(-825, 245);
-            player->SetPoint(-190, -340);
+            transferGate->SetPoint(970, 910);
+            player->SetPoint(-230, -350);
         }
         else if (stage == 6) {
-            transferGate->SetPoint(-825, 245);
-            player->SetPoint(-190, -340);
+            transferGate->SetPoint(-310, -345);
+            player->SetPoint(-870, -345);
         }
     }
 }
