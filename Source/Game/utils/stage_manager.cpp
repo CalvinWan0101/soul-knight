@@ -16,7 +16,7 @@ StageManager* StageManager::Instance() {
 
 StageManager::StageManager() {
     level = 1;
-    stage = 1;
+    stage = 5;
 }
 
 StageManager::~StageManager() {
@@ -42,13 +42,11 @@ void StageManager::NextStage() {
         level++;
     }
 
+    // For testing
     if (level == 3 && stage > 6) {
         level = 1;
         stage = 1;
     }
-
-    // level = 1;
-    // stage = 3;
 
     ObjectManager::Instance()->UpdateGameMap(level, stage);
     UpdatePlayerPosition();
@@ -71,6 +69,14 @@ void StageManager::UpdatePlayerPosition() {
         else if (stage == 3) {
             transferGate->SetPoint(330, 340);
             player->SetPoint(410, 980);
+        }
+        else if (stage == 4) {
+            transferGate->SetPoint(-230, -220);
+            player->SetPoint(330, 340);
+        }
+        else if (stage == 5) {
+            transferGate->SetPoint(-825, 245);
+            player->SetPoint(-190, -340);
         }
     }
 }
