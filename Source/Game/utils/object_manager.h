@@ -1,7 +1,9 @@
 ﻿#pragma once
 #include <vector>
 
+#include "game_map.h"
 #include "game_object.h"
+#include "transfer_gate.h"
 #include "../bullet/bullet.h"
 
 using game_framework::GameObject;
@@ -16,7 +18,9 @@ public:
     ObjectManager();
     ~ObjectManager();
     void SetPlayer(Player* player);
-    void SetGameMap(GameObject* gameMap);
+    void UpdateGameMap(int level, int stage);\
+    Player* GetPlayer();
+    TransferGate* GetTransferGate();
     void AddObject(GameObject* object);
     void Start();
     void Update();
@@ -32,9 +36,10 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    GameObject* gameMap;
+    GameMap* gameMap = new GameMap();
+    TransferGate* transferGate = new TransferGate();
     vector<GameObject*> objects;
-    
+
     void DeleteObsoleteElements();
     void CollisionDetection();
 };

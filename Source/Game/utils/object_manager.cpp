@@ -36,9 +36,16 @@ void ObjectManager::SetPlayer(Player* player) {
     objects.emplace_back(player);
 }
 
-void ObjectManager::SetGameMap(GameObject* gameMap) {
-    gameMap->Start();
-    this->gameMap = gameMap;
+void ObjectManager::UpdateGameMap(int level, int stage) {
+    gameMap->SetMap(level, stage);
+}
+
+Player* ObjectManager::GetPlayer() {
+    return player;
+}
+
+TransferGate* ObjectManager::GetTransferGate() {
+    return transferGate;
 }
 
 void ObjectManager::AddObject(GameObject* object) {
@@ -47,6 +54,9 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
+    gameMap->Start();
+    transferGate->Start();
+    objects.emplace_back(transferGate);
 }
 
 void ObjectManager::Update() {
@@ -67,9 +77,11 @@ void ObjectManager::Show() {
     screenX = (int)player->GetPoint().GetX() - SIZE_X_HALF;
     screenY = (int)player->GetPoint().GetY() - SIZE_Y_HALF;
     gameMap->Show(Point(screenX, screenY));
+    transferGate->Show(Point(screenX, screenY));
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
+    transferGate->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
     for (auto object : objects) {
         object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
     }

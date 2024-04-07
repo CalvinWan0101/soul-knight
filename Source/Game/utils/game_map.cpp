@@ -21,7 +21,7 @@ void GameMap::Start() {
                            "resources/map/3-5.bmp",
                            "resources/map/3-6.bmp"
                        }, RGB(255, 255, 255), 100, true);
-    SetMap(5);
+    SetMap(0);
     GameObject::Start();
 }
 

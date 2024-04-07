@@ -606,6 +606,8 @@
     <ClCompile Include="Source\Game\utils\object_manager.cpp" />
     <ClCompile Include="Source\Game\utils\point.cpp" />
     <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
+    <ClCompile Include="Source\Game\utils\stage_manager.cpp" />
+    <ClCompile Include="Source\Game\utils\transfer_gate.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
     <ClCompile Include="Source\Game\weapon\bad_pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\gun.cpp" />
@@ -699,7 +701,9 @@
     <ClInclude Include="Source\Game\utils\object_manager.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
+    <ClInclude Include="Source\Game\utils\stage_manager.h" />
     <ClInclude Include="Source\Game\utils\tag.h" />
+    <ClInclude Include="Source\Game\utils\transfer_gate.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
     <ClInclude Include="Source\Game\weapon\bad_pistol.h" />
     <ClInclude Include="Source\Game\weapon\gun.h" />
@@ -1188,6 +1192,7 @@
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_2.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_3.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_4.bmp" />
+    <Content Include="Resources\object\transfergate.bmp" />
     <Content Include="Resources\player\knight\dead.bmp" />
     <Content Include="Resources\player\knight\flip_dead.bmp" />
     <Content Include="Resources\player\knight\idle\1.bmp" />

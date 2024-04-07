@@ -6,6 +6,8 @@ enum class Tag {
     MONSTER,
     MONSTER_BULLET,
     
+    TRANSFER_GATE,
+
     REMOVE_ON_NEXT_FRAME,
     Count,
 };

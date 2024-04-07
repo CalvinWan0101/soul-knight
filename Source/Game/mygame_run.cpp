@@ -11,6 +11,7 @@
 #include "../Library/gamecore.h"
 #include "mygame.h"
 #include "utils/game_map.h"
+#include "utils/transfer_gate.h"
 
 using namespace game_framework;
 
@@ -35,9 +36,8 @@ void CGameStateRun::OnMove() // 移動遊戲元素
 
 void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
 {
-    objectManager->SetGameMap(new GameMap());
     objectManager->SetPlayer(new Knight());
-    objectManager->AddObject(new GoblinGiant());
+    // objectManager->AddObject(new GoblinGiant());
     objectManager->Start();
 }
 
