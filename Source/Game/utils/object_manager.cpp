@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <vector>
+#include <iostream>
 
 #include "draw.h"
 #include "stage_manager.h"
@@ -85,7 +86,7 @@ void ObjectManager::Show() {
     }
     for (auto object : objects) {
         object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
-        if(Player* player = dynamic_cast<Player *>(object)) {
+        if (Player* player = dynamic_cast<Player*>(object)) {
             player->GetAlertRange().Show(Point(screenX, screenY));
         }
     }
@@ -140,6 +141,22 @@ void ObjectManager::CollisionDetection() {
             if (objects[i]->GetHitBox().IsCollision(&objects[j]->GetHitBox())) {
                 objects[i]->Collision(objects[j]);
                 objects[j]->Collision(objects[i]);
+            }
+
+            Player* player = dynamic_cast<Player*>(objects[i]);
+            Monster* monster = dynamic_cast<Monster*>(objects[j]);
+            if (player && monster) {
+                if (player->GetAlertRange().IsCollision(&objects[j]->GetHitBox())) {
+                    monster->EnterPlayerAlertRange(player);
+                }
+            }
+
+            player = dynamic_cast<Player*>(objects[j]);
+            monster = dynamic_cast<Monster*>(objects[i]);
+            if (player && monster) {
+                if (player->GetAlertRange().IsCollision(&objects[i]->GetHitBox())) {
+                    monster->EnterPlayerAlertRange(player);
+                }
             }
         }
     }

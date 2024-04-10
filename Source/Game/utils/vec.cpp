@@ -109,3 +109,7 @@ Vec Vec::operator+(Vec& vec) const {
 Vec Vec::operator -(Vec& vec) const {
     return Vec{x - vec.x, y - vec.y};
 }
+
+Vec Vec::operator*(double ratio) const {
+    return Vec{x * ratio, y * ratio};
+}

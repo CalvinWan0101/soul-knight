@@ -21,6 +21,7 @@ public:
     void SetLength(double length);
     Vec operator +(Vec& vec) const;
     Vec operator -(Vec& vec) const;
+    Vec operator *(double ratio) const;
 
 private:
     double x;

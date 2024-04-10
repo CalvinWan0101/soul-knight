@@ -3,6 +3,7 @@
 #include "monster.h"
 #include "../character.h"
 #include "../../bullet/bullet.h"
+#include "../player/player.h"
 
 Monster::Monster() {
     AddTag(Tag::MONSTER);
@@ -15,11 +16,20 @@ void Monster::Start() {
 
 void Monster::Update() {
     Character::Update();
+    if (player) {
+        this->speed = (player->GetPoint() - this->point) * 0.01;
+    }
 }
 
 void Monster::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::PLAYER_BULLET)) {
         this->hp = this->hp - dynamic_cast<Bullet*>(gameObject)->GetDamage();
+    }
+}
+
+void Monster::EnterPlayerAlertRange(Player* player) {
+    if (!this->player) {
+        this->player = player;
     }
 }
 

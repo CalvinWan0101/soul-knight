@@ -37,7 +37,22 @@ void CGameStateRun::OnMove() // 移動遊戲元素
 void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
 {
     objectManager->SetPlayer(new Knight());
-    // objectManager->AddObject(new GoblinGiant());
+    GoblinGiant* goblinGiant1 = new GoblinGiant();
+    GoblinGiant* goblinGiant2 = new GoblinGiant();
+    GoblinGiant* goblinGiant3 = new GoblinGiant();
+    GoblinGiant* goblinGiant4 = new GoblinGiant();
+    GoblinGiant* goblinGiant5 = new GoblinGiant();
+    goblinGiant1->SetPoint(-200, 0);
+    goblinGiant2->SetPoint(-100, 0);
+    goblinGiant3->SetPoint(0, 0);
+    goblinGiant4->SetPoint(100, 0);
+    goblinGiant5->SetPoint(200, 0);
+
+    objectManager->AddObject(goblinGiant1);
+    objectManager->AddObject(goblinGiant2);
+    objectManager->AddObject(goblinGiant3);
+    objectManager->AddObject(goblinGiant4);
+    objectManager->AddObject(goblinGiant5);
     objectManager->Start();
 }
 
