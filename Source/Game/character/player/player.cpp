@@ -3,7 +3,7 @@
 #include "../character.h"
 #include "../../utils/object_manager.h"
 
-Player::Player() {
+Player::Player(): alertRange(point) {
     mp = 0;
     shield = 0;
     AddTag(Tag::PLAYER);
@@ -11,6 +11,7 @@ Player::Player() {
 
 void Player::Start() {
     SetHitBoxByRatio(0.8, 0.3);
+    SetAlertRange(200, 200);
     Character::Start();
 }
 
@@ -40,6 +41,11 @@ int Player::GetMaxShield() {
     return maxShild;
 }
 
+HitBox Player::GetAlertRange() {
+    return alertRange;
+}
+
+
 void Player::SetVision(Vec vision) {
     this->vision = vision;
 }
@@ -54,3 +60,7 @@ void Player::ChangeWeapon(Weapon* newWeapon) {
     this->AddFrontChild(newWeapon);
 }
 
+void Player::SetAlertRange(double height, double width) {
+    alertRange.SetHeight(height);
+    alertRange.SetWidth(width);
+}

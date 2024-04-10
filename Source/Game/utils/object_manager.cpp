@@ -83,9 +83,11 @@ void ObjectManager::Show() {
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
-    transferGate->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
     for (auto object : objects) {
         object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
+        if(Player* player = dynamic_cast<Player *>(object)) {
+            player->GetAlertRange().Show(Point(screenX, screenY));
+        }
     }
     game_framework::Draw::Instance()->Show();
 }
