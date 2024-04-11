@@ -604,12 +604,14 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\utils\hit_box.cpp" />
+    <ClCompile Include="Source\Game\utils\invisible_object.cpp" />
     <ClCompile Include="Source\Game\utils\object_manager.cpp" />
     <ClCompile Include="Source\Game\utils\point.cpp" />
     <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
     <ClCompile Include="Source\Game\utils\stage_manager.cpp" />
     <ClCompile Include="Source\Game\utils\transfer_gate.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
+    <ClCompile Include="Source\Game\wall\invisible_wall.cpp" />
     <ClCompile Include="Source\Game\weapon\bad_pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\gun.cpp" />
     <ClCompile Include="Source\Game\weapon\weapon.cpp">
@@ -700,6 +702,7 @@
     <ClInclude Include="Source\Game\utils\game_map.h" />
     <ClInclude Include="Source\Game\utils\game_object.h" />
     <ClInclude Include="Source\Game\utils\hit_box.h" />
+    <ClInclude Include="Source\Game\utils\invisible_object.h" />
     <ClInclude Include="Source\Game\utils\object_manager.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
@@ -707,6 +710,7 @@
     <ClInclude Include="Source\Game\utils\tag.h" />
     <ClInclude Include="Source\Game\utils\transfer_gate.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
+    <ClInclude Include="Source\Game\wall\invisible_wall.h" />
     <ClInclude Include="Source\Game\weapon\bad_pistol.h" />
     <ClInclude Include="Source\Game\weapon\gun.h" />
     <ClInclude Include="Source\Game\weapon\weapon.h" />
@@ -1396,6 +1400,7 @@
     <Content Include="Resources\weapon\bad_pistol\99.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\bad_pistol.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\flip_bad_pistol.bmp" />
+    <Content Include="Source\Game\Map\1-1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,6 +7,7 @@ enum class Tag {
     MONSTER_BULLET,
     
     TRANSFER_GATE,
+    WALL,
 
     REMOVE_ON_NEXT_FRAME,
     Count,
