@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <vector>
+#include <iostream>
 
 #include "draw.h"
 #include "stage_manager.h"
@@ -28,7 +29,6 @@ ObjectManager::~ObjectManager() {
         delete object;
     }
     delete gameMap;
-    delete game_framework::Draw::Instance();
 }
 
 void ObjectManager::SetPlayer(Player* player) {
@@ -83,10 +83,10 @@ void ObjectManager::Show() {
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
-    transferGate->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
     for (auto object : objects) {
         object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
     }
+    player->GetAlertRange().Show(Point(screenX, screenY));
     game_framework::Draw::Instance()->Show();
 }
 
@@ -138,6 +138,19 @@ void ObjectManager::CollisionDetection() {
             if (objects[i]->GetHitBox().IsCollision(&objects[j]->GetHitBox())) {
                 objects[i]->Collision(objects[j]);
                 objects[j]->Collision(objects[i]);
+            }
+
+            if (objects[i]->HasTag(Tag::PLAYER) && objects[j]->HasTag(Tag::MONSTER)) {
+                Monster* monster = dynamic_cast<Monster*>(objects[j]);
+                if (player->GetAlertRange().IsCollision(&objects[j]->GetHitBox())) {
+                    monster->EnterPlayerAlertRange(player);
+                }
+            }
+            else if (objects[i]->HasTag(Tag::MONSTER) && objects[j]->HasTag(Tag::PLAYER)) {
+                Monster* monster = dynamic_cast<Monster*>(objects[i]);
+                if (player->GetAlertRange().IsCollision(&objects[i]->GetHitBox())) {
+                    monster->EnterPlayerAlertRange(player);
+                }
             }
         }
     }

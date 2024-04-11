@@ -13,6 +13,7 @@ public:
     int GetMaxMP();
     int GetShield();
     int GetMaxShield();
+    HitBox& GetAlertRange();
 
     void SetVision(Vec vision);
     void ChangeWeapon(Weapon* newWeapon);
@@ -22,4 +23,8 @@ protected:
     int maxMp;
     int shield;
     int maxShild;
+    HitBox alertRange;
+private:
+    void SetAlertRange(double height, double witdth);
+    
 };

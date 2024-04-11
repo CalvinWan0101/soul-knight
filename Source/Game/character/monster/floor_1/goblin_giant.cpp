@@ -36,6 +36,7 @@ void GoblinGiant::Start() {
     
     this->speed.SetVec(0.0, 0.0);
     this->maxHp = 30;
+    this->maxSpeed = 3;
     this->hp = maxHp;
     // TODO: Replace bad pistol with the correct weapon
     this->SetWeapon(new BadPistol());
