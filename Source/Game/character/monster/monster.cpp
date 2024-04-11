@@ -18,7 +18,7 @@ void Monster::Update() {
     Character::Update();
     if (player) {
         Vec nowSpeed = (player->GetPoint() - this->point);
-        nowSpeed.SetLength(3);
+        nowSpeed.SetLength(maxSpeed);
         this->speed = nowSpeed;
     }
 }

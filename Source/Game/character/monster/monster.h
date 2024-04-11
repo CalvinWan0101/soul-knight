@@ -13,6 +13,8 @@ public:
 
     void SetWeapon(Weapon* weapon);
 
+protected:
+    double maxSpeed;
 private:
     Player* player = nullptr;
 };
