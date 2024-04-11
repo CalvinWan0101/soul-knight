@@ -19,6 +19,14 @@ void HitBox::SetHeight(double height) {
     this->halfHeight = height / 2;
 }
 
+double HitBox::GetHalfWidth() {
+    return halfWidth;
+}
+
+double HitBox::GetHalfHeight() {
+    return halfHeight;
+}
+
 bool HitBox::IsCollision(HitBox* otherHitBox) {
     bool XOverLap = false;
     bool YOverLap = false;
