@@ -41,7 +41,7 @@ int Player::GetMaxShield() {
     return maxShild;
 }
 
-HitBox Player::GetAlertRange() {
+HitBox& Player::GetAlertRange() {
     return alertRange;
 }
 
