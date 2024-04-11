@@ -2,6 +2,8 @@
 #include "character.h"
 #include "../weapon/Weapon.h"
 
+#include <cmath>
+
 Character::Character() {
     hp = 1;
     maxHp = 1;
@@ -28,6 +30,26 @@ void Character::Update() {
         weapon->SetPoint(&(this->point + Vec(-weaponOffsetX , weaponOffsetY)));
     }
 }
+
+void Character::Collision(GameObject* gameObject) {
+    GameObject::Collision(gameObject);
+    if (gameObject->HasTag(Tag::WALL)) {
+        Vec speedXComponent(speed.GetX(), 0.0);
+        Vec speedYComponent(0.0, speed.GetY());
+        this->point = this->point - speedXComponent;
+        if (hitBox.IsCollision(&gameObject->GetHitBox())) {
+            this->point = this->point + speedXComponent;
+            speedYComponent.SetLength(gameObject->GetHitBox().GetHalfHeight() + this->hitBox.GetHalfHeight() - abs(gameObject->GetPoint().GetY() - this->point.GetY()) + 0.1);
+            this->point = this->point - speedYComponent;
+        }
+        else {
+            this->point = this->point + speedXComponent;
+            speedXComponent.SetLength(gameObject->GetHitBox().GetHalfWidth() + this->hitBox.GetHalfWidth() - abs(gameObject->GetPoint().GetX() - this->point.GetX()) + 0.1);
+            this->point = this->point - speedXComponent;
+        }
+    }
+}
+
 
 int Character::GetHP() {
     return hp;

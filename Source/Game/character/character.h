@@ -7,6 +7,7 @@ public:
     Character();
     void Start() override;
     void Update() override;
+    void Collision(GameObject* gameObject) override;
 
     int GetHP();
     int GetMaxHP();
