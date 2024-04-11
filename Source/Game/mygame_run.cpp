@@ -10,6 +10,7 @@
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
 #include "mygame.h"
+#include "utils/draw.h"
 #include "utils/game_map.h"
 #include "utils/transfer_gate.h"
 
@@ -24,6 +25,8 @@ CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
 
 CGameStateRun::~CGameStateRun() {
     delete objectManager;
+    delete Draw::Instance();
+    delete StageManager::Instance();
 }
 
 void CGameStateRun::OnBeginState() {

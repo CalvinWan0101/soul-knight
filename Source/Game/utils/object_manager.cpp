@@ -29,7 +29,6 @@ ObjectManager::~ObjectManager() {
         delete object;
     }
     delete gameMap;
-    delete game_framework::Draw::Instance();
 }
 
 void ObjectManager::SetPlayer(Player* player) {
