@@ -29,6 +29,7 @@ ObjectManager::~ObjectManager() {
         delete object;
     }
     delete gameMap;
+    delete stage;
 }
 
 void ObjectManager::SetPlayer(Player* player) {
