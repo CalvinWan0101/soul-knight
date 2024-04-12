@@ -540,6 +540,7 @@
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
     <ClCompile Include="Source\Game\stage\stage.cpp" />
+    <ClCompile Include="Source\Game\stage\stage_1_1.cpp" />
     <ClCompile Include="Source\Game\utils\draw.cpp" />
     <ClCompile Include="Source\Game\utils\draw_empty_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_rectangle_command.cpp" />
@@ -695,6 +696,7 @@
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
     <ClInclude Include="Source\Game\stage\stage.h" />
+    <ClInclude Include="Source\Game\stage\stage_1_1.h" />
     <ClInclude Include="Source\Game\utils\draw.h" />
     <ClInclude Include="Source\Game\utils\draw_command.h" />
     <ClInclude Include="Source\Game\utils\draw_empty_rectangle_command.h" />
@@ -1402,6 +1404,7 @@
     <Content Include="Resources\weapon\bad_pistol\99.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\bad_pistol.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\flip_bad_pistol.bmp" />
+    <Content Include="Resources\xml.ipynb" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

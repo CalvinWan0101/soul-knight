@@ -5,6 +5,8 @@
 #include "game_object.h"
 #include "transfer_gate.h"
 #include "../bullet/bullet.h"
+#include "../stage/stage.h"
+#include "../stage/stage_1_1.h"
 
 using game_framework::GameObject;
 using std::vector;
@@ -37,6 +39,7 @@ private:
     static ObjectManager* instance;
     Player* player;
     GameMap* gameMap = new GameMap();
+    Stage* stage;
     TransferGate* transferGate = new TransferGate();
     vector<GameObject*> objects;
 

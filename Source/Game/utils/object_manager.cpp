@@ -39,6 +39,8 @@ void ObjectManager::SetPlayer(Player* player) {
 
 void ObjectManager::UpdateGameMap(int level, int stage) {
     gameMap->SetMap(level, stage);
+    this->stage = new Stage_1_1();
+    this->stage->Initialize();
 }
 
 Player* ObjectManager::GetPlayer() {
@@ -78,7 +80,8 @@ void ObjectManager::Show() {
     });
     screenX = (int)player->GetPoint().GetX() - SIZE_X_HALF;
     screenY = (int)player->GetPoint().GetY() - SIZE_Y_HALF;
-    gameMap->Show(Point(screenX, screenY));
+    // gameMap->Show(Point(screenX, screenY));
+    stage->Show(Point(screenX, screenY));
     transferGate->Show(Point(screenX, screenY));
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
