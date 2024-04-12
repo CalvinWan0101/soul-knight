@@ -20,6 +20,7 @@ void Player::Update() {
 }
 
 void Player::Collision(GameObject* gameObject) {
+    Character::Collision(gameObject);
     if (gameObject->HasTag(Tag::MONSTER_BULLET)) {
         this->hp = this->hp - dynamic_cast<Bullet*>(gameObject)->GetDamage();
     }
