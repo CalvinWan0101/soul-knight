@@ -2,7 +2,7 @@
 #include "wall.h"
 
 void Wall::Start() {
-    this->AddTag(Tag::WALL);
+    this->AddTag(Tag::OBSTACLE);
     InvisibleObject::Start();
 }
 
