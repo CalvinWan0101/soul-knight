@@ -13,7 +13,7 @@
 #include "utils/draw.h"
 #include "utils/game_map.h"
 #include "utils/transfer_gate.h"
-#include "wall/invisible_wall.h"
+#include "wall\wall.h"
 
 using namespace game_framework;
 
@@ -51,7 +51,7 @@ void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
     goblinGiant3->SetPoint(0, 0);
     goblinGiant4->SetPoint(100, 0);
     goblinGiant5->SetPoint(200, 0);
-    InvisibleWall* wall = new InvisibleWall();
+    Wall* wall = new Wall();
     wall->SetPoint(500, 500);
     wall->SetHitBox(100, 200);
 

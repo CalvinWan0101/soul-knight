@@ -539,6 +539,7 @@
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
+    <ClCompile Include="Source\Game\stage\stage.cpp" />
     <ClCompile Include="Source\Game\utils\draw.cpp" />
     <ClCompile Include="Source\Game\utils\draw_empty_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_rectangle_command.cpp" />
@@ -611,7 +612,7 @@
     <ClCompile Include="Source\Game\utils\stage_manager.cpp" />
     <ClCompile Include="Source\Game\utils\transfer_gate.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
-    <ClCompile Include="Source\Game\wall\invisible_wall.cpp" />
+    <ClCompile Include="Source\Game\wall\wall.cpp" />
     <ClCompile Include="Source\Game\weapon\bad_pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\gun.cpp" />
     <ClCompile Include="Source\Game\weapon\weapon.cpp">
@@ -693,6 +694,7 @@
     <ClInclude Include="Source\Game\character\player\player.h" />
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
+    <ClInclude Include="Source\Game\stage\stage.h" />
     <ClInclude Include="Source\Game\utils\draw.h" />
     <ClInclude Include="Source\Game\utils\draw_command.h" />
     <ClInclude Include="Source\Game\utils\draw_empty_rectangle_command.h" />
@@ -710,7 +712,7 @@
     <ClInclude Include="Source\Game\utils\tag.h" />
     <ClInclude Include="Source\Game\utils\transfer_gate.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
-    <ClInclude Include="Source\Game\wall\invisible_wall.h" />
+    <ClInclude Include="Source\Game\wall\wall.h" />
     <ClInclude Include="Source\Game\weapon\bad_pistol.h" />
     <ClInclude Include="Source\Game\weapon\gun.h" />
     <ClInclude Include="Source\Game\weapon\weapon.h" />
