@@ -107,6 +107,9 @@ void ObjectManager::KeyDown(char key) {
     case 'S':
         player->SetSpeedY(player->GetSpeed().GetY() + 10);
         break;
+    case 'F':
+        game_framework::Draw::Instance()->SwitchIsDisplay();
+        break;
     }
 }
 

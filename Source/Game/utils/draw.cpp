@@ -34,11 +34,16 @@ namespace game_framework {
         this->drawCommands.emplace_back((new DrawTextCommand(point, size, color, str, fontName)));
     }
 
-
+    void Draw::SwitchIsDisplay() {
+        isDisplayed = !isDisplayed; 
+    }
+    
     void Draw::Show() {
         CDC *cdc = CDDraw::GetBackCDC(); // get CDC
         for(int i = static_cast<int>(drawCommands.size()) - 1 ; i >= 0 ; i--) {
-            drawCommands[i]->Execute(cdc);
+            if (isDisplayed) {
+                drawCommands[i]->Execute(cdc);
+            }
             delete drawCommands[i];
             drawCommands.pop_back();
         }
