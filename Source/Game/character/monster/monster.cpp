@@ -15,12 +15,12 @@ void Monster::Start() {
 }
 
 void Monster::Update() {
-    Character::Update();
     if (player) {
         Vec nowSpeed = (player->GetPoint() - this->point);
         nowSpeed.SetLength(maxSpeed);
         this->speed = nowSpeed;
     }
+    Character::Update();
 }
 
 void Monster::Collision(GameObject* gameObject) {
