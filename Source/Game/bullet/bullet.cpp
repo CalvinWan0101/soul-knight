@@ -15,8 +15,9 @@ void Bullet::Update() {
 }
 
 void Bullet::Collision(GameObject* gameObject) {
-    if ( (gameObject->HasTag(Tag::PLAYER) && this->HasTag(Tag::MONSTER_BULLET)) ||
-        (gameObject->HasTag(Tag::MONSTER) && this->HasTag(Tag::PLAYER_BULLET)) ) {
+    if ((gameObject->HasTag(Tag::PLAYER) && this->HasTag(Tag::MONSTER_BULLET)) ||
+        (gameObject->HasTag(Tag::MONSTER) && this->HasTag(Tag::PLAYER_BULLET)) ||
+        gameObject->HasTag(Tag::OBSTACLE)) {
         this->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }
