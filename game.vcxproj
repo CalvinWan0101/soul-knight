@@ -610,7 +610,6 @@
     <ClCompile Include="Source\Game\utils\object_manager.cpp" />
     <ClCompile Include="Source\Game\utils\point.cpp" />
     <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
-    <ClCompile Include="Source\Game\utils\stage_manager.cpp" />
     <ClCompile Include="Source\Game\utils\transfer_gate.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
     <ClCompile Include="Source\Game\wall\wall.cpp" />
@@ -710,7 +709,6 @@
     <ClInclude Include="Source\Game\utils\object_manager.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
-    <ClInclude Include="Source\Game\utils\stage_manager.h" />
     <ClInclude Include="Source\Game\utils\tag.h" />
     <ClInclude Include="Source\Game\utils\transfer_gate.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
