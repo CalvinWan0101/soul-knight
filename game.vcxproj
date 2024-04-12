@@ -1400,7 +1400,6 @@
     <Content Include="Resources\weapon\bad_pistol\99.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\bad_pistol.bmp" />
     <Content Include="Resources\weapon\bad_pistol\template\flip_bad_pistol.bmp" />
-    <Content Include="Source\Game\map\1-1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
