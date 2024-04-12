@@ -13,6 +13,4 @@ private:
     static StageManager* instance;
     int level;
     int stage;
-
-    void UpdatePlayerPosition();
 };

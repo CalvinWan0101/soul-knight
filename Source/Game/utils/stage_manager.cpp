@@ -15,8 +15,8 @@ StageManager* StageManager::Instance() {
 }
 
 StageManager::StageManager() {
-    level = 1;
-    stage = 1;
+    level = 0;
+    stage = 5;
 }
 
 StageManager::~StageManager() {
@@ -31,8 +31,7 @@ int StageManager::GetStage() {
 }
 
 void StageManager::Initiliaze() {
-    ObjectManager::Instance()->UpdateGameMap(level, stage);
-    UpdatePlayerPosition();
+    NextStage();
 }
 
 void StageManager::NextStage() {
@@ -49,12 +48,6 @@ void StageManager::NextStage() {
     }
 
     ObjectManager::Instance()->UpdateGameMap(level, stage);
-    UpdatePlayerPosition();
-
-    std::cout << "Level: " << level << " Stage: " << stage << std::endl;
-}
-
-void StageManager::UpdatePlayerPosition() {
     Player* player = ObjectManager::Instance()->GetPlayer();
     TransferGate* transferGate = ObjectManager::Instance()->GetTransferGate();
     if (1 == level) {
@@ -127,4 +120,6 @@ void StageManager::UpdatePlayerPosition() {
             player->SetPoint(-870, -345);
         }
     }
+
+    std::cout << "Level: " << level << " Stage: " << stage << std::endl;
 }
