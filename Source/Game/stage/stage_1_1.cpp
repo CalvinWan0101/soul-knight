@@ -38,11 +38,13 @@ void Stage_1_1::GenerateWall() {
 }
 
 void Stage_1_1::SetPlayerPosition() {
-    
+    ObjectManager::Instance()->SetPlayerPosition(Point(345, 300));
 }
 
-void Stage_1_1::SetTransferGatePosition() {
-    
+void Stage_1_1::SetTransferGate() {
+    TransferGate* transferGate = new TransferGate();
+    transferGate->SetPoint(-900, -300);
+    ObjectManager::Instance()->AddObject(transferGate);
 }
 
 void Stage_1_1::GenerateObstacle() {

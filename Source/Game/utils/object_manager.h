@@ -20,9 +20,8 @@ public:
     ObjectManager();
     ~ObjectManager();
     void SetPlayer(Player* player);
-    void UpdateGameMap(int level, int stage);\
+    void NextStage();
     Player* GetPlayer();
-    TransferGate* GetTransferGate();
     void AddObject(GameObject* object);
     void Start();
     void Update();
@@ -31,6 +30,7 @@ public:
     void KeyUp(char key);
     void SetLButtonPress(bool isPressed);
     void SetPlayerVision(Vec vision);
+    void SetPlayerPosition(Point playerPosition);
 
 private:
     int screenX = 0;
@@ -38,10 +38,9 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    GameMap* gameMap = new GameMap();
     Stage* stage;
-    TransferGate* transferGate = new TransferGate();
     vector<GameObject*> objects;
+    vector<Stage*> stageList;
 
     void DeleteObsoleteElements();
     void CollisionDetection();

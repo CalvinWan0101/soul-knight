@@ -43,7 +43,6 @@
 #include "character/monster/monster.h"
 #include "character/monster/floor_1/goblin_giant.h"
 #include "utils/object_manager.h"
-#include "utils/stage_manager.h"
 
 namespace game_framework {
     /////////////////////////////////////////////////////////////////////////////
@@ -101,7 +100,6 @@ namespace game_framework {
         void OnMove(); // 移動遊戲元素
         void OnShow(); // 顯示這個狀態的遊戲畫面
         ObjectManager* objectManager = ObjectManager::Instance();
-        StageManager* stageManager = StageManager::Instance();
     };
 
     /////////////////////////////////////////////////////////////////////////////

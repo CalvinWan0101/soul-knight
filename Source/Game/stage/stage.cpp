@@ -19,7 +19,7 @@ game_framework::CMovingBitmap* Stage::GetBackground() {
 void Stage::Initialize() {
     GenerateWall();
     SetPlayerPosition();
-    SetTransferGatePosition();
+    SetTransferGate();
     GenerateObstacle();
 }
 

@@ -6,7 +6,6 @@
 #include <iostream>
 
 #include "draw.h"
-#include "stage_manager.h"
 #include "../config.h"
 #include "../character/player/player.h"
 #include "../character/monster/monster.h"
@@ -28,7 +27,6 @@ ObjectManager::~ObjectManager() {
     for (auto object : objects) {
         delete object;
     }
-    delete gameMap;
     delete stage;
 }
 
@@ -38,18 +36,13 @@ void ObjectManager::SetPlayer(Player* player) {
     objects.emplace_back(player);
 }
 
-void ObjectManager::UpdateGameMap(int level, int stage) {
-    gameMap->SetMap(level, stage);
-    this->stage = new Stage_1_1();
-    this->stage->Initialize();
+void ObjectManager::NextStage() {
+    // TODO: Switch to next stage.
+    printf("NextStage");
 }
 
 Player* ObjectManager::GetPlayer() {
     return player;
-}
-
-TransferGate* ObjectManager::GetTransferGate() {
-    return transferGate;
 }
 
 void ObjectManager::AddObject(GameObject* object) {
@@ -58,10 +51,8 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
-    gameMap->Start();
-    transferGate->Start();
-    StageManager::Instance()->Initiliaze();
-    objects.emplace_back(transferGate);
+    this->stage = new Stage_1_1();
+    this->stage->Initialize();
 }
 
 void ObjectManager::Update() {
@@ -81,9 +72,7 @@ void ObjectManager::Show() {
     });
     screenX = (int)player->GetPoint().GetX() - SIZE_X_HALF;
     screenY = (int)player->GetPoint().GetY() - SIZE_Y_HALF;
-    // gameMap->Show(Point(screenX, screenY));
     stage->Show(Point(screenX, screenY));
-    transferGate->Show(Point(screenX, screenY));
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
@@ -137,6 +126,10 @@ void ObjectManager::SetLButtonPress(bool isPress) {
 
 void ObjectManager::SetPlayerVision(Vec vision) {
     player->SetVision(vision);
+}
+
+void ObjectManager::SetPlayerPosition(Point playerPosition) {
+    player->SetPoint(&playerPosition);
 }
 
 void ObjectManager::CollisionDetection() {

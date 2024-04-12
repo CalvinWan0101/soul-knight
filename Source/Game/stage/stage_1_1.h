@@ -8,6 +8,6 @@ public:
 protected:
     void GenerateWall() override;
     void SetPlayerPosition() override;
-    void SetTransferGatePosition() override;
+    void SetTransferGate() override;
     void GenerateObstacle() override;
 };

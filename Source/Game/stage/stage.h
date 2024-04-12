@@ -16,6 +16,6 @@ protected:
     Vec centerOffect;
     virtual void GenerateWall() = 0;
     virtual void SetPlayerPosition() = 0;
-    virtual void SetTransferGatePosition() = 0;
+    virtual void SetTransferGate() = 0;
     virtual void GenerateObstacle() = 0;
 };
