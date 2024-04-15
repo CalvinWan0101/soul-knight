@@ -11,7 +11,6 @@
 #include "../Library/gamecore.h"
 #include "mygame.h"
 #include "utils/draw.h"
-#include "utils/game_map.h"
 #include "utils/transfer_gate.h"
 #include "wall\wall.h"
 
@@ -41,7 +40,6 @@ void CGameStateRun::OnMove() // 移動遊戲元素
 void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
 {
     objectManager->SetPlayer(new Knight());
-    stageManager->Initiliaze();
     GoblinGiant* goblinGiant1 = new GoblinGiant();
     GoblinGiant* goblinGiant2 = new GoblinGiant();
     GoblinGiant* goblinGiant3 = new GoblinGiant();
@@ -59,6 +57,7 @@ void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
     objectManager->AddObject(goblinGiant4);
     objectManager->AddObject(goblinGiant5);
     objectManager->Start();
+    stageManager->Initiliaze();
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
@@ -94,6 +93,5 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // 處理滑鼠的動作
 }
 
 void CGameStateRun::OnShow() {
-    stageManager->GetStage()->Show(objectManager->GetScreenPoint());
     objectManager->Show();
 }

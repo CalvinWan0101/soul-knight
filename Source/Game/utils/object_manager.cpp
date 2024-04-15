@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "draw.h"
+#include "stage_manager.h"
 #include "../config.h"
 #include "../character/player/player.h"
 #include "../character/monster/monster.h"
@@ -68,6 +69,7 @@ void ObjectManager::Show() {
     });
     screenX = (int)player->GetPoint().GetX() - SIZE_X_HALF;
     screenY = (int)player->GetPoint().GetY() - SIZE_Y_HALF;
+    StageManager::Instance()->GetStage()->Show(Point(screenX, screenY));
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }

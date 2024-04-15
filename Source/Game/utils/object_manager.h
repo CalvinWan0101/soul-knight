@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <vector>
 
-#include "game_map.h"
 #include "game_object.h"
 #include "transfer_gate.h"
 #include "../bullet/bullet.h"

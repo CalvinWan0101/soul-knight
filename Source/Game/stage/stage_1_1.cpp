@@ -2,7 +2,6 @@
 #include "stage_1_1.h"
 #include "../utils/object_manager.h"
 #include <iostream>
-#include "../wall/wall.h"
 
 Stage_1_1::Stage_1_1() {
     background.LoadBitmapByString({"resources/map/1-1.bmp"}, RGB(255, 255, 255));
@@ -44,7 +43,7 @@ void Stage_1_1::SetPlayerPosition() {
 
 void Stage_1_1::SetTransferGate() {
     TransferGate* transferGate = new TransferGate();
-    transferGate->SetPoint(-900, -300);
+    transferGate->SetPoint(Point(-900, -300));
     ObjectManager::Instance()->AddObject(transferGate);
 }
 
