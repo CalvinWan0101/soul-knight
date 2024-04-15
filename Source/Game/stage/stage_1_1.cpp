@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "stage_1_1.h"
 #include "../utils/object_manager.h"
+#include <iostream>
 #include "../wall/wall.h"
 
 Stage_1_1::Stage_1_1() {

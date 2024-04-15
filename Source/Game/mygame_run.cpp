@@ -26,6 +26,7 @@ CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
 
 CGameStateRun::~CGameStateRun() {
     delete objectManager;
+    delete stageManager;
     delete Draw::Instance();
 }
 
@@ -40,6 +41,7 @@ void CGameStateRun::OnMove() // 移動遊戲元素
 void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
 {
     objectManager->SetPlayer(new Knight());
+    stageManager->Initiliaze();
     GoblinGiant* goblinGiant1 = new GoblinGiant();
     GoblinGiant* goblinGiant2 = new GoblinGiant();
     GoblinGiant* goblinGiant3 = new GoblinGiant();
@@ -92,5 +94,6 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // 處理滑鼠的動作
 }
 
 void CGameStateRun::OnShow() {
+    stageManager->GetStage()->Show(objectManager->GetScreenPoint());
     objectManager->Show();
 }

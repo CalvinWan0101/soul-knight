@@ -27,7 +27,6 @@ ObjectManager::~ObjectManager() {
     for (auto object : objects) {
         delete object;
     }
-    delete stage;
 }
 
 void ObjectManager::SetPlayer(Player* player) {
@@ -36,13 +35,12 @@ void ObjectManager::SetPlayer(Player* player) {
     objects.emplace_back(player);
 }
 
-void ObjectManager::NextStage() {
-    // TODO: Switch to next stage.
-    printf("NextStage");
-}
-
 Player* ObjectManager::GetPlayer() {
     return player;
+}
+
+Point* ObjectManager::GetScreenPoint() {
+    return new Point(screenX, screenY);
 }
 
 void ObjectManager::AddObject(GameObject* object) {
@@ -51,8 +49,6 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
-    this->stage = new Stage_1_1();
-    this->stage->Initialize();
 }
 
 void ObjectManager::Update() {
@@ -72,7 +68,6 @@ void ObjectManager::Show() {
     });
     screenX = (int)player->GetPoint().GetX() - SIZE_X_HALF;
     screenY = (int)player->GetPoint().GetY() - SIZE_Y_HALF;
-    stage->Show(Point(screenX, screenY));
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
