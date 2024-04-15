@@ -33,7 +33,7 @@ void Character::Update() {
 
 void Character::Collision(GameObject* gameObject) {
     GameObject::Collision(gameObject);
-    if (gameObject->HasTag(Tag::WALL)) {
+    if (gameObject->HasTag(Tag::OBSTACLE)) {
         Vec speedXComponent(speed.GetX(), 0.0);
         Vec speedYComponent(0.0, speed.GetY());
         this->point = this->point - speedXComponent;

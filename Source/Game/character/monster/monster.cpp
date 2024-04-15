@@ -16,9 +16,13 @@ void Monster::Start() {
 
 void Monster::Update() {
     if (player) {
-        Vec nowSpeed = (player->GetPoint() - this->point);
-        nowSpeed.SetLength(maxSpeed);
-        this->speed = nowSpeed;
+        Vec playerOrientation = (player->GetPoint() - this->point);
+        playerOrientation.SetLength(maxSpeed);
+        this->speed = playerOrientation;
+        this->vision = playerOrientation;
+    }
+    else {
+        this->vision = this->speed;
     }
     Character::Update();
 }

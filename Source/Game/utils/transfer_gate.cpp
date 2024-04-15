@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "transfer_gate.h"
 
-#include "stage_manager.h"
+#include "object_manager.h"
 
 TransferGate::TransferGate() {
     AddTag(Tag::TRANSFER_GATE);
@@ -19,6 +19,6 @@ void TransferGate::Update() {
 
 void TransferGate::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::PLAYER)) {
-        StageManager::Instance()->NextStage();
+        ObjectManager::Instance()->NextStage();
     }
 }

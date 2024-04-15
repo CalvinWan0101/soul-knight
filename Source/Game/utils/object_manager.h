@@ -5,6 +5,8 @@
 #include "game_object.h"
 #include "transfer_gate.h"
 #include "../bullet/bullet.h"
+#include "../stage/stage.h"
+#include "../stage/stage_1_1.h"
 
 using game_framework::GameObject;
 using std::vector;
@@ -18,9 +20,8 @@ public:
     ObjectManager();
     ~ObjectManager();
     void SetPlayer(Player* player);
-    void UpdateGameMap(int level, int stage);\
+    void NextStage();
     Player* GetPlayer();
-    TransferGate* GetTransferGate();
     void AddObject(GameObject* object);
     void Start();
     void Update();
@@ -29,6 +30,7 @@ public:
     void KeyUp(char key);
     void SetLButtonPress(bool isPressed);
     void SetPlayerVision(Vec vision);
+    void SetPlayerPosition(Point playerPosition);
 
 private:
     int screenX = 0;
@@ -36,9 +38,9 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    GameMap* gameMap = new GameMap();
-    TransferGate* transferGate = new TransferGate();
+    Stage* stage;
     vector<GameObject*> objects;
+    vector<Stage*> stageList;
 
     void DeleteObsoleteElements();
     void CollisionDetection();
