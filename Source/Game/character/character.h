@@ -12,6 +12,7 @@ public:
     int GetHP();
     int GetMaxHP();
     void Attack();
+    bool IsDead();
 
 protected:
     void CheckState();
