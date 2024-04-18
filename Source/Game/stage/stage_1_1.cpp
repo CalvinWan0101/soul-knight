@@ -37,7 +37,7 @@ void Stage_1_1::GenerateWall() {
     AddWall(Point(880, -100), Point(1232, 144));
     AddWall(Point(-100, 95), Point(16, 272));
     AddWall(Point(592, 944), Point(831, 1060));
-    AddWall(Point(544, -100), Point(879, 16));
+    AddWall(Point(543, -100), Point(879, 16));
     AddWall(Point(2000, 96), Point(2116, 271));
 }
 
@@ -106,7 +106,11 @@ void Stage_1_1::SetRoom1() {
     Monster* monster1 = new GoblinGiant();
     monster1->SetPoint(Point(600, 200) - centerOffect);
     monsters.push_back(monster1);
+    Monster* monster2 = new GoblinGiant();
+    monster2->SetPoint(Point(700, 100) - centerOffect);
+    monsters.push_back(monster2);
     ObjectManager::Instance()->AddObject(monster1);
+    ObjectManager::Instance()->AddObject(monster2);
 }
 
 void Stage_1_1::SetRoom2() {

@@ -2,9 +2,9 @@
 
 enum class Tag {
     PLAYER,
-    PLAYER_BULLET,
+    PLAYER_ATTACK,
     MONSTER,
-    MONSTER_BULLET,
+    MONSTER_ATTACK,
     
     TRANSFER_GATE,
     OBSTACLE,
