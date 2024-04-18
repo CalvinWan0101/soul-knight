@@ -30,7 +30,7 @@ void RotatableObject::SetRotation(Vec* radian) {
 }
 
 void RotatableObject::SetRotation(double radian) {
-    rotation.Rotate(radian - rotation.GetRadian())
+    rotation.Rotate(radian - rotation.GetRadian());
 }
 
 Vec RotatableObject::GetRotation() const {

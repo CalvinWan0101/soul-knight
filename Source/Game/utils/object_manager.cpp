@@ -46,7 +46,7 @@ Point* ObjectManager::GetScreenPoint() {
 
 void ObjectManager::AddObject(GameObject* object) {
     object->Start();
-    objects.emplace_back(object);
+    newObjects.emplace_back(object);
 }
 
 void ObjectManager::Start() {
@@ -57,6 +57,7 @@ void ObjectManager::Update() {
     if (LButtonPressed) {
         player->Attack();
     }
+    PushNewObjectsToList();
     for (auto object : objects) {
         object->Update();
     }
@@ -162,3 +163,9 @@ void ObjectManager::DeleteObsoleteElements() {
         else { ++object; }
     }
 }
+
+void ObjectManager::PushNewObjectsToList() {
+    objects.insert(objects.end(), newObjects.begin(), newObjects.end());
+    newObjects.clear();
+}
+

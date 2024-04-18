@@ -38,7 +38,9 @@ private:
     static ObjectManager* instance;
     Player* player;
     vector<GameObject*> objects;
+    vector<GameObject*> newObjects;
 
     void DeleteObsoleteElements();
+    void PushNewObjectsToList();
     void CollisionDetection();
 };
