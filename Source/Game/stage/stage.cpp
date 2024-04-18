@@ -23,6 +23,11 @@ void Stage::Initialize() {
     GenerateObstacle();
 }
 
+void Stage::SetMap(int level, int stage) {
+    
+}
+
+
 void Stage::Show(Point screenPositoin) {
     background.SetTopLeft(  static_cast<int>(-screenPositoin.GetX() - static_cast<double>(background.GetWidth()) / 2),
                             static_cast<int>(-screenPositoin.GetY() - static_cast<double>(background.GetHeight()) / 2));

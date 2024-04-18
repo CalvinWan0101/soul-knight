@@ -91,8 +91,8 @@ namespace game_framework {
         this->point.SetPoint(x, y);
     }
 
-    void GameObject::SetPoint(Point* point) {
-        this->point.SetPoint(point->GetX(), point->GetY());
+    void GameObject::SetPoint(Point point) {
+        this->point.SetPoint(point.GetX(), point.GetY());
     }
 
     void GameObject::SetX(double x) {

@@ -11,7 +11,6 @@
 #include "../Library/gamecore.h"
 #include "mygame.h"
 #include "utils/draw.h"
-#include "utils/game_map.h"
 #include "utils/transfer_gate.h"
 #include "wall\wall.h"
 
@@ -26,6 +25,7 @@ CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
 
 CGameStateRun::~CGameStateRun() {
     delete objectManager;
+    delete stageManager;
     delete Draw::Instance();
 }
 
@@ -57,6 +57,7 @@ void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
     objectManager->AddObject(goblinGiant4);
     objectManager->AddObject(goblinGiant5);
     objectManager->Start();
+    stageManager->Initiliaze();
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {

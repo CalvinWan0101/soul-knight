@@ -545,7 +545,6 @@
     <ClCompile Include="Source\Game\utils\draw_empty_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_text_command.cpp" />
-    <ClCompile Include="Source\Game\utils\game_map.cpp" />
     <ClCompile Include="Source\Game\utils\game_object.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -610,6 +609,8 @@
     <ClCompile Include="Source\Game\utils\object_manager.cpp" />
     <ClCompile Include="Source\Game\utils\point.cpp" />
     <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
+    <ClCompile Include="Source\Game\utils\stage_factory.cpp" />
+    <ClCompile Include="Source\Game\utils\stage_manager.cpp" />
     <ClCompile Include="Source\Game\utils\transfer_gate.cpp" />
     <ClCompile Include="Source\Game\utils\vec.cpp" />
     <ClCompile Include="Source\Game\wall\wall.cpp" />
@@ -702,13 +703,14 @@
     <ClInclude Include="Source\Game\utils\draw_rectangle_command.h" />
     <ClInclude Include="Source\Game\utils\draw_text_command.h" />
     <ClInclude Include="Source\Game\utils\event.hpp" />
-    <ClInclude Include="Source\Game\utils\game_map.h" />
     <ClInclude Include="Source\Game\utils\game_object.h" />
     <ClInclude Include="Source\Game\utils\hit_box.h" />
     <ClInclude Include="Source\Game\utils\invisible_object.h" />
     <ClInclude Include="Source\Game\utils\object_manager.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
+    <ClInclude Include="Source\Game\utils\stage_factory.h" />
+    <ClInclude Include="Source\Game\utils\stage_manager.h" />
     <ClInclude Include="Source\Game\utils\tag.h" />
     <ClInclude Include="Source\Game\utils\transfer_gate.h" />
     <ClInclude Include="Source\Game\utils\vec.h" />
