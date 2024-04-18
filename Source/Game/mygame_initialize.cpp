@@ -29,7 +29,9 @@ void CGameStateInit::OnInit() {
     // 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
     //
     // ShowInitProgress(66, "Initialize...");
+    CAudio::Instance()->Load(0, "Resources/sound/background.mp3");
     LoadBackground();
+    CAudio::Instance()->Play(0);
 }
 
 void CGameStateInit::OnBeginState() {

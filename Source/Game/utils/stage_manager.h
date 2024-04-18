@@ -7,9 +7,11 @@ public:
     static StageManager* Instance();
     StageManager();
     ~StageManager();
+    void Update();
     Stage* GetStage();
     void Initiliaze();
     void NextStage();
+    bool InRoom();
 
 private:
     static StageManager* instance;

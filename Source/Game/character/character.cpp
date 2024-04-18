@@ -66,6 +66,14 @@ void Character::Attack() {
     weapon->DefaultAttack();
 }
 
+void Character::BeAttacked(int damage) {
+    hp -= damage;
+}
+
+bool Character::IsDead() {
+    return hp <= 0;
+}
+
 void Character::CheckState() {
     if (vision.GetX() > 0) {
         face = RIGHT;
