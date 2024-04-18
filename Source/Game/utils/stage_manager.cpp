@@ -63,7 +63,3 @@ void StageManager::NextStage() {
 
     std::cout << "Level: " << level << " Stage: " << stage << "\n";
 }
-
-bool StageManager::InRoom() {
-    return inRoom;
-}
