@@ -7,16 +7,25 @@ public:
     void Start() override;
     void Update() override;
     void DefaultAttack();
+    virtual void Aim(Vec* direction);
     virtual void Attack() = 0;
+    virtual void SetAttackAnimation(vector<double> attackRotationOffsetList, double cd, double attackTiming = 0);
+    void SetCd(double cd);
     double GetCd();
     int GetDamage();
     int GetMpCost();
     
 protected:
-    double cd; // second
+    int cd;
     int damage;
     int mpCost;
-    
 private:
     int cdCounter;
+    double attackTiming; // 0 <= attackTiming < 1
+    bool isAttack;
+    double attackFace;
+    double attackRotationOffset;
+    vector<double> attackRotationOffsetList;
+    void CalcRotationOffset();
+
 };

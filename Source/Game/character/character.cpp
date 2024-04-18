@@ -22,7 +22,7 @@ void Character::Update() {
     GameObject::Update();
     CheckState();
     index = state * 2 + face;
-    weapon->SetRotation(&vision);
+    weapon->Aim(&vision);
     if (face == RIGHT) {
         weapon->SetPoint(&(this->point + Vec(weaponOffsetX , weaponOffsetY)));
     }

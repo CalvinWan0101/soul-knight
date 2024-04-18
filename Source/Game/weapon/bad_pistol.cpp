@@ -8,9 +8,10 @@ BadPistol::BadPistol() {
 }
 
 void BadPistol::Start() {
-    cd = 0.01;
+    // SetCd(0.5);
     damage = 3;
     SetImages("Resources/weapon/bad_pistol/", 3, RGB(255, 255, 255));
+    SetAttackAnimation({-0.8, -0.4, 0}, 0.5);
     Gun::Start();
 }
 

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "knight.h"
 
+#include "../../weapon/hammer.h"
 #include "..\..\weapon\bad_pistol.h"
 
 Knight::Knight() {
