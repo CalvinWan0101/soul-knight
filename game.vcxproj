@@ -1284,6 +1284,7 @@
     <Content Include="Resources\player\rogue\run\flip_3.bmp" />
     <Content Include="Resources\player\rogue\run\flip_4.bmp" />
     <Content Include="Resources\rotate.ipynb" />
+    <Content Include="Resources\sound\background.mp3" />
     <Content Include="Resources\sound\bullet.MP3" />
     <Content Include="Resources\start\first_page.bmp" />
     <Content Include="Resources\weapon\bad_pistol\0.bmp" />

@@ -3,7 +3,7 @@
 #include "../Library/audio.h"
 
 Arrow::Arrow() {
-    game_framework::CAudio::Instance()->Play(0);
+    game_framework::CAudio::Instance()->Play(1);
 }
 
 void Arrow::Start() {
