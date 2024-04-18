@@ -14,6 +14,7 @@ public:
     void Update() override;
     void Rotate(double radian);
     void SetRotation(Vec* radian);
+    void SetRotation(double radian);
     Vec GetRotation() const;
 
 protected:

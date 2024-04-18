@@ -29,6 +29,10 @@ void RotatableObject::SetRotation(Vec* radian) {
     SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
+void RotatableObject::SetRotation(double radian) {
+    rotation.Rotate(radian - rotation.GetRadian())
+}
+
 Vec RotatableObject::GetRotation() const {
     return rotation;
 }
