@@ -616,6 +616,8 @@
     <ClCompile Include="Source\Game\wall\wall.cpp" />
     <ClCompile Include="Source\Game\weapon\bad_pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\gun.cpp" />
+    <ClCompile Include="Source\Game\weapon\hammer.cpp" />
+    <ClCompile Include="Source\Game\weapon\knife.cpp" />
     <ClCompile Include="Source\Game\weapon\weapon.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -717,6 +719,8 @@
     <ClInclude Include="Source\Game\wall\wall.h" />
     <ClInclude Include="Source\Game\weapon\bad_pistol.h" />
     <ClInclude Include="Source\Game\weapon\gun.h" />
+    <ClInclude Include="Source\Game\weapon\hammer.h" />
+    <ClInclude Include="Source\Game\weapon\knife.h" />
     <ClInclude Include="Source\Game\weapon\weapon.h" />
     <ClInclude Include="Source\Library\audio.h" />
     <ClInclude Include="Source\Library\gamecore.h" />
@@ -1280,6 +1284,7 @@
     <Content Include="Resources\player\rogue\run\flip_3.bmp" />
     <Content Include="Resources\player\rogue\run\flip_4.bmp" />
     <Content Include="Resources\rotate.ipynb" />
+    <Content Include="Resources\sound\bullet.MP3" />
     <Content Include="Resources\start\first_page.bmp" />
     <Content Include="Resources\weapon\bad_pistol\0.bmp" />
     <Content Include="Resources\weapon\bad_pistol\102.bmp" />

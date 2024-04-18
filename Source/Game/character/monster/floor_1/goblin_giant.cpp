@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "goblin_giant.h"
 #include "../../../weapon/bad_pistol.h"
+#include "../../../weapon/hammer.h"
 
 void GoblinGiant::Start() {
     this->AddAnimation({
@@ -39,7 +40,7 @@ void GoblinGiant::Start() {
     this->maxSpeed = 3;
     this->hp = maxHp;
     // TODO: Replace bad pistol with the correct weapon
-    this->SetWeapon(new BadPistol());
+    this->SetWeapon(new Hammer());
     Monster::Start();
 }
 

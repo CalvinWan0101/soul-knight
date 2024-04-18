@@ -43,6 +43,7 @@ void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
     objectManager->SetPlayer(new Knight());
     objectManager->Start();
     stageManager->Initiliaze();
+    CAudio::Instance()->Load(0, "Resources/sound/bullet.mp3");
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {

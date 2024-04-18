@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "arrow.h"
+#include "../Library/audio.h"
 
 Arrow::Arrow() {
+    game_framework::CAudio::Instance()->Play(0);
 }
 
 void Arrow::Start() {

@@ -107,11 +107,6 @@ void Stage_1_1::SetRoom1() {
     monster1->SetPoint(Point(600, 200) - centerOffect);
     monsters.push_back(monster1);
     ObjectManager::Instance()->AddObject(monster1);
-
-    Monster* monster2 = new GoblinGiant();
-    monster2->SetPoint(Point(700, 200) - centerOffect);
-    monsters.push_back(monster2);
-    ObjectManager::Instance()->AddObject(monster2);
 }
 
 void Stage_1_1::SetRoom2() {
