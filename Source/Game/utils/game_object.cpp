@@ -59,7 +59,7 @@ namespace game_framework {
     }
 
     void GameObject::AddBackChild(GameObject* gameObject) {
-        gameObject->Update();
+        gameObject->Start();
         backGameObjects.emplace_back(gameObject);
     }
 
