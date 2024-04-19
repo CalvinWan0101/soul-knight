@@ -10,7 +10,7 @@ Monster::Monster() {
 }
 
 void Monster::Start() {
-    SetHitBoxByRatio(0.8, 0.5);
+    SetHitBoxByRatio(1, 1);
     Character::Start();
 }
 
@@ -24,6 +24,7 @@ void Monster::Update() {
         playerOrientation.SetLength(maxSpeed);
         this->speed = playerOrientation;
         this->vision = playerOrientation;
+        Attack();
     }
     else {
         this->vision = this->speed;

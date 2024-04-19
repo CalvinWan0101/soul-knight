@@ -24,6 +24,9 @@ void Player::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
         this->hp = this->hp - dynamic_cast<Bullet*>(gameObject)->GetDamage();
     }
+    if (gameObject->HasTag(Tag::MONSTER)) {
+        this->hp -= 1;
+    }
 }
 
 int Player::GetMP() {

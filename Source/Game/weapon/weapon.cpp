@@ -73,7 +73,6 @@ void Weapon::CalcRotationOffset() {
     }
     else {
         attackRotationOffset += attackRotationOffsetList[(cd - cdCounter - 1) / step];
-        printf("%f\n", attackRotationOffsetList[(cd - cdCounter - 1) / step]);
     }
 }
 
