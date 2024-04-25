@@ -23,7 +23,7 @@
  *         CGameView::OnLButtonUp() so that Mouse Events (OnLButtonUp and OnMouseMove)
  *         will be called even if the cursor is outside of the window.
  * 2012-05-13 V4.8
- *      1. Fix Ctrl-Q display bug. Add Invalidate() at the end of CGameView::OnKillFocus.
+ *      1. Fix Ctrl-Q display FRAMEWORK_bug. Add Invalidate() at the end of CGameView::OnKillFocus.
  */
 
 #include "stdafx.h"
@@ -77,7 +77,7 @@ END_MESSAGE_MAP()
 
 CGameView::CGameView()
 {
-	// TODO: add construction code here
+	// FRAMEWORK_TODO: add construction code here
 
 }
 
@@ -87,7 +87,7 @@ CGameView::~CGameView()
 
 BOOL CGameView::PreCreateWindow(CREATESTRUCT& cs)
 {
-	// TODO: Modify the Window class or styles here by modifying
+	// FRAMEWORK_TODO: Modify the Window class or styles here by modifying
 	//  the CREATESTRUCT cs
 
 	return CView::PreCreateWindow(cs);
@@ -101,7 +101,7 @@ void CGameView::OnDraw(CDC* pDC)
 	CGameDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 
-	// TODO: add draw code for native data here
+	// FRAMEWORK_TODO: add draw code for native data here
 	static bool first_ondraw = true;
 	static bool second_ondraw = false;
 	if (first_ondraw) {
@@ -128,12 +128,12 @@ BOOL CGameView::OnPreparePrinting(CPrintInfo* pInfo)
 
 void CGameView::OnBeginPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 {
-	// TODO: add extra initialization before printing
+	// FRAMEWORK_TODO: add extra initialization before printing
 }
 
 void CGameView::OnEndPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 {
-	// TODO: add cleanup after printing
+	// FRAMEWORK_TODO: add cleanup after printing
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -163,13 +163,13 @@ CGameDoc* CGameView::GetDocument() // non-debug version is inline
 void CGameView::OnInitialUpdate() 
 {
 	CView::OnInitialUpdate();
-	// TODO: Add your specialized code here and/or call the base class
+	// FRAMEWORK_TODO: Add your specialized code here and/or call the base class
 	game_framework::CGame::Instance()->OnInit();
 }
 
 void CGameView::OnLButtonDown(UINT nFlags, CPoint point) 
 {
-	// TODO: Add your message handler code here and/or call default
+	// FRAMEWORK_TODO: Add your message handler code here and/or call default
 	SetCapture();
 	game_framework::CGame::Instance()->OnLButtonDown(nFlags, point);
 	CView::OnLButtonDown(nFlags, point);
@@ -177,7 +177,7 @@ void CGameView::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGameView::OnLButtonUp(UINT nFlags, CPoint point) 
 {
-	// TODO: Add your message handler code here and/or call default
+	// FRAMEWORK_TODO: Add your message handler code here and/or call default
 	ReleaseCapture();
 	game_framework::CGame::Instance()->OnLButtonUp(nFlags, point);
 	CView::OnLButtonUp(nFlags, point);
@@ -185,14 +185,14 @@ void CGameView::OnLButtonUp(UINT nFlags, CPoint point)
 
 void CGameView::OnRButtonDown(UINT nFlags, CPoint point) 
 {
-	// TODO: Add your message handler code here and/or call default
+	// FRAMEWORK_TODO: Add your message handler code here and/or call default
 	game_framework::CGame::Instance()->OnRButtonDown(nFlags, point);
 	CView::OnRButtonDown(nFlags, point);
 }
 
 void CGameView::OnRButtonUp(UINT nFlags, CPoint point) 
 {
-	// TODO: Add your message handler code here and/or call default
+	// FRAMEWORK_TODO: Add your message handler code here and/or call default
 	game_framework::CGame::Instance()->OnRButtonUp(nFlags, point);
 	CView::OnRButtonUp(nFlags, point);
 }
@@ -201,53 +201,53 @@ void CGameView::OnKillFocus(CWnd* pNewWnd)
 {
 	CView::OnKillFocus(pNewWnd);
 	
-	// TODO: Add your message handler code here
+	// FRAMEWORK_TODO: Add your message handler code here
 	game_framework::CGame::Instance()->OnKillFocus();
 	Invalidate();
 }
 
 void CGameView::OnFilePause() 
 {
-	// TODO: Add your command handler code here
+	// FRAMEWORK_TODO: Add your command handler code here
 	game_framework::CGame::Instance()->OnFilePause();
 	InvalidateRect(NULL);
 }
 
 void CGameView::OnUpdateFilePause(CCmdUI* pCmdUI) 
 {
-	// TODO: Add your command update UI handler code here
+	// FRAMEWORK_TODO: Add your command update UI handler code here
 	pCmdUI->SetCheck(!game_framework::CGame::Instance()->IsRunning());	
 }
 
 void CGameView::OnFileNew() 
 {
-	// TODO: Add your command handler code here
+	// FRAMEWORK_TODO: Add your command handler code here
 	
 }
 
 void CGameView::OnButtonPause() 
 {
-	// TODO: Add your command handler code here
+	// FRAMEWORK_TODO: Add your command handler code here
 	OnFilePause();
 }
 
 void CGameView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
 {
-	// TODO: Add your message handler code here and/or call default
+	// FRAMEWORK_TODO: Add your message handler code here and/or call default
 	game_framework::CGame::Instance()->OnKeyDown(nChar, nRepCnt, nFlags);
 	CView::OnKeyDown(nChar, nRepCnt, nFlags);
 }
 
 void CGameView::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) 
 {
-	// TODO: Add your message handler code here and/or call default
+	// FRAMEWORK_TODO: Add your message handler code here and/or call default
 	game_framework::CGame::Instance()->OnKeyUp(nChar, nRepCnt, nFlags);
 	CView::OnKeyUp(nChar, nRepCnt, nFlags);
 }
 
 void CGameView::OnMouseMove(UINT nFlags, CPoint point) 
 {
-	// TODO: Add your message handler code here and/or call default
+	// FRAMEWORK_TODO: Add your message handler code here and/or call default
 	game_framework::CGame::Instance()->OnMouseMove(nFlags, point);
 	CView::OnMouseMove(nFlags, point);
 }
@@ -255,7 +255,7 @@ void CGameView::OnMouseMove(UINT nFlags, CPoint point)
 void CGameView::OnSetFocus(CWnd* pOldWnd) 
 {
 	
-	// TODO: Add your message handler code here
+	// FRAMEWORK_TODO: Add your message handler code here
 	game_framework::CGame::Instance()->OnSetFocus();	
 	CView::OnSetFocus(pOldWnd);
 }

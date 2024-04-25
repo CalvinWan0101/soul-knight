@@ -47,7 +47,7 @@ void CGameStateRun::OnInit() // 遊戲的初值及圖形設定
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
-    // TODO: Fixed the bug of pressing more than one key
+    // TODO: Fixed pressing more than one key
     objectManager->KeyDown(nChar);
 }
 

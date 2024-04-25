@@ -49,7 +49,7 @@
  *   2006-09-09 V4.3
  *      1. Rename Move() and Show() as OnMove and OnShow() to emphasize that they are
  *         event driven.
- *      2. Fix bug: audio is now correctly recovered after a sleep or suspension of windows.
+ *      2. Fix FRAMEWORK_bug: audio is now correctly recovered after a sleep or suspension of windows.
  *      3. Support ENABLE_GAME_PAUSE.
  *   2008-02-15 V4.4
  *      1. Add setup project for Visual studio 2005.

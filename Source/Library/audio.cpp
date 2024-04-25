@@ -34,12 +34,12 @@
  *      2. Change the constructor of CAudio to eliminate the compiling
  *         error with VC++.net.
  *   2006-09-09 V4.3
- *      2. Fix bug: audio is now correctly recovered after a sleep or suspension of windows.
+ *      2. Fix FRAMEWORK_bug: audio is now correctly recovered after a sleep or suspension of windows.
  *      3. Support ENABLE_GAME_PAUSE.
  *   2010-02-23 V4.5
  *      1. Remove #define INITGUID to work with VS2008
  *   2010-03-23 V4.6
- *      1. Fix bug: when AUDIO device is not available, CGame::OnInit() returned too early.
+ *      1. Fix FRAMEWORK_bug: when AUDIO device is not available, CGame::OnInit() returned too early.
  *      2. Rewrite CAudio with MCI commands to eliminate dependency with DirectMusic.
  *      3. Support MP3 audio playback.
  *   2012-05-10 V4.8

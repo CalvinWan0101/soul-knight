@@ -72,7 +72,7 @@ static UINT indicators[] =
 
 CMainFrame::CMainFrame()
 {
-	// TODO: add member initialization code here
+	// FRAMEWORK_TODO: add member initialization code here
 	isFullScreen = OPEN_AS_FULLSCREEN;	
 	isToolBarVisible = true;
 	isStatusBarVisible = true;
@@ -103,11 +103,11 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	}
 	
 
-	// TODO: Remove this if you don't want tool tips or a resizeable toolbar
+	// FRAMEWORK_TODO: Remove this if you don't want tool tips or a resizeable toolbar
 	m_wndToolBar.SetBarStyle(m_wndToolBar.GetBarStyle() |
 		CBRS_FLYBY | CBRS_SIZE_DYNAMIC);
 
-	// TODO: Delete these three lines if you don't want the toolbar to
+	// FRAMEWORK_TODO: Delete these three lines if you don't want the toolbar to
 	//  be dockable
 
 	//
@@ -143,7 +143,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 {
-	// TODO: Modify the Window class or styles here by modifying
+	// FRAMEWORK_TODO: Modify the Window class or styles here by modifying
 	//  the CREATESTRUCT cs
 
 	//	cs.style = WS_OVERLAPPED | WS_CAPTION | FWS_ADDTOTITLE
@@ -229,7 +229,7 @@ void CMainFrame::SetFullScreen(bool isFull)
 
 void CMainFrame::OnToggleFullscreen() 
 {
-	// TODO: Add your command handler code here
+	// FRAMEWORK_TODO: Add your command handler code here
 	SetFullScreen(!isFullScreen);
 }
 
@@ -237,7 +237,7 @@ void CMainFrame::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
 	
-	// TODO: Add your message handler code here
+	// FRAMEWORK_TODO: Add your message handler code here
 
 	// Do not call CFrameWnd::OnPaint() for painting messages
 	if (isFullScreen)
@@ -265,14 +265,14 @@ void CMainFrame::OnPaint()
 
 void CMainFrame::OnButtonFullscreen() 
 {
-	// TODO: Add your command handler code here
+	// FRAMEWORK_TODO: Add your command handler code here
 	SetFullScreen(!isFullScreen);
 }
 
 
 LRESULT CMainFrame::WindowProc(UINT message, WPARAM wParam, LPARAM lParam) 
 {
-	// TODO: Add your specialized code here and/or call the base class
+	// FRAMEWORK_TODO: Add your specialized code here and/or call the base class
 	if (message == WM_SYSCOMMAND)
 	{
 		wParam &= 0xFFF0;

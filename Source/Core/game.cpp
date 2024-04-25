@@ -68,7 +68,7 @@ END_MESSAGE_MAP()
 
 CGameApp::CGameApp()
 {
-	// TODO: add construction code here,
+	// FRAMEWORK_TODO: add construction code here,
 	// Place all significant initialization in InitInstance
 }
 
@@ -261,19 +261,19 @@ void CGameApp::OnAppAboutFramework()
 
 BOOL CGameApp::OnIdle(LONG lCount)
 {
-	// TODO: Add your specialized code here and/or call the base class
+	// FRAMEWORK_TODO: Add your specialized code here and/or call the base class
 	return game_framework::CGame::Instance()->OnIdle();
 	//return CWinApp::OnIdle(lCount);
 }
 
 void CAboutDlg::OnReadme()
 {
-	// TODO: Add your control notification handler code here
+	// FRAMEWORK_TODO: Add your control notification handler code here
 	system("notepad.exe ReadMe.txt");
 }
 
 void CAboutFrameworkDlg::OnReadme()
 {
-	// TODO: Add your control notification handler code here
+	// FRAMEWORK_TODO: Add your control notification handler code here
 	system("notepad.exe ReadMe.txt");
 }
