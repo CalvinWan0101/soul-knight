@@ -54,7 +54,7 @@ void HitBox::Show(Point screenPositoin) {
         Point(screenX - halfWidth, screenY - halfHeight),
         Point(screenX + halfWidth, screenY + halfHeight),
         (isCollisionInThisFrame ? RGB(235,16,0) : RGB(8,249,24))
-        );   
+        );
     }
     isCollisionInThisFrame = false;
 }

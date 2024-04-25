@@ -8,5 +8,4 @@ public:
     void Start() override;
     void Update() override;
     void Attack() override = 0;
-    void Collision(GameObject* gameObject) override; // TODO: delete it.
 };

@@ -13,13 +13,16 @@ public:
     int GetMaxHP();
     void Attack();
     void BeAttacked(int damage);
-    bool IsDead();
 
 protected:
-    void CheckState();
     int hp;
     int maxHp;
-
+    
+    Vec vision;
+    Weapon* weapon;
+    double weaponOffsetX;
+    double weaponOffsetY;
+private:
     enum Face {
         RIGHT,
         LEFT
@@ -34,8 +37,6 @@ protected:
 
     Face face;
     State state;
-    Vec vision;
-    Weapon* weapon;
-    double weaponOffsetX;
-    double weaponOffsetY;
+    void CheckState();
+    void CheckFace();
 };

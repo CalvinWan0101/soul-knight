@@ -17,10 +17,3 @@ void Knife::Start() {
 void Knife::Update() {
     Weapon::Update();
 }
-
-void Knife::Collision(GameObject* gameObject) { // TODO: delete it.
-    if (gameObject->HasTag(Tag::PLAYER)) {
-        Player* player = dynamic_cast<Player*>(gameObject);
-        player->BeAttacked(damage);
-    }
-}

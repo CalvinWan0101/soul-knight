@@ -5,7 +5,6 @@
 #include "..\..\weapon\bad_pistol.h"
 
 Knight::Knight() {
-    state = IDLE;
     maxHp = 30;
     hp = maxHp;
 }

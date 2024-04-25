@@ -74,7 +74,7 @@ void Stage_1_1::DetectRoom1Cleared() {
     }
 
     for (auto monster : monsters) {
-        if (!monster->IsDead()) {
+        if (!monster->HasTag(Tag::DEAD)) {
             return;
         }
     }

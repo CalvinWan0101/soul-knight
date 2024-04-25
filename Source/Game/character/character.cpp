@@ -21,6 +21,7 @@ void Character::Start() {
 void Character::Update() {
     GameObject::Update();
     CheckState();
+    CheckFace();
     index = state * 2 + face;
     weapon->Aim(&vision);
     if (face == RIGHT) {
@@ -70,25 +71,25 @@ void Character::BeAttacked(int damage) {
     hp -= damage;
 }
 
-bool Character::IsDead() {
-    return hp <= 0;
+void Character::CheckState() {
+    if (hp <= 0) {
+        state = DEAD;
+        AddTag(Tag::DEAD);
+    }
+    else if (speed.GetLength() == 0.0) {
+        state = IDLE;
+    }
+    else if (speed.GetLength() != 0.0) {
+        state = RUN;
+    }
 }
 
-void Character::CheckState() {
+void Character::CheckFace() {
     if (vision.GetX() > 0) {
         face = RIGHT;
     }
     else if (vision.GetX() < 0) {
         face = LEFT;
     }
-
-    if (speed.GetLength() == 0.0) {
-        state = IDLE;
-    }
-    else if (speed.GetLength() != 0.0) {
-        state = RUN;
-    }
-    if (hp <= 0) {
-        state = DEAD;
-    }
 }
+
