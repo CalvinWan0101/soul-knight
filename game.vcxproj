@@ -730,6 +730,13 @@
     <ResourceCompile Include="Source\Core\game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\affect\weapon\wave\1.bmp" />
+    <Content Include="Resources\affect\weapon\wave\2.bmp" />
+    <Content Include="Resources\affect\weapon\wave\3.bmp" />
+    <Content Include="Resources\affect\weapon\wave\4.bmp" />
+    <Content Include="Resources\affect\weapon\wave\5.bmp" />
+    <Content Include="Resources\affect\weapon\wave\6.bmp" />
+    <Content Include="Resources\affect\weapon\wave\7.bmp" />
     <Content Include="Resources\bullet\bad_bullet\0.bmp" />
     <Content Include="Resources\bullet\bad_bullet\102.bmp" />
     <Content Include="Resources\bullet\bad_bullet\105.bmp" />
