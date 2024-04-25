@@ -4,6 +4,9 @@
 Gun::Gun() {
 }
 
+Gun::Gun(Point point) : Weapon(point) {
+}
+
 void Gun::Start() {
     Weapon::Start();   
 }

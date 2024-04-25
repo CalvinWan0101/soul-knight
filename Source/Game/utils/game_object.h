@@ -24,9 +24,9 @@ namespace game_framework {
         void RemoveFrontChile(GameObject* frontChild);
         void RemoveBackChild(GameObject* backChild);
         // TODO: Fixed the bug of revised the value by reference directly
-        Point GetPoint();
-        void SetPoint(double x, double y);
-        void SetPoint(Point point);
+        Point GetPosition();
+        void SetPosition(double x, double y);
+        void SetPosition(Point point);
         void SetX(double x);
         void SetY(double y);
         Vec GetSpeed();
@@ -44,7 +44,7 @@ namespace game_framework {
         virtual void Collision(GameObject* gameObject);
 
     protected:
-        Point point;
+        Point position;
         Vec centerOffset;
         HitBox hitBox;
         Vec speed;

@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "../character/monster/floor_1/goblin_giant.h"
+#include "../weapon/hammer.h"
 
 Stage_1_1::Stage_1_1() {
     background.LoadBitmapByString({"resources/map/1-1.bmp"}, RGB(255, 255, 255));
@@ -47,7 +48,7 @@ void Stage_1_1::SetPlayerPosition() {
 
 void Stage_1_1::SetTransferGate() {
     TransferGate* transferGate = new TransferGate();
-    transferGate->SetPoint(Point(-900, -300));
+    transferGate->SetPosition(Point(-900, -300));
     ObjectManager::Instance()->AddObject(transferGate);
 }
 
@@ -55,8 +56,8 @@ void Stage_1_1::GenerateObstacle() {
 }
 
 void Stage_1_1::DetectRoom1() {
-    double x = ObjectManager::Instance()->GetPlayer()->GetPoint().GetX() + centerOffect.GetX();
-    double y = ObjectManager::Instance()->GetPlayer()->GetPoint().GetY() + centerOffect.GetY();
+    double x = ObjectManager::Instance()->GetPlayer()->GetPosition().GetX() + centerOffect.GetX();
+    double y = ObjectManager::Instance()->GetPlayer()->GetPosition().GetY() + centerOffect.GetY();
     if (!isInRoom1 && !room1Cleared && x >= 528 && x <= 896 && y >= -1 && y <= 367) {
         isInRoom1 = true;
         SetRoom1();
@@ -87,6 +88,9 @@ void Stage_1_1::DetectRoom1Cleared() {
         monster->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
     monsters.clear();
+    GameObject* weapon = new Hammer();
+    weapon->SetPosition(Point(700, 100) - centerOffect);
+    ObjectManager::Instance()->AddObject(weapon);
 }
 
 void Stage_1_1::DetectRoom2Cleared() {
@@ -104,10 +108,10 @@ void Stage_1_1::SetRoom1() {
     ObjectManager::Instance()->AddObject(wall3);
 
     Monster* monster1 = new GoblinGiant();
-    monster1->SetPoint(Point(600, 200) - centerOffect);
+    monster1->SetPosition(Point(600, 200) - centerOffect);
     monsters.push_back(monster1);
     Monster* monster2 = new GoblinGiant();
-    monster2->SetPoint(Point(700, 100) - centerOffect);
+    monster2->SetPosition(Point(700, 100) - centerOffect);
     monsters.push_back(monster2);
     ObjectManager::Instance()->AddObject(monster1);
     ObjectManager::Instance()->AddObject(monster2);

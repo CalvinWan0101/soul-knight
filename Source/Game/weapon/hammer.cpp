@@ -4,6 +4,13 @@
 Hammer::Hammer() {
 }
 
+Hammer::Hammer(Point point) : Knife(point) {
+}
+
+Weapon* Hammer::Copy() {
+    return new Hammer(this->position);
+}
+
 void Hammer::Start() {
     damage = 10;
     SetImages("Resources/weapon/hammer/", 3, RGB(255, 255, 255));

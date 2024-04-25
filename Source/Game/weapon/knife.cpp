@@ -6,6 +6,10 @@
 Knife::Knife() {
 }
 
+Knife::Knife(Point point) : Weapon(point) {
+}
+
+
 void Knife::Start() {
     Weapon::Start();
 }
@@ -14,7 +18,7 @@ void Knife::Update() {
     Weapon::Update();
 }
 
-void Knife::Collision(GameObject* gameObject) {
+void Knife::Collision(GameObject* gameObject) { // TODO: delete it.
     if (gameObject->HasTag(Tag::PLAYER)) {
         Player* player = dynamic_cast<Player*>(gameObject);
         player->BeAttacked(damage);

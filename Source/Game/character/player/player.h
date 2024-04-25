@@ -18,6 +18,8 @@ public:
     void SetVision(Vec vision);
     void ChangeWeapon(Weapon* newWeapon);
 
+    void SetInteractive(bool interactive);
+
 protected:
     int mp;
     int maxMp;
@@ -25,6 +27,7 @@ protected:
     int maxShild;
     HitBox alertRange;
 private:
+    bool interactive;
     void SetAlertRange(double height, double witdth);
     
 };

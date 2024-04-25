@@ -3,9 +3,10 @@
 #include "../character.h"
 #include "../../utils/object_manager.h"
 
-Player::Player(): alertRange(point) {
+Player::Player(): alertRange(position) {
     mp = 0;
     shield = 0;
+    interactive = false;
     AddTag(Tag::PLAYER);
 }
 
@@ -24,8 +25,14 @@ void Player::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
         this->hp = this->hp - dynamic_cast<Bullet*>(gameObject)->GetDamage();
     }
-    if (gameObject->HasTag(Tag::MONSTER)) {
+    else if (gameObject->HasTag(Tag::MONSTER)) {
         this->hp -= 1;
+    }
+    else if (gameObject->HasTag(Tag::WEAPON) && interactive == true) {
+        interactive = false;
+        Weapon* weapon = dynamic_cast<Weapon*>(gameObject);
+        weapon->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+        this->ChangeWeapon(weapon->Copy());
     }
 }
 
@@ -56,12 +63,16 @@ void Player::SetVision(Vec vision) {
 
 void Player::ChangeWeapon(Weapon* newWeapon) {
     if (this->weapon != nullptr) {
-        this->weapon->SetPoint(&this->point);
+        this->weapon->SetPosition(&this->position);
         RemoveFrontChile(this->weapon);
         ObjectManager::Instance()->AddObject(this->weapon);
     }
     this->weapon = newWeapon;
     this->AddFrontChild(newWeapon);
+}
+
+void Player::SetInteractive(bool interactive) {
+    this->interactive = interactive;
 }
 
 void Player::SetAlertRange(double height, double width) {

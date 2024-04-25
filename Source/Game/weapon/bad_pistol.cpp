@@ -7,6 +7,13 @@
 BadPistol::BadPistol() {
 }
 
+BadPistol::BadPistol(Point point) : Gun(point) {
+}
+
+Weapon* BadPistol::Copy() {
+    return new BadPistol(this->position);
+}
+
 void BadPistol::Start() {
     // SetCd(0.5);
     damage = 3;
@@ -22,7 +29,7 @@ void BadPistol::Update() {
 void BadPistol::Attack() {
     Bullet* bullet = new Arrow();
     bullet->SetSpeed(rotation, 1);
-    bullet->SetPoint(&(this->point + Vec(&rotation, 7)));
+    bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
     bullet->AddTag(Tag::PLAYER_ATTACK);
     ObjectManager::Instance()->AddObject(bullet);

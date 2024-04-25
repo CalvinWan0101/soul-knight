@@ -4,7 +4,7 @@
 #include <algorithm>
 
 namespace game_framework {
-    GameObject::GameObject() : hitBox(point) {
+    GameObject::GameObject() : hitBox(position) {
         index = 0;
         factor = 1;
     }
@@ -23,7 +23,7 @@ namespace game_framework {
     }
 
     void GameObject::Update() {
-        this->point = this->point + this->speed;
+        this->position = this->position + this->speed;
         for (auto gameObject : backGameObjects) {
             gameObject->Update();
         }
@@ -33,8 +33,8 @@ namespace game_framework {
     }
 
     void GameObject::Show(Point screenPositoin) {
-        double screenX = this->point.GetX() - screenPositoin.GetX();
-        double screenY = this->point.GetY() - screenPositoin.GetY();
+        double screenX = this->position.GetX() - screenPositoin.GetX();
+        double screenY = this->position.GetY() - screenPositoin.GetY();
         for (auto gameObject : backGameObjects) {
             gameObject->Show(screenPositoin);
         }
@@ -83,24 +83,24 @@ namespace game_framework {
         }
     }
 
-    Point GameObject::GetPoint() {
-        return point;
+    Point GameObject::GetPosition() {
+        return position;
     }
 
-    void GameObject::SetPoint(double x, double y) {
-        this->point.SetPoint(x, y);
+    void GameObject::SetPosition(double x, double y) {
+        this->position.SetPoint(x, y);
     }
 
-    void GameObject::SetPoint(Point point) {
-        this->point.SetPoint(point.GetX(), point.GetY());
+    void GameObject::SetPosition(Point point) {
+        this->position.SetPoint(point.GetX(), point.GetY());
     }
 
     void GameObject::SetX(double x) {
-        this->point.SetX(x);
+        this->position.SetX(x);
     }
 
     void GameObject::SetY(double y) {
-        this->point.SetY(y);
+        this->position.SetY(y);
     }
 
     Vec GameObject::GetSpeed() {

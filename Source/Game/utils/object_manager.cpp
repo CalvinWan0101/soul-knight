@@ -66,10 +66,10 @@ void ObjectManager::Update() {
 
 void ObjectManager::Show() {
     std::sort(objects.begin(), objects.end(), [](game_framework::GameObject* a, game_framework::GameObject* b) {
-        return a->GetPoint().GetY() < b->GetPoint().GetY();
+        return a->GetPosition().GetY() < b->GetPosition().GetY();
     });
-    screenX = (int)player->GetPoint().GetX() - SIZE_X_HALF;
-    screenY = (int)player->GetPoint().GetY() - SIZE_Y_HALF;
+    screenX = (int)player->GetPosition().GetX() - SIZE_X_HALF;
+    screenY = (int)player->GetPosition().GetY() - SIZE_Y_HALF;
     StageManager::Instance()->GetStage()->Show(Point(screenX, screenY));
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
@@ -95,6 +95,9 @@ void ObjectManager::KeyDown(char key) {
     case 'S':
         player->SetSpeedY(player->GetSpeed().GetY() + 10);
         break;
+    case 'Q':
+        player->SetInteractive(true);
+        break;
     case 'F':
         game_framework::Draw::Instance()->SwitchIsDisplay();
         break;
@@ -115,6 +118,9 @@ void ObjectManager::KeyUp(char key) {
     case 'S':
         player->SetSpeedY(player->GetSpeed().GetY() - 10);
         break;
+    case 'Q':
+        player->SetInteractive(false);
+        break;
     }
 }
 
@@ -127,7 +133,7 @@ void ObjectManager::SetPlayerVision(Vec vision) {
 }
 
 void ObjectManager::SetPlayerPosition(Point playerPosition) {
-    player->SetPoint(&playerPosition);
+    player->SetPosition(&playerPosition);
 }
 
 void ObjectManager::CollisionDetection() {

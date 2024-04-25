@@ -4,6 +4,8 @@
 class Weapon : public RotatableObject {
 public:
     Weapon();
+    Weapon(Point point);
+    virtual Weapon* Copy() = 0;
     void Start() override;
     void Update() override;
     void DefaultAttack();

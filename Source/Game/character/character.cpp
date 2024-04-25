@@ -24,10 +24,10 @@ void Character::Update() {
     index = state * 2 + face;
     weapon->Aim(&vision);
     if (face == RIGHT) {
-        weapon->SetPoint(&(this->point + Vec(weaponOffsetX , weaponOffsetY)));
+        weapon->SetPosition(&(this->position + Vec(weaponOffsetX , weaponOffsetY)));
     }
     else if (face == LEFT) {
-        weapon->SetPoint(&(this->point + Vec(-weaponOffsetX , weaponOffsetY)));
+        weapon->SetPosition(&(this->position + Vec(-weaponOffsetX , weaponOffsetY)));
     }
 }
 
@@ -36,16 +36,16 @@ void Character::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::OBSTACLE)) {
         Vec speedXComponent(speed.GetX(), 0.0);
         Vec speedYComponent(0.0, speed.GetY());
-        this->point = this->point - speedXComponent;
+        this->position = this->position - speedXComponent;
         if (hitBox.IsCollision(&gameObject->GetHitBox())) {
-            this->point = this->point + speedXComponent;
-            speedYComponent.SetLength(gameObject->GetHitBox().GetHalfHeight() + this->hitBox.GetHalfHeight() - abs(gameObject->GetPoint().GetY() - this->point.GetY()) + 0.1);
-            this->point = this->point - speedYComponent;
+            this->position = this->position + speedXComponent;
+            speedYComponent.SetLength(gameObject->GetHitBox().GetHalfHeight() + this->hitBox.GetHalfHeight() - abs(gameObject->GetPosition().GetY() - this->position.GetY()) + 0.1);
+            this->position = this->position - speedYComponent;
         }
         else {
-            this->point = this->point + speedXComponent;
-            speedXComponent.SetLength(gameObject->GetHitBox().GetHalfWidth() + this->hitBox.GetHalfWidth() - abs(gameObject->GetPoint().GetX() - this->point.GetX()) + 0.1);
-            this->point = this->point - speedXComponent;
+            this->position = this->position + speedXComponent;
+            speedXComponent.SetLength(gameObject->GetHitBox().GetHalfWidth() + this->hitBox.GetHalfWidth() - abs(gameObject->GetPosition().GetX() - this->position.GetX()) + 0.1);
+            this->position = this->position - speedXComponent;
         }
     }
 }

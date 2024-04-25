@@ -7,9 +7,19 @@ Weapon::Weapon() {
     cdCounter = 0;
     attackTiming = 0;
     attackRotationOffset = 0;
+    AddTag(Tag::WEAPON);
+}
+
+Weapon::Weapon(Point point) {
+    this->position = point;
+    cdCounter = 0;
+    attackTiming = 0;
+    attackRotationOffset = 0;
+    AddTag(Tag::WEAPON);
 }
 
 void Weapon::Start() {
+    SetHitBoxByRatio(1,1);
     RotatableObject::Start();
 }
 
