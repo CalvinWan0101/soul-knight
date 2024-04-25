@@ -15,11 +15,11 @@ Character::Character() {
 }
 
 void Character::Start() {
-    GameObject::Start();
+    GeneralObject::Start();
 }
 
 void Character::Update() {
-    GameObject::Update();
+    GeneralObject::Update();
     CheckState();
     CheckFace();
     index = state * 2 + face;
@@ -32,20 +32,20 @@ void Character::Update() {
     }
 }
 
-void Character::Collision(GameObject* gameObject) {
-    GameObject::Collision(gameObject);
-    if (gameObject->HasTag(Tag::OBSTACLE)) {
+void Character::Collision(GeneralObject* generalObject) {
+    GeneralObject::Collision(generalObject);
+    if (generalObject->HasTag(Tag::OBSTACLE)) {
         Vec speedXComponent(speed.GetX(), 0.0);
         Vec speedYComponent(0.0, speed.GetY());
         this->position = this->position - speedXComponent;
-        if (hitBox.IsCollision(&gameObject->GetHitBox())) {
+        if (hitBox.IsCollision(&generalObject->GetHitBox())) {
             this->position = this->position + speedXComponent;
-            speedYComponent.SetLength(gameObject->GetHitBox().GetHalfHeight() + this->hitBox.GetHalfHeight() - abs(gameObject->GetPosition().GetY() - this->position.GetY()) + 0.1);
+            speedYComponent.SetLength(generalObject->GetHitBox().GetHalfHeight() + this->hitBox.GetHalfHeight() - abs(generalObject->GetPosition().GetY() - this->position.GetY()) + 0.1);
             this->position = this->position - speedYComponent;
         }
         else {
             this->position = this->position + speedXComponent;
-            speedXComponent.SetLength(gameObject->GetHitBox().GetHalfWidth() + this->hitBox.GetHalfWidth() - abs(gameObject->GetPosition().GetX() - this->position.GetX()) + 0.1);
+            speedXComponent.SetLength(generalObject->GetHitBox().GetHalfWidth() + this->hitBox.GetHalfWidth() - abs(generalObject->GetPosition().GetX() - this->position.GetX()) + 0.1);
             this->position = this->position - speedXComponent;
         }
     }

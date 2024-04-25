@@ -1,10 +1,10 @@
 ﻿#pragma once
-#include "game_object.h"
+#include "general_object.h"
 
-class TransferGate : public game_framework::GameObject {
+class TransferGate : public game_framework::GeneralObject {
 public:
     TransferGate();
     void Start() override;
     void Update() override;
-    void Collision(GameObject* gameObject) override;
+    void Collision(GeneralObject* generalObject) override;
 };

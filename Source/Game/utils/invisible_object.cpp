@@ -2,19 +2,19 @@
 #include "invisible_object.h"
 
 void InvisibleObject::Start() {
-    GameObject::Start();
+    GeneralObject::Start();
 }
 
 void InvisibleObject::Update() {
-    GameObject::Update();
+    GeneralObject::Update();
 }
 
 void InvisibleObject::Show(Point screenPositoin) {
     // do nothing
 }
 
-void InvisibleObject::Collision(GameObject* gameObject) {
-    GameObject::Collision(gameObject);
+void InvisibleObject::Collision(GeneralObject* generalObject) {
+    GeneralObject::Collision(generalObject);
 }
 
 

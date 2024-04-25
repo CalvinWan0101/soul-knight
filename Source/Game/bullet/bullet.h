@@ -6,7 +6,7 @@ public:
     Bullet();
     void Start() override;
     void Update() override;
-    void Collision(GameObject* gameObject) override;
+    void Collision(GeneralObject* generalObject) override;
 
     void SetDamage(int damage);
     int GetDamage();

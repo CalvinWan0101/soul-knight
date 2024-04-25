@@ -32,10 +32,10 @@ void Monster::Update() {
     Character::Update();
 }
 
-void Monster::Collision(GameObject* gameObject) {
-    Character::Collision(gameObject);
-    if (gameObject->HasTag(Tag::PLAYER_ATTACK)) {
-        this->hp = this->hp - dynamic_cast<Bullet*>(gameObject)->GetDamage();
+void Monster::Collision(GeneralObject* generalObject) {
+    Character::Collision(generalObject);
+    if (generalObject->HasTag(Tag::PLAYER_ATTACK)) {
+        this->hp = this->hp - dynamic_cast<Bullet*>(generalObject)->GetDamage();
     }
 }
 

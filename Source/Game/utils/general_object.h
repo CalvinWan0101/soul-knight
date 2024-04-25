@@ -10,19 +10,19 @@
 using std::vector;
 
 namespace game_framework {
-    class GameObject {
+    class GeneralObject {
     public:
-        GameObject();
-        virtual ~GameObject();
+        GeneralObject();
+        virtual ~GeneralObject();
         virtual void Start();
         virtual void Update();
         virtual void Show(Point screenPositoin);
 
         void AddAnimation(vector<string> filepaths, COLORREF color, int delay, bool once);
-        void AddFrontChild(GameObject* gameObject);
-        void AddBackChild(GameObject* gameObject);
-        void RemoveFrontChile(GameObject* frontChild);
-        void RemoveBackChild(GameObject* backChild);
+        void AddFrontChild(GeneralObject* generalObject);
+        void AddBackChild(GeneralObject* generalObject);
+        void RemoveFrontChile(GeneralObject* frontChild);
+        void RemoveBackChild(GeneralObject* backChild);
         // TODO: Fixed the bug of revised the value by reference directly
         Point GetPosition();
         void SetPosition(double x, double y);
@@ -41,7 +41,7 @@ namespace game_framework {
         void SetHitBox(double height, double width);
         void SetHitBoxByRatio(double heightRatio, double widthRatio);
         HitBox& GetHitBox();
-        virtual void Collision(GameObject* gameObject);
+        virtual void Collision(GeneralObject* generalObject);
 
     protected:
         Point position;
@@ -51,8 +51,8 @@ namespace game_framework {
         bitset<static_cast<int>(Tag::Count)> tags;
         vector<CMovingBitmap> cMovingBitmaps;
         int index;
-        vector<GameObject*> frontGameObjects;
-        vector<GameObject*> backGameObjects;
+        vector<GeneralObject*> frontGeneralObjects;
+        vector<GeneralObject*> backGeneralObjects;
         virtual void SetCenter();
 
     private:

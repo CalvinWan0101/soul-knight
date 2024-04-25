@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-#include "game_object.h"
+#include "general_object.h"
 #include "vec.h"
 
-class RotatableObject : public game_framework::GameObject {
+class RotatableObject : public game_framework::GeneralObject {
 public:
     RotatableObject();
     void Start() override;

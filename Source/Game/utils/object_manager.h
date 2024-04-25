@@ -1,13 +1,13 @@
 ﻿#pragma once
 #include <vector>
 
-#include "game_object.h"
+#include "general_object.h"
 #include "transfer_gate.h"
 #include "../bullet/bullet.h"
 #include "../stage/stage.h"
 #include "../stage/stage_1_1.h"
 
-using game_framework::GameObject;
+using game_framework::GeneralObject;
 using std::vector;
 
 class Monster;
@@ -21,7 +21,7 @@ public:
     void SetPlayer(Player* player);
     Player* GetPlayer();
     Point* GetScreenPoint();
-    void AddObject(GameObject* object);
+    void AddObject(GeneralObject* object);
     void Start();
     void Update();
     void Show();
@@ -37,8 +37,8 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    vector<GameObject*> objects;
-    vector<GameObject*> newObjects;
+    vector<GeneralObject*> objects;
+    vector<GeneralObject*> newObjects;
 
     void DeleteObsoleteElements();
     void PushNewObjectsToList();

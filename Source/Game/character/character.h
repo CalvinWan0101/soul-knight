@@ -1,13 +1,13 @@
 #pragma once
-#include "../utils/game_object.h"
+#include "..\utils\general_object.h"
 #include "../weapon/weapon.h"
 
-class Character : public game_framework::GameObject {
+class Character : public game_framework::GeneralObject {
 public:
     Character();
     void Start() override;
     void Update() override;
-    void Collision(GameObject* gameObject) override;
+    void Collision(GeneralObject* generalObject) override;
 
     int GetHP();
     int GetMaxHP();

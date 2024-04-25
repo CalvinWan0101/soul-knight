@@ -12,11 +12,11 @@ RotatableObject::RotatableObject() {
 }
 
 void RotatableObject::Start() {
-    GameObject::Start();
+    GeneralObject::Start();
 }
 
 void RotatableObject::Update() {
-    GameObject::Update();
+    GeneralObject::Update();
 }
 
 void RotatableObject::Rotate(double radian) {

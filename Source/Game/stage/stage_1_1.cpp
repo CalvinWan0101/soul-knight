@@ -88,7 +88,7 @@ void Stage_1_1::DetectRoom1Cleared() {
         monster->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
     monsters.clear();
-    GameObject* weapon = new Hammer();
+    GeneralObject* weapon = new Hammer();
     weapon->SetPosition(Point(700, 100) - centerOffect);
     ObjectManager::Instance()->AddObject(weapon);
 }

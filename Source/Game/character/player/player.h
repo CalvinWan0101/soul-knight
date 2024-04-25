@@ -1,5 +1,5 @@
 #pragma once
-#include "../../utils/game_object.h"
+#include "..\..\utils\general_object.h"
 #include "../../character/character.h"
 
 class Player : public Character {
@@ -7,7 +7,7 @@ public:
     Player();
     void Start() override;
     void Update() override;
-    void Collision(GameObject* gameObject) override;
+    void Collision(GeneralObject* generalObject) override;
 
     int GetMP();
     int GetMaxMP();
