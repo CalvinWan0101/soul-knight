@@ -23,6 +23,6 @@ void Wall::Update() {
     // do nothing
 }
 
-void Wall::Collision(GeneralObject* generalObject) {
+void Wall::Collision(GameObject* gameObject) {
     // do nothing now
 }

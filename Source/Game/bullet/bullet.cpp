@@ -14,10 +14,10 @@ void Bullet::Update() {
     RotatableObject::Update();
 }
 
-void Bullet::Collision(GeneralObject* generalObject) {
-    if ((generalObject->HasTag(Tag::PLAYER) && this->HasTag(Tag::MONSTER_ATTACK)) ||
-        (generalObject->HasTag(Tag::MONSTER) && this->HasTag(Tag::PLAYER_ATTACK)) ||
-        generalObject->HasTag(Tag::OBSTACLE)) {
+void Bullet::Collision(GameObject* gameObject) {
+    if ((gameObject->HasTag(Tag::PLAYER) && this->HasTag(Tag::MONSTER_ATTACK)) ||
+        (gameObject->HasTag(Tag::MONSTER) && this->HasTag(Tag::PLAYER_ATTACK)) ||
+        gameObject->HasTag(Tag::OBSTACLE)) {
         this->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }

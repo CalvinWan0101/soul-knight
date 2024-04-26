@@ -7,7 +7,6 @@
 #include "../stage/stage.h"
 #include "../stage/stage_1_1.h"
 
-using game_framework::GeneralObject;
 using std::vector;
 
 class Monster;
@@ -21,7 +20,7 @@ public:
     void SetPlayer(Player* player);
     Player* GetPlayer();
     Point* GetScreenPoint();
-    void AddObject(GeneralObject* object);
+    void AddObject(GameObject* object);
     void Start();
     void Update();
     void Show();
@@ -37,8 +36,8 @@ private:
     bool LButtonPressed;
     static ObjectManager* instance;
     Player* player;
-    vector<GeneralObject*> objects;
-    vector<GeneralObject*> newObjects;
+    vector<GameObject*> objects;
+    vector<GameObject*> newObjects;
 
     void DeleteObsoleteElements();
     void PushNewObjectsToList();

@@ -7,7 +7,7 @@ public:
     Player();
     void Start() override;
     void Update() override;
-    void Collision(GeneralObject* generalObject) override;
+    void Collision(GameObject* gameObject) override;
 
     int GetMP();
     int GetMaxMP();

@@ -7,5 +7,5 @@ public:
     Wall();
     void Start() override;
     void Update() override;
-    void Collision(GeneralObject* generalObject) override;
+    void Collision(GameObject* gameObject) override;
 };

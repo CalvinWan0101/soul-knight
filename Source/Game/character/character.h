@@ -2,12 +2,12 @@
 #include "..\utils\general_object.h"
 #include "../weapon/weapon.h"
 
-class Character : public game_framework::GeneralObject {
+class Character : public GeneralObject {
 public:
     Character();
     void Start() override;
     void Update() override;
-    void Collision(GeneralObject* generalObject) override;
+    void Collision(GameObject* gameObject) override;
 
     int GetHP();
     int GetMaxHP();

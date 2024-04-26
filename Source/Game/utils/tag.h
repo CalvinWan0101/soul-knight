@@ -15,5 +15,7 @@ enum class Tag {
     DEAD,
 
     REMOVE_ON_NEXT_FRAME,
-    Count,
+
+    
+    Count // For calculate tags num in bitset.
 };

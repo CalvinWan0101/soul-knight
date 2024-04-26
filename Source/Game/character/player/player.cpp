@@ -20,17 +20,17 @@ void Player::Update() {
     Character::Update();
 }
 
-void Player::Collision(GeneralObject* generalObject) {
-    Character::Collision(generalObject);
-    if (generalObject->HasTag(Tag::MONSTER_ATTACK)) {
-        this->hp = this->hp - dynamic_cast<Bullet*>(generalObject)->GetDamage();
+void Player::Collision(GameObject* gameObject) {
+    Character::Collision(gameObject);
+    if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
+        this->hp = this->hp - dynamic_cast<Bullet*>(gameObject)->GetDamage();
     }
-    else if (generalObject->HasTag(Tag::MONSTER)) {
+    else if (gameObject->HasTag(Tag::MONSTER)) {
         this->hp -= 1;
     }
-    else if (generalObject->HasTag(Tag::WEAPON) && interactive == true) {
+    else if (gameObject->HasTag(Tag::WEAPON) && interactive == true) {
         interactive = false;
-        Weapon* weapon = dynamic_cast<Weapon*>(generalObject);
+        Weapon* weapon = dynamic_cast<Weapon*>(gameObject);
         weapon->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
         this->ChangeWeapon(weapon->Copy());
     }

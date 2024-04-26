@@ -8,7 +8,7 @@ public:
     Monster();
     void Start() override;
     void Update() override;
-    void Collision(GeneralObject* generalObject) override;
+    void Collision(GameObject* gameObject) override;
     void EnterPlayerAlertRange(Player* player);
 
     void SetWeapon(Weapon* weapon);

@@ -44,7 +44,7 @@ Point* ObjectManager::GetScreenPoint() {
     return new Point(screenX, screenY);
 }
 
-void ObjectManager::AddObject(GeneralObject* object) {
+void ObjectManager::AddObject(GameObject* object) {
     object->Start();
     newObjects.emplace_back(object);
 }
@@ -65,7 +65,7 @@ void ObjectManager::Update() {
 }
 
 void ObjectManager::Show() {
-    std::sort(objects.begin(), objects.end(), [](game_framework::GeneralObject* a, game_framework::GeneralObject* b) {
+    std::sort(objects.begin(), objects.end(), [](GameObject* a, GameObject* b) {
         return a->GetPosition().GetY() < b->GetPosition().GetY();
     });
     screenX = (int)player->GetPosition().GetX() - SIZE_X_HALF;
@@ -161,7 +161,7 @@ void ObjectManager::CollisionDetection() {
 }
 
 void ObjectManager::DeleteObsoleteElements() {
-    for (vector<GeneralObject*>::iterator object = objects.begin(); object != objects.end();) {
+    for (vector<GameObject*>::iterator object = objects.begin(); object != objects.end();) {
         if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
             delete *object;
             object = objects.erase(object);

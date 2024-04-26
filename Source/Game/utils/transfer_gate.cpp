@@ -18,8 +18,8 @@ void TransferGate::Update() {
     GeneralObject::Update();
 }
 
-void TransferGate::Collision(GeneralObject* generalObject) {
-    if (generalObject->HasTag(Tag::PLAYER)) {
+void TransferGate::Collision(GameObject* gameObject) {
+    if (gameObject->HasTag(Tag::PLAYER)) {
         StageManager::Instance()->NextStage();
     }
 }

@@ -545,6 +545,7 @@
     <ClCompile Include="Source\Game\utils\draw_empty_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_text_command.cpp" />
+    <ClCompile Include="Source\Game\utils\GameObject.cpp" />
     <ClCompile Include="Source\Game\utils\general_object.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -705,6 +706,7 @@
     <ClInclude Include="Source\Game\utils\draw_rectangle_command.h" />
     <ClInclude Include="Source\Game\utils\draw_text_command.h" />
     <ClInclude Include="Source\Game\utils\event.hpp" />
+    <ClInclude Include="Source\Game\utils\GameObject.h" />
     <ClInclude Include="Source\Game\utils\general_object.h" />
     <ClInclude Include="Source\Game\utils\hit_box.h" />
     <ClInclude Include="Source\Game\utils\invisible_object.h" />
