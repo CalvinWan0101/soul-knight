@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "bad_pistol.h"
 
-#include "../bullet/arrow.h"
+#include "../projectile/bullet/arrow.h"
 #include "../utils/object_manager.h"
 
 BadPistol::BadPistol() {

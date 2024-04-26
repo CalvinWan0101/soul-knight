@@ -2,7 +2,7 @@
 #include <bitset>
 #include <vector>
 
-#include "GameObject.h"
+#include "game_object.h"
 #include "tag.h"
 #include "../utils/point.h"
 #include "../../Library/gameutil.h"

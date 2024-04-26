@@ -9,8 +9,6 @@
 
 enum class Tag;
 
-    class GeneralObject;
-    
     class GameObject {
     public:
         GameObject();

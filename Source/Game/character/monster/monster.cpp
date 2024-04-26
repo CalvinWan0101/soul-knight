@@ -2,7 +2,7 @@
 
 #include "monster.h"
 #include "../character.h"
-#include "../../bullet/bullet.h"
+#include "../../projectile/bullet/bullet.h"
 #include "../player/player.h"
 
 Monster::Monster() {
@@ -35,7 +35,7 @@ void Monster::Update() {
 void Monster::Collision(GameObject* gameObject) {
     Character::Collision(gameObject);
     if (gameObject->HasTag(Tag::PLAYER_ATTACK)) {
-        this->hp = this->hp - dynamic_cast<Bullet*>(gameObject)->GetDamage();
+        this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();
     }
 }
 

@@ -21,13 +21,3 @@ void Bullet::Collision(GameObject* gameObject) {
         this->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }
-
-void Bullet::SetDamage(int damage) {
-    this->damage = damage;
-}
-
-int Bullet::GetDamage() {
-    return damage;
-}
-
-

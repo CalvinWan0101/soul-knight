@@ -3,7 +3,7 @@
 
 #include "general_object.h"
 #include "transfer_gate.h"
-#include "../bullet/bullet.h"
+#include "../projectile/bullet/bullet.h"
 #include "../stage/stage.h"
 #include "../stage/stage_1_1.h"
 

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "GameObject.h"
+#include "game_object.h"
 
 GameObject::GameObject() : hitBox(position) {
 }

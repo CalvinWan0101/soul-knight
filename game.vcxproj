@@ -239,8 +239,8 @@
     <ClCompile Include="Source\Core\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Source\Game\bullet\arrow.cpp" />
-    <ClCompile Include="Source\Game\bullet\bullet.cpp">
+    <ClCompile Include="Source\Game\projectile\bullet\arrow.cpp" />
+    <ClCompile Include="Source\Game\projectile\bullet\bullet.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -539,13 +539,16 @@
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
+    <ClCompile Include="Source\Game\projectile\projectile.cpp" />
+    <ClCompile Include="Source\Game\projectile\shock_wave\shock_wave.cpp" />
+    <ClCompile Include="Source\Game\projectile\shock_wave\wave.cpp" />
     <ClCompile Include="Source\Game\stage\stage.cpp" />
     <ClCompile Include="Source\Game\stage\stage_1_1.cpp" />
     <ClCompile Include="Source\Game\utils\draw.cpp" />
     <ClCompile Include="Source\Game\utils\draw_empty_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_rectangle_command.cpp" />
     <ClCompile Include="Source\Game\utils\draw_text_command.cpp" />
-    <ClCompile Include="Source\Game\utils\GameObject.cpp" />
+    <ClCompile Include="Source\Game\utils\game_object.cpp" />
     <ClCompile Include="Source\Game\utils\general_object.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -608,6 +611,7 @@
     <ClCompile Include="Source\Game\utils\hit_box.cpp" />
     <ClCompile Include="Source\Game\utils\invisible_object.cpp" />
     <ClCompile Include="Source\Game\utils\object_manager.cpp" />
+    <ClCompile Include="Source\Game\utils\once_animation_object.cpp" />
     <ClCompile Include="Source\Game\utils\point.cpp" />
     <ClCompile Include="Source\Game\utils\rotatable_object.cpp" />
     <ClCompile Include="Source\Game\utils\stage_factory.cpp" />
@@ -689,8 +693,8 @@
     <ClInclude Include="Source\Core\MainFrm.h" />
     <ClInclude Include="Source\Core\Resource.h" />
     <ClInclude Include="Source\Core\StdAfx.h" />
-    <ClInclude Include="Source\Game\bullet\arrow.h" />
-    <ClInclude Include="Source\Game\bullet\bullet.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\arrow.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\bullet.h" />
     <ClInclude Include="Source\Game\character\character.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_giant.h" />
     <ClInclude Include="Source\Game\character\monster\monster.h" />
@@ -698,6 +702,9 @@
     <ClInclude Include="Source\Game\character\player\player.h" />
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
+    <ClInclude Include="Source\Game\projectile\projectile.h" />
+    <ClInclude Include="Source\Game\projectile\shock_wave\shock_wave.h" />
+    <ClInclude Include="Source\Game\projectile\shock_wave\wave.h" />
     <ClInclude Include="Source\Game\stage\stage.h" />
     <ClInclude Include="Source\Game\stage\stage_1_1.h" />
     <ClInclude Include="Source\Game\utils\draw.h" />
@@ -706,11 +713,12 @@
     <ClInclude Include="Source\Game\utils\draw_rectangle_command.h" />
     <ClInclude Include="Source\Game\utils\draw_text_command.h" />
     <ClInclude Include="Source\Game\utils\event.hpp" />
-    <ClInclude Include="Source\Game\utils\GameObject.h" />
+    <ClInclude Include="Source\Game\utils\game_object.h" />
     <ClInclude Include="Source\Game\utils\general_object.h" />
     <ClInclude Include="Source\Game\utils\hit_box.h" />
     <ClInclude Include="Source\Game\utils\invisible_object.h" />
     <ClInclude Include="Source\Game\utils\object_manager.h" />
+    <ClInclude Include="Source\Game\utils\once_animation_object.h" />
     <ClInclude Include="Source\Game\utils\point.h" />
     <ClInclude Include="Source\Game\utils\rotatable_object.h" />
     <ClInclude Include="Source\Game\utils\stage_factory.h" />

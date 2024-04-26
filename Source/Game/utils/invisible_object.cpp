@@ -13,10 +13,6 @@ void InvisibleObject::Show(Point screenPositoin) {
     // do nothing
 }
 
-void InvisibleObject::Collision(GameObject* gameObject) {
-    GameObject::Collision(gameObject);
-}
-
 void InvisibleObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
     // do nothing
 }
