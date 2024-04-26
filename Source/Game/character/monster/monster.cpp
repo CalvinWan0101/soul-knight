@@ -47,5 +47,7 @@ void Monster::EnterPlayerAlertRange(Player* player) {
 
 void Monster::SetWeapon(Weapon* weapon) {
     this->weapon = weapon;
+    this->weapon->RemoveTag(Tag::PLAYER_WEAPON);
+    this->weapon->AddTag(Tag::MONSTER_WEAPON);
     this->AddFrontChild(weapon);
 }

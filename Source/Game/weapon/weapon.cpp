@@ -7,7 +7,7 @@ Weapon::Weapon() {
     cdCounter = 0;
     attackTiming = 0;
     attackRotationOffset = 0;
-    AddTag(Tag::WEAPON);
+    AddTag(Tag::PLAYER_WEAPON);
 }
 
 Weapon::Weapon(Point point) {
@@ -15,7 +15,7 @@ Weapon::Weapon(Point point) {
     cdCounter = 0;
     attackTiming = 0;
     attackRotationOffset = 0;
-    AddTag(Tag::WEAPON);
+    AddTag(Tag::PLAYER_WEAPON);
 }
 
 void Weapon::Start() {

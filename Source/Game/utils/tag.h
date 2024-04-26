@@ -7,7 +7,8 @@ enum class Tag {
     PLAYER_ATTACK,
     MONSTER_ATTACK,
     
-    WEAPON,
+    PLAYER_WEAPON,
+    MONSTER_WEAPON,
     
     TRANSFER_GATE,
     OBSTACLE,

@@ -25,10 +25,7 @@ void Player::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
         this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();
     }
-    else if (gameObject->HasTag(Tag::MONSTER)) {
-        this->hp -= 1;
-    }
-    else if (gameObject->HasTag(Tag::WEAPON) && interactive == true) {
+    else if (gameObject->HasTag(Tag::PLAYER_WEAPON) && interactive == true) {
         interactive = false;
         Weapon* weapon = dynamic_cast<Weapon*>(gameObject);
         weapon->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
@@ -68,6 +65,7 @@ void Player::ChangeWeapon(Weapon* newWeapon) {
         ObjectManager::Instance()->AddObject(this->weapon);
     }
     this->weapon = newWeapon;
+    this->weapon->AddTag(Tag::PLAYER_WEAPON);
     this->AddFrontChild(newWeapon);
 }
 

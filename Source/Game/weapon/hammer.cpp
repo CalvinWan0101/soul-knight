@@ -28,8 +28,8 @@ void Hammer::Update() {
 
 void Hammer::Attack() {
     ShockWave* shockWave = new Wave();
-    shockWave->SetPosition(&(this->position + Vec(&rotation, 12) + Vec(0.0, -15)));
-    shockWave->SetDamage(10);
-    shockWave->AddTag(Tag::PLAYER_ATTACK);
+    shockWave->SetPosition(&(this->position + Vec(&rotation, 17) + Vec(0.0, -15)));
+    shockWave->SetDamage(damage);
+    shockWave->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
     ObjectManager::Instance()->AddObject(shockWave);
 }
