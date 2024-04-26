@@ -2,11 +2,11 @@
 #include "invisible_object.h"
 
 void InvisibleObject::Start() {
-    GeneralObject::Start();
+    GameObject::Start();
 }
 
 void InvisibleObject::Update() {
-    GeneralObject::Update();
+    GameObject::Update();
 }
 
 void InvisibleObject::Show(Point screenPositoin) {
@@ -14,7 +14,17 @@ void InvisibleObject::Show(Point screenPositoin) {
 }
 
 void InvisibleObject::Collision(GameObject* gameObject) {
-    GeneralObject::Collision(gameObject);
+    GameObject::Collision(gameObject);
 }
+
+void InvisibleObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
+    // do nothing
+}
+
+void InvisibleObject::SetCenter() {
+    // do nothing
+}
+
+
 
 
