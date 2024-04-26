@@ -12,30 +12,41 @@ RotatableObject::RotatableObject() {
 }
 
 void RotatableObject::Start() {
-    GeneralObject::Start();
+    GameObject::Start();
 }
 
 void RotatableObject::Update() {
-    GeneralObject::Update();
+    GameObject::Update();
+}
+
+void RotatableObject::Show(Point screenPositoin) {
+    SetFrameIndexOfBitmap(rotation.GetRadian());
+    double screenX = this->position.GetX() - screenPositoin.GetX();
+    double screenY = this->position.GetY() - screenPositoin.GetY();
+    cMovingBitmap.SetTopLeft(static_cast<int>(screenX - centerOffset.GetX()),
+                                static_cast<int>(screenY - centerOffset.GetY()));
+    cMovingBitmap.ShowBitmap();
 }
 
 void RotatableObject::Rotate(double radian) {
     rotation.Rotate(radian);
-    SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
 void RotatableObject::SetRotation(Vec* radian) {
     rotation = Vec(radian);
-    SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
 void RotatableObject::SetRotation(double radian) {
     rotation.Rotate(radian - rotation.GetRadian());
-    SetFrameIndexOfBitmap(rotation.GetRadian());
 }
 
 Vec RotatableObject::GetRotation() const {
     return rotation;
+}
+
+void RotatableObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
+    hitBox.SetHeight(static_cast<double>(cMovingBitmap.GetHeight()) * heightRatio);
+    hitBox.SetWidth(static_cast<double>(cMovingBitmap.GetWidth()) * widthRatio);
 }
 
 void RotatableObject::SetImages(string filePath, int index, COLORREF color) {
@@ -43,11 +54,15 @@ void RotatableObject::SetImages(string filePath, int index, COLORREF color) {
     for (int i = 0; i <= 360; i += index) {
         filepaths.push_back(filePath + to_string(i) + ".bmp");
     }
-    game_framework::CMovingBitmap cMovingBitmap = game_framework::CMovingBitmap();
+    cMovingBitmap = game_framework::CMovingBitmap();
     cMovingBitmap.LoadBitmapByString(filepaths, color);
-    cMovingBitmaps.push_back(cMovingBitmap);
 }
 
 void RotatableObject::SetFrameIndexOfBitmap(double radian) {
-    cMovingBitmaps[0].SetFrameIndexOfBitmap(static_cast<int>((radian / (2 * PI) ) * static_cast<double>(cMovingBitmaps[0].GetFrameSizeOfBitmap())));
+    cMovingBitmap.SetFrameIndexOfBitmap(static_cast<int>((radian / (2 * PI) ) * static_cast<double>(cMovingBitmap.GetFrameSizeOfBitmap())));
 }
+
+void RotatableObject::SetCenter() {
+    this->centerOffset.SetVec(cMovingBitmap.GetWidth() / 2, cMovingBitmap.GetHeight() / 2);
+}
+
