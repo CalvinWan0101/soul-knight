@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "weapon.h"
+#include "Weapon.h"
 
 #include "../config.h"
 

@@ -1609,7 +1609,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\weapon\weapon.cpp">
+    <ClCompile Include="Source\Game\weapon\Weapon.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1717,7 +1717,7 @@
     <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />
     <ClInclude Include="Source\Game\weapon\MeleeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
-    <ClInclude Include="Source\Game\weapon\weapon.h" />
+    <ClInclude Include="Source\Game\weapon\Weapon.h" />
     <ClInclude Include="Source\Library\audio.h" />
     <ClInclude Include="Source\Library\gamecore.h" />
     <ClInclude Include="Source\Library\gameutil.h" />
