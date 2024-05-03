@@ -60,6 +60,7 @@ void Weapon::SetAttackAnimation(vector<double> attackRotationOffsetList, double 
     }
 }
 
+// Set cd by second
 void Weapon::SetCd(double cd) {
     this->cd = static_cast<int>(cd * 50);
 }

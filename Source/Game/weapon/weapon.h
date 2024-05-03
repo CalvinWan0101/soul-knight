@@ -18,7 +18,7 @@ public:
     int GetMpCost();
     
 protected:
-    int cd;
+    int cd; // frame
     int damage;
     int mpCost;
 private:
