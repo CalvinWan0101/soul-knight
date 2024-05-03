@@ -620,9 +620,9 @@
     <ClCompile Include="Source\Game\utils\vec.cpp" />
     <ClCompile Include="Source\Game\wall\wall.cpp" />
     <ClCompile Include="Source\Game\weapon\bad_pistol.cpp" />
-    <ClCompile Include="Source\Game\weapon\gun.cpp" />
+    <ClCompile Include="Source\Game\weapon\RangedWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\hammer.cpp" />
-    <ClCompile Include="Source\Game\weapon\knife.cpp" />
+    <ClCompile Include="Source\Game\weapon\MeleeWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\weapon.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -728,9 +728,9 @@
     <ClInclude Include="Source\Game\utils\vec.h" />
     <ClInclude Include="Source\Game\wall\wall.h" />
     <ClInclude Include="Source\Game\weapon\bad_pistol.h" />
-    <ClInclude Include="Source\Game\weapon\gun.h" />
+    <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />
     <ClInclude Include="Source\Game\weapon\hammer.h" />
-    <ClInclude Include="Source\Game\weapon\knife.h" />
+    <ClInclude Include="Source\Game\weapon\MeleeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\weapon.h" />
     <ClInclude Include="Source\Library\audio.h" />
     <ClInclude Include="Source\Library\gamecore.h" />

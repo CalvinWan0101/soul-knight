@@ -2,10 +2,10 @@
 #include "weapon.h"
 #include "../utils/rotatable_object.h"
 
-class Gun : public Weapon {
+class RangedWeapon : public Weapon {
 public:
-    Gun();
-    Gun(Point point);
+    RangedWeapon();
+    RangedWeapon(Point point);
     void Start() override;
     void Update() override;
     void Attack() override = 0;

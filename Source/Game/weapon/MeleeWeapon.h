@@ -1,10 +1,10 @@
 ﻿#pragma once
 #include "weapon.h"
 
-class Knife : public Weapon{
+class MeleeWeapon : public Weapon{
 public:
-    Knife();
-    Knife(Point point);
+    MeleeWeapon();
+    MeleeWeapon(Point point);
     void Start() override;
     void Update() override;
     void Attack() override = 0;

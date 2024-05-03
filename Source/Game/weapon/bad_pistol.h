@@ -1,7 +1,7 @@
 ﻿#pragma once
-#include "gun.h"
+#include "RangedWeapon.h"
 
-class BadPistol : public Gun {
+class BadPistol : public RangedWeapon {
 public:
     BadPistol();
     BadPistol(Point point);

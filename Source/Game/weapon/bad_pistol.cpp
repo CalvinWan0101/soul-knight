@@ -7,7 +7,7 @@
 BadPistol::BadPistol() {
 }
 
-BadPistol::BadPistol(Point point) : Gun(point) {
+BadPistol::BadPistol(Point point) : RangedWeapon(point) {
 }
 
 Weapon* BadPistol::Copy() {
@@ -19,11 +19,11 @@ void BadPistol::Start() {
     damage = 3;
     SetImages("Resources/weapon/bad_pistol/", 3, RGB(255, 255, 255));
     SetAttackAnimation({-0.8, -0.4, 0}, 0.5);
-    Gun::Start();
+    RangedWeapon::Start();
 }
 
 void BadPistol::Update() {
-    Gun::Update();
+    RangedWeapon::Update();
 }
 
 void BadPistol::Attack() {
