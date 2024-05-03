@@ -1,5 +1,5 @@
 /*
- * mygame.h: 本檔案儲遊戲本身的class的interface
+ * mygame.h: ￠FFFD???????x?C??￠FFFD?????class??interface
  * Copyright (C) 2002-2008 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *
  * This file is part of game, a free game development framework for windows.
@@ -38,12 +38,12 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
-#include "character/player/knight.h"
-#include "character/player.h"
-#include "character/monster.h"
-#include "character/monster/floor_1/goblin_giant.h"
-#include "manager/object_manager.h"
-#include "manager/stage_manager.h"
+#include "character/player/Knight.h"
+#include "character/Player.h"
+#include "character/Monster.h"
+#include "character/monster/floor_1/GoblinGiant.h"
+#include "manager/ObjectManager.h"
+#include "manager/StageManager.h"
 
 namespace game_framework {
     /////////////////////////////////////////////////////////////////////////////
@@ -51,7 +51,7 @@ namespace game_framework {
     /////////////////////////////////////////////////////////////////////////////
 
     enum AUDIO_ID {
-        // 定義各種音效的編號
+        // ?w?q?U?????????s??
         AUDIO_DING,
         // 0
         AUDIO_LAKE,
@@ -60,65 +60,65 @@ namespace game_framework {
     };
 
     /////////////////////////////////////////////////////////////////////////////
-    // 這個class為遊戲的遊戲開頭畫面物件
-    // 每個Member function的Implementation都要弄懂
+    // ?o??class?￠FFFX?C?????C???}?Y?e?????￠FFFD?
+    // ?C??Member function??Implementation?￠FFFG?n??????
     /////////////////////////////////////////////////////////////////////////////
 
     class CGameStateInit : public CGameState {
     public:
         CGameStateInit(CGame* g);
-        void OnInit(); // 遊戲的初值及圖形設定
-        void OnBeginState(); // 設定每次重玩所需的變數
-        void OnKeyUp(UINT, UINT, UINT); // 處理鍵盤Up的動作
-        void OnLButtonDown(UINT nFlags, CPoint point); // 處理滑鼠的動作
+        void OnInit(); // ?C?????????????????]?w
+        void OnBeginState(); // ?]?w?C?????????????????
+        void OnKeyUp(UINT, UINT, UINT); // ?B?z???LUp??￠FFFX????@
+        void OnLButtonDown(UINT nFlags, CPoint point); // ?B?z?P?????￠FFFX????@
     protected:
-        void OnShow(); // 顯示這個狀態的遊戲畫面
+        void OnShow(); // ??￠FFFD??o?????A???C???e???
     private:
         void LoadBackground();
         void DrawText();
-        CMovingBitmap background; // csie的logo
+        CMovingBitmap background; // csie??logo
     };
 
     /////////////////////////////////////////////////////////////////////////////
-    // 這個class為遊戲的遊戲執行物件，主要的遊戲程式都在這裡
-    // 每個Member function的Implementation都要弄懂
+    // ?o??class?￠FFFX?C?????C??￠FFFX?????￠FFFD??A￠FFFDD?n???C???{???￠FFFG?b?o??
+    // ?C??Member function??Implementation?￠FFFG?n??????
     /////////////////////////////////////////////////////////////////////////////
 
     class CGameStateRun : public CGameState {
     public:
         CGameStateRun(CGame* g);
         ~CGameStateRun();
-        void OnBeginState(); // 設定每次重玩所需的變數
-        void OnInit(); // 遊戲的初值及圖形設定
+        void OnBeginState(); // ?]?w?C?????????????????
+        void OnInit(); // ?C?????????????????]?w
         void OnKeyDown(UINT, UINT, UINT);
         void OnKeyUp(UINT, UINT, UINT);
-        void OnLButtonDown(UINT nFlags, CPoint point); // 處理滑鼠的動作
-        void OnLButtonUp(UINT nFlags, CPoint point); // 處理滑鼠的動作
-        void OnMouseMove(UINT nFlags, CPoint point); // 處理滑鼠的動作 
-        void OnRButtonDown(UINT nFlags, CPoint point); // 處理滑鼠的動作
-        void OnRButtonUp(UINT nFlags, CPoint point); // 處理滑鼠的動作
+        void OnLButtonDown(UINT nFlags, CPoint point); // ?B?z?P?????￠FFFX????@
+        void OnLButtonUp(UINT nFlags, CPoint point); // ?B?z?P?????￠FFFX????@
+        void OnMouseMove(UINT nFlags, CPoint point); // ?B?z?P?????￠FFFX????@ 
+        void OnRButtonDown(UINT nFlags, CPoint point); // ?B?z?P?????￠FFFX????@
+        void OnRButtonUp(UINT nFlags, CPoint point); // ?B?z?P?????￠FFFX????@
     protected:
-        void OnMove(); // 移動遊戲元素
-        void OnShow(); // 顯示這個狀態的遊戲畫面
+        void OnMove(); // ??￠FFFX??C??????
+        void OnShow(); // ??￠FFFD??o?????A???C???e???
         ObjectManager* objectManager = ObjectManager::Instance();
         StageManager* stageManager = StageManager::Instance();
     };
 
     /////////////////////////////////////////////////////////////////////////////
-    // 這個class為遊戲的結束狀態(Game Over)
-    // 每個Member function的Implementation都要弄懂
+    // ?o??class?￠FFFX?C?????????????A(Game Over)
+    // ?C??Member function??Implementation?￠FFFG?n??????
     /////////////////////////////////////////////////////////////////////////////
 
     class CGameStateOver : public CGameState {
     public:
         CGameStateOver(CGame* g);
-        void OnBeginState(); // 設定每次重玩所需的變數
+        void OnBeginState(); // ?]?w?C?????????????????
         void OnInit();
 
     protected:
-        void OnMove(); // 移動遊戲元素
-        void OnShow(); // 顯示這個狀態的遊戲畫面
+        void OnMove(); // ??￠FFFX??C??????
+        void OnShow(); // ??￠FFFD??o?????A???C???e???
     private:
-        int counter; // 倒數之計數器
+        int counter; // ?????????p????
     };
 }

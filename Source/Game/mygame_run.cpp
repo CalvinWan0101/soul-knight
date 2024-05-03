@@ -10,8 +10,8 @@
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
 #include "mygame.h"
-#include "utils/draw/draw.h"
-#include "stage/transfer_gate.h"
+#include "utils/draw/Draw.h"
+#include "stage/TransferGate.h"
 #include "wall\Wall.h"
 
 using namespace game_framework;

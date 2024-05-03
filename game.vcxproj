@@ -239,7 +239,7 @@
     <ClCompile Include="Source\Core\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Source\Game\character\monster.cpp">
+    <ClCompile Include="Source\Game\character\Monster.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -298,7 +298,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\character\player.cpp">
+    <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -357,7 +357,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\manager\object_manager.cpp">
+    <ClCompile Include="Source\Game\manager\ObjectManager.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -416,7 +416,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\manager\stage_manager.cpp">
+    <ClCompile Include="Source\Game\manager\StageManager.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -475,7 +475,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\projectile\bullet.cpp">
+    <ClCompile Include="Source\Game\projectile\Bullet.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -534,8 +534,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\projectile\bullet\arrow.cpp" />
-    <ClCompile Include="Source\Game\character\character.cpp">
+    <ClCompile Include="Source\Game\projectile\bullet\BadPistolBullet.cpp" />
+    <ClCompile Include="Source\Game\character\Character.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -594,8 +594,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\character\monster\floor_1\goblin_giant.cpp" />
-    <ClCompile Include="Source\Game\character\player\knight.cpp">
+    <ClCompile Include="Source\Game\character\monster\floor_1\GoblinGiant.cpp" />
+    <ClCompile Include="Source\Game\character\player\Knight.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -657,8 +657,8 @@
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
-    <ClCompile Include="Source\Game\projectile\projectile.cpp" />
-    <ClCompile Include="Source\Game\projectile\shock_wave.cpp">
+    <ClCompile Include="Source\Game\projectile\Projectile.cpp" />
+    <ClCompile Include="Source\Game\projectile\ShockWave.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -776,8 +776,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\stage\stage.cpp" />
-    <ClCompile Include="Source\Game\stage\stage_factory.cpp">
+    <ClCompile Include="Source\Game\stage\Stage.cpp" />
+    <ClCompile Include="Source\Game\stage\StageFactory.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -836,7 +836,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\stage\stage_implementation\stage_1_1.cpp">
+    <ClCompile Include="Source\Game\stage\stage_implementation\Stage_1_1.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -895,7 +895,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\stage\transfer_gate.cpp">
+    <ClCompile Include="Source\Game\stage\TransferGate.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -954,7 +954,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\draw\draw.cpp">
+    <ClCompile Include="Source\Game\utils\draw\Draw.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1013,7 +1013,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\draw\draw_empty_rectangle_command.cpp">
+    <ClCompile Include="Source\Game\utils\draw\DrawEmptyRectangleCommand.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1072,7 +1072,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\draw\draw_rectangle_command.cpp">
+    <ClCompile Include="Source\Game\utils\draw\DrawRectangleCommand.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1131,7 +1131,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\draw\draw_text_command.cpp">
+    <ClCompile Include="Source\Game\utils\draw\DrawTextCommand.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1190,8 +1190,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\hit_box.cpp" />
-    <ClCompile Include="Source\Game\utils\object\game_object.cpp">
+    <ClCompile Include="Source\Game\utils\HitBox.cpp" />
+    <ClCompile Include="Source\Game\utils\object\GameObject.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1250,7 +1250,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\object\general_object.cpp">
+    <ClCompile Include="Source\Game\utils\object\GeneralObject.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1309,7 +1309,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\object\invisible_object.cpp">
+    <ClCompile Include="Source\Game\utils\object\InvisibleObject.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1368,7 +1368,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\object\once_animation_object.cpp">
+    <ClCompile Include="Source\Game\utils\object\OnceAnimationObject.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1427,7 +1427,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\object\rotatable_object.cpp">
+    <ClCompile Include="Source\Game\utils\object\RotatableObject.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1486,8 +1486,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\utils\point.cpp" />
-    <ClCompile Include="Source\Game\utils\vec.cpp" />
+    <ClCompile Include="Source\Game\utils\Point.cpp" />
+    <ClCompile Include="Source\Game\utils\Vec.cpp" />
     <ClCompile Include="Source\Game\wall\Wall.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\Hammer.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -1679,39 +1679,39 @@
     <ClInclude Include="Source\Core\MainFrm.h" />
     <ClInclude Include="Source\Core\Resource.h" />
     <ClInclude Include="Source\Core\StdAfx.h" />
-    <ClInclude Include="Source\Game\character\monster.h" />
-    <ClInclude Include="Source\Game\character\player.h" />
-    <ClInclude Include="Source\Game\manager\object_manager.h" />
-    <ClInclude Include="Source\Game\manager\stage_manager.h" />
-    <ClInclude Include="Source\Game\projectile\bullet.h" />
-    <ClInclude Include="Source\Game\projectile\bullet\arrow.h" />
-    <ClInclude Include="Source\Game\character\character.h" />
-    <ClInclude Include="Source\Game\character\monster\floor_1\goblin_giant.h" />
-    <ClInclude Include="Source\Game\character\player\knight.h" />
+    <ClInclude Include="Source\Game\character\Monster.h" />
+    <ClInclude Include="Source\Game\character\Player.h" />
+    <ClInclude Include="Source\Game\manager\ObjectManager.h" />
+    <ClInclude Include="Source\Game\manager\StageManager.h" />
+    <ClInclude Include="Source\Game\projectile\Bullet.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\BadPistolBullet.h" />
+    <ClInclude Include="Source\Game\character\Character.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\GoblinGiant.h" />
+    <ClInclude Include="Source\Game\character\player\Knight.h" />
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
-    <ClInclude Include="Source\Game\projectile\projectile.h" />
-    <ClInclude Include="Source\Game\projectile\shock_wave.h" />
+    <ClInclude Include="Source\Game\projectile\Projectile.h" />
+    <ClInclude Include="Source\Game\projectile\ShockWave.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
-    <ClInclude Include="Source\Game\stage\stage.h" />
-    <ClInclude Include="Source\Game\stage\stage_factory.h" />
-    <ClInclude Include="Source\Game\stage\stage_implementation\stage_1_1.h" />
-    <ClInclude Include="Source\Game\stage\transfer_gate.h" />
-    <ClInclude Include="Source\Game\utils\draw\draw.h" />
-    <ClInclude Include="Source\Game\utils\draw\draw_command.h" />
-    <ClInclude Include="Source\Game\utils\draw\draw_empty_rectangle_command.h" />
-    <ClInclude Include="Source\Game\utils\draw\draw_rectangle_command.h" />
-    <ClInclude Include="Source\Game\utils\draw\draw_text_command.h" />
-    <ClInclude Include="Source\Game\utils\event.hpp" />
-    <ClInclude Include="Source\Game\utils\hit_box.h" />
-    <ClInclude Include="Source\Game\utils\object\game_object.h" />
-    <ClInclude Include="Source\Game\utils\object\general_object.h" />
-    <ClInclude Include="Source\Game\utils\object\invisible_object.h" />
-    <ClInclude Include="Source\Game\utils\object\once_animation_object.h" />
-    <ClInclude Include="Source\Game\utils\object\rotatable_object.h" />
-    <ClInclude Include="Source\Game\utils\point.h" />
-    <ClInclude Include="Source\Game\utils\tag.h" />
-    <ClInclude Include="Source\Game\utils\vec.h" />
+    <ClInclude Include="Source\Game\stage\Stage.h" />
+    <ClInclude Include="Source\Game\stage\StageFactory.h" />
+    <ClInclude Include="Source\Game\stage\stage_implementation\Stage_1_1.h" />
+    <ClInclude Include="Source\Game\stage\TransferGate.h" />
+    <ClInclude Include="Source\Game\utils\draw\Draw.h" />
+    <ClInclude Include="Source\Game\utils\draw\DrawCommand.h" />
+    <ClInclude Include="Source\Game\utils\draw\DrawEmptyRectangleCommand.h" />
+    <ClInclude Include="Source\Game\utils\draw\DrawRectangleCommand.h" />
+    <ClInclude Include="Source\Game\utils\draw\DrawTextCommand.h" />
+    <ClInclude Include="Source\Game\utils\Event.hpp" />
+    <ClInclude Include="Source\Game\utils\HitBox.h" />
+    <ClInclude Include="Source\Game\utils\object\GameObject.h" />
+    <ClInclude Include="Source\Game\utils\object\GeneralObject.h" />
+    <ClInclude Include="Source\Game\utils\object\InvisibleObject.h" />
+    <ClInclude Include="Source\Game\utils\object\OnceAnimationObject.h" />
+    <ClInclude Include="Source\Game\utils\object\RotatableObject.h" />
+    <ClInclude Include="Source\Game\utils\Point.h" />
+    <ClInclude Include="Source\Game\utils\Tag.h" />
+    <ClInclude Include="Source\Game\utils\Vec.h" />
     <ClInclude Include="Source\Game\wall\Wall.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hammer.h" />
     <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />

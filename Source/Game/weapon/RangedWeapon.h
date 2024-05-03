@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "weapon.h"
-#include "../utils/object/rotatable_object.h"
+#include "../utils/object/RotatableObject.h"
 
 class RangedWeapon : public Weapon {
 public:

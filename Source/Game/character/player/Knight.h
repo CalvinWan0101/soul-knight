@@ -1,8 +1,9 @@
 #pragma once
-#include "../ShockWave.h"
+#include "../Player.h"
 
-class HammerWave : public ShockWave{
+class Knight : public Player {
 public:
+    Knight();
     void Start() override;
     void Update() override;
 };

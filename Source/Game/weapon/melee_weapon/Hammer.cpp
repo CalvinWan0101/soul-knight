@@ -1,9 +1,9 @@
 ﻿#include "stdafx.h"
 #include "Hammer.h"
 
-#include "../../projectile/shock_wave.h"
+#include "../../projectile/ShockWave.h"
 #include "../../projectile/shock_wave/HammerWave.h"
-#include "../../manager/object_manager.h"
+#include "../../manager/ObjectManager.h"
 
 Hammer::Hammer() {
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "../utils/object/invisible_object.h"
+#include "../utils/object/InvisibleObject.h"
 
 class Wall : public InvisibleObject{
 public:

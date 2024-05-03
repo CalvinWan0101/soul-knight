@@ -1,8 +1,8 @@
 ﻿#include "stdafx.h"
 #include "BadPistol.h"
 
-#include "../../projectile/bullet/arrow.h"
-#include "../../manager/object_manager.h"
+#include "../../projectile/bullet/BadPistolBullet.h"
+#include "../../manager/ObjectManager.h"
 
 BadPistol::BadPistol() {
 }
@@ -27,7 +27,7 @@ void BadPistol::Update() {
 }
 
 void BadPistol::Attack() {
-    Bullet* bullet = new Arrow();
+    Bullet* bullet = new BadPistolBullet();
     bullet->SetSpeed(rotation, 1);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
