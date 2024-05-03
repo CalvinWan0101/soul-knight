@@ -39,11 +39,11 @@
 */
 
 #include "character/player/knight.h"
-#include "character/player/player.h"
-#include "character/monster/monster.h"
+#include "character/player.h"
+#include "character/monster.h"
 #include "character/monster/floor_1/goblin_giant.h"
-#include "utils/object_manager.h"
-#include "utils/stage_manager.h"
+#include "manager/object_manager.h"
+#include "manager/stage_manager.h"
 
 namespace game_framework {
     /////////////////////////////////////////////////////////////////////////////

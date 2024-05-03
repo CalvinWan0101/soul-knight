@@ -10,9 +10,9 @@
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
 #include "mygame.h"
-#include "utils/draw.h"
-#include "utils/transfer_gate.h"
-#include "wall\wall.h"
+#include "utils/draw/draw.h"
+#include "stage/transfer_gate.h"
+#include "wall\Wall.h"
 
 using namespace game_framework;
 
@@ -55,26 +55,26 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) {
     objectManager->KeyUp(nChar);
 }
 
-void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point) // 處理滑鼠的動作
+void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point) // ?B?z·?????°?§@
 {
     objectManager->SetLButtonPress(true);
 }
 
-void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point) // 處理滑鼠的動作
+void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point) // ?B?z·?????°?§@
 {
     objectManager->SetLButtonPress(false);
 }
 
-void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point) // 處理滑鼠的動作
+void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point) // ?B?z·?????°?§@
 {
     objectManager->SetPlayerVision(Point(point.x, point.y) - Point(SIZE_X / 2, SIZE_Y / 2));
 }
 
-void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point) // 處理滑鼠的動作
+void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point) // ?B?z·?????°?§@
 {
 }
 
-void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // 處理滑鼠的動作
+void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // ?B?z·?????°?§@
 {
 }
 

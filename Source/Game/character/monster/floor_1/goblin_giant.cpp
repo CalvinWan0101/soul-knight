@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "goblin_giant.h"
-#include "../../../weapon/bad_pistol.h"
-#include "../../../weapon/hammer.h"
+#include "../../../weapon/ranged_weapon/BadPistol.h"
+#include "../../../weapon/melee_weapon/Hammer.h"
 
 void GoblinGiant::Start() {
     this->AddAnimation({

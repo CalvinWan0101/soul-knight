@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "knight.h"
 
-#include "../../weapon/hammer.h"
-#include "..\..\weapon\bad_pistol.h"
+#include "../../weapon/melee_weapon/Hammer.h"
+#include "../../weapon/ranged_weapon/BadPistol.h"
 
 Knight::Knight() {
     maxHp = 30;

@@ -1,5 +1,5 @@
 #pragma once
-#include "bullet.h"
+#include "../bullet.h"
 
 class Arrow : public Bullet {
 public:

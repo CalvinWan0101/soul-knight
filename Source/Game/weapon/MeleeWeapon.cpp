@@ -1,6 +1,6 @@
 ﻿#include "stdafx.h"
 #include "MeleeWeapon.h"
-#include "../character/player/player.h"
+#include "../character/player.h"
 
 
 MeleeWeapon::MeleeWeapon() {

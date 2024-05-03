@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "stage.h"
 
-#include "../utils/object_manager.h"
-#include "../wall/wall.h"
+#include "../manager/object_manager.h"
+#include "../wall/Wall.h"
 
 Stage::Stage() {
     

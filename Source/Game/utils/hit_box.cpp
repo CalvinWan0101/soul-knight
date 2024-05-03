@@ -2,7 +2,7 @@
 #include "hit_box.h"
 #include <cmath>
 
-#include "draw.h"
+#include "draw/draw.h"
 #include "../config.h"
 
 HitBox::HitBox(Point& authorPoint) : authorPoint(authorPoint) {

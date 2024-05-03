@@ -1,5 +1,5 @@
 #pragma once
-#include "..\utils\general_object.h"
+#include "../utils/object/general_object.h"
 #include "../weapon/weapon.h"
 
 class Character : public GeneralObject {
