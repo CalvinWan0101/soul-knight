@@ -5,7 +5,7 @@
 #include "../stage/TransferGate.h"
 #include "../projectile/Bullet.h"
 #include "../stage/Stage.h"
-#include "../stage/stage_implementation/Stage_1_1.h"
+#include "../stage/implementation/Stage_1_1.h"
 
 using std::vector;
 

@@ -5,7 +5,7 @@
 #include "../projectile/Bullet.h"
 #include "Player.h"
 
-Monster::Monster() {
+Monster::Monster(double level): level(level) {
     AddTag(Tag::MONSTER);
 }
 

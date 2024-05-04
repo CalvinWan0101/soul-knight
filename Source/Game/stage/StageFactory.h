@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "stage_implementation/Stage_1_1.h"
+#include "implementation/Stage_1_1.h"
 
 class Stage;
 

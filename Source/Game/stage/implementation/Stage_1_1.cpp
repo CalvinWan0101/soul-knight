@@ -5,6 +5,7 @@
 #include "../../character/Player.h"
 #include <iostream>
 
+#include "../../character/MonsterFactory.h"
 #include "../../character/monster/floor_1/GoblinGiant.h"
 #include "../../weapon/melee_weapon/Hammer.h"
 
@@ -107,10 +108,10 @@ void Stage_1_1::SetRoom1() {
     ObjectManager::Instance()->AddObject(wall2);
     ObjectManager::Instance()->AddObject(wall3);
 
-    Monster* monster1 = new GoblinGiant();
+    Monster* monster1 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
     monster1->SetPosition(Point(600, 200) - centerOffect);
     monsters.push_back(monster1);
-    Monster* monster2 = new GoblinGiant();
+    Monster* monster2 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
     monster2->SetPosition(Point(700, 100) - centerOffect);
     monsters.push_back(monster2);
     ObjectManager::Instance()->AddObject(monster1);

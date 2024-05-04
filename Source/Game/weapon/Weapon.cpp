@@ -28,7 +28,7 @@ void Weapon::Update() {
     if (cdCounter > 0) {
         cdCounter--;
         CalcRotationOffset();
-        if (static_cast<double>(cd - cdCounter) / static_cast<double>(cd) >= attackTiming && isAttack == false) {
+        if (static_cast<double>(frameCd - cdCounter) / static_cast<double>(frameCd) >= attackTiming && isAttack == false) {
             isAttack = true;
             Attack();
         }
@@ -37,7 +37,7 @@ void Weapon::Update() {
 
 void Weapon::DefaultAttack() {
     if (cdCounter == 0) {
-        cdCounter = cd;
+        cdCounter = frameCd;
         isAttack = false;
         attackFace = (rotation.GetRadian() > PI) ? 1 : -1;
     }
@@ -48,11 +48,11 @@ void Weapon::Aim(Vec* direction) {
 
 }
 
-void Weapon::SetAttackAnimation(vector<double> attackRotationOffsetList, double cd, double attackTiming) {
-    SetCd(cd);
+void Weapon::SetAttackAnimation(vector<double> attackRotationOffsetList, double second, double attackTiming) {
+    SetFrameCd(second);
     this->attackTiming = attackTiming;
     attackRotationOffsetList.emplace_back(0);
-    int step = this->cd / static_cast<int>(attackRotationOffsetList.size());
+    int step = this->frameCd / static_cast<int>(attackRotationOffsetList.size());
     this->attackRotationOffsetList = attackRotationOffsetList;
     this->attackRotationOffsetList[0] = attackRotationOffsetList[0] / static_cast<double>(step);
     for (int i = 0 ; i < static_cast<int>(attackRotationOffsetList.size() - 1) ; i++) {
@@ -60,13 +60,8 @@ void Weapon::SetAttackAnimation(vector<double> attackRotationOffsetList, double 
     }
 }
 
-// Set cd by second
-void Weapon::SetCd(double cd) {
-    this->cd = static_cast<int>(cd * 50);
-}
-
-double Weapon::GetCd() {
-    return static_cast<double>(cd) / 50;
+void Weapon::SetFrameCd(double second) {
+    this->frameCd = static_cast<int>(second * 50);
 }
 
 int Weapon::GetDamage() {
@@ -78,12 +73,12 @@ int Weapon::GetMpCost() {
 }
 
 void Weapon::CalcRotationOffset() {
-    int step = this->cd / static_cast<int>(attackRotationOffsetList.size());
-    if (cd - cdCounter > step * static_cast<int>(attackRotationOffsetList.size())) {
+    int step = this->frameCd / static_cast<int>(attackRotationOffsetList.size());
+    if (frameCd - cdCounter > step * static_cast<int>(attackRotationOffsetList.size())) {
         attackRotationOffset = 0;
     }
     else {
-        attackRotationOffset += attackRotationOffsetList[(cd - cdCounter - 1) / step];
+        attackRotationOffset += attackRotationOffsetList[(frameCd - cdCounter - 1) / step];
     }
 }
 

@@ -5,7 +5,7 @@ class Player;
 
 class Monster : public Character {
 public:
-    Monster();
+    Monster(double level);
     void Start() override;
     void Update() override;
     void Collision(GameObject* gameObject) override;
@@ -15,6 +15,7 @@ public:
 
 protected:
     double maxSpeed;
+    double level;
 private:
     Player* player = nullptr;
 };

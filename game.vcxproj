@@ -298,6 +298,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\MonsterFactory.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -836,7 +837,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Game\stage\stage_implementation\Stage_1_1.cpp">
+    <ClCompile Include="Source\Game\stage\implementation\Stage_1_1.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
@@ -1680,6 +1681,8 @@
     <ClInclude Include="Source\Core\Resource.h" />
     <ClInclude Include="Source\Core\StdAfx.h" />
     <ClInclude Include="Source\Game\character\Monster.h" />
+    <ClInclude Include="Source\Game\character\MonsterFactory.h" />
+    <ClInclude Include="Source\Game\character\MonsterType.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
@@ -1695,7 +1698,7 @@
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
     <ClInclude Include="Source\Game\stage\Stage.h" />
     <ClInclude Include="Source\Game\stage\StageFactory.h" />
-    <ClInclude Include="Source\Game\stage\stage_implementation\Stage_1_1.h" />
+    <ClInclude Include="Source\Game\stage\implementation\Stage_1_1.h" />
     <ClInclude Include="Source\Game\stage\TransferGate.h" />
     <ClInclude Include="Source\Game\utils\draw\Draw.h" />
     <ClInclude Include="Source\Game\utils\draw\DrawCommand.h" />

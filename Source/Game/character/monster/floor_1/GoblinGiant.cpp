@@ -3,6 +3,12 @@
 #include "../../../weapon/ranged_weapon/BadPistol.h"
 #include "../../../weapon/melee_weapon/Hammer.h"
 
+GoblinGiant::GoblinGiant() : Monster(1) {
+}
+
+GoblinGiant::GoblinGiant(double level) : Monster(level) {
+}
+
 void GoblinGiant::Start() {
     this->AddAnimation({
                            "resources/monster/floor_1/goblin_giant/idle/1.bmp",
@@ -36,7 +42,7 @@ void GoblinGiant::Start() {
                }, RGB(255, 255, 255), 100, false);
     
     this->speed.SetVec(0.0, 0.0);
-    this->maxHp = 30;
+    this->maxHp = 30 * level;
     this->maxSpeed = 3;
     this->hp = maxHp;
     // TODO: Replace bad pistol with the correct weapon
