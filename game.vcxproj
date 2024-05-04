@@ -777,6 +777,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\stage\Room.cpp" />
     <ClCompile Include="Source\Game\stage\Stage.cpp" />
     <ClCompile Include="Source\Game\stage\StageFactory.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -1696,6 +1697,8 @@
     <ClInclude Include="Source\Game\projectile\Projectile.h" />
     <ClInclude Include="Source\Game\projectile\ShockWave.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
+    <ClInclude Include="Source\Game\stage\Room.h" />
+    <ClInclude Include="Source\Game\stage\RoomSize.h" />
     <ClInclude Include="Source\Game\stage\Stage.h" />
     <ClInclude Include="Source\Game\stage\StageFactory.h" />
     <ClInclude Include="Source\Game\stage\implementation\Stage_1_1.h" />

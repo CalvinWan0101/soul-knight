@@ -25,10 +25,8 @@ StageManager::~StageManager() {
 }
 
 void StageManager::Update() {
-    gameStage->DetectRoom1();
-    gameStage->DetectRoom2();
-    gameStage->DetectRoom1Cleared();
-    gameStage->DetectRoom2Cleared();
+    gameStage->IsInsideRoom();
+    gameStage->IsRoomCleared();
 }
 
 Stage* StageManager::GetStage() {
@@ -51,7 +49,7 @@ void StageManager::NextStage() {
         level = 1;
         stage = 1;
     }
-    
+
     gameStage = StageFactory::Create(level, stage);
 
     // For testing

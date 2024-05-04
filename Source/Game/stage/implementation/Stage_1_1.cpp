@@ -5,13 +5,21 @@
 #include "../../character/Player.h"
 #include <iostream>
 
+#include "../RoomSize.h"
 #include "../../character/MonsterFactory.h"
 #include "../../character/monster/floor_1/GoblinGiant.h"
 #include "../../weapon/melee_weapon/Hammer.h"
 
 Stage_1_1::Stage_1_1() {
     background.LoadBitmapByString({"resources/map/1-1.bmp"}, RGB(255, 255, 255));
-    centerOffect = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
+    centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
+
+    Monster* monster1 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    monster1->SetPosition(Point(600, 200) - centerOffset);
+    Monster* monster2 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    monster2->SetPosition(Point(700, 100) - centerOffset);
+    rooms.push_back(new Room(Point(528, 0), centerOffset, RoomSize::LARGE_SIZE,
+                             std::vector<Monster*>{monster1, monster2}));
 }
 
 Stage_1_1::~Stage_1_1() = default;
@@ -54,70 +62,4 @@ void Stage_1_1::SetTransferGate() {
 }
 
 void Stage_1_1::GenerateObstacle() {
-}
-
-void Stage_1_1::DetectRoom1() {
-    double x = ObjectManager::Instance()->GetPlayer()->GetPosition().GetX() + centerOffect.GetX();
-    double y = ObjectManager::Instance()->GetPlayer()->GetPosition().GetY() + centerOffect.GetY();
-    if (!isInRoom1 && !room1Cleared && x >= 528 && x <= 896 && y >= -1 && y <= 367) {
-        isInRoom1 = true;
-        SetRoom1();
-    }
-}
-
-void Stage_1_1::DetectRoom2() {
-    // 1-1 has only one room
-}
-
-void Stage_1_1::DetectRoom1Cleared() {
-    if (!isInRoom1 || room1Cleared) {
-        return;
-    }
-
-    for (auto monster : monsters) {
-        if (!monster->HasTag(Tag::DEAD)) {
-            return;
-        }
-    }
-    
-    room1Cleared = true;
-    for (auto door : doors) {
-        door->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
-    }
-    doors.clear();
-    for (auto monster : monsters) {
-        monster->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
-    }
-    monsters.clear();
-    GameObject* weapon = new Hammer();
-    weapon->SetPosition(Point(700, 100) - centerOffect);
-    ObjectManager::Instance()->AddObject(weapon);
-}
-
-void Stage_1_1::DetectRoom2Cleared() {
-}
-
-void Stage_1_1::SetRoom1() {
-    Wall* wall1 = new Wall(Point(528, 143) - centerOffect, Point(544, 223) - centerOffect);
-    Wall* wall2 = new Wall(Point(673, 352) - centerOffect, Point(751, 367) - centerOffect);
-    Wall* wall3 = new Wall(Point(880, 145) - centerOffect, Point(896, 223) - centerOffect);
-    doors.push_back(wall1);
-    doors.push_back(wall2);
-    doors.push_back(wall3);
-    ObjectManager::Instance()->AddObject(wall1);
-    ObjectManager::Instance()->AddObject(wall2);
-    ObjectManager::Instance()->AddObject(wall3);
-
-    Monster* monster1 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
-    monster1->SetPosition(Point(600, 200) - centerOffect);
-    monsters.push_back(monster1);
-    Monster* monster2 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
-    monster2->SetPosition(Point(700, 100) - centerOffect);
-    monsters.push_back(monster2);
-    ObjectManager::Instance()->AddObject(monster1);
-    ObjectManager::Instance()->AddObject(monster2);
-}
-
-void Stage_1_1::SetRoom2() {
-    // 1-1 has only one room
 }
