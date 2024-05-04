@@ -1,6 +1,5 @@
 ﻿#include "stdafx.h"
 #include "GoblinGiant.h"
-#include "../../../weapon/ranged_weapon/BadPistol.h"
 #include "../../../weapon/melee_weapon/Hammer.h"
 
 GoblinGiant::GoblinGiant(double level = 1) : Monster(level) {
@@ -42,7 +41,6 @@ void GoblinGiant::Start() {
     this->maxHp = 30 * level;
     this->maxSpeed = 3;
     this->hp = maxHp;
-    // TODO: Replace bad pistol with the correct weapon
     this->SetWeapon(new Hammer());
     Monster::Start();
 }
