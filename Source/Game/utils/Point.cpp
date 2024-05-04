@@ -40,6 +40,10 @@ void Point::SetPoint(double x, double y) {
     this->y = y;
 }
 
+double Point::Distance(Point& point) {
+    return sqrt(pow(x - point.x, 2) + pow(y - point.y, 2));
+}
+
 Point Point::operator +(Point& point) const {
     return Point{x + point.x, y + point.y};
 }

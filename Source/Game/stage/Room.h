@@ -22,4 +22,5 @@ private:
     std::vector<Monster*> monsters;
     void SetMonsters();
     void SetDoors();
+    void RelocatePlayerToNearestEdge();
 };

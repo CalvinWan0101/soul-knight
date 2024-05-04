@@ -14,6 +14,8 @@ public:
     void SetY(double y);
     void SetPoint(double x, double y);
 
+    double Distance(Point& point);
+
     Point operator +(Point& point) const;
     Vec operator -(Point& point) const;
     Point operator +(Vec& vec) const;

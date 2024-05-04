@@ -1,5 +1,8 @@
 ﻿#include "stdafx.h"
 #include "Room.h"
+
+#include <iostream>
+
 #include "../wall/Wall.h"
 #include "../character/Monster.h"
 #include "../character/Player.h"
@@ -17,9 +20,10 @@ void Room::IsInside() {
     if (!isInside && !isCleared && x >= topLeft.GetX() && x <= topLeft.GetX() + 16 * (size + 2) && y >= topLeft.GetY()
         && y <= topLeft.GetY() + 16 * (size + 2)) {
         isInside = true;
+        // TODO: Move player inside the room
+        RelocatePlayerToNearestEdge();
         SetDoors();
         SetMonsters();
-        // TODO: Move player inside the room
     }
 }
 
@@ -63,4 +67,25 @@ void Room::SetDoors() {
     ObjectManager::Instance()->AddObject(rightDoor);
     ObjectManager::Instance()->AddObject(topDoor);
     ObjectManager::Instance()->AddObject(bottomDoor);
+}
+
+void Room::RelocatePlayerToNearestEdge() {
+    double x = topLeft.GetX() - centerOffset.GetX();
+    double y = topLeft.GetY() - centerOffset.GetY();
+    Point left = Point(x + 16, y + 16 * (size / 2 + 1));
+    Point top = Point(x + 16 * (size / 2 + 1), y + 16);
+    Point right = Point(x + 16 * (size + 1), y + 16 * (size / 2 + 1));
+    Point bottom = Point(x + 16 * (size / 2 + 1), y + 16 * (size + 1));
+
+    std::vector<Point> middlePoints = {left, top, right, bottom};
+    Point playerPosition = ObjectManager::Instance()->GetPlayer()->GetPosition();
+    Point result;
+    double minDistance = 100000;
+    for (auto point : middlePoints) {
+        if (playerPosition.Distance(point) < minDistance) {
+            minDistance = playerPosition.Distance(point);
+            result = point;
+        }
+    }
+    ObjectManager::Instance()->GetPlayer()->SetPosition(result);
 }
