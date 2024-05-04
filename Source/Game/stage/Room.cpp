@@ -3,13 +3,14 @@
 #include <random>
 #include "../wall/Wall.h"
 #include "../character/Monster.h"
+#include "../character/MonsterFactory.h"
 #include "../character/Player.h"
 #include "../manager/ObjectManager.h"
 
-Room::Room(Point topLeft, Vec centerOffset, RoomSize size, std::vector<Monster*> monsters): topLeft(topLeft),
+Room::Room(Point topLeft, Vec centerOffset, RoomSize size, std::map<MonsterType, int> monsterMap): topLeft(topLeft),
     centerOffset(centerOffset),
     size((int)size),
-    monsters(monsters) {
+    monsterMap(monsterMap) {
 }
 
 void Room::IsInside() {
@@ -44,6 +45,18 @@ void Room::IsCleared() {
 }
 
 void Room::SetMonsters() {
+    for (auto monster : monsterMap) {
+        for (int i = 0; i < monster.second; i++) {
+            monsters.push_back(MonsterFactory::CreateMonster(monster.first, 1));
+        }
+    }
+    PlacedMonster();
+    for (auto monster : monsters) {
+        ObjectManager::Instance()->AddObject(monster);
+    }
+}
+
+void Room::PlacedMonster() {
     std::random_device rd;
     std::mt19937 gen(rd());
 
@@ -57,10 +70,6 @@ void Room::SetMonsters() {
 
     for (auto monster : monsters) {
         monster->SetPosition(Point(disX(gen), disY(gen)));
-    }
-
-    for (auto monster : monsters) {
-        ObjectManager::Instance()->AddObject(monster);
     }
 }
 
