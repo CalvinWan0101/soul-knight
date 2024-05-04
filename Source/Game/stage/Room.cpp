@@ -1,8 +1,6 @@
 ﻿#include "stdafx.h"
 #include "Room.h"
-
-#include <iostream>
-
+#include <random>
 #include "../wall/Wall.h"
 #include "../character/Monster.h"
 #include "../character/Player.h"
@@ -20,7 +18,6 @@ void Room::IsInside() {
     if (!isInside && !isCleared && x >= topLeft.GetX() && x <= topLeft.GetX() + 16 * (size + 2) && y >= topLeft.GetY()
         && y <= topLeft.GetY() + 16 * (size + 2)) {
         isInside = true;
-        // TODO: Move player inside the room
         RelocatePlayerToNearestEdge();
         SetDoors();
         SetMonsters();
@@ -47,6 +44,21 @@ void Room::IsCleared() {
 }
 
 void Room::SetMonsters() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    double minX = topLeft.GetX() + 16 - centerOffset.GetX();
+    double minY = topLeft.GetY() + 16 - centerOffset.GetY();
+    double maxX = topLeft.GetX() + 16 * size - centerOffset.GetX();
+    double maxY = topLeft.GetY() + 16 * size - centerOffset.GetY();
+
+    std::uniform_int_distribution<> disX(minX, maxX - 1);
+    std::uniform_int_distribution<> disY(minY, maxY - 1);
+
+    for (auto monster : monsters) {
+        monster->SetPosition(Point(disX(gen), disY(gen)));
+    }
+
     for (auto monster : monsters) {
         ObjectManager::Instance()->AddObject(monster);
     }

@@ -14,12 +14,21 @@ Stage_1_1::Stage_1_1() {
     background.LoadBitmapByString({"resources/map/1-1.bmp"}, RGB(255, 255, 255));
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
-    Monster* monster1 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
-    monster1->SetPosition(Point(600, 200) - centerOffset);
-    Monster* monster2 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
-    monster2->SetPosition(Point(700, 100) - centerOffset);
+    Monster* monster01 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster02 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster03 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster04 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster05 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster06 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster07 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster08 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster09 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
+    Monster* monster10 = MonsterFactory::CreateMonster(MonsterType::GOBLIN_GIANT, 1);
     rooms.push_back(new Room(Point(528, 0), centerOffset, RoomSize::LARGE_SIZE,
-                             std::vector<Monster*>{monster1, monster2}));
+                             std::vector<Monster*>{
+                                 monster01, monster02, monster03, monster04, monster05, monster06, monster07, monster08,
+                                 monster09, monster10
+                             }));
 }
 
 Stage_1_1::~Stage_1_1() = default;
