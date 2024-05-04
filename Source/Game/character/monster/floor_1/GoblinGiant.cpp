@@ -3,10 +3,7 @@
 #include "../../../weapon/ranged_weapon/BadPistol.h"
 #include "../../../weapon/melee_weapon/Hammer.h"
 
-GoblinGiant::GoblinGiant() : Monster(1) {
-}
-
-GoblinGiant::GoblinGiant(double level) : Monster(level) {
+GoblinGiant::GoblinGiant(double level = 1) : Monster(level) {
 }
 
 void GoblinGiant::Start() {
@@ -17,11 +14,11 @@ void GoblinGiant::Start() {
                            "resources/monster/floor_1/goblin_giant/idle/4.bmp"
                        }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
-                       "resources/monster/floor_1/goblin_giant/idle/flip_1.bmp",
-                       "resources/monster/floor_1/goblin_giant/idle/flip_2.bmp",
-                       "resources/monster/floor_1/goblin_giant/idle/flip_3.bmp",
-                       "resources/monster/floor_1/goblin_giant/idle/flip_4.bmp"
-                   }, RGB(255, 255, 255), 100, false);
+                           "resources/monster/floor_1/goblin_giant/idle/flip_1.bmp",
+                           "resources/monster/floor_1/goblin_giant/idle/flip_2.bmp",
+                           "resources/monster/floor_1/goblin_giant/idle/flip_3.bmp",
+                           "resources/monster/floor_1/goblin_giant/idle/flip_4.bmp"
+                       }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
                            "resources/monster/floor_1/goblin_giant/run/1.bmp",
                            "resources/monster/floor_1/goblin_giant/run/2.bmp",
@@ -29,18 +26,18 @@ void GoblinGiant::Start() {
                            "resources/monster/floor_1/goblin_giant/run/4.bmp"
                        }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
-                       "resources/monster/floor_1/goblin_giant/run/flip_1.bmp",
-                       "resources/monster/floor_1/goblin_giant/run/flip_2.bmp",
-                       "resources/monster/floor_1/goblin_giant/run/flip_3.bmp",
-                       "resources/monster/floor_1/goblin_giant/run/flip_4.bmp"
-                   }, RGB(255, 255, 255), 100, false);
+                           "resources/monster/floor_1/goblin_giant/run/flip_1.bmp",
+                           "resources/monster/floor_1/goblin_giant/run/flip_2.bmp",
+                           "resources/monster/floor_1/goblin_giant/run/flip_3.bmp",
+                           "resources/monster/floor_1/goblin_giant/run/flip_4.bmp"
+                       }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
-                       "resources/monster/floor_1/goblin_giant/dead.bmp"
-                   }, RGB(255, 255, 255), 100, false);
+                           "resources/monster/floor_1/goblin_giant/dead.bmp"
+                       }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
-                   "resources/monster/floor_1/goblin_giant/flip_dead.bmp"
-               }, RGB(255, 255, 255), 100, false);
-    
+                           "resources/monster/floor_1/goblin_giant/flip_dead.bmp"
+                       }, RGB(255, 255, 255), 100, false);
+
     this->speed.SetVec(0.0, 0.0);
     this->maxHp = 30 * level;
     this->maxSpeed = 3;
