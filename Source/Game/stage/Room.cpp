@@ -60,8 +60,8 @@ void Room::PlacedMonster() {
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    double minX = topLeft.GetX() + 16 - centerOffset.GetX();
-    double minY = topLeft.GetY() + 16 - centerOffset.GetY();
+    double minX = topLeft.GetX() + 32 - centerOffset.GetX();
+    double minY = topLeft.GetY() + 32 - centerOffset.GetY();
     double maxX = topLeft.GetX() + 16 * size - centerOffset.GetX();
     double maxY = topLeft.GetY() + 16 * size - centerOffset.GetY();
 
