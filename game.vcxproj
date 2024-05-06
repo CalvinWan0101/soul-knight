@@ -1552,6 +1552,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\weapon\melee_weapon\Spear.cpp" />
     <ClCompile Include="Source\Game\weapon\RangedWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\MeleeWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\BadPistol.cpp">
@@ -1724,6 +1725,7 @@
     <ClInclude Include="Source\Game\utils\Vec.h" />
     <ClInclude Include="Source\Game\wall\Wall.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hammer.h" />
+    <ClInclude Include="Source\Game\weapon\melee_weapon\Spear.h" />
     <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />
     <ClInclude Include="Source\Game\weapon\MeleeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
