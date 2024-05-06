@@ -300,6 +300,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\character\MonsterFactory.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\Boar.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\GoblinGuard.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -1686,6 +1687,7 @@
     <ClInclude Include="Source\Game\character\MonsterFactory.h" />
     <ClInclude Include="Source\Game\character\MonsterType.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\Boar.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\GoblinGuard.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
