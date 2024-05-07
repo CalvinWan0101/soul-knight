@@ -27,30 +27,31 @@ Stage_1_1::Stage_1_1() {
 Stage_1_1::~Stage_1_1() = default;
 
 void Stage_1_1::GenerateWall() {
-    AddWall(Point(-100, -100), Point(190, 94));
-    AddWall(Point(191, -100), Point(542, 143));
-    AddWall(Point(-100, 273), Point(192, 412));
-    AddWall(Point(192, 224), Point(544, 352));
-    AddWall(Point(520, 352), Point(672, 703));
-    AddWall(Point(452, 704), Point(591, 1060));
-    AddWall(Point(752, 352), Point(879, 704));
-    AddWall(Point(832, 705), Point(969, 1060));
-    AddWall(Point(880, 224), Point(1232, 368));
-    AddWall(Point(1233, 308), Point(1311, 656));
-    AddWall(Point(1115, 562), Point(1232, 896));
-    AddWall(Point(1120, 896), Point(1636, 1060));
-    AddWall(Point(1471, 656), Point(1642, 895));
-    AddWall(Point(1392, 304), Point(1535, 656));
-    AddWall(Point(1472, 223), Point(1823, 303));
-    AddWall(Point(1824, 272), Point(2116, 344));
-    AddWall(Point(1472, -100), Point(1823, 144));
-    AddWall(Point(1823, -100), Point(2116, 95));
-    AddWall(Point(1233, -100), Point(1471, 64));
-    AddWall(Point(880, -100), Point(1232, 144));
-    AddWall(Point(-100, 95), Point(16, 272));
-    AddWall(Point(592, 944), Point(831, 1060));
-    AddWall(Point(543, -100), Point(879, 16));
-    AddWall(Point(2000, 96), Point(2116, 271));
+    AddWall(Point(192, 0), Point(543, 143));
+    AddWall(Point(192, 224), Point(543, 367));
+    AddWall(Point(0, 80), Point(207, 95));
+    AddWall(Point(0, 80), Point(15, 287));
+    AddWall(Point(0, 272), Point(207, 287));
+    AddWall(Point(528, 352), Point(671, 703));
+    AddWall(Point(895, 352), Point(752, 703));
+    AddWall(Point(576, 688), Point(591, 959));
+    AddWall(Point(832, 688), Point(847, 959));
+    AddWall(Point(576, 944), Point(847, 959));
+    AddWall(Point(528, 0), Point(895, 15));
+
+    AddWall(Point(880, 0), Point(1231, 143));
+    AddWall(Point(880, 367), Point(1231, 224));
+    AddWall(Point(1216, 304), Point(1311, 655));
+    AddWall(Point(1392, 304), Point(1487, 655));
+    AddWall(Point(1216, 48), Point(1487, 63));
+    AddWall(Point(1216, 640), Point(1231, 911));
+    AddWall(Point(1216, 896), Point(1487, 911));
+    AddWall(Point(1472, 640), Point(1487, 911));
+    AddWall(Point(1472, 48), Point(1823, 143));
+    AddWall(Point(1823, 224), Point(1472, 319));
+    AddWall(Point(1808, 80), Point(2015, 95));
+    AddWall(Point(1808, 272), Point(2015, 287));
+    AddWall(Point(2000, 80), Point(2015, 287));
 }
 
 void Stage_1_1::SetPlayerPosition() {
