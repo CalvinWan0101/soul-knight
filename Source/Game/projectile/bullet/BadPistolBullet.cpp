@@ -3,7 +3,7 @@
 #include "../Library/audio.h"
 
 BadPistolBullet::BadPistolBullet() {
-    game_framework::CAudio::Instance()->Play(1);
+    // game_framework::CAudio::Instance()->Play(1);
 }
 
 void BadPistolBullet::Start() {
