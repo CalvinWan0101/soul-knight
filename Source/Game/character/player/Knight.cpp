@@ -2,6 +2,7 @@
 #include "Knight.h"
 
 #include "../../weapon/melee_weapon/Hammer.h"
+#include "../../weapon/melee_weapon/Spear.h"
 #include "../../weapon/ranged_weapon/BadPistol.h"
 
 Knight::Knight() {
@@ -12,7 +13,7 @@ Knight::Knight() {
 void Knight::Start() {
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new BadPistol());
+    ChangeWeapon(new Spear());
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",
