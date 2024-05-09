@@ -21,11 +21,13 @@ void RotatableObject::Update() {
 
 void RotatableObject::Show(Point screenPositoin) {
     SetFrameIndexOfBitmap(rotation.GetRadian());
-    double screenX = this->position.GetX() - screenPositoin.GetX();
-    double screenY = this->position.GetY() - screenPositoin.GetY();
+    double screenX = this->position.GetX() - screenPositoin.GetX() + showOffset.GetX();
+    double screenY = this->position.GetY() - screenPositoin.GetY() + showOffset.GetY();
     cMovingBitmap.SetTopLeft(static_cast<int>(screenX - centerOffset.GetX()),
                                 static_cast<int>(screenY - centerOffset.GetY()));
     cMovingBitmap.ShowBitmap();
+    showOffset.SetX(0);
+    showOffset.SetY(0);
 }
 
 void RotatableObject::Rotate(double radian) {

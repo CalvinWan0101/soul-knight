@@ -17,7 +17,7 @@ Weapon* BadPistol::Copy() {
 void BadPistol::Start() {
     damage = 3;
     SetImages("Resources/weapon/bad_pistol/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({-0.8, -0.4, 0}, 0.1);
+    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
     RangedWeapon::Start();
 }
 
@@ -27,7 +27,7 @@ void BadPistol::Update() {
 
 void BadPistol::Attack() {
     Bullet* bullet = new BadPistolBullet();
-    bullet->SetSpeed(rotation, 20);
+    bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
     bullet->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);

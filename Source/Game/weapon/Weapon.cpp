@@ -27,7 +27,8 @@ void Weapon::Update() {
     RotatableObject::Update();
     if (cdCounter > 0) {
         cdCounter--;
-        CalcRotationOffset();
+        UpdateRotationOffset();
+        UpdateTranslationOffset();
         if (static_cast<double>(frameCd - cdCounter) / static_cast<double>(frameCd) >= attackTiming && isAttack == false) {
             isAttack = true;
             Attack();
@@ -45,18 +46,27 @@ void Weapon::DefaultAttack() {
 
 void Weapon::Aim(Vec* direction) {
     SetRotation(direction->GetRadian() + attackRotationOffset * attackFace);
-
+    Vec translationOffset = this->rotation;
+    translationOffset.SetLength(attackTranslationOffset);
+    this->showOffset = this->showOffset + translationOffset;
 }
 
-void Weapon::SetAttackAnimation(vector<double> attackRotationOffsetList, double second, double attackTiming) {
+void Weapon::SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets , double second, double attackTiming) {
     SetFrameCd(second);
     this->attackTiming = attackTiming;
-    attackRotationOffsetList.emplace_back(0);
-    int step = this->frameCd / static_cast<int>(attackRotationOffsetList.size());
-    this->attackRotationOffsetList = attackRotationOffsetList;
-    this->attackRotationOffsetList[0] = attackRotationOffsetList[0] / static_cast<double>(step);
-    for (int i = 0 ; i < static_cast<int>(attackRotationOffsetList.size() - 1) ; i++) {
-        this->attackRotationOffsetList[i + 1] = (attackRotationOffsetList[i + 1] - attackRotationOffsetList[i]) / static_cast<double>(step);   
+    attackRotationOffsets.emplace_back(0);
+    attackTranslationOffsets.emplace_back(0);
+    int rotationStep = this->frameCd / static_cast<int>(attackRotationOffsets.size());
+    int translationStep = this->frameCd / static_cast<int>(attackTranslationOffsets.size());
+    this->attackRotationOffsets = attackRotationOffsets;
+    this->attackTranslationOffsets = attackTranslationOffsets;
+    this->attackRotationOffsets[0] = attackRotationOffsets[0] / static_cast<double>(rotationStep);
+    this->attackTranslationOffsets[0] = attackTranslationOffsets[0] / static_cast<double>(translationStep);
+    for (int i = 0 ; i < static_cast<int>(attackRotationOffsets.size() - 1) ; i++) {
+        this->attackRotationOffsets[i + 1] = (attackRotationOffsets[i + 1] - attackRotationOffsets[i]) / static_cast<double>(rotationStep);   
+    }
+    for (int i = 0 ; i < static_cast<int>(attackTranslationOffsets.size() - 1) ; i++) {
+        this->attackTranslationOffsets[i + 1] = (attackTranslationOffsets[i + 1] - attackTranslationOffsets[i]) / static_cast<double>(translationStep);   
     }
 }
 
@@ -72,13 +82,24 @@ int Weapon::GetMpCost() {
     return mpCost;
 }
 
-void Weapon::CalcRotationOffset() {
-    int step = this->frameCd / static_cast<int>(attackRotationOffsetList.size());
-    if (frameCd - cdCounter > step * static_cast<int>(attackRotationOffsetList.size())) {
+void Weapon::UpdateRotationOffset() {
+    int step = this->frameCd / static_cast<int>(attackRotationOffsets.size());
+    if (frameCd - cdCounter > step * static_cast<int>(attackRotationOffsets.size())) {
         attackRotationOffset = 0;
     }
     else {
-        attackRotationOffset += attackRotationOffsetList[(frameCd - cdCounter - 1) / step];
+        attackRotationOffset += attackRotationOffsets[(frameCd - cdCounter - 1) / step];
     }
 }
+
+void Weapon::UpdateTranslationOffset() {
+    int step = this->frameCd / static_cast<int>(attackTranslationOffsets.size());
+    if (frameCd - cdCounter > step * static_cast<int>(attackTranslationOffsets.size())) {
+        attackTranslationOffset = 0;
+    }
+    else {
+        attackTranslationOffset += attackTranslationOffsets[(frameCd - cdCounter - 1) / step];
+    }
+}
+
 

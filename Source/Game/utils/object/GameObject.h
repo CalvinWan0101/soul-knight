@@ -41,6 +41,7 @@ protected:
     Vec centerOffset;
     HitBox hitBox;
     Vec speed;
+    Vec showOffset;
     virtual void SetCenter() = 0;
 
 private:

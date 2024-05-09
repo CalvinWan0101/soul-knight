@@ -11,7 +11,7 @@ public:
     void DefaultAttack();
     virtual void Aim(Vec* direction);
     virtual void Attack() = 0;
-    virtual void SetAttackAnimation(vector<double> attackRotationOffsetList, double second, double attackTiming = 0);
+    virtual void SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets ,double second, double attackTiming = 0);
     int GetDamage();
     int GetMpCost();
     
@@ -21,11 +21,14 @@ protected:
     int mpCost;
 private:
     int cdCounter; // minus 1 per frame
-    double attackTiming; // 0 <= attackTiming < 1
+    double attackTiming; // 0 <= attackTiming < 1, percentage of the whole animation 
     bool isAttack;
     double attackFace;
     double attackRotationOffset;
-    vector<double> attackRotationOffsetList;
-    void CalcRotationOffset();
+    vector<double> attackRotationOffsets;
+    double attackTranslationOffset;
+    vector<double> attackTranslationOffsets;
+    void UpdateRotationOffset();
+    void UpdateTranslationOffset();
     void SetFrameCd(double second);
 };

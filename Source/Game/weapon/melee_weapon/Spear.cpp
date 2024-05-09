@@ -20,7 +20,7 @@ Weapon* Spear::Copy() {
 void Spear::Start() {
     damage = 10;
     SetImages("Resources/weapon/spear/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, 0.835, 0.65);
+    SetAttackAnimation({}, {15, 12, 9, 6, 3, 0},0.835, 0.65);
     MeleeWeapon::Start();
 }
 
@@ -29,9 +29,9 @@ void Spear::Update() {
 }
 
 void Spear::Attack() {
-    ShockWave* shockWave = new HammerWave();
-    shockWave->SetPosition(&(this->position + Vec(&rotation, 17) + Vec(0.0, -15)));
-    shockWave->SetDamage(damage);
-    shockWave->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
-    ObjectManager::Instance()->AddObject(shockWave);
+    // ShockWave* shockWave = new HammerWave();
+    // shockWave->SetPosition(&(this->position + Vec(&rotation, 17) + Vec(0.0, -15)));
+    // shockWave->SetDamage(damage);
+    // shockWave->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    // ObjectManager::Instance()->AddObject(shockWave);
 }

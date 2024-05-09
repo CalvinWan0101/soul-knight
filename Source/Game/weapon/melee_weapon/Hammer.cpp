@@ -18,7 +18,7 @@ Weapon* Hammer::Copy() {
 void Hammer::Start() {
     damage = 10;
     SetImages("Resources/weapon/hammer/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, 0.835, 0.65);
+    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.835, 0.65);
     MeleeWeapon::Start();
 }
 
