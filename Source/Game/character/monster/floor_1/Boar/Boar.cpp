@@ -17,11 +17,16 @@ void Boar::Start() {
     this->angryCounter = 0;
     this->calmCounter = clamKeepFrame;
     this->isAngry = false;
+    this->boarDump = new BoarDump();
+    this->boarDump->SetVisible(false);
+    AddFrontChild(boarDump);
     Monster::Start();
 }
 
 void Boar::Update() {
     Monster::Update();
+    this->boarDump->SetPosition(position);
+    this->boarDump->SetAnimationIndex(static_cast<int>(face));
 }
 
 void Boar::AutoMation() {
@@ -47,10 +52,12 @@ void Boar::DumpState(bool isDump) {
     if (isDump) {
         this->maxSpeed = 6;
         AddTag(Tag::MONSTER_ATTACK);
+        this->boarDump->SetVisible(true);
     }
     else {
         this->maxSpeed = 2;
         RemoveTag(Tag::MONSTER_ATTACK);
+        this->boarDump->SetVisible(false);
     }
 }
 

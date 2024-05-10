@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "BoarDump.h"
 #include "../../../Monster.h"
 #include "../../../../projectile/Projectile.h"
 
@@ -15,4 +16,5 @@ private:
     int angryKeepFrame;
     int clamKeepFrame;
     bool isAngry;
+    BoarDump* boarDump;
 };

@@ -61,6 +61,9 @@ void GameObject::SetSpeedY(double y) {
     this->speed.SetY(y);
 }
 
+void GameObject::SetVisible(bool visible) {
+    this->visible = visible;
+}
 
 void GameObject::AddTag(Tag tag) {
     tags[static_cast<int>(tag)] = true;

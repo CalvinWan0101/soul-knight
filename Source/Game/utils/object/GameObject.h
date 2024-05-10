@@ -28,6 +28,7 @@ public:
     void SetSpeed(double value);
     void SetSpeedX(double x);
     void SetSpeedY(double y);
+    void SetVisible(bool visiable);
     void AddTag(Tag tag);
     void RemoveTag(Tag tag);
     bool HasTag(Tag tag);

@@ -239,6 +239,7 @@
     <ClCompile Include="Source\Core\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\CharacterAffect.cpp" />
     <ClCompile Include="Source\Game\character\Monster.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -300,6 +301,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\character\MonsterFactory.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\Boar\Boar.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\Boar\BoarDump.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\Boar\DireBoar.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\Boar\NormalBoar.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuard.cpp">
@@ -1751,10 +1753,12 @@
     <ClInclude Include="Source\Core\MainFrm.h" />
     <ClInclude Include="Source\Core\Resource.h" />
     <ClInclude Include="Source\Core\StdAfx.h" />
+    <ClInclude Include="Source\Game\character\CharacterAffect.h" />
     <ClInclude Include="Source\Game\character\Monster.h" />
     <ClInclude Include="Source\Game\character\MonsterFactory.h" />
     <ClInclude Include="Source\Game\character\MonsterType.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\Boar\Boar.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\Boar\BoarDump.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\Boar\DireBoar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\Boar\NormalBoar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuard.h" />

@@ -22,7 +22,6 @@ protected:
     Weapon* weapon;
     double weaponOffsetX;
     double weaponOffsetY;
-private:
     enum Face {
         RIGHT,
         LEFT
@@ -37,6 +36,7 @@ private:
 
     Face face;
     State state;
+private:
     void CheckState();
     void CheckFace();
 };
