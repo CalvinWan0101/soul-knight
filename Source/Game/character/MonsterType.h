@@ -13,7 +13,8 @@ enum class MonsterType {
     GOBLIN_GIANT,
 
     TRUMPET_FLOWER,
-    BOAR,
+    
+    NORMAL_BOAR,
     DIRE_BOAR,
 
     // floor 2

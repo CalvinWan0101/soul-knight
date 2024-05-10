@@ -299,7 +299,8 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\character\MonsterFactory.cpp" />
-    <ClCompile Include="Source\Game\character\monster\floor_1\Boar.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\Boar\Boar.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\Boar\NormalBoar.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuard.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -1748,7 +1749,8 @@
     <ClInclude Include="Source\Game\character\Monster.h" />
     <ClInclude Include="Source\Game\character\MonsterFactory.h" />
     <ClInclude Include="Source\Game\character\MonsterType.h" />
-    <ClInclude Include="Source\Game\character\monster\floor_1\Boar.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\Boar\Boar.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\Boar\NormalBoar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuard.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardSpear.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
