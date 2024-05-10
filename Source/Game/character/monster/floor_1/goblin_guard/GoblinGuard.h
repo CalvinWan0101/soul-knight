@@ -6,4 +6,5 @@ public:
     GoblinGuard(double level);
     virtual void Start() override;
     void Update() override;
+    void AutoMation() override;
 };

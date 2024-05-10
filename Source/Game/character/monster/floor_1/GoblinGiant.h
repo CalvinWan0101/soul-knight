@@ -6,4 +6,5 @@ public:
     GoblinGiant(double level);
     void Start() override;
     void Update() override;
+    void AutoMation() override;
 };

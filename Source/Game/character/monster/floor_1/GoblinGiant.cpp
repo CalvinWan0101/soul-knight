@@ -48,3 +48,8 @@ void GoblinGiant::Start() {
 void GoblinGiant::Update() {
     Monster::Update();
 }
+
+void GoblinGiant::AutoMation() {
+    Attack();
+}
+

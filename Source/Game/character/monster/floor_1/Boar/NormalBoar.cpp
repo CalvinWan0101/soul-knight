@@ -28,7 +28,8 @@ void NormalBoar::Start() {
                            "resources/monster/floor_1/boar/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
 
-    this->maxHp = 30 * level;
+    this->maxHp = 8 * level;
+    SetDamage(2);
     Boar::Start();
 }
 
