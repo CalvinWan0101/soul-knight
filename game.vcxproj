@@ -360,6 +360,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardSpear.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardGun.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -1751,6 +1752,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\Boar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuard.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardSpear.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardGun.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
