@@ -17,7 +17,7 @@ Weapon* Bow::Copy() {
 
 void Bow::Start() {
     damage = 5;
-    SetImages("Resources/weapon/bow/bow/", 3, RGB(255, 255, 255));
+    SetImages("Resources/weapon/bow/drawn_bow/", 3, RGB(255, 255, 255));
     SetAttackAnimation({0}, {-2, 0}, 0.5);
     RangedWeapon::Start();
 }
