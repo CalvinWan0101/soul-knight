@@ -29,6 +29,7 @@ void DireBoar::Start() {
                        }, RGB(255, 255, 255), 100, false);
 
     this->maxHp = 10 * level;
+    SetDamage(3);
     Boar::Start();
 }
 

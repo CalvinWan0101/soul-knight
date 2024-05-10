@@ -1808,6 +1808,14 @@
     <ResourceCompile Include="Source\Core\game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\affect\monster\boar_affect\1.bmp" />
+    <Content Include="Resources\affect\monster\boar_affect\2.bmp" />
+    <Content Include="Resources\affect\monster\boar_affect\3.bmp" />
+    <Content Include="Resources\affect\monster\boar_affect\4.bmp" />
+    <Content Include="Resources\affect\monster\boar_affect\flip_1.bmp" />
+    <Content Include="Resources\affect\monster\boar_affect\flip_2.bmp" />
+    <Content Include="Resources\affect\monster\boar_affect\flip_3.bmp" />
+    <Content Include="Resources\affect\monster\boar_affect\flip_4.bmp" />
     <Content Include="Resources\affect\weapon\wave\1.bmp" />
     <Content Include="Resources\affect\weapon\wave\2.bmp" />
     <Content Include="Resources\affect\weapon\wave\3.bmp" />

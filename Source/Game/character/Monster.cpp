@@ -24,7 +24,7 @@ void Monster::Update() {
         playerOrientation.SetLength(maxSpeed);
         this->speed = playerOrientation;
         this->vision = playerOrientation;
-        Attack();
+        AutoMation();
     }
     else {
         this->vision = this->speed;

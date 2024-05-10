@@ -29,6 +29,7 @@ void NormalBoar::Start() {
                        }, RGB(255, 255, 255), 100, false);
 
     this->maxHp = 8 * level;
+    SetDamage(2);
     Boar::Start();
 }
 

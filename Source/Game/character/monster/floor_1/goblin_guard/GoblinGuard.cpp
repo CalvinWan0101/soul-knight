@@ -46,3 +46,8 @@ void GoblinGuard::Start() {
 void GoblinGuard::Update() {
     Monster::Update();
 }
+
+void GoblinGuard::AutoMation() {
+    Attack();
+}
+
