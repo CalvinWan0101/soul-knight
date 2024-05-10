@@ -1,7 +1,5 @@
 ﻿#include "stdafx.h"
 #include "GoblinGuard.h"
-#include "../../../weapon/melee_weapon/Hammer.h"
-#include "../../../weapon/melee_weapon/Spear.h"
 
 GoblinGuard::GoblinGuard(double level = 1) : Monster(level) {
 }
@@ -42,7 +40,6 @@ void GoblinGuard::Start() {
     this->maxHp = 30 * level;
     this->maxSpeed = 3;
     this->hp = maxHp;
-    this->SetWeapon(new Spear());
     Monster::Start();
 }
 

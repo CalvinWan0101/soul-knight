@@ -1,10 +1,9 @@
 ﻿#pragma once
-#include "../../Monster.h"
+#include "../../../Monster.h"
 
 class GoblinGuard : public Monster {
 public:
     GoblinGuard(double level);
-    void Start() override;
+    virtual void Start() override;
     void Update() override;
-    
 };
