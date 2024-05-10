@@ -18,6 +18,8 @@ void OnceAnimationObject::Update() {
 }
 
 void OnceAnimationObject::Show(Point screenPositoin) {
+    if (!visible)
+        return;
     double screenX = this->position.GetX() - screenPositoin.GetX();
     double screenY = this->position.GetY() - screenPositoin.GetY();
     if (!isAnimationStart) {

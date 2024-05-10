@@ -42,6 +42,7 @@ protected:
     HitBox hitBox;
     Vec speed;
     Vec showOffset;
+    bool visible;
     virtual void SetCenter() = 0;
 
 private:

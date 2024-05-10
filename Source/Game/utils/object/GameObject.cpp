@@ -9,6 +9,7 @@ GameObject::~GameObject() {
 
 void GameObject::Start() {
     SetCenter();
+    this->visible = true;
 }
 
 void GameObject::Update() {

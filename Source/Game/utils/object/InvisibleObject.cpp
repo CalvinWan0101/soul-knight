@@ -10,7 +10,8 @@ void InvisibleObject::Update() {
 }
 
 void InvisibleObject::Show(Point screenPositoin) {
-    // do nothing
+    if (!visible)
+        return;
 }
 
 void InvisibleObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
