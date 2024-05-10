@@ -3,6 +3,7 @@
 
 #include "../../projectile/bullet/BadPistolBullet.h"
 #include "../../manager/ObjectManager.h"
+#include "../../projectile/bullet/Arrow.h"
 
 BadPistol::BadPistol() {
 }
