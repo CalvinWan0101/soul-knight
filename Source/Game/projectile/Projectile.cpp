@@ -1,10 +1,8 @@
 #include "stdafx.h"
 #include "Projectile.h"
 
-Projectile::Projectile() {
-    damage = 0;
+Projectile::Projectile(): damage(0) {
 }
-
 
 int Projectile::GetDamage() {
     return damage;
@@ -13,4 +11,3 @@ int Projectile::GetDamage() {
 void Projectile::SetDamage(int damage) {
     this->damage = damage;
 }
-

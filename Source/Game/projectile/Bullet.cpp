@@ -2,7 +2,6 @@
 #include "Bullet.h"
 
 Bullet::Bullet() {
-    damage = 0;
 }
 
 void Bullet::Start() {

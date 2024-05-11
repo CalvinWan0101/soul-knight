@@ -1,9 +1,7 @@
 #include "stdafx.h"
 #include "OnceAnimationObject.h"
 
-OnceAnimationObject::OnceAnimationObject() {
-    isAnimationStart = false;
-    isAnimationFinished = false;
+OnceAnimationObject::OnceAnimationObject(): isAnimationStart(false), isAnimationFinished(false) {
 }
 
 OnceAnimationObject::~OnceAnimationObject() {
@@ -29,9 +27,9 @@ void OnceAnimationObject::Show(Point screenPositoin) {
     if (cMovingBitmap.IsAnimationDone()) {
         isAnimationFinished = true;
     }
-    
+
     cMovingBitmap.SetTopLeft(static_cast<int>(screenX - centerOffset.GetX()),
-                                static_cast<int>(screenY - centerOffset.GetY()));
+                             static_cast<int>(screenY - centerOffset.GetY()));
     cMovingBitmap.ShowBitmap();
 }
 
@@ -48,6 +46,3 @@ void OnceAnimationObject::SetAnimation(vector<string> filePaths, int delay, COLO
 void OnceAnimationObject::SetCenter() {
     this->centerOffset.SetVec(cMovingBitmap.GetWidth() / 2, cMovingBitmap.GetHeight() / 2);
 }
-
-
-

@@ -10,7 +10,6 @@ Wall::Wall(Point point1, Point point2) {
 }
 
 Wall::Wall() {
-    
 }
 
 

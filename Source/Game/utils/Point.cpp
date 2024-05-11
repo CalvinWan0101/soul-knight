@@ -1,19 +1,13 @@
 #include "stdafx.h"
 #include "Point.h"
 
-Point::Point(double x, double y) {
-    this->x = x;
-    this->y = y;
+Point::Point(double x, double y): x(x), y(y) {
 }
 
-Point::Point(Point* point) {
-    this->x = point->GetX();
-    this->y = point->GetY();
+Point::Point(Point* point): x(point->GetX()), y(point->GetY()) {
 }
 
-Point::Point() {
-    x = 0;
-    y = 0;
+Point::Point(): x(0), y(0) {
 }
 
 Point::~Point() {

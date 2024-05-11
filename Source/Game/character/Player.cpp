@@ -3,10 +3,7 @@
 #include "Character.h"
 #include "../manager/ObjectManager.h"
 
-Player::Player(): alertRange(position) {
-    mp = 0;
-    shield = 0;
-    interactive = false;
+Player::Player(): alertRange(position), mp(0), shield(0), interactive(false) {
     AddTag(Tag::PLAYER);
 }
 

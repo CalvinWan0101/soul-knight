@@ -6,9 +6,7 @@
 #include <complex>
 #include <valarray>
 
-Vec::Vec(double x, double y) {
-    this->x = x;
-    this->y = y;
+Vec::Vec(double x, double y): x(x), y(y) {
 }
 
 Vec::Vec(Vec* vec, double val) {
@@ -20,9 +18,7 @@ Vec::Vec(Vec* vec, double val) {
     }
 }
 
-Vec::Vec(Vec* vec) {
-    x = vec->x;
-    y = vec->y;
+Vec::Vec(Vec* vec): x(vec->x), y(vec->y) {
 }
 
 Vec::Vec() {

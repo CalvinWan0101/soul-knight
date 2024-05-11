@@ -15,9 +15,7 @@ StageManager* StageManager::Instance() {
     return instance;
 }
 
-StageManager::StageManager() {
-    level = 0;
-    stage = 5;
+StageManager::StageManager(): level(0), stage(5) {
 }
 
 StageManager::~StageManager() {

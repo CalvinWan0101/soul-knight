@@ -28,7 +28,7 @@ void Knight::Start() {
                            "resources/player/knight/idle/flip_3.bmp",
                            "resources/player/knight/idle/flip_4.bmp"
                        }, RGB(255, 255, 255), 100, false);
-    
+
     this->AddAnimation({
                            "resources/player/knight/run/1.bmp",
                            "resources/player/knight/run/2.bmp",

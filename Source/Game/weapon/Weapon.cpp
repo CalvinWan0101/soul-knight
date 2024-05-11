@@ -3,18 +3,12 @@
 
 #include "../config.h"
 
-Weapon::Weapon() {
-    cdCounter = 0;
-    attackTiming = 0;
-    attackRotationOffset = 0;
+Weapon::Weapon(): cdCounter(0), attackTiming(0), attackRotationOffset(0) {
     AddTag(Tag::PLAYER_WEAPON);
 }
 
-Weapon::Weapon(Point point) {
+Weapon::Weapon(Point point): cdCounter(0), attackTiming(0), attackRotationOffset(0) {
     this->position = point;
-    cdCounter = 0;
-    attackTiming = 0;
-    attackRotationOffset = 0;
     AddTag(Tag::PLAYER_WEAPON);
 }
 

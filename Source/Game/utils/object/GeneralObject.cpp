@@ -4,8 +4,7 @@
 #include <algorithm>
 
 
-GeneralObject::GeneralObject(){
-    index = 0;
+GeneralObject::GeneralObject(): index(0) {
 }
 
 GeneralObject::~GeneralObject() {
@@ -71,9 +70,10 @@ void GeneralObject::AddBackChild(GameObject* gameObject) {
 
 void GeneralObject::RemoveFrontChile(GameObject* frontChild) {
     size_t frontObjects = frontGameObjects.size();
-    frontGameObjects.erase(std::remove_if(frontGameObjects.begin(), frontGameObjects.end(), [frontChild](const GameObject* obj) {
-        return frontChild == obj;
-    }), frontGameObjects.end());
+    frontGameObjects.erase(std::remove_if(frontGameObjects.begin(), frontGameObjects.end(),
+                                          [frontChild](const GameObject* obj) {
+                                              return frontChild == obj;
+                                          }), frontGameObjects.end());
     if (frontObjects <= frontGameObjects.size()) {
         throw exception("GameObject Not Found.");
     }
@@ -81,9 +81,10 @@ void GeneralObject::RemoveFrontChile(GameObject* frontChild) {
 
 void GeneralObject::RemoveBackChild(GameObject* backChild) {
     size_t backObjects = backGameObjects.size();
-    backGameObjects.erase(std::remove_if(backGameObjects.begin(), backGameObjects.end(), [backChild](const GameObject* obj) {
-        return backChild == obj;
-    }), backGameObjects.end());
+    backGameObjects.erase(std::remove_if(backGameObjects.begin(), backGameObjects.end(),
+                                         [backChild](const GameObject* obj) {
+                                             return backChild == obj;
+                                         }), backGameObjects.end());
     if (backObjects <= backGameObjects.size()) {
         throw exception("GameObject Not Found.");
     }
