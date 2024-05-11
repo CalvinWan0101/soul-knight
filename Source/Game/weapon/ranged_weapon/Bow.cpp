@@ -5,13 +5,12 @@
 
 class Bullet;
 
-Bow::Bow() {
-}
-
 Bow::Bow(Point point) : RangedWeapon(point) {
+    damage = 4;
+    this->position = point;
 }
 
-Bow::Bow(double damage = 4) : RangedWeapon(damage) {
+Bow::Bow(double damage) : RangedWeapon(damage) {
 }
 
 Weapon* Bow::Copy() {
@@ -20,7 +19,7 @@ Weapon* Bow::Copy() {
 
 void Bow::Start() {
     SetImages("Resources/weapon/bow/drawn_bow/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({0}, {-2, 0}, 8);
+    SetAttackAnimation({0}, {-2, 0}, 0.8);
     RangedWeapon::Start();
 }
 

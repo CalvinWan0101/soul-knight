@@ -9,14 +9,14 @@ public:
     void Update() override;
     void Collision(GameObject* gameObject) override;
 
-    int GetHP();
-    int GetMaxHP();
+    double GetHP();
+    double GetMaxHP();
     void Attack();
-    void BeAttacked(int damage);
+    void BeAttacked(double damage);
 
 protected:
-    int hp;
-    int maxHp;
+    double hp;
+    double maxHp;
     
     Vec vision;
     Weapon* weapon;

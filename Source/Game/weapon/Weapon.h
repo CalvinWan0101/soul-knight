@@ -13,8 +13,8 @@ public:
     virtual void Aim(Vec* direction);
     virtual void Attack() = 0;
     virtual void SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets ,double second, double attackTiming = 0);
-    int GetDamage();
-    void SetDamage(int damage);
+    double GetDamage();
+    void SetDamage(double damage);
     int GetMpCost();
     
 protected:

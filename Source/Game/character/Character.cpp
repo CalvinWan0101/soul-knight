@@ -8,6 +8,7 @@ Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX
 }
 
 void Character::Start() {
+    this->hp = maxHp;
     GeneralObject::Start();
 }
 
@@ -49,11 +50,11 @@ void Character::Collision(GameObject* gameObject) {
 }
 
 
-int Character::GetHP() {
+double Character::GetHP() {
     return hp;
 }
 
-int Character::GetMaxHP() {
+double Character::GetMaxHP() {
     return maxHp;
 }
 
@@ -64,7 +65,7 @@ void Character::Attack() {
     weapon->DefaultAttack();
 }
 
-void Character::BeAttacked(int damage) {
+void Character::BeAttacked(double damage) {
     hp -= damage;
 }
 

@@ -4,10 +4,10 @@
 Projectile::Projectile(): damage(0) {
 }
 
-int Projectile::GetDamage() {
+double Projectile::GetDamage() {
     return damage;
 }
 
-void Projectile::SetDamage(int damage) {
+void Projectile::SetDamage(double damage) {
     this->damage = damage;
 }

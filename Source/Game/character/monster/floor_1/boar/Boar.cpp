@@ -9,7 +9,6 @@ Boar::Boar(double level = 1) : Monster(level) {
 void Boar::Start() {
     this->speed.SetVec(0.0, 0.0);
     this->maxSpeed = 2;
-    this->hp = maxHp;
     this->SetWeapon(new FakeWeapon());
     
     this->angryKeepFrame = 50;

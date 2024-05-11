@@ -7,12 +7,12 @@ Weapon::Weapon(): cdCounter(0), attackTiming(0), attackRotationOffset(0), attack
     AddTag(Tag::PLAYER_WEAPON);
 }
 
-Weapon::Weapon(Point point): cdCounter(0), attackTiming(0), attackRotationOffset(0) {
+Weapon::Weapon(Point point): cdCounter(0), attackTiming(0), attackRotationOffset(0), attackTranslationOffset(0) {
     this->position = point;
     AddTag(Tag::PLAYER_WEAPON);
 }
 
-Weapon::Weapon(double damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0) {
+Weapon::Weapon(double damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0), attackTranslationOffset(0) {
     AddTag(Tag::PLAYER_WEAPON);
 }
 
@@ -76,11 +76,11 @@ void Weapon::SetFrameCd(double second) {
     this->frameCd = static_cast<int>(second * 50);
 }
 
-int Weapon::GetDamage() {
+double Weapon::GetDamage() {
     return damage;
 }
 
-void Weapon::SetDamage(int damage) {
+void Weapon::SetDamage(double damage) {
     this->damage = damage;
 }
 

@@ -2,19 +2,18 @@
 #include "Knight.h"
 
 #include "../../weapon/melee_weapon/Hammer.h"
+#include "../../weapon/melee_weapon/Hoe.h"
 #include "../../weapon/melee_weapon/Spear.h"
 #include "../../weapon/ranged_weapon/BadPistol.h"
 #include "../../weapon/ranged_weapon/Bow.h"
 
 Knight::Knight() {
-    maxHp = 30;
-    hp = maxHp;
 }
 
 void Knight::Start() {
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new Bow());
+    ChangeWeapon(new Hoe());
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",
@@ -50,6 +49,7 @@ void Knight::Start() {
     this->AddAnimation({
                            "resources/player/knight/flip_dead.bmp",
                        }, RGB(255, 255, 255), 100, true);
+    maxHp = 30;
     Player::Start();
 }
 

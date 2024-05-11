@@ -40,7 +40,6 @@ void GoblinGiant::Start() {
     this->speed.SetVec(0.0, 0.0);
     this->maxHp = 40 * level;
     this->maxSpeed = 3;
-    this->hp = maxHp;
     this->SetWeapon(new Hammer());
     Monster::Start();
 }

@@ -8,13 +8,11 @@
 #include "../../projectile/shock_wave/HammerWave.h"
 #include "../../manager/ObjectManager.h"
 
-Hoe::Hoe() {
-}
-
 Hoe::Hoe(Point point) : MeleeWeapon(point) {
+    damage = 5;
 }
 
-Hoe::Hoe(double damage = 5) : MeleeWeapon(damage) {
+Hoe::Hoe(double damage) : MeleeWeapon(damage) {
 }
 
 Weapon* Hoe::Copy() {
@@ -23,7 +21,7 @@ Weapon* Hoe::Copy() {
 
 void Hoe::Start() {
     SetImages("Resources/weapon/hoe/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 10, 0);
+    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
     MeleeWeapon::Start();
 }
 

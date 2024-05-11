@@ -3,9 +3,9 @@
 class Projectile {
 public:
     Projectile();
-    void SetDamage(int damage);
-    int GetDamage();
+    void SetDamage(double damage);
+    double GetDamage();
 protected:
-    int damage;
+    double damage;
 };
 

@@ -39,7 +39,6 @@ void GoblinGuard::Start() {
     this->speed.SetVec(0.0, 0.0);
     this->maxHp = 8 * level;
     this->maxSpeed = 3;
-    this->hp = maxHp;
     Monster::Start();
 }
 
