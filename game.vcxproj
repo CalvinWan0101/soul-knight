@@ -785,8 +785,7 @@
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
     <ClCompile Include="Source\Game\projectile\Projectile.cpp" />
-    <ClCompile Include="Source\Game\projectile\RotatableShockWave.cpp" />
-    <ClCompile Include="Source\Game\projectile\rotatable_shock_wave\SpearWave.cpp" />
+    <ClCompile Include="Source\Game\projectile\InvisibleShockWave.cpp" />
     <ClCompile Include="Source\Game\projectile\ShockWave.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -1837,8 +1836,7 @@
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
     <ClInclude Include="Source\Game\projectile\Projectile.h" />
-    <ClInclude Include="Source\Game\projectile\RotatableShockWave.h" />
-    <ClInclude Include="Source\Game\projectile\rotatable_shock_wave\SpearWave.h" />
+    <ClInclude Include="Source\Game\projectile\InvisibleShockWave.h" />
     <ClInclude Include="Source\Game\projectile\ShockWave.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
     <ClInclude Include="Source\Game\stage\Room.h" />

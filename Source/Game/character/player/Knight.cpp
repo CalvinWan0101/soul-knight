@@ -13,7 +13,7 @@ Knight::Knight() {
 void Knight::Start() {
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new Hoe());
+    ChangeWeapon(new Spear());
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",

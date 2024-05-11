@@ -4,17 +4,14 @@
 #include "../../projectile/ShockWave.h"
 #include "../../projectile/shock_wave/HammerWave.h"
 #include "../../manager/ObjectManager.h"
-#include "../../projectile/rotatable_shock_wave/SpearWave.h"
+#include "../../projectile/InvisibleShockWave.h"
 
 class ShockWave;
-
-Spear::Spear() {
-}
 
 Spear::Spear(Point point) : MeleeWeapon(point) {
 }
 
-Spear::Spear(double damage = 3) : MeleeWeapon(damage) {
+Spear::Spear(double damage) : MeleeWeapon(damage) {
 }
 
 Weapon* Spear::Copy() {
@@ -32,9 +29,10 @@ void Spear::Update() {
 }
 
 void Spear::Attack() {
-    RotatableShockWave* shockWave = new SpearWave();
+    InvisibleShockWave* shockWave = new InvisibleShockWave();
     shockWave->SetPosition(&(this->position + Vec(&rotation, 10)));
     shockWave->SetSpeed(rotation, 0.5);
+    shockWave->SetSize(30);
     shockWave->SetDamage(damage);
     shockWave->SetAliveTime(0.3);
     shockWave->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
