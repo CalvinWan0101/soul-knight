@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "GameObject.h"
 
-GameObject::GameObject() : hitBox(position) {
+GameObject::GameObject() : hitBox(position), visible(true) {
 }
 
 GameObject::~GameObject() {
@@ -9,7 +9,6 @@ GameObject::~GameObject() {
 
 void GameObject::Start() {
     SetCenter();
-    this->visible = true;
 }
 
 void GameObject::Update() {

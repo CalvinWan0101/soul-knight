@@ -26,6 +26,9 @@ void Boar::Update() {
     Monster::Update();
     this->boarDump->SetPosition(position);
     this->boarDump->SetAnimationIndex(static_cast<int>(face));
+    if (hp <= 0) {
+        DumpState(false);
+    }
 }
 
 void Boar::AutoMation() {
