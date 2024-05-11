@@ -4,6 +4,7 @@
 #include "../../projectile/ShockWave.h"
 #include "../../projectile/shock_wave/HammerWave.h"
 #include "../../manager/ObjectManager.h"
+#include "../../pool/ProjectilePool.h"
 
 Hammer::Hammer() {
 }
@@ -29,9 +30,9 @@ void Hammer::Update() {
 }
 
 void Hammer::Attack() {
-    ShockWave* shockWave = new HammerWave();
+    ShockWave* shockWave = ProjectilePool::Instance()->AcquireHammerWave();
     shockWave->SetPosition(&(this->position + Vec(&rotation, 17) + Vec(0.0, -15)));
     shockWave->SetDamage(damage);
-    shockWave->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(shockWave);
     ObjectManager::Instance()->AddObject(shockWave);
 }

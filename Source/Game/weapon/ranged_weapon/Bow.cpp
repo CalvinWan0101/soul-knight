@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Bow.h"
 #include "../../manager/ObjectManager.h"
+#include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/Arrow.h"
 
 class Bullet;
@@ -28,10 +29,10 @@ void Bow::Update() {
 }
 
 void Bow::Attack() {
-    Bullet* bullet = new Arrow();
+    Bullet* bullet = ProjectilePool::Instance()->AcquireArrow();
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
-    bullet->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(bullet);
     ObjectManager::Instance()->AddObject(bullet);
 }

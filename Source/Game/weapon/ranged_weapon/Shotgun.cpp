@@ -73,14 +73,3 @@ void Shotgun::Attack() {
     UpdateTag(bullet5);
     ObjectManager::Instance()->AddObject(bullet5);
 }
-
-void Shotgun::UpdateTag(Bullet* bullet) {
-    if (HasTag(Tag::PLAYER_WEAPON)) {
-        bullet->AddTag(Tag::PLAYER_ATTACK);
-        bullet->RemoveTag(Tag::MONSTER_ATTACK);
-    }
-    else {
-        bullet->AddTag(Tag::MONSTER_ATTACK);
-        bullet->RemoveTag(Tag::PLAYER_ATTACK);
-    }
-}

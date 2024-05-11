@@ -7,6 +7,7 @@
 #include "../../projectile/ShockWave.h"
 #include "../../projectile/InvisibleShockWave.h"
 #include "../../manager/ObjectManager.h"
+#include "../../pool/ProjectilePool.h"
 
 Hoe::Hoe(Point point) : MeleeWeapon(point) {
     damage = 5;
@@ -30,12 +31,12 @@ void Hoe::Update() {
 }
 
 void Hoe::Attack() {
-    InvisibleShockWave* shockWave = new InvisibleShockWave();
+    InvisibleShockWave* shockWave = ProjectilePool::Instance()->AcquireInvisibleShockWave();
     shockWave->SetPosition(&(this->position + Vec(&rotation, 10)));
     shockWave->SetSpeed(rotation, 0);
     shockWave->SetSize(30);
     shockWave->SetDamage(damage);
     shockWave->SetAliveTime(0.1);
-    shockWave->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(shockWave);
     ObjectManager::Instance()->AddObject(shockWave);
 }

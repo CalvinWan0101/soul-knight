@@ -11,6 +11,4 @@ public:
     void Start() override;
     void Update() override;
     void Attack() override;
-private:
-    void UpdateTag(Bullet* bullet);
 };

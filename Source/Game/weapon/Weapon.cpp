@@ -2,6 +2,7 @@
 #include "Weapon.h"
 
 #include "../config.h"
+#include "../projectile/Bullet.h"
 
 Weapon::Weapon(): cdCounter(0), attackTiming(0), attackRotationOffset(0), attackTranslationOffset(0) {
     AddTag(Tag::PLAYER_WEAPON);
@@ -12,7 +13,8 @@ Weapon::Weapon(Point point): cdCounter(0), attackTiming(0), attackRotationOffset
     AddTag(Tag::PLAYER_WEAPON);
 }
 
-Weapon::Weapon(double damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0), attackTranslationOffset(0) {
+Weapon::Weapon(double damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0),
+                               attackTranslationOffset(0) {
     AddTag(Tag::PLAYER_WEAPON);
 }
 
@@ -105,5 +107,38 @@ void Weapon::UpdateTranslationOffset() {
     }
     else {
         attackTranslationOffset += attackTranslationOffsets[(frameCd - cdCounter - 1) / step];
+    }
+}
+
+void Weapon::UpdateTag(Bullet* bullet) {
+    if (HasTag(Tag::PLAYER_WEAPON)) {
+        bullet->AddTag(Tag::PLAYER_ATTACK);
+        bullet->RemoveTag(Tag::MONSTER_ATTACK);
+    }
+    else {
+        bullet->AddTag(Tag::MONSTER_ATTACK);
+        bullet->RemoveTag(Tag::PLAYER_ATTACK);
+    }
+}
+
+void Weapon::UpdateTag(ShockWave* shockWave) {
+    if (HasTag(Tag::PLAYER_WEAPON)) {
+        shockWave->AddTag(Tag::PLAYER_ATTACK);
+        shockWave->RemoveTag(Tag::MONSTER_ATTACK);
+    }
+    else {
+        shockWave->AddTag(Tag::MONSTER_ATTACK);
+        shockWave->RemoveTag(Tag::PLAYER_ATTACK);
+    }
+}
+
+void Weapon::UpdateTag(InvisibleShockWave* invisibleShockWave) {
+    if (HasTag(Tag::PLAYER_WEAPON)) {
+        invisibleShockWave->AddTag(Tag::PLAYER_ATTACK);
+        invisibleShockWave->RemoveTag(Tag::MONSTER_ATTACK);
+    }
+    else {
+        invisibleShockWave->AddTag(Tag::MONSTER_ATTACK);
+        invisibleShockWave->RemoveTag(Tag::PLAYER_ATTACK);
     }
 }

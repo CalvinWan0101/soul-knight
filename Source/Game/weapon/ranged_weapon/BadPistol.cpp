@@ -3,6 +3,7 @@
 
 #include "../../projectile/bullet/BadPistolBullet.h"
 #include "../../manager/ObjectManager.h"
+#include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/Arrow.h"
 
 BadPistol::BadPistol(Point point) : RangedWeapon(point) {
@@ -26,10 +27,10 @@ void BadPistol::Update() {
 }
 
 void BadPistol::Attack() {
-    Bullet* bullet = new BadPistolBullet();
+    Bullet* bullet = ProjectilePool::Instance()->AcquireBadPistolBullet();
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
-    bullet->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(bullet);
     ObjectManager::Instance()->AddObject(bullet);
 }

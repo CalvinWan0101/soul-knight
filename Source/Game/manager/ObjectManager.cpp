@@ -10,6 +10,7 @@
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
+#include "../pool/ProjectileDispatcher.h"
 #include "../pool/ProjectilePool.h"
 #include "../projectile/bullet/BadPistolBullet.h"
 #include "../weapon/ranged_weapon/BadPistol.h"
@@ -166,11 +167,7 @@ void ObjectManager::DeleteObsoleteElements() {
     for (vector<GameObject*>::iterator object = objects.begin(); object != objects.end();) {
         if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
             if ((*object)->HasTag(Tag::PROJECTILE)) {
-                Projectile* projectile = dynamic_cast<Projectile*>(*object);
-                if (projectile->GetProjectileType() == ProjectileType::BAD_PISTOL_BULLET) {
-                    BadPistolBullet* badPistolbullet = static_cast<BadPistolBullet*>(projectile);
-                    ProjectilePool::Instance()->ReleaseBadPistolBullet(badPistolbullet);
-                }
+                ProjectileDispatcher::dispatch(dynamic_cast<Projectile*>(*object));
             }
             else {
                 delete *object;
