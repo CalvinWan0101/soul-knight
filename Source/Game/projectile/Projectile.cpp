@@ -12,8 +12,8 @@ double Projectile::GetDamage() {
     return damage;
 }
 
-bool Projectile::IsProjectileType(ProjectileType type) {
-    return static_cast<int>(type) == projectileType;
+ProjectileType Projectile::GetProjectileType() {
+    return static_cast<ProjectileType>(projectileType);
 }
 
 void Projectile::SetProjectileType(ProjectileType type) {

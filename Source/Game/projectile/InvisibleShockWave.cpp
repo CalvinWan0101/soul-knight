@@ -4,6 +4,7 @@
 InvisibleShockWave::InvisibleShockWave() {
     aliveFrame = 0;
     activicated = false;
+    AddTag(Tag::PROJECTILE);
     SetProjectileType(ProjectileType::INVISIBLE_SHOCK_WAVE);
 }
 
@@ -35,6 +36,3 @@ void InvisibleShockWave::SetAliveTime(double second) {
 void InvisibleShockWave::SetSize(double size) {
     SetHitBox(size, size);
 }
-
-
-

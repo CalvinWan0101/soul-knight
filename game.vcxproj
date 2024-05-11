@@ -606,6 +606,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\pool\ProjectilePool.cpp" />
     <ClCompile Include="Source\Game\projectile\Bullet.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -1838,6 +1839,7 @@
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
+    <ClInclude Include="Source\Game\pool\ProjectilePool.h" />
     <ClInclude Include="Source\Game\projectile\Bullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\Arrow.h" />
     <ClInclude Include="Source\Game\projectile\bullet\BadPistolBullet.h" />

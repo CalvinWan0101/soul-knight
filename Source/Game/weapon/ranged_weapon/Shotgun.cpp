@@ -2,6 +2,7 @@
 #include "Shotgun.h"
 
 #include "../../manager/ObjectManager.h"
+#include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/BadPistolBullet.h"
 
 Shotgun::Shotgun(Point point) : RangedWeapon(point) {
@@ -25,49 +26,61 @@ void Shotgun::Update() {
 }
 
 void Shotgun::Attack() {
+    ProjectilePool* projectilePool = ProjectilePool::Instance();
     Vec currentRotation = this->rotation;
     currentRotation.Rotate(0.4);
 
-    Bullet* bullet1 = new BadPistolBullet();
+    Bullet* bullet1 = projectilePool->AcquireBadPistolBullet();
     bullet1->SetSpeed(currentRotation, 7);
     bullet1->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet1->SetDamage(this->GetDamage());
-    bullet1->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(bullet1);
     ObjectManager::Instance()->AddObject(bullet1);
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet2 = new BadPistolBullet();
+    Bullet* bullet2 = projectilePool->AcquireBadPistolBullet();
     bullet2->SetSpeed(currentRotation, 7);
     bullet2->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet2->SetDamage(this->GetDamage());
-    bullet2->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(bullet2);
     ObjectManager::Instance()->AddObject(bullet2);
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet3 = new BadPistolBullet();
+    Bullet* bullet3 = projectilePool->AcquireBadPistolBullet();
     bullet3->SetSpeed(currentRotation, 7);
     bullet3->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet3->SetDamage(this->GetDamage());
-    bullet3->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(bullet3);
     ObjectManager::Instance()->AddObject(bullet3);
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet4 = new BadPistolBullet();
+    Bullet* bullet4 = projectilePool->AcquireBadPistolBullet();
     bullet4->SetSpeed(currentRotation, 7);
     bullet4->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet4->SetDamage(this->GetDamage());
-    bullet4->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(bullet4);
     ObjectManager::Instance()->AddObject(bullet4);
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet5 = new BadPistolBullet();
+    Bullet* bullet5 = projectilePool->AcquireBadPistolBullet();
     bullet5->SetSpeed(currentRotation, 7);
     bullet5->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet5->SetDamage(this->GetDamage());
-    bullet5->AddTag(HasTag(Tag::PLAYER_WEAPON) ? Tag::PLAYER_ATTACK : Tag::MONSTER_ATTACK);
+    UpdateTag(bullet5);
     ObjectManager::Instance()->AddObject(bullet5);
+}
+
+void Shotgun::UpdateTag(Bullet* bullet) {
+    if (HasTag(Tag::PLAYER_WEAPON)) {
+        bullet->AddTag(Tag::PLAYER_ATTACK);
+        bullet->RemoveTag(Tag::MONSTER_ATTACK);
+    }
+    else {
+        bullet->AddTag(Tag::MONSTER_ATTACK);
+        bullet->RemoveTag(Tag::PLAYER_ATTACK);
+    }
 }

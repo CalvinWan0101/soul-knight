@@ -27,6 +27,7 @@ CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
 CGameStateRun::~CGameStateRun() {
     delete objectManager;
     delete stageManager;
+    delete projectilePool;
     delete Draw::Instance();
 }
 

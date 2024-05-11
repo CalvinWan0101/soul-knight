@@ -6,7 +6,7 @@ public:
     Projectile();
     void SetDamage(double damage);
     double GetDamage();
-    bool IsProjectileType(ProjectileType type);
+    ProjectileType GetProjectileType();
 protected:
     double damage;
     int projectileType;

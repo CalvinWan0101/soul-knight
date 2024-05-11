@@ -10,5 +10,4 @@ enum class ProjectileType {
 
     // other
     INVISIBLE_SHOCK_WAVE,
-    SHOCK_WAVE
 };

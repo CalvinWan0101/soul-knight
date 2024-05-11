@@ -40,6 +40,7 @@
 
 #include "manager/ObjectManager.h"
 #include "manager/StageManager.h"
+#include "pool/ProjectilePool.h"
 
 namespace game_framework {
     /////////////////////////////////////////////////////////////////////////////
@@ -98,6 +99,7 @@ namespace game_framework {
         void OnShow(); // ??¢FFFFD??o?????A???C???e???
         ObjectManager* objectManager = ObjectManager::Instance();
         StageManager* stageManager = StageManager::Instance();
+        ProjectilePool* projectilePool = ProjectilePool::Instance();
     };
 
     /////////////////////////////////////////////////////////////////////////////

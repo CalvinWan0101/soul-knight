@@ -2,7 +2,7 @@
 #include "ShockWave.h"
 
 ShockWave::ShockWave() {
-    SetProjectileType(ProjectileType::SHOCK_WAVE);
+    AddTag(Tag::PROJECTILE);
 }
 
 

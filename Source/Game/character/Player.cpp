@@ -62,6 +62,7 @@ void Player::ChangeWeapon(Weapon* newWeapon) {
         ObjectManager::Instance()->AddObject(this->weapon);
     }
     this->weapon = newWeapon;
+    this->weapon->RemoveTag(Tag::MONSTER_WEAPON);
     this->weapon->AddTag(Tag::PLAYER_WEAPON);
     this->AddFrontChild(newWeapon);
 }

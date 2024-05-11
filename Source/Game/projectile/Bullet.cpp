@@ -2,6 +2,7 @@
 #include "Bullet.h"
 
 Bullet::Bullet() {
+    AddTag(Tag::PROJECTILE);
 }
 
 void Bullet::Start() {
