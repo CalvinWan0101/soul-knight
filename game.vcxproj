@@ -304,6 +304,8 @@
     <ClCompile Include="Source\Game\character\monster\floor_1\boar\BoarDump.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\boar\DireBoar.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\boar\NormalBoar.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuard.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardHoe.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_giant\GoblinGiant.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -1820,6 +1822,8 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\boar\BoarDump.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\boar\DireBoar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\boar\NormalBoar.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuard.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardHoe.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_giant\GoblinGiant.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuard.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardBow.h" />

@@ -18,7 +18,7 @@ Stage_1_1::Stage_1_1() {
 
     // room 2
     rooms.push_back(new Room(Point(1216, 48), centerOffset, RoomSize::MEDIUM_SIZE,
-                             std::map<MonsterType, int>{{MonsterType::GOBLIN_GUARD_BOW, 1}}));
+                             std::map<MonsterType, int>{{MonsterType::ELITE_GOBLIN_GUARD_HOE, 1}}));
 
     // room 3
     rooms.push_back(new Room(Point(1808, 80), centerOffset, RoomSize::SMALL_SIZE,
