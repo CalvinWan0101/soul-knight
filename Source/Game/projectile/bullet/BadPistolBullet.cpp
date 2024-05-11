@@ -4,6 +4,7 @@
 
 BadPistolBullet::BadPistolBullet() {
     // game_framework::CAudio::Instance()->Play(1);
+    SetProjectileType(ProjectileType::BAD_PISTOL_BULLET);
 }
 
 void BadPistolBullet::Start() {

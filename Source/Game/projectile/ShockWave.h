@@ -4,6 +4,7 @@
 
 class ShockWave : public OnceAnimationObject, public Projectile {
 public:
+    ShockWave();
     void Start() override;
     void Update() override;
 private:

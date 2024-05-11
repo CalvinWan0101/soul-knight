@@ -2,6 +2,7 @@
 #include "Arrow.h"
 
 Arrow::Arrow() {
+    SetProjectileType(ProjectileType::ARROW);
 }
 
 void Arrow::Start() {

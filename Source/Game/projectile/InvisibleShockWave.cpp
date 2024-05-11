@@ -4,6 +4,7 @@
 InvisibleShockWave::InvisibleShockWave() {
     aliveFrame = 0;
     activicated = false;
+    SetProjectileType(ProjectileType::INVISIBLE_SHOCK_WAVE);
 }
 
 void InvisibleShockWave::Start() {

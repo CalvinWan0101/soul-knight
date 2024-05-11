@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "HammerWave.h"
 
+HammerWave::HammerWave() {
+    SetProjectileType(ProjectileType::HAMMER_WAVE);
+}
+
 void HammerWave::Start() {
     SetAnimation({
         "Resources/affect/weapon/wave/1.bmp",

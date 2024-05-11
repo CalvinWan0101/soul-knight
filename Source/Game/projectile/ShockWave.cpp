@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "ShockWave.h"
 
+ShockWave::ShockWave() {
+    SetProjectileType(ProjectileType::SHOCK_WAVE);
+}
+
+
 void ShockWave::Start() {
     activicated = false;
     SetHitBoxByRatio(0.7, 0.7);
@@ -16,9 +21,8 @@ void ShockWave::Update() {
     if (!activicated) {
         activicated = true;
     }
-    
+
     if (isAnimationFinished) {
         AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }
-
