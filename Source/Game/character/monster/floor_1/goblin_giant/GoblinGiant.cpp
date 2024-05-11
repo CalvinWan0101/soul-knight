@@ -1,6 +1,6 @@
 ﻿#include "stdafx.h"
 #include "GoblinGiant.h"
-#include "../../../weapon/melee_weapon/Hammer.h"
+#include "../../../../weapon/melee_weapon/Hammer.h"
 
 GoblinGiant::GoblinGiant(double level = 1) : Monster(level) {
 }
@@ -38,7 +38,7 @@ void GoblinGiant::Start() {
                        }, RGB(255, 255, 255), 100, false);
 
     this->speed.SetVec(0.0, 0.0);
-    this->maxHp = 30 * level;
+    this->maxHp = 40 * level;
     this->maxSpeed = 3;
     this->hp = maxHp;
     this->SetWeapon(new Hammer());

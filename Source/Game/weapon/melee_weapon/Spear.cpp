@@ -14,14 +14,16 @@ Spear::Spear() {
 Spear::Spear(Point point) : MeleeWeapon(point) {
 }
 
+Spear::Spear(double damage = 3) : MeleeWeapon(damage) {
+}
+
 Weapon* Spear::Copy() {
     return new Spear(this->position);
 }
 
 void Spear::Start() {
-    damage = 10;
     SetImages("Resources/weapon/spear/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({}, {15, 12, 9, 6, 3, 0},1, 0.1);
+    SetAttackAnimation({}, {15, 12, 9, 6, 3, 0}, 1, 0.1);
     MeleeWeapon::Start();
 }
 

@@ -38,10 +38,6 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
-#include "character/player/Knight.h"
-#include "character/Player.h"
-#include "character/Monster.h"
-#include "character/monster/floor_1/GoblinGiant.h"
 #include "manager/ObjectManager.h"
 #include "manager/StageManager.h"
 

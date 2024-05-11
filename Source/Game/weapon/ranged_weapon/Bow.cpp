@@ -11,14 +11,16 @@ Bow::Bow() {
 Bow::Bow(Point point) : RangedWeapon(point) {
 }
 
+Bow::Bow(double damage = 4) : RangedWeapon(damage) {
+}
+
 Weapon* Bow::Copy() {
     return new Bow(this->position);
 }
 
 void Bow::Start() {
-    damage = 5;
     SetImages("Resources/weapon/bow/drawn_bow/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({0}, {-2, 0}, 0.5);
+    SetAttackAnimation({0}, {-2, 0}, 0.8);
     RangedWeapon::Start();
 }
 

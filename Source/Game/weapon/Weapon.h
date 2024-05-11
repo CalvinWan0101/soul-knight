@@ -5,6 +5,7 @@ class Weapon : public RotatableObject {
 public:
     Weapon();
     Weapon(Point point);
+    Weapon(int damage);
     virtual Weapon* Copy() = 0;
     void Start() override;
     void Update() override;
@@ -13,6 +14,7 @@ public:
     virtual void Attack() = 0;
     virtual void SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets ,double second, double attackTiming = 0);
     int GetDamage();
+    void SetDamage(int damage);
     int GetMpCost();
     
 protected:

@@ -6,6 +6,6 @@ GoblinGuardSpear::GoblinGuardSpear(double level) : GoblinGuard(level) {
 }
 
 void GoblinGuardSpear::Start() {
-    this->SetWeapon(new Spear());
+    this->SetWeapon(new Spear(3));
     GoblinGuard::Start();
 }

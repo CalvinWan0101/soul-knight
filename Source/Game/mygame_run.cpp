@@ -10,6 +10,7 @@
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
 #include "mygame.h"
+#include "character/player/Knight.h"
 #include "utils/draw/Draw.h"
 #include "stage/TransferGate.h"
 #include "wall\Wall.h"

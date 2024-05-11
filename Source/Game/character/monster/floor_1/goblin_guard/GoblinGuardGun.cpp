@@ -7,6 +7,6 @@ GoblinGuardGun::GoblinGuardGun(double level) : GoblinGuard(level) {
 }
 
 void GoblinGuardGun::Start() {
-    this->SetWeapon(new BadPistol());
+    this->SetWeapon(new BadPistol(2));
     GoblinGuard::Start();
 }

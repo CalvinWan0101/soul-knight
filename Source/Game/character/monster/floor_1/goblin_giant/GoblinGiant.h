@@ -1,6 +1,5 @@
 ﻿#pragma once
-#include "../../Monster.h"
-
+#include "../../../Monster.h"
 class GoblinGiant : public Monster {
 public:
     GoblinGiant(double level);

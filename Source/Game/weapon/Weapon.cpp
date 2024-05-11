@@ -18,8 +18,12 @@ Weapon::Weapon(Point point) {
     AddTag(Tag::PLAYER_WEAPON);
 }
 
+Weapon::Weapon(int damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0) {
+    AddTag(Tag::PLAYER_WEAPON);
+}
+
 void Weapon::Start() {
-    SetHitBoxByRatio(1,1);
+    SetHitBoxByRatio(1, 1);
     RotatableObject::Start();
 }
 
@@ -29,7 +33,8 @@ void Weapon::Update() {
         cdCounter--;
         UpdateRotationOffset();
         UpdateTranslationOffset();
-        if (static_cast<double>(frameCd - cdCounter) / static_cast<double>(frameCd) >= attackTiming && isAttack == false) {
+        if (static_cast<double>(frameCd - cdCounter) / static_cast<double>(frameCd) >= attackTiming && isAttack ==
+            false) {
             isAttack = true;
             Attack();
         }
@@ -51,7 +56,8 @@ void Weapon::Aim(Vec* direction) {
     this->showOffset = this->showOffset + translationOffset;
 }
 
-void Weapon::SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets , double second, double attackTiming) {
+void Weapon::SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets,
+                                double second, double attackTiming) {
     SetFrameCd(second);
     this->attackTiming = attackTiming;
     attackRotationOffsets.emplace_back(0);
@@ -62,11 +68,13 @@ void Weapon::SetAttackAnimation(vector<double> attackRotationOffsets, vector<dou
     this->attackTranslationOffsets = attackTranslationOffsets;
     this->attackRotationOffsets[0] = attackRotationOffsets[0] / static_cast<double>(rotationStep);
     this->attackTranslationOffsets[0] = attackTranslationOffsets[0] / static_cast<double>(translationStep);
-    for (int i = 0 ; i < static_cast<int>(attackRotationOffsets.size() - 1) ; i++) {
-        this->attackRotationOffsets[i + 1] = (attackRotationOffsets[i + 1] - attackRotationOffsets[i]) / static_cast<double>(rotationStep);   
+    for (int i = 0; i < static_cast<int>(attackRotationOffsets.size() - 1); i++) {
+        this->attackRotationOffsets[i + 1] = (attackRotationOffsets[i + 1] - attackRotationOffsets[i]) / static_cast<
+            double>(rotationStep);
     }
-    for (int i = 0 ; i < static_cast<int>(attackTranslationOffsets.size() - 1) ; i++) {
-        this->attackTranslationOffsets[i + 1] = (attackTranslationOffsets[i + 1] - attackTranslationOffsets[i]) / static_cast<double>(translationStep);   
+    for (int i = 0; i < static_cast<int>(attackTranslationOffsets.size() - 1); i++) {
+        this->attackTranslationOffsets[i + 1] = (attackTranslationOffsets[i + 1] - attackTranslationOffsets[i]) /
+            static_cast<double>(translationStep);
     }
 }
 
@@ -76,6 +84,10 @@ void Weapon::SetFrameCd(double second) {
 
 int Weapon::GetDamage() {
     return damage;
+}
+
+void Weapon::SetDamage(int damage) {
+    this->damage = damage;
 }
 
 int Weapon::GetMpCost() {
@@ -101,5 +113,3 @@ void Weapon::UpdateTranslationOffset() {
         attackTranslationOffset += attackTranslationOffsets[(frameCd - cdCounter - 1) / step];
     }
 }
-
-
