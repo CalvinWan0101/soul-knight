@@ -5,8 +5,9 @@
 #include "monster/floor_1/boar/DireBoar.h"
 #include "monster/floor_1/boar/NormalBoar.h"
 #include "monster/floor_1/elite_goblin_guard/EliteGoblinGuardHoe.h"
+#include "monster/floor_1/elite_goblin_guard/EliteGoblinGuardShotgun.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardBow.h"
-#include "monster/floor_1/goblin_guard/GoblinGuardGun.h"
+#include "monster/floor_1/goblin_guard/GoblinGuardPistol.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardSpear.h"
 
 Monster* MonsterFactory::CreateMonster(MonsterType type, double level) {
@@ -17,11 +18,13 @@ Monster* MonsterFactory::CreateMonster(MonsterType type, double level) {
 
     case MonsterType::GOBLIN_GUARD_SPEAR:
         return new GoblinGuardSpear(level);
-    case MonsterType::GOBLIN_GUARD_GUN:
-        return new GoblinGuardGun(level);
+    case MonsterType::GOBLIN_GUARD_PISTOL:
+        return new GoblinGuardPistol(level);
     case MonsterType::GOBLIN_GUARD_BOW:
         return new GoblinGuardBow(level);
 
+    case MonsterType::ELITE_GOBLIN_GUARD_SHOTGUN:
+        return new EliteGoblinGuardShotgun(level);
     case MonsterType::ELITE_GOBLIN_GUARD_HOE:
         return new EliteGoblinGuardHoe(level);
 

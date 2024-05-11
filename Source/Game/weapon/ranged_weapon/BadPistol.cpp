@@ -5,13 +5,10 @@
 #include "../../manager/ObjectManager.h"
 #include "../../projectile/bullet/Arrow.h"
 
-BadPistol::BadPistol() {
-}
-
 BadPistol::BadPistol(Point point) : RangedWeapon(point) {
 }
 
-BadPistol::BadPistol(double damage = 3) : RangedWeapon(damage) {
+BadPistol::BadPistol(double damage) : RangedWeapon(damage) {
 }
 
 Weapon* BadPistol::Copy() {
