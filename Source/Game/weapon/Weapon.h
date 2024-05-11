@@ -5,7 +5,7 @@ class Weapon : public RotatableObject {
 public:
     Weapon();
     Weapon(Point point);
-    Weapon(int damage);
+    Weapon(double damage);
     virtual Weapon* Copy() = 0;
     void Start() override;
     void Update() override;
@@ -19,7 +19,7 @@ public:
     
 protected:
     int frameCd; // how many frames to wait for next attack
-    int damage;
+    double damage;
     int mpCost;
 private:
     int cdCounter; // minus 1 per frame

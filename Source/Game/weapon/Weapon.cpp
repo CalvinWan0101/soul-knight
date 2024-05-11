@@ -3,7 +3,7 @@
 
 #include "../config.h"
 
-Weapon::Weapon(): cdCounter(0), attackTiming(0), attackRotationOffset(0) {
+Weapon::Weapon(): cdCounter(0), attackTiming(0), attackRotationOffset(0), attackTranslationOffset(0) {
     AddTag(Tag::PLAYER_WEAPON);
 }
 
@@ -12,7 +12,7 @@ Weapon::Weapon(Point point): cdCounter(0), attackTiming(0), attackRotationOffset
     AddTag(Tag::PLAYER_WEAPON);
 }
 
-Weapon::Weapon(int damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0) {
+Weapon::Weapon(double damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0) {
     AddTag(Tag::PLAYER_WEAPON);
 }
 

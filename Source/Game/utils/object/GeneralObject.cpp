@@ -4,7 +4,7 @@
 #include <algorithm>
 
 
-GeneralObject::GeneralObject(): index(0) {
+GeneralObject::GeneralObject(): cMovingBitmaps({}), index(0), frontGameObjects({}), backGameObjects({}) {
 }
 
 GeneralObject::~GeneralObject() {
