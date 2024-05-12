@@ -33,7 +33,7 @@ void Shotgun::Attack() {
     Vec currentRotation = this->rotation;
     currentRotation.Rotate(0.4);
 
-    Bullet* bullet1 = projectilePool->AcquireBadPistolBullet();
+    Bullet* bullet1 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
     bullet1->SetSpeed(currentRotation, 7);
     bullet1->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet1->SetDamage(this->GetDamage());
@@ -42,7 +42,7 @@ void Shotgun::Attack() {
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet2 = projectilePool->AcquireBadPistolBullet();
+    Bullet* bullet2 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
     bullet2->SetSpeed(currentRotation, 7);
     bullet2->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet2->SetDamage(this->GetDamage());
@@ -51,7 +51,7 @@ void Shotgun::Attack() {
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet3 = projectilePool->AcquireBadPistolBullet();
+    Bullet* bullet3 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
     bullet3->SetSpeed(currentRotation, 7);
     bullet3->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet3->SetDamage(this->GetDamage());
@@ -60,7 +60,7 @@ void Shotgun::Attack() {
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet4 = projectilePool->AcquireBadPistolBullet();
+    Bullet* bullet4 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
     bullet4->SetSpeed(currentRotation, 7);
     bullet4->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet4->SetDamage(this->GetDamage());
@@ -69,7 +69,7 @@ void Shotgun::Attack() {
 
     currentRotation.Rotate(-0.2);
 
-    Bullet* bullet5 = projectilePool->AcquireBadPistolBullet();
+    Bullet* bullet5 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
     bullet5->SetSpeed(currentRotation, 7);
     bullet5->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet5->SetDamage(this->GetDamage());

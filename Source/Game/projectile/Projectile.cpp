@@ -4,6 +4,9 @@
 Projectile::Projectile(): damage(0) {
 }
 
+Projectile::~Projectile() {
+}
+
 void Projectile::SetDamage(double damage) {
     this->damage = damage;
 }

@@ -30,7 +30,7 @@ void Hammer::LoadResources() {
 }
 
 void Hammer::Attack() {
-    ShockWave* shockWave = ProjectilePool::Instance()->AcquireHammerWave();
+    ShockWave* shockWave = static_cast<HammerWave*>(ProjectilePool::Instance()->Acquire(ProjectileType::HAMMER_WAVE));
     shockWave->SetPosition(&(this->position + Vec(&rotation, 17) + Vec(0.0, -15)));
     shockWave->SetDamage(damage);
     UpdateTag(shockWave);

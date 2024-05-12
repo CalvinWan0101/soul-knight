@@ -4,5 +4,5 @@
 
 class MonsterFactory {
 public:
-    static Monster* CreateMonster(MonsterType type, double level); 
+    static Monster* Create(MonsterType type, double level); 
 };

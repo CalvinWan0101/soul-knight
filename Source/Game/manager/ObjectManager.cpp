@@ -10,7 +10,6 @@
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
-#include "../pool/ProjectileDispatcher.h"
 #include "../pool/ProjectilePool.h"
 #include "../projectile/bullet/BadPistolBullet.h"
 #include "../weapon/ranged_weapon/BadPistol.h"
@@ -167,10 +166,12 @@ void ObjectManager::DeleteObsoleteElements() {
     for (vector<GameObject*>::iterator object = objects.begin(); object != objects.end();) {
         if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
             if ((*object)->HasTag(Tag::PROJECTILE)) {
-                ProjectileDispatcher::dispatch(dynamic_cast<Projectile*>(*object));
+                (*object)->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
+                ProjectilePool::Instance()->Release(dynamic_cast<Projectile*>(*object));
             }
             else {
                 delete *object;
+                *object = nullptr;
             }
             object = objects.erase(object);
         }

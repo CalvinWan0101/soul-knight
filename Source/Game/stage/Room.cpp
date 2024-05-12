@@ -47,7 +47,7 @@ void Room::IsCleared() {
 void Room::SetMonsters() {
     for (auto monster : monsterMap) {
         for (int i = 0; i < monster.second; i++) {
-            monsters.push_back(MonsterFactory::CreateMonster(monster.first, 1));
+            monsters.push_back(MonsterFactory::Create(monster.first, 1));
         }
     }
     PlacedMonster();

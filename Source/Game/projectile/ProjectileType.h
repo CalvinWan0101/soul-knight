@@ -10,4 +10,7 @@ enum class ProjectileType {
 
     // other
     INVISIBLE_SHOCK_WAVE,
+
+    // count
+    COUNT
 };

@@ -32,7 +32,7 @@ void Bow::LoadResources() {
 }
 
 void Bow::Attack() {
-    Bullet* bullet = ProjectilePool::Instance()->AcquireArrow();
+    Bullet* bullet = static_cast<Arrow*>(ProjectilePool::Instance()->Acquire(ProjectileType::ARROW));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());

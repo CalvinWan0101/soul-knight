@@ -1,9 +1,12 @@
 ﻿#include "stdafx.h"
 #include "ProjectilePool.h"
 
-#define PREALLOCATE_BULLET 50
-#define PREALLOCATE_SHOCK_WAVE 10
+#include "../projectile/Projectile.h"
+#include "../projectile/ProjectileFactory.h"
 
+#define PREALLOCATIONS 50
+
+class Arrow;
 ProjectilePool* ProjectilePool::instance = nullptr;
 
 ProjectilePool* ProjectilePool::Instance() {
@@ -14,98 +17,37 @@ ProjectilePool* ProjectilePool::Instance() {
 }
 
 ProjectilePool::ProjectilePool() {
-    // bullet
-    for (int i = 0; i < PREALLOCATE_BULLET; i++) {
-        arrows.push_back(new Arrow());
-    }
-    for (int i = 0; i < PREALLOCATE_BULLET; i++) {
-        badPistolBullets.push_back(new BadPistolBullet());
-    }
-    // shock wave
-    for (int i = 0; i < PREALLOCATE_SHOCK_WAVE; i++) {
-        hammerWaves.push_back(new HammerWave());
-    }
-    // other
-    for (int i = 0; i < PREALLOCATE_SHOCK_WAVE; i++) {
-        invisibleShockWaves.push_back(new InvisibleShockWave());
+    pool = std::vector<std::vector<Projectile*>>(static_cast<int>(ProjectileType::COUNT));
+    for (int i = 0; i < static_cast<int>(ProjectileType::COUNT); i++) {
+        std::vector<Projectile*> projectiles;
+        for (int j = 0; j < PREALLOCATIONS; j++) {
+            projectiles.push_back(ProjectileFactory::Create(static_cast<ProjectileType>(i)));
+        }
+        pool.push_back(projectiles);
     }
 }
 
 ProjectilePool::~ProjectilePool() {
-    // bullet
-    for (Arrow* arrow : arrows) {
-        delete arrow;
+    for (auto& vector : pool) {
+        for (auto projectile : vector) {
+            delete projectile;
+        }
+        vector.clear();
     }
-    for (BadPistolBullet* bullet : badPistolBullets) {
-        delete bullet;
-    }
-    
-    // shock wave
-    for (HammerWave* hammerWave : hammerWaves) {
-        delete hammerWave;
-    }
-    
-    // other
-    for (InvisibleShockWave* invisibleShockWave : invisibleShockWaves) {
-        delete invisibleShockWave;
-    }
+    pool.clear();
 }
 
-// bullet
-Arrow* ProjectilePool::AcquireArrow() {
-    if (arrows.empty()) {
-        arrows.push_back(new Arrow());
+
+Projectile* ProjectilePool::Acquire(ProjectileType type) {
+    int index = static_cast<int>(type);
+    if (pool[index].empty()) {
+        pool[index].push_back(ProjectileFactory::Create(type));
     }
-    Arrow* arrow = arrows.back();
-    arrows.pop_back();
-    return arrow;
+    Projectile* projectile = pool[index].back();
+    pool[index].pop_back();
+    return projectile;
 }
 
-void ProjectilePool::ReleaseArrow(Arrow* arrow) {
-    arrow->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
-    arrows.push_back(arrow);
-}
-
-BadPistolBullet* ProjectilePool::AcquireBadPistolBullet() {
-    if (badPistolBullets.empty()) {
-        badPistolBullets.push_back(new BadPistolBullet());
-    }
-    BadPistolBullet* bullet = badPistolBullets.back();
-    badPistolBullets.pop_back();
-    return bullet;
-}
-
-void ProjectilePool::ReleaseBadPistolBullet(BadPistolBullet* bullet) {
-    bullet->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
-    badPistolBullets.push_back(bullet);
-}
-
-// shock wave
-HammerWave* ProjectilePool::AcquireHammerWave() {
-    if (hammerWaves.empty()) {
-        hammerWaves.push_back(new HammerWave());
-    }
-    HammerWave* hammerWave = hammerWaves.back();
-    hammerWaves.pop_back();
-    return hammerWave;
-}
-
-void ProjectilePool::ReleaseHammerWave(HammerWave* hammerWave) {
-    hammerWave->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
-    hammerWaves.push_back(hammerWave);
-}
-
-// other
-InvisibleShockWave* ProjectilePool::AcquireInvisibleShockWave() {
-    if (invisibleShockWaves.empty()) {
-        invisibleShockWaves.push_back(new InvisibleShockWave());
-    }
-    InvisibleShockWave* invisibleShockWave = invisibleShockWaves.back();
-    invisibleShockWaves.pop_back();
-    return invisibleShockWave;
-}
-
-void ProjectilePool::ReleaseInvisibleShockWave(InvisibleShockWave* invisibleShockWave) {
-    invisibleShockWave->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
-    invisibleShockWaves.push_back(invisibleShockWave);
+void ProjectilePool::Release(Projectile* projectile) {
+    pool[static_cast<int>(projectile->GetProjectileType())].push_back(projectile);
 }

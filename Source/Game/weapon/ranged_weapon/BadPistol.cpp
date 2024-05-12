@@ -30,7 +30,7 @@ void BadPistol::LoadResources() {
 }
 
 void BadPistol::Attack() {
-    Bullet* bullet = ProjectilePool::Instance()->AcquireBadPistolBullet();
+    Bullet* bullet = static_cast<BadPistolBullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::BAD_PISTOL_BULLET));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());

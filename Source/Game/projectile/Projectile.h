@@ -4,6 +4,7 @@
 class Projectile {
 public:
     Projectile();
+    virtual ~Projectile();
     void SetDamage(double damage);
     double GetDamage();
     ProjectileType GetProjectileType();

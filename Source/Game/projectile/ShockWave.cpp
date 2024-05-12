@@ -5,7 +5,6 @@ ShockWave::ShockWave() {
     AddTag(Tag::PROJECTILE);
 }
 
-
 void ShockWave::Start() {
     OnceAnimationObject::Start();
     activicated = false;

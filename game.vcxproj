@@ -607,7 +607,6 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\pool\ProjectilePool.cpp" />
-    <ClCompile Include="Source\Game\pool\ProjectileDispatcher.cpp" />
     <ClCompile Include="Source\Game\projectile\Bullet.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -792,6 +791,7 @@
     <ClCompile Include="Source\Game\mygame_run.cpp" />
     <ClCompile Include="Source\Game\projectile\Projectile.cpp" />
     <ClCompile Include="Source\Game\projectile\InvisibleShockWave.cpp" />
+    <ClCompile Include="Source\Game\projectile\ProjectileFactory.cpp" />
     <ClCompile Include="Source\Game\projectile\ShockWave.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -1841,7 +1841,6 @@
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
     <ClInclude Include="Source\Game\pool\ProjectilePool.h" />
-    <ClInclude Include="Source\Game\pool\ProjectileDispatcher.h" />
     <ClInclude Include="Source\Game\projectile\Bullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\Arrow.h" />
     <ClInclude Include="Source\Game\projectile\bullet\BadPistolBullet.h" />
@@ -1851,6 +1850,7 @@
     <ClInclude Include="Source\Game\mygame.h" />
     <ClInclude Include="Source\Game\projectile\Projectile.h" />
     <ClInclude Include="Source\Game\projectile\InvisibleShockWave.h" />
+    <ClInclude Include="Source\Game\projectile\ProjectileFactory.h" />
     <ClInclude Include="Source\Game\projectile\ProjectileType.h" />
     <ClInclude Include="Source\Game\projectile\ShockWave.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />

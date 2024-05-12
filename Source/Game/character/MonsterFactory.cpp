@@ -10,7 +10,7 @@
 #include "monster/floor_1/goblin_guard/GoblinGuardPistol.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardSpear.h"
 
-Monster* MonsterFactory::CreateMonster(MonsterType type, double level) {
+Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
     // level 1
     case MonsterType::GOBLIN_GIANT:

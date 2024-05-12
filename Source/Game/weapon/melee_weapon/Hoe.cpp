@@ -34,7 +34,7 @@ void Hoe::LoadResources() {
 }
 
 void Hoe::Attack() {
-    InvisibleShockWave* shockWave = ProjectilePool::Instance()->AcquireInvisibleShockWave();
+    InvisibleShockWave* shockWave = static_cast<InvisibleShockWave*>(ProjectilePool::Instance()->Acquire(ProjectileType::INVISIBLE_SHOCK_WAVE));
     shockWave->SetPosition(&(this->position + Vec(&rotation, 10)));
     shockWave->SetSpeed(rotation, 0);
     shockWave->SetSize(30);
