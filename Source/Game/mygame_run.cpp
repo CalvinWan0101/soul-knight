@@ -28,6 +28,7 @@ CGameStateRun::~CGameStateRun() {
     delete objectManager;
     delete stageManager;
     delete projectilePool;
+    delete monsterPool;
     delete Draw::Instance();
 }
 

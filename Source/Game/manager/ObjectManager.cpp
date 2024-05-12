@@ -10,6 +10,7 @@
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
+#include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
 #include "../projectile/bullet/BadPistolBullet.h"
 #include "../weapon/ranged_weapon/BadPistol.h"
@@ -165,9 +166,12 @@ void ObjectManager::CollisionDetection() {
 void ObjectManager::DeleteObsoleteElements() {
     for (vector<GameObject*>::iterator object = objects.begin(); object != objects.end();) {
         if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
+            (*object)->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
             if ((*object)->HasTag(Tag::PROJECTILE)) {
-                (*object)->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
                 ProjectilePool::Instance()->Release(dynamic_cast<Projectile*>(*object));
+            }
+            else if ((*object)->HasTag(Tag::MONSTER)) {
+                MonsterPool::Instance()->Release(dynamic_cast<Monster*>(*object));
             }
             else {
                 delete *object;

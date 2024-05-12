@@ -10,4 +10,5 @@ EliteGoblinGuardShotgun::EliteGoblinGuardShotgun(double level) : EliteGoblinGuar
 void EliteGoblinGuardShotgun::Start() {
     this->SetWeapon(new Shotgun(3));
     EliteGoblinGuard::Start();
+    SetMonsterType(MonsterType::ELITE_GOBLIN_GUARD_SHOTGUN);
 }

@@ -7,10 +7,11 @@ GoblinGiant::GoblinGiant(double level = 1) : Monster(level) {
 
 void GoblinGiant::Start() {
     Monster::Start();
-    this->speed.SetVec(0.0, 0.0);
     this->maxHp = 40 * level;
+    this->speed.SetVec(0.0, 0.0);
     this->maxSpeed = 3;
     this->SetWeapon(new Hammer());
+    SetMonsterType(MonsterType::GOBLIN_GIANT);
 }
 
 void GoblinGiant::Update() {

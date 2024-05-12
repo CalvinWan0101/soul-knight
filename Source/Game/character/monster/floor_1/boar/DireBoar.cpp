@@ -8,6 +8,7 @@ void DireBoar::Start() {
     Boar::Start();
     this->maxHp = 10 * level;
     SetDamage(3);
+    SetMonsterType(MonsterType::DIRE_BOAR);
 }
 
 void DireBoar::LoadResources() {

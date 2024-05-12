@@ -6,7 +6,6 @@
 
 #define PREALLOCATIONS 50
 
-class Arrow;
 ProjectilePool* ProjectilePool::instance = nullptr;
 
 ProjectilePool* ProjectilePool::Instance() {

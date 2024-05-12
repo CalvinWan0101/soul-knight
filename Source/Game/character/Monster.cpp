@@ -46,8 +46,28 @@ void Monster::EnterPlayerAlertRange(Player* player) {
 }
 
 void Monster::SetWeapon(Weapon* weapon) {
-    this->weapon = weapon;
-    this->weapon->RemoveTag(Tag::PLAYER_WEAPON);
-    this->weapon->AddTag(Tag::MONSTER_WEAPON);
-    this->AddFrontChild(weapon);
+    if (!this->weapon) {
+        this->weapon = weapon;
+        this->weapon->RemoveTag(Tag::PLAYER_WEAPON);
+        this->weapon->AddTag(Tag::MONSTER_WEAPON);
+        this->AddFrontChild(weapon);
+    }
+}
+
+void Monster::SetLevel(double level) {
+    this->level = level;
+}
+
+void Monster::Reset() {
+    this->hp = maxHp;
+    this->state = IDLE;
+    this->RemoveTag(Tag::DEAD);
+}
+
+MonsterType Monster::GetMonsterType() {
+    return static_cast<MonsterType>(monsterType);
+}
+
+void Monster::SetMonsterType(MonsterType type) {
+    monsterType = static_cast<int>(type);
 }

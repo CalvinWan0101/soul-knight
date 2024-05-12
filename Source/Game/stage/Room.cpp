@@ -6,11 +6,12 @@
 #include "../character/MonsterFactory.h"
 #include "../character/Player.h"
 #include "../manager/ObjectManager.h"
+#include "../pool/MonsterPool.h"
 
 Room::Room(Point topLeft, Vec centerOffset, RoomSize size, std::map<MonsterType, int> monsterMap): topLeft(topLeft),
-    centerOffset(centerOffset),
-    size((int)size),
-    monsterMap(monsterMap) {
+                                                                                                   centerOffset(centerOffset),
+                                                                                                   size((int)size),
+                                                                                                   monsterMap(monsterMap) {
 }
 
 void Room::IsInside() {
@@ -47,7 +48,7 @@ void Room::IsCleared() {
 void Room::SetMonsters() {
     for (auto monster : monsterMap) {
         for (int i = 0; i < monster.second; i++) {
-            monsters.push_back(MonsterFactory::Create(monster.first, 1));
+            monsters.push_back(MonsterPool::Instance()->Acquire(monster.first, 1));
         }
     }
     PlacedMonster();

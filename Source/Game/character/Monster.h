@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Character.h"
+#include "MonsterType.h"
 
 class Player;
 
@@ -13,10 +14,15 @@ public:
     void EnterPlayerAlertRange(Player* player);
 
     void SetWeapon(Weapon* weapon);
+    void SetLevel(double level);
+    void Reset();
+    MonsterType GetMonsterType();
 
 protected:
     double maxSpeed;
     double level;
+    int monsterType;
+    void SetMonsterType(MonsterType type);
 
 private:
     Player* player = nullptr;

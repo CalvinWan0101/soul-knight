@@ -306,7 +306,7 @@
     <ClCompile Include="Source\Game\character\monster\floor_1\boar\NormalBoar.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuard.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardHoe.cpp" />
-    <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardPistol.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardDart.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardShotgun.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_giant\GoblinGiant.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -606,6 +606,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\pool\MonsterPool.cpp" />
     <ClCompile Include="Source\Game\pool\ProjectilePool.cpp" />
     <ClCompile Include="Source\Game\projectile\Bullet.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -1830,7 +1831,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\boar\NormalBoar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuard.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardHoe.h" />
-    <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardPistol.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardDart.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardShotgun.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_giant\GoblinGiant.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuard.h" />
@@ -1840,6 +1841,7 @@
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
+    <ClInclude Include="Source\Game\pool\MonsterPool.h" />
     <ClInclude Include="Source\Game\pool\ProjectilePool.h" />
     <ClInclude Include="Source\Game\projectile\Bullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\Arrow.h" />
