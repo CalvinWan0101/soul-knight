@@ -5,6 +5,7 @@ class InvisibleObject : public GameObject{
 public:
     void Start() override;
     void Update() override;
+    void LoadResources() override;
     void Show(Point screenPositoin) override;
 
     void SetHitBoxByRatio(double heightRatio, double widthRatio) override;

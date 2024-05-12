@@ -1,18 +1,26 @@
 #include "stdafx.h"
 #include "GameObject.h"
 
-GameObject::GameObject() : hitBox(position), visible(true) {
+GameObject::GameObject() : hitBox(position), visible(true), resourcesIsLoaded(false) {
 }
 
 GameObject::~GameObject() {
 }
 
 void GameObject::Start() {
+    if (!resourcesIsLoaded) {
+        resourcesIsLoaded = true;
+        LoadResources();
+    }
     SetCenter();
 }
 
 void GameObject::Update() {
     this->position = this->position + this->speed;
+}
+
+void GameObject::LoadResources() {
+    
 }
 
 Point GameObject::GetPosition() {

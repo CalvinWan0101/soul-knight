@@ -6,6 +6,14 @@ HammerWave::HammerWave() {
 }
 
 void HammerWave::Start() {
+    ShockWave::Start();
+}
+
+void HammerWave::Update() {
+    ShockWave::Update();
+}
+
+void HammerWave::LoadResources() {
     SetAnimation({
         "Resources/affect/weapon/wave/1.bmp",
         "Resources/affect/weapon/wave/2.bmp",
@@ -15,10 +23,6 @@ void HammerWave::Start() {
         "Resources/affect/weapon/wave/6.bmp",
         "Resources/affect/weapon/wave/7.bmp",
     }, 100, RGB(255, 255, 255));
-    ShockWave::Start();
 }
 
-void HammerWave::Update() {
-    ShockWave::Update();
-}
 

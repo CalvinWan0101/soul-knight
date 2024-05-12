@@ -15,6 +15,7 @@ public:
     virtual ~GameObject();
     virtual void Start();
     virtual void Update();
+    virtual void LoadResources();
     virtual void Show(Point screenPositoin) = 0;
 
     Point GetPosition();
@@ -47,5 +48,6 @@ protected:
     virtual void SetCenter() = 0;
 
 private:
+    bool resourcesIsLoaded;
     bitset<static_cast<int>(Tag::Count)> tags;
 };

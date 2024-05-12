@@ -7,9 +7,9 @@ ShockWave::ShockWave() {
 
 
 void ShockWave::Start() {
+    OnceAnimationObject::Start();
     activicated = false;
     SetHitBoxByRatio(0.7, 0.7);
-    OnceAnimationObject::Start();
 }
 
 void ShockWave::Update() {
@@ -23,6 +23,7 @@ void ShockWave::Update() {
     }
 
     if (isAnimationFinished) {
+        isAnimationFinished = false;
         AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }

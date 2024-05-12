@@ -9,6 +9,10 @@ void InvisibleObject::Update() {
     GameObject::Update();
 }
 
+void InvisibleObject::LoadResources() {
+    // do nothing
+}
+
 void InvisibleObject::Show(Point screenPositoin) {
     if (!visible)
         return;

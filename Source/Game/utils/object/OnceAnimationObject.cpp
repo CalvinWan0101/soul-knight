@@ -8,6 +8,8 @@ OnceAnimationObject::~OnceAnimationObject() {
 }
 
 void OnceAnimationObject::Start() {
+    isAnimationStart = false;
+    isAnimationFinished = false;
     GameObject::Start();
 }
 
@@ -20,11 +22,11 @@ void OnceAnimationObject::Show(Point screenPositoin) {
         return;
     double screenX = this->position.GetX() - screenPositoin.GetX();
     double screenY = this->position.GetY() - screenPositoin.GetY();
-    if (!isAnimationStart) {
+    if (!isAnimationStart && !isAnimationFinished) {
         isAnimationStart = true;
         cMovingBitmap.ToggleAnimation();
     }
-    if (cMovingBitmap.IsAnimationDone()) {
+    else if (cMovingBitmap.IsAnimationDone() && !isAnimationFinished) {
         isAnimationFinished = true;
     }
 
