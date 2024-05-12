@@ -6,6 +6,18 @@ EliteGoblinGuard::EliteGoblinGuard(double level = 1) : Monster(level) {
 }
 
 void EliteGoblinGuard::Start() {
+    Monster::Start();
+    this->speed.SetVec(0.0, 0.0);
+    this->maxHp = 15 * level;
+    this->maxSpeed = 3;
+    this->hp = maxHp;
+}
+
+void EliteGoblinGuard::Update() {
+    Monster::Update();
+}
+
+void EliteGoblinGuard::LoadResources() {
     this->AddAnimation({
                            "resources/monster/floor_1/elite_goblin_guard/idle/1.bmp",
                            "resources/monster/floor_1/elite_goblin_guard/idle/2.bmp",
@@ -36,16 +48,8 @@ void EliteGoblinGuard::Start() {
     this->AddAnimation({
                            "resources/monster/floor_1/elite_goblin_guard/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
-    this->speed.SetVec(0.0, 0.0);
-    this->maxHp = 15 * level;
-    this->maxSpeed = 3;
-    this->hp = maxHp;
-    Monster::Start();
 }
 
-void EliteGoblinGuard::Update() {
-    Monster::Update();
-}
 
 void EliteGoblinGuard::AutoMation() {
     Attack();

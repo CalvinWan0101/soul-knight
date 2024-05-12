@@ -6,5 +6,6 @@ public:
     EliteGoblinGuard(double level);
     void Start();
     void Update();
+    void LoadResources();
     void AutoMation();
 };

@@ -15,7 +15,7 @@ public:
     virtual ~GameObject();
     virtual void Start();
     virtual void Update();
-    virtual void LoadResources();
+    virtual void LoadResources() = 0;
     virtual void Show(Point screenPositoin) = 0;
 
     Point GetPosition();

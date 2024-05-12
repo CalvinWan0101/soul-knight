@@ -8,9 +8,9 @@ Player::Player(): alertRange(position), mp(0), shield(0), interactive(false) {
 }
 
 void Player::Start() {
+    Character::Start();
     SetHitBoxByRatio(0.8, 0.3);
     SetAlertRange(200, 200);
-    Character::Start();
 }
 
 void Player::Update() {

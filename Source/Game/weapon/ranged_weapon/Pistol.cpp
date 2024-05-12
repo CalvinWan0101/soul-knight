@@ -18,13 +18,16 @@ Weapon* Pistol::Copy() {
 }
 
 void Pistol::Start() {
-    SetImages("Resources/weapon/pistol/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
     RangedWeapon::Start();
+    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
 }
 
 void Pistol::Update() {
     RangedWeapon::Update();
+}
+
+void Pistol::LoadResources() {
+    SetImages("Resources/weapon/pistol/", 3, RGB(255, 255, 255));
 }
 
 void Pistol::Attack() {

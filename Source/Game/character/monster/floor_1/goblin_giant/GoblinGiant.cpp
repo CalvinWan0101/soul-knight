@@ -6,6 +6,18 @@ GoblinGiant::GoblinGiant(double level = 1) : Monster(level) {
 }
 
 void GoblinGiant::Start() {
+    Monster::Start();
+    this->speed.SetVec(0.0, 0.0);
+    this->maxHp = 40 * level;
+    this->maxSpeed = 3;
+    this->SetWeapon(new Hammer());
+}
+
+void GoblinGiant::Update() {
+    Monster::Update();
+}
+
+void GoblinGiant::LoadResources() {
     this->AddAnimation({
                            "resources/monster/floor_1/goblin_giant/idle/1.bmp",
                            "resources/monster/floor_1/goblin_giant/idle/2.bmp",
@@ -36,19 +48,8 @@ void GoblinGiant::Start() {
     this->AddAnimation({
                            "resources/monster/floor_1/goblin_giant/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
-
-    this->speed.SetVec(0.0, 0.0);
-    this->maxHp = 40 * level;
-    this->maxSpeed = 3;
-    this->SetWeapon(new Hammer());
-    Monster::Start();
-}
-
-void GoblinGiant::Update() {
-    Monster::Update();
 }
 
 void GoblinGiant::AutoMation() {
     Attack();
 }
-

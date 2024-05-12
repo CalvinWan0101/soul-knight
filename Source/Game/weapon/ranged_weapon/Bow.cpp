@@ -19,13 +19,16 @@ Weapon* Bow::Copy() {
 }
 
 void Bow::Start() {
-    SetImages("Resources/weapon/bow/drawn_bow/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({0}, {-2, 0}, 0.8);
     RangedWeapon::Start();
+    SetAttackAnimation({0}, {-2, 0}, 0.8);
 }
 
 void Bow::Update() {
     RangedWeapon::Update();
+}
+
+void Bow::LoadResources() {
+    SetImages("Resources/weapon/bow/drawn_bow/", 3, RGB(255, 255, 255));
 }
 
 void Bow::Attack() {

@@ -6,4 +6,5 @@ public:
     BadPistolBullet();
     void Start() override;
     void Update() override;
+    void LoadResources() override;
 };

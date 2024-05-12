@@ -6,7 +6,7 @@
 class Boar : public Monster, public Projectile{
 public:
     Boar(double level);
-    virtual void Start() override;
+    void Start() override;
     void Update() override;
     void AutoMation() override;
     void DumpState(bool isDump);

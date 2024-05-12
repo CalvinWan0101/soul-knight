@@ -5,10 +5,16 @@ DireBoar::DireBoar(double level) : Boar(level) {
 }
 
 void DireBoar::Start() {
+    Boar::Start();
+    this->maxHp = 10 * level;
+    SetDamage(3);
+}
+
+void DireBoar::LoadResources() {
     this->AddAnimation({
-                   "resources/monster/floor_1/dire_boar/idle/1.bmp",
-                   "resources/monster/floor_1/dire_boar/idle/2.bmp"
-               }, RGB(255, 255, 255), 100, false);
+                           "resources/monster/floor_1/dire_boar/idle/1.bmp",
+                           "resources/monster/floor_1/dire_boar/idle/2.bmp"
+                       }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
                            "resources/monster/floor_1/dire_boar/idle/flip_1.bmp",
                            "resources/monster/floor_1/dire_boar/idle/flip_2.bmp"
@@ -27,10 +33,4 @@ void DireBoar::Start() {
     this->AddAnimation({
                            "resources/monster/floor_1/dire_boar/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
-
-    this->maxHp = 10 * level;
-    SetDamage(3);
-    Boar::Start();
 }
-
-

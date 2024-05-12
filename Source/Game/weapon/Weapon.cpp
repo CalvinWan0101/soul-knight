@@ -19,8 +19,8 @@ Weapon::Weapon(double damage): damage(damage), cdCounter(0), attackTiming(0), at
 }
 
 void Weapon::Start() {
-    SetHitBoxByRatio(1, 1);
     RotatableObject::Start();
+    SetHitBoxByRatio(1, 1);
 }
 
 void Weapon::Update() {

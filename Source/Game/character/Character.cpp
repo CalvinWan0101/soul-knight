@@ -8,8 +8,8 @@ Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX
 }
 
 void Character::Start() {
-    this->hp = maxHp;
     GeneralObject::Start();
+    this->hp = maxHp;
 }
 
 void Character::Update() {

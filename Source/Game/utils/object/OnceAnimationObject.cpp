@@ -8,9 +8,9 @@ OnceAnimationObject::~OnceAnimationObject() {
 }
 
 void OnceAnimationObject::Start() {
+    GameObject::Start();
     isAnimationStart = false;
     isAnimationFinished = false;
-    GameObject::Start();
 }
 
 void OnceAnimationObject::Update() {

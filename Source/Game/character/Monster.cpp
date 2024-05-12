@@ -10,8 +10,8 @@ Monster::Monster(double level): level(level) {
 }
 
 void Monster::Start() {
-    SetHitBoxByRatio(1, 1);
     Character::Start();
+    SetHitBoxByRatio(1, 1);
 }
 
 void Monster::Update() {

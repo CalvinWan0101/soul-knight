@@ -20,13 +20,16 @@ Weapon* Spear::Copy() {
 }
 
 void Spear::Start() {
-    SetImages("Resources/weapon/spear/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({}, {15, 12, 9, 6, 3, 0}, 1, 0.1);
     MeleeWeapon::Start();
+    SetAttackAnimation({}, {15, 12, 9, 6, 3, 0}, 1, 0.1);
 }
 
 void Spear::Update() {
     MeleeWeapon::Update();
+}
+
+void Spear::LoadResources() {
+    SetImages("Resources/weapon/spear/", 3, RGB(255, 255, 255));
 }
 
 void Spear::Attack() {

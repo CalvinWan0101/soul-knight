@@ -13,9 +13,18 @@ Knight::Knight() {
 }
 
 void Knight::Start() {
+    Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
     ChangeWeapon(new Hammer());
+    maxHp = 30;
+}
+
+void Knight::Update() {
+    Player::Update();
+}
+
+void Knight::LoadResources() {
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",
                            "resources/player/knight/idle/2.bmp",
@@ -51,10 +60,4 @@ void Knight::Start() {
     this->AddAnimation({
                            "resources/player/knight/flip_dead.bmp",
                        }, RGB(255, 255, 255), 100, true);
-    maxHp = 30;
-    Player::Start();
-}
-
-void Knight::Update() {
-    Player::Update();
 }

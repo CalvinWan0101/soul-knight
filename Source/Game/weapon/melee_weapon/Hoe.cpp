@@ -21,13 +21,16 @@ Weapon* Hoe::Copy() {
 }
 
 void Hoe::Start() {
-    SetImages("Resources/weapon/hoe/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
     MeleeWeapon::Start();
+    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
 }
 
 void Hoe::Update() {
     MeleeWeapon::Update();
+}
+
+void Hoe::LoadResources() {
+    SetImages("Resources/weapon/hoe/", 3, RGB(255, 255, 255));
 }
 
 void Hoe::Attack() {

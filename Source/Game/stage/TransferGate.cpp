@@ -9,13 +9,16 @@ TransferGate::TransferGate() {
 }
 
 void TransferGate::Start() {
-    AddAnimation({ "resources/object/transfergate.bmp" }, RGB(255, 255, 255), 0, false);
-    SetHitBoxByRatio(0.7, 0.7);
     GeneralObject::Start();
+    SetHitBoxByRatio(0.7, 0.7);
 }
 
 void TransferGate::Update() {
     GeneralObject::Update();
+}
+
+void TransferGate::LoadResources() {
+    AddAnimation({"resources/object/transfergate.bmp"}, RGB(255, 255, 255), 0, false);
 }
 
 void TransferGate::Collision(GameObject* gameObject) {

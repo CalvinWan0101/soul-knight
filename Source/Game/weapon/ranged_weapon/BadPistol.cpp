@@ -17,13 +17,16 @@ Weapon* BadPistol::Copy() {
 }
 
 void BadPistol::Start() {
-    SetImages("Resources/weapon/bad_pistol/", 3, RGB(255, 255, 255));
-    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
     RangedWeapon::Start();
+    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
 }
 
 void BadPistol::Update() {
     RangedWeapon::Update();
+}
+
+void BadPistol::LoadResources() {
+    SetImages("Resources/weapon/bad_pistol/", 3, RGB(255, 255, 255));
 }
 
 void BadPistol::Attack() {

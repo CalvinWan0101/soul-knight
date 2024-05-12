@@ -7,10 +7,11 @@ Boar::Boar(double level = 1) : Monster(level) {
 }
 
 void Boar::Start() {
+    Monster::Start();
     this->speed.SetVec(0.0, 0.0);
     this->maxSpeed = 2;
     this->SetWeapon(new FakeWeapon());
-    
+
     this->angryKeepFrame = 50;
     this->clamKeepFrame = 150;
     this->angryCounter = 0;
@@ -19,7 +20,6 @@ void Boar::Start() {
     this->boarDump = new BoarDump();
     this->boarDump->SetVisible(false);
     AddFrontChild(boarDump);
-    Monster::Start();
 }
 
 void Boar::Update() {

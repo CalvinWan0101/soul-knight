@@ -6,8 +6,8 @@ Bullet::Bullet() {
 }
 
 void Bullet::Start() {
-    SetHitBoxByRatio(0.3, 0.3);
     RotatableObject::Start();
+    SetHitBoxByRatio(0.3, 0.3);
 }
 
 void Bullet::Update() {

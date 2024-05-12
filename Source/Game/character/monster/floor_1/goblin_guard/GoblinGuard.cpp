@@ -5,6 +5,17 @@ GoblinGuard::GoblinGuard(double level = 1) : Monster(level) {
 }
 
 void GoblinGuard::Start() {
+    Monster::Start();
+    this->speed.SetVec(0.0, 0.0);
+    this->maxHp = 8 * level;
+    this->maxSpeed = 3;
+}
+
+void GoblinGuard::Update() {
+    Monster::Update();
+}
+
+void GoblinGuard::LoadResources() {
     this->AddAnimation({
                            "resources/monster/floor_1/goblin_guard/idle/1.bmp",
                            "resources/monster/floor_1/goblin_guard/idle/2.bmp",
@@ -35,15 +46,6 @@ void GoblinGuard::Start() {
     this->AddAnimation({
                            "resources/monster/floor_1/goblin_guard/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
-
-    this->speed.SetVec(0.0, 0.0);
-    this->maxHp = 8 * level;
-    this->maxSpeed = 3;
-    Monster::Start();
-}
-
-void GoblinGuard::Update() {
-    Monster::Update();
 }
 
 void GoblinGuard::AutoMation() {

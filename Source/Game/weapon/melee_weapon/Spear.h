@@ -8,5 +8,6 @@ public:
     Weapon* Copy() override;
     void Start() override;
     void Update() override;
+    void LoadResources() override; 
     void Attack() override;
 };
