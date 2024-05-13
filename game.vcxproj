@@ -791,6 +791,7 @@
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedDiamondBullet.cpp" />
+    <ClCompile Include="Source\Game\projectile\bullet\RedRectangleBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\Projectile.cpp" />
     <ClCompile Include="Source\Game\projectile\InvisibleShockWave.cpp" />
     <ClCompile Include="Source\Game\projectile\ProjectileFactory.cpp" />
@@ -1750,6 +1751,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Bow.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\Dart.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Shotgun.cpp" />
     <ClCompile Include="Source\Game\weapon\Weapon.cpp">
@@ -1852,6 +1854,7 @@
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedDiamondBullet.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\RedRectangleBullet.h" />
     <ClInclude Include="Source\Game\projectile\Projectile.h" />
     <ClInclude Include="Source\Game\projectile\InvisibleShockWave.h" />
     <ClInclude Include="Source\Game\projectile\ProjectileFactory.h" />
@@ -1888,6 +1891,7 @@
     <ClInclude Include="Source\Game\weapon\MeleeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Bow.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\Dart.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Shotgun.h" />
     <ClInclude Include="Source\Game\weapon\Weapon.h" />

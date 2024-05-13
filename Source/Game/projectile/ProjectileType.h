@@ -5,6 +5,7 @@ enum class ProjectileType {
     ARROW,
     BAD_PISTOL_BULLET,
     RED_DIAMOND_BULLET,
+    RED_RECTANGLE_BULLET,
 
     // shock wave
     HAMMER_WAVE,
