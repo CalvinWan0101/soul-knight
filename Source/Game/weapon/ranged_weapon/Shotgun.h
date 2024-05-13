@@ -12,4 +12,7 @@ public:
     void Update() override;
     void LoadResources() override;
     void Attack() override;
+private:
+    void GeneratePlayerBullet();
+    void GenerateMonsterBullet();
 };

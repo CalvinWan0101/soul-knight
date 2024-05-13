@@ -790,6 +790,7 @@
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
+    <ClCompile Include="Source\Game\projectile\bullet\RedDiamondBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\Projectile.cpp" />
     <ClCompile Include="Source\Game\projectile\InvisibleShockWave.cpp" />
     <ClCompile Include="Source\Game\projectile\ProjectileFactory.cpp" />
@@ -1850,6 +1851,7 @@
     <ClInclude Include="Source\Game\character\player\Knight.h" />
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\RedDiamondBullet.h" />
     <ClInclude Include="Source\Game\projectile\Projectile.h" />
     <ClInclude Include="Source\Game\projectile\InvisibleShockWave.h" />
     <ClInclude Include="Source\Game\projectile\ProjectileFactory.h" />
