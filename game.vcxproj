@@ -1626,6 +1626,71 @@
     </ClCompile>
     <ClCompile Include="Source\Game\utils\Point.cpp" />
     <ClCompile Include="Source\Game\utils\Vec.cpp" />
+    <ClCompile Include="Source\Game\wall\door\Door.cpp">
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <BrowseInformation>false</BrowseInformation>
+      <BrowseInformationFile>.\Debug\</BrowseInformationFile>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <CompileAs>Default</CompileAs>
+      <ConformanceMode>false</ConformanceMode>
+      <DiagnosticsFormat>Classic</DiagnosticsFormat>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <MinimalRebuild>true</MinimalRebuild>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <Optimization>Disabled</Optimization>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug\game.pch</PrecompiledHeaderOutputFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ShowIncludes>false</ShowIncludes>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <SpectreMitigation>false</SpectreMitigation>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <TrackerLogDirectory>.\Debug\game.tlog\</TrackerLogDirectory>
+      <MinimalRebuildFromTracking>true</MinimalRebuildFromTracking>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <XMLDocumentationFileName>.\Debug\</XMLDocumentationFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_VC80_UPGRADE=0x0600;_AFXDLL;</PreprocessorDefinitions>
+      <EnablePREfast>false</EnablePREfast>
+      <OmitFramePointers>false</OmitFramePointers>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <LinkCompiled>true</LinkCompiled>
+    </ClCompile>
+    <ClCompile Include="Source\Game\wall\door\HorizontalDoor2.cpp" />
+    <ClCompile Include="Source\Game\wall\door\HorizontalDoor3.cpp" />
+    <ClCompile Include="Source\Game\wall\door\VerticalDoor1.cpp" />
+    <ClCompile Include="Source\Game\wall\door\HorizontalDoor1.cpp" />
+    <ClCompile Include="Source\Game\wall\door\VerticalDoor2.cpp" />
+    <ClCompile Include="Source\Game\wall\door\VerticalDoor3.cpp" />
     <ClCompile Include="Source\Game\wall\Wall.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\FakeWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\Hammer.cpp">
@@ -1882,6 +1947,13 @@
     <ClInclude Include="Source\Game\utils\Point.h" />
     <ClInclude Include="Source\Game\utils\Tag.h" />
     <ClInclude Include="Source\Game\utils\Vec.h" />
+    <ClInclude Include="Source\Game\wall\door\Door.h" />
+    <ClInclude Include="Source\Game\wall\door\HorizontalDoor2.h" />
+    <ClInclude Include="Source\Game\wall\door\HorizontalDoor3.h" />
+    <ClInclude Include="Source\Game\wall\door\VerticalDoor1.h" />
+    <ClInclude Include="Source\Game\wall\door\HorizontalDoor1.h" />
+    <ClInclude Include="Source\Game\wall\door\VerticalDoor2.h" />
+    <ClInclude Include="Source\Game\wall\door\VerticalDoor3.h" />
     <ClInclude Include="Source\Game\wall\Wall.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\FakeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hammer.h" />
@@ -2558,6 +2630,12 @@
     <Content Include="Resources\map\3-4.bmp" />
     <Content Include="Resources\map\3-5.bmp" />
     <Content Include="Resources\map\3-6.bmp" />
+    <Content Include="Resources\map\door\vertical_1.bmp" />
+    <Content Include="Resources\map\door\horizontal_1.bmp" />
+    <Content Include="Resources\map\door\vertical_2.bmp" />
+    <Content Include="Resources\map\door\horizontal_2.bmp" />
+    <Content Include="Resources\map\door\vertical_3.bmp" />
+    <Content Include="Resources\map\door\horizontal_3.bmp" />
     <Content Include="Resources\monster\floor_1\boar\dead.bmp" />
     <Content Include="Resources\monster\floor_1\boar\flip_dead.bmp" />
     <Content Include="Resources\monster\floor_1\boar\idle\1.bmp" />
