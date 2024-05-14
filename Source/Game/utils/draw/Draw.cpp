@@ -22,8 +22,8 @@ namespace game_framework {
     }
 
     
-    void Draw::Rectangle(Point point1, Point point2, COLORREF color, Point radius) {
-        this->drawCommands.emplace_back(new DrawRectangleCommand(point1, point2, color, radius));
+    void Draw::Rectangle(Point point1, Point point2, COLORREF color, int alpha) {
+        this->drawCommands.emplace_back(new DrawRectangleCommand(point1, point2, color, alpha));
     }
     
     void Draw::EmptyRectangle(Point point1, Point point2, COLORREF color, Point radius, int thickness) {
