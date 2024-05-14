@@ -25,6 +25,7 @@ protected:
     int maxMp;
     int shield;
     int maxShild;
+    int damageCooldownCounter;
     HitBox alertRange;
 
 private:

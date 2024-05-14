@@ -3,7 +3,7 @@
 #include "Character.h"
 #include "../manager/ObjectManager.h"
 
-Player::Player(): alertRange(position), mp(0), shield(0), interactive(false) {
+Player::Player(): alertRange(position), mp(0), shield(0), interactive(false), damageCooldownCounter(0) {
     AddTag(Tag::PLAYER);
 }
 
@@ -15,12 +15,18 @@ void Player::Start() {
 
 void Player::Update() {
     Character::Update();
+    if (damageCooldownCounter > 0) {
+        damageCooldownCounter--;
+    }
 }
 
 void Player::Collision(GameObject* gameObject) {
     Character::Collision(gameObject);
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
-        this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();
+        if (damageCooldownCounter == 0) {
+            damageCooldownCounter = 150;
+            this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();   
+        }
     }
     else if (gameObject->HasTag(Tag::PLAYER_WEAPON) && interactive == true) {
         interactive = false;

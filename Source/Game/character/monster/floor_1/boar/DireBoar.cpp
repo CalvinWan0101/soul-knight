@@ -7,6 +7,7 @@ DireBoar::DireBoar(double level) : Boar(level) {
 void DireBoar::Start() {
     Boar::Start();
     this->maxHp = 10 * level;
+    hp = maxHp;
     SetDamage(3);
     SetMonsterType(MonsterType::DIRE_BOAR);
 }

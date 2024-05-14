@@ -7,6 +7,7 @@ NormalBoar::NormalBoar(double level) : Boar(level) {
 void NormalBoar::Start() {
     Boar::Start();
     this->maxHp = 8 * level;
+    hp = maxHp;
     SetDamage(2);
     SetMonsterType(MonsterType::NORMAL_BOAR);
 }
