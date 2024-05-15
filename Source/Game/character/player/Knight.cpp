@@ -6,6 +6,7 @@
 #include "../../weapon/melee_weapon/Spear.h"
 #include "../../weapon/ranged_weapon/BadPistol.h"
 #include "../../weapon/ranged_weapon/Bow.h"
+#include "../../weapon/ranged_weapon/GoblinStaff.h"
 #include "../../weapon/ranged_weapon/Pistol.h"
 #include "../../weapon/ranged_weapon/Shotgun.h"
 
@@ -16,7 +17,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new BadPistol());
+    ChangeWeapon(new GoblinStaff());
     maxHp = 30;
     hp = maxHp;
 }

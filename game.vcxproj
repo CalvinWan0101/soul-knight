@@ -1819,6 +1819,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Bow.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Dart.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinStaff.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Shotgun.cpp" />
     <ClCompile Include="Source\Game\weapon\Weapon.cpp">
@@ -1968,6 +1969,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Bow.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Dart.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinStaff.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Shotgun.h" />
     <ClInclude Include="Source\Game\weapon\Weapon.h" />
