@@ -39,6 +39,8 @@ void Shotgun::Attack() {
 
 void Shotgun::GeneratePlayerBullet() {
     ProjectilePool* projectilePool = ProjectilePool::Instance();
+    ObjectManager* objectManager = ObjectManager::Instance();
+
     Vec currentRotation = this->rotation;
     currentRotation.Rotate(0.4);
 
@@ -47,7 +49,7 @@ void Shotgun::GeneratePlayerBullet() {
     bullet1->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet1->SetDamage(this->GetDamage());
     UpdateTag(bullet1);
-    ObjectManager::Instance()->AddObject(bullet1);
+    objectManager->AddObject(bullet1);
 
     currentRotation.Rotate(-0.2);
 
@@ -56,7 +58,7 @@ void Shotgun::GeneratePlayerBullet() {
     bullet2->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet2->SetDamage(this->GetDamage());
     UpdateTag(bullet2);
-    ObjectManager::Instance()->AddObject(bullet2);
+    objectManager->AddObject(bullet2);
 
     currentRotation.Rotate(-0.2);
 
@@ -65,7 +67,7 @@ void Shotgun::GeneratePlayerBullet() {
     bullet3->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet3->SetDamage(this->GetDamage());
     UpdateTag(bullet3);
-    ObjectManager::Instance()->AddObject(bullet3);
+    objectManager->AddObject(bullet3);
 
     currentRotation.Rotate(-0.2);
 
@@ -74,7 +76,7 @@ void Shotgun::GeneratePlayerBullet() {
     bullet4->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet4->SetDamage(this->GetDamage());
     UpdateTag(bullet4);
-    ObjectManager::Instance()->AddObject(bullet4);
+    objectManager->AddObject(bullet4);
 
     currentRotation.Rotate(-0.2);
 
@@ -83,7 +85,7 @@ void Shotgun::GeneratePlayerBullet() {
     bullet5->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet5->SetDamage(this->GetDamage());
     UpdateTag(bullet5);
-    ObjectManager::Instance()->AddObject(bullet5);
+    objectManager->AddObject(bullet5);
 }
 
 void Shotgun::GenerateMonsterBullet() {
