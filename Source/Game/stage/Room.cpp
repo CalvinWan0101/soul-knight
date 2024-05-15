@@ -10,9 +10,11 @@
 #include "../wall/door/VerticalDoor1.h"
 #include "../wall/door/VerticalDoor2.h"
 #include "../wall/door/VerticalDoor3.h"
+#include "../wall/door/VerticalDoor4.h"
 #include "../wall/door/HorizontalDoor1.h"
 #include "../wall/door/HorizontalDoor2.h"
 #include "../wall/door/HorizontalDoor3.h"
+#include "../wall/door/HorizontalDoor4.h"
 
 Room::Room(Point topLeft, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap):
     topLeft(topLeft),
@@ -128,6 +130,11 @@ void Room::SetDoors() {
         topDoor = new HorizontalDoor3();
         bottomDoor = new HorizontalDoor3();
         break;
+    case 4:
+        leftDoor = new VerticalDoor4();
+        rightDoor = new VerticalDoor4();
+        topDoor = new HorizontalDoor4();
+        bottomDoor = new HorizontalDoor4();
     }
 
     leftDoor->SetTopLeft(Point(x, y + 16 * (size / 2 - 1)));

@@ -1690,10 +1690,12 @@
     </ClCompile>
     <ClCompile Include="Source\Game\wall\door\HorizontalDoor2.cpp" />
     <ClCompile Include="Source\Game\wall\door\HorizontalDoor3.cpp" />
+    <ClCompile Include="Source\Game\wall\door\HorizontalDoor4.cpp" />
     <ClCompile Include="Source\Game\wall\door\VerticalDoor1.cpp" />
     <ClCompile Include="Source\Game\wall\door\HorizontalDoor1.cpp" />
     <ClCompile Include="Source\Game\wall\door\VerticalDoor2.cpp" />
     <ClCompile Include="Source\Game\wall\door\VerticalDoor3.cpp" />
+    <ClCompile Include="Source\Game\wall\door\VerticalDoor4.cpp" />
     <ClCompile Include="Source\Game\wall\Wall.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\FakeWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\Hammer.cpp">
@@ -1957,10 +1959,12 @@
     <ClInclude Include="Source\Game\wall\door\Door.h" />
     <ClInclude Include="Source\Game\wall\door\HorizontalDoor2.h" />
     <ClInclude Include="Source\Game\wall\door\HorizontalDoor3.h" />
+    <ClInclude Include="Source\Game\wall\door\HorizontalDoor4.h" />
     <ClInclude Include="Source\Game\wall\door\VerticalDoor1.h" />
     <ClInclude Include="Source\Game\wall\door\HorizontalDoor1.h" />
     <ClInclude Include="Source\Game\wall\door\VerticalDoor2.h" />
     <ClInclude Include="Source\Game\wall\door\VerticalDoor3.h" />
+    <ClInclude Include="Source\Game\wall\door\VerticalDoor4.h" />
     <ClInclude Include="Source\Game\wall\Wall.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\FakeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hammer.h" />
@@ -3007,12 +3011,14 @@
     <Content Include="Resources\map\3-4.bmp" />
     <Content Include="Resources\map\3-5.bmp" />
     <Content Include="Resources\map\3-6.bmp" />
+    <Content Include="Resources\map\door\horizontal_4.bmp" />
     <Content Include="Resources\map\door\vertical_1.bmp" />
     <Content Include="Resources\map\door\horizontal_1.bmp" />
     <Content Include="Resources\map\door\vertical_2.bmp" />
     <Content Include="Resources\map\door\horizontal_2.bmp" />
     <Content Include="Resources\map\door\vertical_3.bmp" />
     <Content Include="Resources\map\door\horizontal_3.bmp" />
+    <Content Include="Resources\map\door\vertical_4.bmp" />
     <Content Include="Resources\monster\floor_1\boar\dead.bmp" />
     <Content Include="Resources\monster\floor_1\boar\flip_dead.bmp" />
     <Content Include="Resources\monster\floor_1\boar\idle\1.bmp" />

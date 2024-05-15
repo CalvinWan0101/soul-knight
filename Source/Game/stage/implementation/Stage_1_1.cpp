@@ -13,21 +13,21 @@ Stage_1_1::Stage_1_1() {
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
     // room 1
-    rooms.push_back(new Room(Point(528, 0), centerOffset, RoomSize::LARGE_SIZE, 1,
+    rooms.push_back(new Room(Point(528, 0), centerOffset, RoomSize::LARGE_SIZE, 4,
                              std::map<MonsterType, int>{
                                  {MonsterType::GOBLIN_GIANT, 5}, {MonsterType::NORMAL_BOAR, 5}
                              }));
 
     // room 2
-    rooms.push_back(new Room(Point(1216, 48), centerOffset, RoomSize::MEDIUM_SIZE, 2,
+    rooms.push_back(new Room(Point(1216, 48), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                              std::map<MonsterType, int>{{MonsterType::GOBLIN_SHAMAN, 1}}));
 
     // room 3
-    rooms.push_back(new Room(Point(1808, 80), centerOffset, RoomSize::SMALL_SIZE, 3,
+    rooms.push_back(new Room(Point(1808, 80), centerOffset, RoomSize::SMALL_SIZE, 4,
                              std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}}));
 
     // room 4
-    rooms.push_back(new Room(Point(576, 688), centerOffset, RoomSize::MEDIUM_SIZE, 1,
+    rooms.push_back(new Room(Point(576, 688), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                              std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 10}}));
 }
 
