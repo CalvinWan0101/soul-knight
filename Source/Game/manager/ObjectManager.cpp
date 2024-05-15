@@ -24,7 +24,7 @@ ObjectManager* ObjectManager::Instance() {
     return instance;
 }
 
-ObjectManager::ObjectManager() : bar(200, 20, RGB(165,165,165), RGB(247,26,40), Point(30,30)) {
+ObjectManager::ObjectManager() : bar(200, 20, RGB(165,165,165), RGB(247,26,40), Point(30,30)), isDisplayHitBox(false) {
 }
 
 ObjectManager::~ObjectManager() {
@@ -77,10 +77,12 @@ void ObjectManager::Show() {
     for (auto object : objects) {
         object->Show(Point(screenX, screenY));
     }
-    for (auto object : objects) {
-        object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
+    if (isDisplayHitBox) {
+        for (auto object : objects) {
+            object->GetHitBox().Show(Point(screenX, screenY)); // TODO: Test code for HitBox location
+        }
+        player->GetAlertRange().Show(Point(screenX, screenY));
     }
-    player->GetAlertRange().Show(Point(screenX, screenY));
     game_framework::Draw::Instance()->Show();
     bar.Show(player->GetHP(),player->GetMaxHP());
 }
@@ -103,7 +105,7 @@ void ObjectManager::KeyDown(char key) {
         player->SetInteractive(true);
         break;
     case 'F':
-        game_framework::Draw::Instance()->SwitchIsDisplay();
+        isDisplayHitBox = !isDisplayHitBox;
         break;
     }
 }

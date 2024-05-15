@@ -21,6 +21,8 @@ namespace game_framework {
         return instance;
     }
 
+    Draw::Draw() : isDisplayed(true) {
+    }
     
     void Draw::Rectangle(Point point1, Point point2, COLORREF color, int alpha) {
         this->drawCommands.emplace_back(new DrawRectangleCommand(point1, point2, color, alpha));
