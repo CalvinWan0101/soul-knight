@@ -35,6 +35,7 @@ private:
     int screenX = 0;
     int screenY = 0;
     bool LButtonPressed;
+    bool isDisplayHitBox;
     static ObjectManager* instance;
     Player* player;
     vector<GameObject*> objects;
