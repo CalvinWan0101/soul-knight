@@ -6,6 +6,7 @@
 #include "../projectile/Bullet.h"
 #include "../stage/Stage.h"
 #include "../stage/implementation/Stage_1_1.h"
+#include "../utils/draw/Bar.h"
 
 using std::vector;
 
@@ -38,6 +39,7 @@ private:
     Player* player;
     vector<GameObject*> objects;
     vector<GameObject*> newObjects;
+    Bar bar;
 
     void DeleteObsoleteElements();
     void PushNewObjectsToList();
