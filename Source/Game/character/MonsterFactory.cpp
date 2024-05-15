@@ -10,6 +10,7 @@
 #include "monster/floor_1/goblin_guard/GoblinGuardBow.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardPistol.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardSpear.h"
+#include "monster/floor_1/goblin_shaman/GoblinShaman.h"
 
 Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
@@ -30,6 +31,9 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new EliteGoblinGuardDart(level);
     case MonsterType::ELITE_GOBLIN_GUARD_HOE:
         return new EliteGoblinGuardHoe(level);
+
+    case MonsterType::GOBLIN_SHAMAN:
+        return new GoblinShaman(level);
 
     case MonsterType::NORMAL_BOAR:
         return new NormalBoar(level);

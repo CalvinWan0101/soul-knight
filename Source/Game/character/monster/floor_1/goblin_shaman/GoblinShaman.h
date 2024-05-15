@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include "../../../Monster.h"
 
-class GoblinGiant : public Monster {
+class GoblinShaman : public Monster {
 public:
-    GoblinGiant(double level);
+    GoblinShaman(double level = 1);
     void Start() override;
     void Update() override;
     void LoadResources() override;
