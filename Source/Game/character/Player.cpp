@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "Player.h"
 #include "Character.h"
+#include "../config.h"
 #include "../manager/ObjectManager.h"
+#include "../utils/draw/Draw.h"
 
 Player::Player(): alertRange(position), mp(0), shield(0), interactive(false), damageCooldownCounter(0) {
     AddTag(Tag::PLAYER);
@@ -17,6 +19,9 @@ void Player::Update() {
     Character::Update();
     if (damageCooldownCounter > 0) {
         damageCooldownCounter--;
+        if (damageCooldownCounter > 100) {
+            game_framework::Draw::Instance()->Rectangle(Point(0,0),Point(SIZE_X, SIZE_Y),RGB(200,0,0),(damageCooldownCounter - 100) * 2);
+        }
     }
 }
 
@@ -25,7 +30,7 @@ void Player::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
         if (damageCooldownCounter == 0) {
             damageCooldownCounter = 150;
-            this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();   
+            this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();
         }
     }
     else if (gameObject->HasTag(Tag::PLAYER_WEAPON) && interactive == true) {
