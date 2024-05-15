@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "DrawRectangleCommand.h"
 
+#include "../../config.h"
+
 DrawRectangleCommand::DrawRectangleCommand(Point point1, Point point2, COLORREF color, int alpha) {
     this->point1 = point1;
     this->point2 = point2;
@@ -11,7 +13,7 @@ DrawRectangleCommand::DrawRectangleCommand(Point point1, Point point2, COLORREF 
 DrawRectangleCommand::~DrawRectangleCommand() = default;
 
 void DrawRectangleCommand::Execute(CDC* cdc) {
-    if (alpha == 255) {
+    if (alpha == 255 || TRANSLUCENT_EFFECT == false ) {
         CPen *oldPen, pen(PS_NULL, 0, RGB(0, 0, 0)); //
         oldPen = cdc->SelectObject(&pen);
         

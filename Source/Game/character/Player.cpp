@@ -19,7 +19,7 @@ void Player::Update() {
     Character::Update();
     if (damageCooldownCounter > 0) {
         damageCooldownCounter--;
-        if (damageCooldownCounter > 100) {
+        if (damageCooldownCounter > 100 && TRANSLUCENT_EFFECT == true) {
             game_framework::Draw::Instance()->Rectangle(Point(0,0),Point(SIZE_X, SIZE_Y),RGB(200,0,0),(damageCooldownCounter - 100) * 2);
         }
     }
