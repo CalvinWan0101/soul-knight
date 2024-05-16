@@ -3492,6 +3492,9 @@
     <Content Include="Resources\sound\background.mp3" />
     <Content Include="Resources\sound\bullet.MP3" />
     <Content Include="Resources\start\first_page.bmp" />
+    <Content Include="Resources\ui\player_state\hp.bmp" />
+    <Content Include="Resources\ui\player_state\mp.bmp" />
+    <Content Include="Resources\ui\player_state\shield.bmp" />
     <Content Include="Resources\weapon\bad_pistol\0.bmp" />
     <Content Include="Resources\weapon\bad_pistol\102.bmp" />
     <Content Include="Resources\weapon\bad_pistol\105.bmp" />

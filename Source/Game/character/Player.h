@@ -9,10 +9,11 @@ public:
     void Update() override;
     void Collision(GameObject* gameObject) override;
 
+    void Attack() override;
     int GetMP();
     int GetMaxMP();
-    int GetShield();
-    int GetMaxShield();
+    double GetShield();
+    double GetMaxShield();
     HitBox& GetAlertRange();
 
     void SetVision(Vec vision);
@@ -23,12 +24,18 @@ public:
 protected:
     int mp;
     int maxMp;
-    int shield;
-    int maxShild;
+    double shield;
+    double maxShild;
     int damageCooldownCounter;
+    int damageCooldownFrameCD;
+    int shieldRecoverCooldownCounter;
+    int shieldRecoverCooldownFrameCD;
     HitBox alertRange;
 
 private:
     bool interactive;
     void SetAlertRange(double height, double witdth);
+    void Injuried(double damage);
+    void CalculateDamageCooldownCounter();
+    void CalculateShieldRecoverCounter();
 };

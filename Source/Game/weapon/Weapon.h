@@ -21,6 +21,7 @@ public:
     double GetDamage();
     void SetDamage(double damage);
     int GetMpCost();
+    bool CanAttack();
 
 protected:
     int frameCd; // how many frames to wait for next attack
