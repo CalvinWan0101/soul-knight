@@ -18,6 +18,7 @@ Weapon* Shotgun::Copy() {
 void Shotgun::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
+    mpCost = 3;
 }
 
 void Shotgun::Update() {

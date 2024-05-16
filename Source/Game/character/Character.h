@@ -11,7 +11,7 @@ public:
 
     double GetHP();
     double GetMaxHP();
-    void Attack();
+    virtual void Attack();
     void BeAttacked(double damage);
 
 protected:

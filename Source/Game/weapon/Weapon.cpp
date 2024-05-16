@@ -90,6 +90,10 @@ int Weapon::GetMpCost() {
     return mpCost;
 }
 
+bool Weapon::CanAttack() {
+    return cdCounter == 0;
+}
+
 void Weapon::UpdateRotationOffset() {
     int step = this->frameCd / static_cast<int>(attackRotationOffsets.size());
     if (frameCd - cdCounter > step * static_cast<int>(attackRotationOffsets.size())) {

@@ -13,7 +13,7 @@ Bar::Bar(int width, int height, COLORREF borderColor, COLORREF innerColor, Point
 
 void Bar::Show(int value, int maxValue) {
     game_framework::Draw::Instance()->EmptyRectangle(point, point + Point(width, height), borderColor,Point(5,5), 3);
-    game_framework::Draw::Instance()->Rectangle(point + Point(1, 1), point + Point(width * (static_cast<double>(value) / (static_cast<double>(maxValue))), height) + Point(-1, -1), innerColor);
+    game_framework::Draw::Instance()->Rectangle(point + Point(2, 1), point + Point(width * (static_cast<double>(value) / (static_cast<double>(maxValue))), height) + Point(-1, -1), innerColor);
 }
 
 

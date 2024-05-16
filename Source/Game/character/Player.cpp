@@ -44,6 +44,19 @@ void Player::Collision(GameObject* gameObject) {
     }
 }
 
+void Player::Attack() {
+    if (weapon) {
+        if (weapon->CanAttack()) {
+            int mpCost = weapon->GetMpCost();
+            if (mp > mpCost) {
+                mp -= mpCost;
+                Character::Attack();
+            }
+        }
+    }
+}
+
+
 int Player::GetMP() {
     return mp;
 }

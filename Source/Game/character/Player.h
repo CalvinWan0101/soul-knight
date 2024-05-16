@@ -9,6 +9,7 @@ public:
     void Update() override;
     void Collision(GameObject* gameObject) override;
 
+    void Attack() override;
     int GetMP();
     int GetMaxMP();
     double GetShield();
