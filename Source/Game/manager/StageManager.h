@@ -11,11 +11,10 @@ public:
     Stage* GetStage();
     void Initiliaze();
     void NextStage();
-    bool InRoom();
 
 private:
     static StageManager* instance;
     int level;
     int stage;
-    Stage* gameStage;
+    Stage* gameStage = nullptr;
 };

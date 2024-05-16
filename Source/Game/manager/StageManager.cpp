@@ -48,13 +48,15 @@ void StageManager::NextStage() {
         stage = 1;
     }
 
+    delete gameStage;
+
     gameStage = StageFactory::Create(level, stage);
 
     // For testing
     if (!gameStage) {
         gameStage = new Stage_1_1();
     }
-
+    
     gameStage->Initialize();
 
     std::cout << "Level: " << level << " Stage: " << stage << "\n";

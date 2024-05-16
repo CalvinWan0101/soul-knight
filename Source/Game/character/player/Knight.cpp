@@ -17,7 +17,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new GoblinStaff());
+    ChangeWeapon(new Shotgun());
     maxHp = 30;
     hp = maxHp;
 }

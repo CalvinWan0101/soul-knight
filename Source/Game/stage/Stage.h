@@ -9,7 +9,7 @@ class Wall;
 class Stage {
 public:
     Stage();
-    virtual ~Stage();
+    ~Stage();
     game_framework::CMovingBitmap* GetBackground();
     void Initialize();
     void Show(Point screenPositoin);

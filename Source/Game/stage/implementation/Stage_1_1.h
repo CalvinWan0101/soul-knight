@@ -4,7 +4,7 @@
 class Stage_1_1 : public Stage {
 public:
     Stage_1_1();
-    ~Stage_1_1() override;
+    ~Stage_1_1();
 
 protected:
     void GenerateWall() override;

@@ -4,7 +4,7 @@
 #include "../character/Monster.h"
 #include "../character/MonsterFactory.h"
 
-#define PREALLOCATIONS 10
+#define PREALLOCATIONS 20
 
 MonsterPool* MonsterPool::instance = nullptr;
 
