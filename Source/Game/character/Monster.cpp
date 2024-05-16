@@ -46,12 +46,15 @@ void Monster::EnterPlayerAlertRange(Player* player) {
 }
 
 void Monster::SetWeapon(Weapon* weapon) {
-    if (!this->weapon) {
-        this->weapon = weapon;
-        this->weapon->RemoveTag(Tag::PLAYER_WEAPON);
-        this->weapon->AddTag(Tag::MONSTER_WEAPON);
-        this->AddFrontChild(weapon);
+    if (this->weapon) {
+        RemoveFrontChile(this->weapon);
+        delete this->weapon;
+        this->weapon = nullptr;
     }
+    this->weapon = weapon;
+    this->weapon->RemoveTag(Tag::PLAYER_WEAPON);
+    this->weapon->AddTag(Tag::MONSTER_WEAPON);
+    this->AddFrontChild(weapon);
 }
 
 void Monster::SetLevel(double level) {

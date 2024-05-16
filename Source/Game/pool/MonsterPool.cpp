@@ -49,5 +49,6 @@ Monster* MonsterPool::Acquire(MonsterType type, double level) {
 }
 
 void MonsterPool::Release(Monster* monster) {
+    monster->RemoveTag(Tag::DEAD);
     pool[static_cast<int>(monster->GetMonsterType())].push_back(monster);
 }
