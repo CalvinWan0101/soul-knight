@@ -32,6 +32,9 @@ Stage* StageManager::GetStage() {
 }
 
 void StageManager::Initiliaze() {
+    transferGate = new TransferGate();
+    transferGate->SetPosition(Point(0, 0));
+    ObjectManager::Instance()->AddObject(transferGate);
     NextStage();
 }
 
@@ -56,8 +59,12 @@ void StageManager::NextStage() {
     if (!gameStage) {
         gameStage = new Stage_1_1();
     }
-    
+
     gameStage->Initialize();
 
     std::cout << "Level: " << level << " Stage: " << stage << "\n";
+}
+
+void StageManager::SetTransferGatePosition(Point position) {
+    transferGate->SetPosition(position);
 }

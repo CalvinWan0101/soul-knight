@@ -6,6 +6,7 @@
 
 #include "../RoomSize.h"
 #include "../../character/MonsterFactory.h"
+#include "../../manager/StageManager.h"
 #include "../../weapon/melee_weapon/Hammer.h"
 
 Stage_1_1::Stage_1_1() {
@@ -66,9 +67,7 @@ void Stage_1_1::SetPlayerPosition() {
 }
 
 void Stage_1_1::SetTransferGate() {
-    TransferGate* transferGate = new TransferGate();
-    transferGate->SetPosition(Point(-900, -300));
-    ObjectManager::Instance()->AddObject(transferGate);
+    StageManager::Instance()->SetTransferGatePosition(Point(-900, -300));
 }
 
 void Stage_1_1::GenerateObstacle() {
