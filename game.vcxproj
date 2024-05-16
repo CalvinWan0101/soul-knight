@@ -1095,6 +1095,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\ui\PlayerState.cpp" />
     <ClCompile Include="Source\Game\utils\draw\Bar.cpp" />
     <ClCompile Include="Source\Game\utils\draw\Draw.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -1942,6 +1943,7 @@
     <ClInclude Include="Source\Game\stage\StageFactory.h" />
     <ClInclude Include="Source\Game\stage\implementation\Stage_1_1.h" />
     <ClInclude Include="Source\Game\stage\TransferGate.h" />
+    <ClInclude Include="Source\Game\ui\PlayerState.h" />
     <ClInclude Include="Source\Game\utils\draw\Bar.h" />
     <ClInclude Include="Source\Game\utils\draw\Draw.h" />
     <ClInclude Include="Source\Game\utils\draw\DrawCommand.h" />

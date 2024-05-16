@@ -18,8 +18,12 @@ void Knight::Start() {
     weaponOffsetX = 7;
     weaponOffsetY = 7;
     ChangeWeapon(new Shotgun());
-    maxHp = 30;
+    maxHp = 7;
     hp = maxHp;
+    maxMp = 200;
+    mp = maxMp;
+    maxShild = 6;
+    shield = maxShild;
 }
 
 void Knight::Update() {

@@ -40,7 +40,6 @@ private:
     Player* player;
     vector<GameObject*> objects;
     vector<GameObject*> newObjects;
-    Bar bar;
 
     void DeleteObsoleteElements();
     void PushNewObjectsToList();

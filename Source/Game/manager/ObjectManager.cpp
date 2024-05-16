@@ -24,7 +24,7 @@ ObjectManager* ObjectManager::Instance() {
     return instance;
 }
 
-ObjectManager::ObjectManager() : bar(200, 20, RGB(165,165,165), RGB(247,26,40), Point(30,30)), isDisplayHitBox(false) {
+ObjectManager::ObjectManager() : isDisplayHitBox(false) {
 }
 
 ObjectManager::~ObjectManager() {
@@ -84,7 +84,6 @@ void ObjectManager::Show() {
         player->GetAlertRange().Show(Point(screenX, screenY));
     }
     game_framework::Draw::Instance()->Show();
-    bar.Show(player->GetHP(),player->GetMaxHP());
 }
 
 void ObjectManager::KeyDown(char key) {

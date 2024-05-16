@@ -83,4 +83,5 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // ?B?z¡P?????¢X?¡±@
 
 void CGameStateRun::OnShow() {
     objectManager->Show();
+    playerState.Show();
 }
