@@ -1,6 +1,6 @@
 #pragma once
 #include "../character/Player.h"
-#include "../utils/draw/Bar.h"
+#include "Bar.h"
 
 class PlayerState {
 public:
