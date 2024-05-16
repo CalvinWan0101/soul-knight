@@ -7,7 +7,7 @@ public:
     PlayerState();
     void Show();
 
-protected:
+private:
     Bar HpBar;
     Bar MpBar;
     Bar ShildBar;
