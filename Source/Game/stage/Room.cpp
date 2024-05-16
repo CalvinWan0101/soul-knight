@@ -24,9 +24,6 @@ Room::Room(Point topLeft, Vec centerOffset, RoomSize size, int level, std::map<M
     monsterMap(monsterMap) {
 }
 
-Room::~Room() {
-}
-
 void Room::IsInside() {
     double x = ObjectManager::Instance()->GetPlayer()->GetPosition().GetX() + centerOffset.GetX();
     double y = ObjectManager::Instance()->GetPlayer()->GetPosition().GetY() + centerOffset.GetY();

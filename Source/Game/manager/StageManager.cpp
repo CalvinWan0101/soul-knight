@@ -45,20 +45,14 @@ void StageManager::NextStage() {
         level++;
     }
 
-    // For testing
-    if (level == 3 && stage > 6) {
-        level = 1;
-        stage = 1;
-    }
+    // for testing
+    // level = 1;
+    // stage = 2;
 
-    if (gameStage) {
-        gameStage->ClearedStage();
-        delete gameStage;
-    }
+    delete gameStage;
 
     gameStage = StageFactory::Create(level, stage);
 
-    // For testing
     if (!gameStage) {
         gameStage = new Stage_1_1();
     }

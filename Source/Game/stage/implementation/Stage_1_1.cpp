@@ -15,21 +15,20 @@ Stage_1_1::Stage_1_1() {
 
     // room 1
     rooms.push_back(new Room(Point(528, 0), centerOffset, RoomSize::LARGE_SIZE, 4,
-                             std::map<MonsterType, int>{
-                                 {MonsterType::GOBLIN_GIANT, 5}, {MonsterType::NORMAL_BOAR, 5}
-                             }));
+                             std::map<MonsterType, int>{{MonsterType::GOBLIN_SHAMAN, 1}}));
 
     // room 2
     rooms.push_back(new Room(Point(1216, 48), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                              std::map<MonsterType, int>{{MonsterType::GOBLIN_SHAMAN, 1}}));
 
+
     // room 3
     rooms.push_back(new Room(Point(1808, 80), centerOffset, RoomSize::SMALL_SIZE, 4,
-                             std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}}));
+                             std::map<MonsterType, int>{{MonsterType::GOBLIN_SHAMAN, 1}}));
 
     // room 4
     rooms.push_back(new Room(Point(576, 688), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                             std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 10}}));
+                             std::map<MonsterType, int>{{MonsterType::GOBLIN_SHAMAN, 1}}));
 }
 
 void Stage_1_1::GenerateWall() {
@@ -44,7 +43,6 @@ void Stage_1_1::GenerateWall() {
     AddWall(Point(832, 688), Point(847, 959));
     AddWall(Point(576, 944), Point(847, 959));
     AddWall(Point(528, 0), Point(895, 15));
-
     AddWall(Point(880, 0), Point(1231, 143));
     AddWall(Point(880, 367), Point(1231, 224));
     AddWall(Point(1216, 304), Point(1311, 655));

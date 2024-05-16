@@ -11,6 +11,9 @@ Stage::~Stage() {
     for (auto room : rooms) {
         delete room;
     }
+    for (auto wall : walls) {
+        wall->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
 }
 
 game_framework::CMovingBitmap* Stage::GetBackground() {
@@ -49,11 +52,5 @@ void Stage::IsInsideRoom() {
 void Stage::IsRoomCleared() {
     for (auto room : rooms) {
         room->IsCleared();
-    }
-}
-
-void Stage::ClearedStage() {
-    for (auto wall : walls) {
-        wall->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }

@@ -9,14 +9,13 @@ class Wall;
 class Stage {
 public:
     Stage();
-    ~Stage();
+    virtual ~Stage();
     game_framework::CMovingBitmap* GetBackground();
     void Initialize();
     void Show(Point screenPositoin);
     void AddWall(Point point1, Point point2);
     void IsInsideRoom();
     void IsRoomCleared();
-    void ClearedStage();
 
 protected:
     game_framework::CMovingBitmap background;
