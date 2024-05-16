@@ -4,7 +4,7 @@
 
 class PlayerState {
 public:
-    PlayerState();
+    PlayerState(Point point);
     void Show();
 
 private:
@@ -12,4 +12,5 @@ private:
     Bar MpBar;
     Bar ShildBar;
     Player* player;
+    Point point;
 };

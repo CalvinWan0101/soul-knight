@@ -21,7 +21,7 @@ using namespace game_framework;
 // 這個class為遊戲的遊戲執行物件，主要的遊戲程式都在這裡
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
+CGameStateRun::CGameStateRun(CGame* g) : CGameState(g), playerState(Point(10, 10)) {
 }
 
 CGameStateRun::~CGameStateRun() {
