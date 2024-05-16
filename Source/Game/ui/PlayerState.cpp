@@ -22,7 +22,7 @@ void PlayerState::Show() {
     else {
         HpBar.Show(player->GetHP(), player->GetMaxHP());
         MpBar.Show(player->GetMP(), player->GetMaxMP());
-        ShildBar.Show(player->GetShield(), player->GetShield());
+        ShildBar.Show(player->GetShield(), player->GetMaxShield());
     }
 }
 

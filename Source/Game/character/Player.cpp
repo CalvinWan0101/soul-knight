@@ -5,7 +5,15 @@
 #include "../manager/ObjectManager.h"
 #include "../utils/draw/Draw.h"
 
-Player::Player(): alertRange(position), mp(0), shield(0), interactive(false), damageCooldownCounter(0) {
+Player::Player():
+alertRange(position),
+mp(0),
+shield(0),
+interactive(false),
+damageCooldownCounter(0),
+damageCooldownFrameCD(150){
+    shieldRecoverCooldownFrameCD = 250;
+    shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
     AddTag(Tag::PLAYER);
 }
 
@@ -17,21 +25,15 @@ void Player::Start() {
 
 void Player::Update() {
     Character::Update();
-    if (damageCooldownCounter > 0) {
-        damageCooldownCounter--;
-        if (damageCooldownCounter > 100 && TRANSLUCENT_EFFECT == true) {
-            game_framework::Draw::Instance()->Rectangle(Point(0,0),Point(SIZE_X, SIZE_Y),RGB(200,0,0),(damageCooldownCounter - 100) * 2);
-        }
-        visible = damageCooldownCounter / 7 % 2 == 0;
-    }
+    CalculateDamageCooldownCounter();
+    CalculateShieldRecoverCounter();
 }
 
 void Player::Collision(GameObject* gameObject) {
     Character::Collision(gameObject);
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
         if (damageCooldownCounter == 0) {
-            damageCooldownCounter = 150;
-            this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();
+            Injuried(dynamic_cast<Projectile*>(gameObject)->GetDamage());
         }
     }
     else if (gameObject->HasTag(Tag::PLAYER_WEAPON) && interactive == true) {
@@ -50,11 +52,11 @@ int Player::GetMaxMP() {
     return maxMp;
 }
 
-int Player::GetShield() {
+double Player::GetShield() {
     return shield;
 }
 
-int Player::GetMaxShield() {
+double Player::GetMaxShield() {
     return maxShild;
 }
 
@@ -87,3 +89,40 @@ void Player::SetAlertRange(double height, double width) {
     alertRange.SetHeight(height);
     alertRange.SetWidth(width);
 }
+
+void Player::Injuried(double damage) {
+    damageCooldownCounter = damageCooldownFrameCD;
+    shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
+    if (damage > shield) {
+        damage -= shield;
+        shield = 0;
+        hp -= (damage > hp) ? hp : damage;
+    }
+    else {
+        shield -= damage;
+    }
+}
+
+void Player::CalculateDamageCooldownCounter() {
+    if (damageCooldownCounter > 0) {
+        damageCooldownCounter--;
+        if (damageCooldownCounter > 100 && TRANSLUCENT_EFFECT == true) {
+            game_framework::Draw::Instance()->Rectangle(Point(0,0),Point(SIZE_X, SIZE_Y),RGB(200,0,0),(damageCooldownCounter - 100) * 2);
+        }
+        visible = damageCooldownCounter / 7 % 2 == 0;
+    }
+}
+
+void Player::CalculateShieldRecoverCounter() {
+    if (shield < maxShild) {
+        shieldRecoverCooldownCounter--;
+        if (shieldRecoverCooldownCounter == 0) {
+            shield++;
+            shieldRecoverCooldownCounter = 50;
+        }
+    }
+    else {
+        shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
+    }
+}
+
