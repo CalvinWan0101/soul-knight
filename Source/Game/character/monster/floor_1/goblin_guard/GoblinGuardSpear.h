@@ -5,4 +5,5 @@ class GoblinGuardSpear : public GoblinGuard{
 public:
     GoblinGuardSpear(double level);
     void Start() override;
+    void InitializeWeapon() override;
 };

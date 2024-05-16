@@ -8,4 +8,5 @@ public:
     void Update();
     void LoadResources();
     void AutoMation();
+    virtual void InitializeWeapon() override = 0;
 };

@@ -5,4 +5,5 @@ class EliteGoblinGuardHoe : public EliteGoblinGuard {
 public:
     EliteGoblinGuardHoe(double level);
     void Start();
+    void InitializeWeapon() override;
 };

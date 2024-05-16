@@ -7,7 +7,10 @@ EliteGoblinGuardDart::EliteGoblinGuardDart(double level) : EliteGoblinGuard(leve
 }
 
 void EliteGoblinGuardDart::Start() {
-    this->SetWeapon(new Dart(3));
     EliteGoblinGuard::Start();
     SetMonsterType(MonsterType::ELITE_GOBLIN_GUARD_DART);
+}
+
+void EliteGoblinGuardDart::InitializeWeapon() {
+    this->SetWeapon(new Dart(3));
 }
