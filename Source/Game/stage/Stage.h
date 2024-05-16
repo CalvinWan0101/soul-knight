@@ -16,6 +16,7 @@ public:
     void AddWall(Point point1, Point point2);
     void IsInsideRoom();
     void IsRoomCleared();
+    void ClearedStage();
 
 protected:
     game_framework::CMovingBitmap background;
@@ -26,4 +27,5 @@ protected:
     virtual void SetTransferGate() = 0;
     virtual void GenerateObstacle() = 0;
     std::vector<Room*> rooms;
+    std::vector<Wall*> walls;
 };

@@ -35,7 +35,9 @@ void Stage::Show(Point screenPositoin) {
 }
 
 void Stage::AddWall(Point point1, Point point2) {
-    ObjectManager::Instance()->AddObject(new Wall(point1 - centerOffset, point2 - centerOffset));
+    Wall* wall = new Wall(point1 - centerOffset, point2 - centerOffset);
+    walls.push_back(wall);
+    ObjectManager::Instance()->AddObject(wall);
 }
 
 void Stage::IsInsideRoom() {
@@ -47,5 +49,11 @@ void Stage::IsInsideRoom() {
 void Stage::IsRoomCleared() {
     for (auto room : rooms) {
         room->IsCleared();
+    }
+}
+
+void Stage::ClearedStage() {
+    for (auto wall : walls) {
+        wall->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }

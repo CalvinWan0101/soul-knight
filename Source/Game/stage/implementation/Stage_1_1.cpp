@@ -32,8 +32,6 @@ Stage_1_1::Stage_1_1() {
                              std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 10}}));
 }
 
-Stage_1_1::~Stage_1_1() = default;
-
 void Stage_1_1::GenerateWall() {
     AddWall(Point(192, 0), Point(543, 143));
     AddWall(Point(192, 224), Point(543, 367));

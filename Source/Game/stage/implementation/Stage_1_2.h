@@ -1,9 +1,9 @@
-#pragma once
+﻿#pragma once
 #include "../Stage.h"
 
-class Stage_1_1 : public Stage {
+class Stage_1_2 : public Stage {
 public:
-    Stage_1_1();
+    Stage_1_2();
 
 protected:
     void GenerateWall() override;

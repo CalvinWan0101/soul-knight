@@ -12,6 +12,7 @@ class Monster;
 class Room {
 public:
     Room(Point leftTop, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap);
+    ~Room();
     void IsInside();
     void IsCleared();
 

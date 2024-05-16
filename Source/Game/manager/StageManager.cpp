@@ -51,7 +51,10 @@ void StageManager::NextStage() {
         stage = 1;
     }
 
-    delete gameStage;
+    if (gameStage) {
+        gameStage->ClearedStage();
+        delete gameStage;
+    }
 
     gameStage = StageFactory::Create(level, stage);
 
