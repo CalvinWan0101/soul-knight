@@ -23,6 +23,13 @@ namespace game_framework {
 
     Draw::Draw() : isDisplayed(true) {
     }
+
+    Draw::~Draw() {
+        for(int i = static_cast<int>(drawCommands.size()) - 1 ; i >= 0 ; i--) {
+            delete drawCommands[i];
+            drawCommands.pop_back();
+        }
+    }
     
     void Draw::Rectangle(Point point1, Point point2, COLORREF color, int alpha) {
         this->drawCommands.emplace_back(new DrawRectangleCommand(point1, point2, color, alpha));
