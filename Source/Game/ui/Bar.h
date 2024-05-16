@@ -1,5 +1,5 @@
 #pragma once
-#include "../Point.h"
+#include "../utils/Point.h"
 
 class Bar {
 public:

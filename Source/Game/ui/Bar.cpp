@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Bar.h"
 
-#include "Draw.h"
+#include "../utils/draw/Draw.h"
 
 Bar::Bar(int width, int height, COLORREF borderColor, COLORREF innerColor, Point point) {
     this->width = width;
