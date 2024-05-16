@@ -10,7 +10,6 @@ void Boar::Start() {
     Monster::Start();
     this->speed.SetVec(0.0, 0.0);
     this->maxSpeed = 2;
-    this->SetWeapon(new FakeWeapon());
 
     this->angryKeepFrame = 50;
     this->clamKeepFrame = 150;
@@ -62,5 +61,10 @@ void Boar::DumpState(bool isDump) {
         this->boarDump->SetVisible(false);
     }
 }
+
+void Boar::InitializeWeapon() {
+    this->SetWeapon(new FakeWeapon());
+}
+
 
 

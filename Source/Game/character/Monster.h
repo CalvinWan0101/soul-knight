@@ -11,6 +11,7 @@ public:
     void Update() override;
     void Collision(GameObject* gameObject) override;
     virtual void AutoMation() = 0;
+    virtual void InitializeWeapon() = 0;
     void EnterPlayerAlertRange(Player* player);
 
     void SetWeapon(Weapon* weapon);
@@ -25,5 +26,6 @@ protected:
     void SetMonsterType(MonsterType type);
 
 private:
+    bool isInitializeWeapon;
     Player* player = nullptr;
 };

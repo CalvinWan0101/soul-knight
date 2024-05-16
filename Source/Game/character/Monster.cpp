@@ -5,13 +5,17 @@
 #include "../projectile/Bullet.h"
 #include "Player.h"
 
-Monster::Monster(double level): level(level) {
+Monster::Monster(double level): level(level), isInitializeWeapon(false) {
     AddTag(Tag::MONSTER);
 }
 
 void Monster::Start() {
     Character::Start();
     SetHitBoxByRatio(1, 1);
+    if (!isInitializeWeapon) {
+        isInitializeWeapon = true;
+        InitializeWeapon();
+    }
 }
 
 void Monster::Update() {

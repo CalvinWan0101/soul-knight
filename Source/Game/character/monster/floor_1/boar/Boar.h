@@ -10,6 +10,7 @@ public:
     void Update() override;
     void AutoMation() override;
     void DumpState(bool isDump);
+    void InitializeWeapon() override;
 private:
     int angryCounter;
     int calmCounter;

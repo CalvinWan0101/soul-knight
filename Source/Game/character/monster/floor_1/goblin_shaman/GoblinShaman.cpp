@@ -12,7 +12,6 @@ void GoblinShaman::Start() {
     hp = maxHp;
     this->speed.SetVec(0.0, 0.0);
     this->maxSpeed = 3;
-    this->SetWeapon(new GoblinStaff());
     SetMonsterType(MonsterType::GOBLIN_SHAMAN);
 }
 
@@ -55,4 +54,8 @@ void GoblinShaman::LoadResources() {
 
 void GoblinShaman::AutoMation() {
     Attack();
+}
+
+void GoblinShaman::InitializeWeapon() {
+    this->SetWeapon(new GoblinStaff());
 }

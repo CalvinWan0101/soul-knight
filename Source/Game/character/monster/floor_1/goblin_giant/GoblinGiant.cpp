@@ -11,7 +11,6 @@ void GoblinGiant::Start() {
     hp = maxHp;
     this->speed.SetVec(0.0, 0.0);
     this->maxSpeed = 3;
-    this->SetWeapon(new Hammer());
     SetMonsterType(MonsterType::GOBLIN_GIANT);
 }
 
@@ -55,3 +54,8 @@ void GoblinGiant::LoadResources() {
 void GoblinGiant::AutoMation() {
     Attack();
 }
+
+void GoblinGiant::InitializeWeapon() {
+    this->SetWeapon(new Hammer());
+}
+

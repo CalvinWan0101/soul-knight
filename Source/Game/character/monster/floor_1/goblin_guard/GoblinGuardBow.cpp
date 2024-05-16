@@ -7,7 +7,10 @@ GoblinGuardBow::GoblinGuardBow(double level) : GoblinGuard(level) {
 }
 
 void GoblinGuardBow::Start() {
-    this->SetWeapon(new Bow(4));
     GoblinGuard::Start();
     SetMonsterType(MonsterType::GOBLIN_GUARD_BOW);
+}
+
+void GoblinGuardBow::InitializeWeapon() {
+    this->SetWeapon(new Bow(4));
 }

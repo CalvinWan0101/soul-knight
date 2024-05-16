@@ -8,6 +8,9 @@ EliteGoblinGuardHoe::EliteGoblinGuardHoe(double level) : EliteGoblinGuard(level)
 
 void EliteGoblinGuardHoe::Start() {
     EliteGoblinGuard::Start();
-    this->SetWeapon(new Hoe(3));
     SetMonsterType(MonsterType::ELITE_GOBLIN_GUARD_HOE);
+}
+
+void EliteGoblinGuardHoe::InitializeWeapon() {
+    this->SetWeapon(new Hoe(3));
 }
