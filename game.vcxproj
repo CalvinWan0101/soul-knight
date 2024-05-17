@@ -607,6 +607,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\manager\StageText.cpp" />
+    <ClCompile Include="Source\Game\manager\UIManager.cpp" />
     <ClCompile Include="Source\Game\pool\MonsterPool.cpp" />
     <ClCompile Include="Source\Game\pool\ProjectilePool.cpp" />
     <ClCompile Include="Source\Game\projectile\Bullet.cpp">
@@ -2094,6 +2096,8 @@
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
+    <ClInclude Include="Source\Game\manager\StageText.h" />
+    <ClInclude Include="Source\Game\manager\UIManager.h" />
     <ClInclude Include="Source\Game\pool\MonsterPool.h" />
     <ClInclude Include="Source\Game\pool\ProjectilePool.h" />
     <ClInclude Include="Source\Game\projectile\Bullet.h" />
@@ -3529,6 +3533,10 @@
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_2.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_3.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_4.bmp" />
+    <Content Include="Resources\object\gold_coin\1.bmp" />
+    <Content Include="Resources\object\gold_coin\2.bmp" />
+    <Content Include="Resources\object\gold_coin\3.bmp" />
+    <Content Include="Resources\object\gold_coin\4.bmp" />
     <Content Include="Resources\object\transfergate.bmp" />
     <Content Include="Resources\player\knight\dead.bmp" />
     <Content Include="Resources\player\knight\flip_dead.bmp" />

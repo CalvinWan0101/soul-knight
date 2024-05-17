@@ -18,7 +18,7 @@ void TransferGate::Update() {
 }
 
 void TransferGate::LoadResources() {
-    AddAnimation({"resources/object/transfergate.bmp"}, RGB(255, 255, 255), 0, false);
+    AddAnimation({"resources/object/transfer_gate/transfergate.bmp"}, RGB(255, 255, 255), 0, false);
 }
 
 void TransferGate::Collision(GameObject* gameObject) {

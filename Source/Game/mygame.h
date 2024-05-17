@@ -40,6 +40,7 @@
 
 #include "manager/ObjectManager.h"
 #include "manager/StageManager.h"
+#include "manager/UIManager.h"
 #include "pool/MonsterPool.h"
 #include "pool/ProjectilePool.h"
 #include "ui/PlayerState.h"
@@ -103,7 +104,7 @@ namespace game_framework {
         StageManager* stageManager = StageManager::Instance();
         ProjectilePool* projectilePool = ProjectilePool::Instance();
         MonsterPool* monsterPool = MonsterPool::Instance();
-        PlayerState playerState;
+        UIManager uiManager;
     };
 
     /////////////////////////////////////////////////////////////////////////////
