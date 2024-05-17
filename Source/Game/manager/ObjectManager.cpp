@@ -10,6 +10,7 @@
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
+#include "../drop/Coin.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
 #include "../projectile/bullet/BadPistolBullet.h"
@@ -53,6 +54,7 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
+    AddObject(new Coin());
 }
 
 void ObjectManager::Update() {

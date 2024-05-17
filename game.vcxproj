@@ -489,6 +489,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\drop\Coin.cpp" />
     <ClCompile Include="Source\Game\drop\MagnetizedDrop.cpp" />
     <ClCompile Include="Source\Game\manager\ObjectManager.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -2036,6 +2037,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardPistol.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_shaman\GoblinShaman.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
+    <ClInclude Include="Source\Game\drop\Coin.h" />
     <ClInclude Include="Source\Game\drop\MagnetizedDrop.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
