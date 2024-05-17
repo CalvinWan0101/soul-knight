@@ -3,8 +3,6 @@
 
 #include "../utils/object/GeneralObject.h"
 #include "../projectile/Bullet.h"
-#include "../stage/Stage.h"
-#include "../stage/implementation/Stage_1_1.h"
 #include "../utils/Wallet.h"
 
 using std::vector;
