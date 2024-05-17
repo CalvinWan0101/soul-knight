@@ -54,7 +54,10 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
-    
+    Coin* coin = new Coin();
+    coin->SetValue(Coin::COPPER);
+    coin->SetX(320);
+    AddObject(coin);
 }
 
 void ObjectManager::Update() {

@@ -3,12 +3,11 @@
 
 #include "../manager/ObjectManager.h"
 
-Coin::Coin() : value(0) {
+Coin::Coin() : value(1) {
 }
 
 void Coin::Start() {
     MagnetizedDrop::Start();
-    SetValue(1);
 }
 
 void Coin::Update() {
@@ -52,16 +51,18 @@ void Coin::Collision(GameObject* gameObject) {
     }
 }
 
-void Coin::SetValue(int value) {
-    this->value = value;
-    if (value >= 10) {
-        index = 2;
-    }
-    else if (value >= 5) {
-        index = 1;
-    }
-    else {
+void Coin::SetValue(Material material) {
+    this->value = material;
+    switch (material) {
+    case(Material::COPPER):
         index = 0;
+        break;
+    case(Material::SILVER):
+        index = 1;
+        break;
+    case(Material::GOLD):
+        index = 2;
+        break;
     }
 }
 

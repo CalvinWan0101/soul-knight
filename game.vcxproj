@@ -1158,6 +1158,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\ui\CoinText.cpp" />
     <ClCompile Include="Source\Game\ui\PlayerState.cpp" />
     <ClCompile Include="Source\Game\ui\StageText.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -2070,6 +2071,7 @@
     <ClInclude Include="Source\Game\stage\implementation\Stage_1_1.h" />
     <ClInclude Include="Source\Game\stage\TransferGate.h" />
     <ClInclude Include="Source\Game\ui\Bar.h" />
+    <ClInclude Include="Source\Game\ui\CoinText.h" />
     <ClInclude Include="Source\Game\ui\PlayerState.h" />
     <ClInclude Include="Source\Game\ui\StageText.h" />
     <ClInclude Include="Source\Game\utils\draw\Draw.h" />
@@ -3572,6 +3574,7 @@
     <Content Include="Resources\sound\background.mp3" />
     <Content Include="Resources\sound\bullet.MP3" />
     <Content Include="Resources\start\first_page.bmp" />
+    <Content Include="Resources\ui\player_state\coin_icon.bmp" />
     <Content Include="Resources\ui\player_state\hp.bmp" />
     <Content Include="Resources\ui\player_state\mp.bmp" />
     <Content Include="Resources\ui\player_state\shield.bmp" />
