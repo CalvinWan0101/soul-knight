@@ -5,6 +5,7 @@
 #include "implementation/stage_1/Stage_1_2.h"
 #include "implementation/stage_1/Stage_1_3.h"
 #include "implementation/stage_1/Stage_1_4.h"
+#include "implementation/stage_1/Stage_1_5.h"
 
 Stage* StageFactory::Create(int level, int stage) {
     if (level == 1) {
@@ -19,6 +20,9 @@ Stage* StageFactory::Create(int level, int stage) {
         }
         if (stage == 4) {
             return new Stage_1_4();
+        }
+        if (stage == 5) {
+            return new Stage_1_5();
         }
     }
     return nullptr;
