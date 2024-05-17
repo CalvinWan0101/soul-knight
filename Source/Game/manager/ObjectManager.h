@@ -6,6 +6,7 @@
 #include "../projectile/Bullet.h"
 #include "../stage/Stage.h"
 #include "../stage/implementation/Stage_1_1.h"
+#include "../utils/Wallet.h"
 
 using std::vector;
 
@@ -29,6 +30,9 @@ public:
     void SetLButtonPress(bool isPressed);
     void SetPlayerVision(Vec vision);
     void SetPlayerPosition(Point playerPosition);
+    void MakeMoney(int money);
+    bool SpendMoney(int money);
+    int GetMoney();
 
 private:
     int screenX = 0;
@@ -39,6 +43,7 @@ private:
     Player* player;
     vector<GameObject*> objects;
     vector<GameObject*> newObjects;
+    Wallet wallet;
 
     void DeleteObsoleteElements();
     void PushNewObjectsToList();

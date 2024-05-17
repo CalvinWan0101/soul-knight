@@ -1752,6 +1752,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\utils\Point.cpp" />
     <ClCompile Include="Source\Game\utils\Vec.cpp" />
+    <ClCompile Include="Source\Game\utils\Wallet.cpp" />
     <ClCompile Include="Source\Game\wall\door\Door.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2087,6 +2088,7 @@
     <ClInclude Include="Source\Game\utils\Point.h" />
     <ClInclude Include="Source\Game\utils\Tag.h" />
     <ClInclude Include="Source\Game\utils\Vec.h" />
+    <ClInclude Include="Source\Game\utils\Wallet.h" />
     <ClInclude Include="Source\Game\wall\door\Door.h" />
     <ClInclude Include="Source\Game\wall\door\HorizontalDoor2.h" />
     <ClInclude Include="Source\Game\wall\door\HorizontalDoor3.h" />
@@ -3478,10 +3480,18 @@
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_2.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_3.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_4.bmp" />
+    <Content Include="Resources\object\copper_coin\1.bmp" />
+    <Content Include="Resources\object\copper_coin\2.bmp" />
+    <Content Include="Resources\object\copper_coin\3.bmp" />
+    <Content Include="Resources\object\copper_coin\4.bmp" />
     <Content Include="Resources\object\gold_coin\1.bmp" />
     <Content Include="Resources\object\gold_coin\2.bmp" />
     <Content Include="Resources\object\gold_coin\3.bmp" />
     <Content Include="Resources\object\gold_coin\4.bmp" />
+    <Content Include="Resources\object\silver_coin\1.bmp" />
+    <Content Include="Resources\object\silver_coin\2.bmp" />
+    <Content Include="Resources\object\silver_coin\3.bmp" />
+    <Content Include="Resources\object\silver_coin\4.bmp" />
     <Content Include="Resources\player\knight\dead.bmp" />
     <Content Include="Resources\player\knight\flip_dead.bmp" />
     <Content Include="Resources\player\knight\idle\1.bmp" />

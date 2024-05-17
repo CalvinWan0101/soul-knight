@@ -8,4 +8,7 @@ public:
     void Update() override;
     void LoadResources() override;
     void Collision(GameObject* gameObject) override;
+    void SetValue(int value);
+private:
+    int value;
 };
