@@ -14,6 +14,8 @@ enum class Tag {
     TRANSFER_GATE,
     OBSTACLE,
 
+    PLAYER_ALERTABLE,
+
     DEAD,
 
     REMOVE_ON_NEXT_FRAME,

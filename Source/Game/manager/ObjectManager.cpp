@@ -149,16 +149,16 @@ void ObjectManager::CollisionDetection() {
                 objects[j]->Collision(objects[i]);
             }
 
-            if (objects[i]->HasTag(Tag::PLAYER) && objects[j]->HasTag(Tag::MONSTER)) {
-                Monster* monster = dynamic_cast<Monster*>(objects[j]);
+            if (objects[i]->HasTag(Tag::PLAYER) && objects[j]->HasTag(Tag::PLAYER_ALERTABLE)) {
+                PlayerAlertable* alertableObject = dynamic_cast<PlayerAlertable*>(objects[j]);
                 if (player->GetAlertRange().IsCollision(&objects[j]->GetHitBox())) {
-                    monster->EnterPlayerAlertRange(player);
+                    alertableObject->EnterPlayerAlertRange(player);
                 }
             }
-            else if (objects[i]->HasTag(Tag::MONSTER) && objects[j]->HasTag(Tag::PLAYER)) {
-                Monster* monster = dynamic_cast<Monster*>(objects[i]);
+            else if (objects[i]->HasTag(Tag::PLAYER_ALERTABLE) && objects[j]->HasTag(Tag::PLAYER)) {
+                PlayerAlertable* alertableObject = dynamic_cast<PlayerAlertable*>(objects[i]);
                 if (player->GetAlertRange().IsCollision(&objects[i]->GetHitBox())) {
-                    monster->EnterPlayerAlertRange(player);
+                    alertableObject->EnterPlayerAlertRange(player);
                 }
             }
         }

@@ -489,6 +489,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\drop\MagnetizedDrop.cpp" />
     <ClCompile Include="Source\Game\manager\ObjectManager.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2035,6 +2036,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardPistol.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_shaman\GoblinShaman.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
+    <ClInclude Include="Source\Game\drop\MagnetizedDrop.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
     <ClInclude Include="Source\Game\manager\UIManager.h" />
@@ -2079,6 +2081,7 @@
     <ClInclude Include="Source\Game\utils\object\InvisibleObject.h" />
     <ClInclude Include="Source\Game\utils\object\OnceAnimationObject.h" />
     <ClInclude Include="Source\Game\utils\object\RotatableObject.h" />
+    <ClInclude Include="Source\Game\utils\PlayerAlertable.h" />
     <ClInclude Include="Source\Game\utils\Point.h" />
     <ClInclude Include="Source\Game\utils\Tag.h" />
     <ClInclude Include="Source\Game\utils\Vec.h" />
@@ -3477,7 +3480,6 @@
     <Content Include="Resources\object\gold_coin\2.bmp" />
     <Content Include="Resources\object\gold_coin\3.bmp" />
     <Content Include="Resources\object\gold_coin\4.bmp" />
-    <Content Include="Resources\object\transfergate.bmp" />
     <Content Include="Resources\player\knight\dead.bmp" />
     <Content Include="Resources\player\knight\flip_dead.bmp" />
     <Content Include="Resources\player\knight\idle\1.bmp" />

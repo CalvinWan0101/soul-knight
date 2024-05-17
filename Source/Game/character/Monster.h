@@ -1,10 +1,11 @@
 ﻿#pragma once
 #include "Character.h"
 #include "MonsterType.h"
+#include "../utils/PlayerAlertable.h"
 
 class Player;
 
-class Monster : public Character {
+class Monster : public Character, public PlayerAlertable{
 public:
     Monster(double level);
     void Start() override;
@@ -12,7 +13,7 @@ public:
     void Collision(GameObject* gameObject) override;
     virtual void AutoMation() = 0;
     virtual void InitializeWeapon() = 0;
-    void EnterPlayerAlertRange(Player* player);
+    void EnterPlayerAlertRange(Player* player) override;
 
     void SetWeapon(Weapon* weapon);
     void SetLevel(double level);
