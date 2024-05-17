@@ -49,15 +49,15 @@ void StageManager::Initiliaze() {
 }
 
 void StageManager::NextStage() {
-    stage++;
-    if (stage > 5 && level != 3) {
-        stage = 1;
-        level++;
-    }
+    // stage++;
+    // if (stage > 5 && level != 3) {
+    //     stage = 1;
+    //     level++;
+    // }
 
     // for testing
-    // level = 1;
-    // stage = 2;
+    level = 2;
+    stage = 1;
 
     delete gameStage;
 
