@@ -1,13 +1,8 @@
 #include "stdafx.h"
 #include "Stage_1_1.h"
-#include "../../manager/ObjectManager.h"
-#include "../../character/Player.h"
-#include <iostream>
-
-#include "../RoomSize.h"
-#include "../../character/MonsterFactory.h"
-#include "../../manager/StageManager.h"
-#include "../../weapon/melee_weapon/Hammer.h"
+#include "../../../manager/ObjectManager.h"
+#include "../../../manager/StageManager.h"
+#include "../../RoomSize.h"
 
 Stage_1_1::Stage_1_1() {
     background.LoadBitmapByString({"resources/map/1-1.bmp"}, RGB(255, 255, 255));

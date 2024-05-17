@@ -2,10 +2,7 @@
 #include <vector>
 
 #include "../utils/object/GeneralObject.h"
-#include "../stage/TransferGate.h"
 #include "../projectile/Bullet.h"
-#include "../stage/Stage.h"
-#include "../stage/implementation/Stage_1_1.h"
 
 using std::vector;
 

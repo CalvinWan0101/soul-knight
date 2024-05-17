@@ -7,12 +7,12 @@
 
 #include "../utils/draw/Draw.h"
 #include "StageManager.h"
+#include "../stage/Stage.h"
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
-#include "../projectile/bullet/BadPistolBullet.h"
 #include "../weapon/ranged_weapon/BadPistol.h"
 
 ObjectManager* ObjectManager::instance = nullptr;

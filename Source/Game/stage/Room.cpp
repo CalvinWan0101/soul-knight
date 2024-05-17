@@ -3,7 +3,6 @@
 #include <random>
 #include "../wall/Wall.h"
 #include "../character/Monster.h"
-#include "../character/MonsterFactory.h"
 #include "../character/Player.h"
 #include "../manager/ObjectManager.h"
 #include "../pool/MonsterPool.h"

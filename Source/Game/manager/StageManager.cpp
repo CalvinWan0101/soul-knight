@@ -4,6 +4,8 @@
 
 #include "ObjectManager.h"
 #include "../stage/StageFactory.h"
+#include "../stage/Stage.h"
+#include "../stage/implementation/stage_1/Stage_1_1.h"
 #include "../character/Player.h"
 
 StageManager* StageManager::instance = nullptr;

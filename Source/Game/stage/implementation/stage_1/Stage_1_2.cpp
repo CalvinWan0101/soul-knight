@@ -1,8 +1,8 @@
 ﻿#include "stdafx.h"
 #include "Stage_1_2.h"
-#include "../../manager/ObjectManager.h"
-#include "../../manager/StageManager.h"
-#include "../RoomSize.h"
+#include "../../../manager/ObjectManager.h"
+#include "../../../manager/StageManager.h"
+#include "../../RoomSize.h"
 
 Stage_1_2::Stage_1_2() {
     background.LoadBitmapByString({"resources/map/1-2.bmp"}, RGB(255, 255, 255));
