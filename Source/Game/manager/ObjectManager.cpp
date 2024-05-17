@@ -54,7 +54,10 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
-    AddObject(new Coin());
+    Coin* coin = new Coin();
+    coin->SetValue(Coin::COPPER);
+    coin->SetX(320);
+    AddObject(coin);
 }
 
 void ObjectManager::Update() {
@@ -141,6 +144,18 @@ void ObjectManager::SetPlayerVision(Vec vision) {
 
 void ObjectManager::SetPlayerPosition(Point playerPosition) {
     player->SetPosition(&playerPosition);
+}
+
+void ObjectManager::MakeMoney(int money) {
+    wallet.MakeMoney(money);
+}
+
+bool ObjectManager::SpendMoney(int money) {
+    return wallet.SpendMoney(money);
+}
+
+int ObjectManager::GetMoney() {
+    return wallet.GetMoney();
 }
 
 void ObjectManager::CollisionDetection() {
