@@ -22,11 +22,11 @@ void PlayerState::Show() {
     }
     else {
         string hpStr = std::to_string(static_cast<int>(player->GetHP())) + " / " + std::to_string(static_cast<int>(player->GetMaxHP()));
-        game_framework::Draw::Instance()->Text(point + Point(15 + 5,20 + 3), 12, RGB(255,255,255), hpStr, "Consolas");
+        game_framework::Draw::Instance()->Text(point + Point(15 + 5,20 + 3), 12, RGB(255,255,255), hpStr, "MS Gothic");
         string shieldStr = std::to_string(static_cast<int>(player->GetShield())) + " / " + std::to_string(static_cast<int>(player->GetMaxShield()));
-        game_framework::Draw::Instance()->Text(point + Point(15 + 5,50 + 3), 12, RGB(255,255,255), shieldStr, "Consolas");
+        game_framework::Draw::Instance()->Text(point + Point(15 + 5,50 + 3), 12, RGB(255,255,255), shieldStr, "MS Gothic");
         string mpStr = std::to_string(player->GetMP()) + " / " + std::to_string(player->GetMaxMP());
-        game_framework::Draw::Instance()->Text(point + Point(15 + 5,80 + 3), 12, RGB(255,255,255), mpStr, "Consolas");
+        game_framework::Draw::Instance()->Text(point + Point(15 + 5,80 + 3), 12, RGB(255,255,255), mpStr, "MS Gothic");
         HpBar.Show(player->GetHP(), player->GetMaxHP());
         ShildBar.Show(player->GetShield(), player->GetMaxShield());
         MpBar.Show(player->GetMP(), player->GetMaxMP());

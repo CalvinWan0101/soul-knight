@@ -607,6 +607,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\manager\StageText.cpp" />
+    <ClCompile Include="Source\Game\manager\UIManager.cpp" />
     <ClCompile Include="Source\Game\pool\MonsterPool.cpp" />
     <ClCompile Include="Source\Game\pool\ProjectilePool.cpp" />
     <ClCompile Include="Source\Game\projectile\Bullet.cpp">
@@ -1977,6 +1979,8 @@
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
+    <ClInclude Include="Source\Game\manager\StageText.h" />
+    <ClInclude Include="Source\Game\manager\UIManager.h" />
     <ClInclude Include="Source\Game\pool\MonsterPool.h" />
     <ClInclude Include="Source\Game\pool\ProjectilePool.h" />
     <ClInclude Include="Source\Game\projectile\Bullet.h" />

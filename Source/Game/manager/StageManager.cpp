@@ -31,6 +31,14 @@ Stage* StageManager::GetStage() {
     return gameStage;
 }
 
+int StageManager::GetStageNumber() {
+    return stage;
+}
+
+int StageManager::GetLevelNumber() {
+    return level;
+}
+
 void StageManager::Initiliaze() {
     transferGate = new TransferGate();
     transferGate->SetPosition(Point(0, 0));

@@ -10,6 +10,8 @@ public:
     ~StageManager();
     void Update();
     Stage* GetStage();
+    int GetStageNumber();
+    int GetLevelNumber();
     void Initiliaze();
     void NextStage();
     void SetTransferGatePosition(Point position);
