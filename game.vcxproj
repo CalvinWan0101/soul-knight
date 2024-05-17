@@ -3415,6 +3415,10 @@
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_2.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_3.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_4.bmp" />
+    <Content Include="Resources\object\gold_coin\1.bmp" />
+    <Content Include="Resources\object\gold_coin\2.bmp" />
+    <Content Include="Resources\object\gold_coin\3.bmp" />
+    <Content Include="Resources\object\gold_coin\4.bmp" />
     <Content Include="Resources\object\transfergate.bmp" />
     <Content Include="Resources\player\knight\dead.bmp" />
     <Content Include="Resources\player\knight\flip_dead.bmp" />
