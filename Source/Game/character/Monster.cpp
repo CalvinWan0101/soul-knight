@@ -7,6 +7,7 @@
 
 Monster::Monster(double level): level(level), isInitializeWeapon(false) {
     AddTag(Tag::MONSTER);
+    AddTag(Tag::PLAYER_ALERTABLE);
 }
 
 void Monster::Start() {

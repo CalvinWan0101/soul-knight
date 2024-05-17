@@ -1,5 +1,5 @@
 #pragma once
-#include "StageText.h"
+#include "../ui/StageText.h"
 #include "../ui/PlayerState.h"
 
 class UIManager {

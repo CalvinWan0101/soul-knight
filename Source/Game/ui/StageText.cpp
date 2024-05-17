@@ -3,8 +3,7 @@
 
 #include <string>
 
-#include "StageManager.h"
-#include "../config.h"
+#include "../manager/StageManager.h"
 #include "../utils/draw/Draw.h"
 
 StageText::StageText(Point point) {
