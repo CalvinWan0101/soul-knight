@@ -57,7 +57,7 @@ void StageManager::NextStage() {
 
     // for testing
     level = 2;
-    stage = 4;
+    stage = 5;
 
     delete gameStage;
 
