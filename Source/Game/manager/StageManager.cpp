@@ -49,27 +49,22 @@ void StageManager::Initiliaze() {
 }
 
 void StageManager::NextStage() {
-    // stage++;
-    // if (stage > 5 && level != 3) {
-    //     stage = 1;
-    //     level++;
-    // }
+    stage++;
+    if (stage > 5 && level != 3) {
+        stage = 1;
+        level++;
+    }
 
     // for testing
-    level = 3;
-    stage = 4;
+    // level = 3;
+    // stage = 5;
 
     delete gameStage;
-
     gameStage = StageFactory::Create(level, stage);
-
     if (!gameStage) {
         gameStage = new Stage_1_1();
     }
-
     gameStage->Initialize();
-
-    std::cout << "Level: " << level << " Stage: " << stage << "\n";
 }
 
 void StageManager::SetTransferGatePosition(Point position) {
