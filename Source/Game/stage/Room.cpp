@@ -52,7 +52,7 @@ void Room::IsCleared() {
 
     if (isBossRoom) {
         StageManager::Instance()->SetTransferGatePosition(
-            topLeft + Point(16 * (size / 2 + 2), 16 * (size / 2 + 2)) - centerOffset);
+            topLeft + Point((size + 2) * 8, (size + 2) * 8) - centerOffset);
     }
 
     for (auto door : invisibleDoors) {
