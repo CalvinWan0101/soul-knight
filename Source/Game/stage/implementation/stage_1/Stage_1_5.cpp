@@ -9,7 +9,7 @@ Stage_1_5::Stage_1_5() {
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
     Room* room1 = new Room(Point(0, 544), centerOffset, RoomSize::LARGE_SIZE, 4,
-                           std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                           std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}}, true);
     Room* room2 = new Room(Point(688, 592), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                            std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     Room* room3 = new Room(Point(1360, 624), centerOffset, RoomSize::SMALL_SIZE, 4,
@@ -65,7 +65,7 @@ void Stage_1_5::SetPlayerPosition() {
 }
 
 void Stage_1_5::SetTransferGate() {
-    StageManager::Instance()->SetTransferGatePosition(Point(183, 726) - centerOffset);
+    StageManager::Instance()->SetTransferGatePosition(Point(3000, 3000) - centerOffset);
 }
 
 void Stage_1_5::GenerateObstacle() {

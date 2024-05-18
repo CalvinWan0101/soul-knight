@@ -11,7 +11,7 @@ class Monster;
 
 class Room {
 public:
-    Room(Point leftTop, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap);
+    Room(Point leftTop, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap, bool isBossRoom = false);
     void IsInside();
     void IsCleared();
 
@@ -19,6 +19,7 @@ private:
     Point topLeft; // Outter position
     int size;
     int level;
+    bool isBossRoom = false;
     Vec centerOffset;
     bool isInside = false;
     bool isCleared = false;

@@ -1,11 +1,12 @@
 ﻿#include "stdafx.h"
 #include "Room.h"
 #include <random>
-#include "../wall/Wall.h"
+#include "../manager/ObjectManager.h"
+#include "../manager/StageManager.h"
+#include "../pool/MonsterPool.h"
 #include "../character/Monster.h"
 #include "../character/Player.h"
-#include "../manager/ObjectManager.h"
-#include "../pool/MonsterPool.h"
+#include "../wall/Wall.h"
 #include "../wall/door/VerticalDoor1.h"
 #include "../wall/door/VerticalDoor2.h"
 #include "../wall/door/VerticalDoor3.h"
@@ -15,12 +16,14 @@
 #include "../wall/door/HorizontalDoor3.h"
 #include "../wall/door/HorizontalDoor4.h"
 
-Room::Room(Point topLeft, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap):
+Room::Room(Point topLeft, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap,
+           bool isBossRoom):
     topLeft(topLeft),
     centerOffset(centerOffset),
     size((int)size),
     level(level),
-    monsterMap(monsterMap) {
+    monsterMap(monsterMap),
+    isBossRoom(isBossRoom) {
 }
 
 void Room::IsInside() {
@@ -46,6 +49,12 @@ void Room::IsCleared() {
     }
 
     isCleared = true;
+
+    if (isBossRoom) {
+        StageManager::Instance()->SetTransferGatePosition(
+            topLeft + Point(16 * (size / 2 + 2), 16 * (size / 2 + 2)) - centerOffset);
+    }
+
     for (auto door : invisibleDoors) {
         door->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
