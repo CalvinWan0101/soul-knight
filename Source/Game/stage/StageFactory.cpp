@@ -19,59 +19,23 @@
 #include "implementation/stage_3/Stage_3_6.h"
 
 Stage* StageFactory::Create(int level, int stage) {
-    if (level == 1) {
-        if (stage == 1) {
-            return new Stage_1_1();
-        }
-        if (stage == 2) {
-            return new Stage_1_2();
-        }
-        if (stage == 3) {
-            return new Stage_1_3();
-        }
-        if (stage == 4) {
-            return new Stage_1_4();
-        }
-        if (stage == 5) {
-            return new Stage_1_5();
-        }
+    switch (level * 10 + stage) {
+    case 11: return new Stage_1_1();
+    case 12: return new Stage_1_2();
+    case 13: return new Stage_1_3();
+    case 14: return new Stage_1_4();
+    case 15: return new Stage_1_5();
+    case 21: return new Stage_2_1();
+    case 22: return new Stage_2_2();
+    case 23: return new Stage_2_3();
+    case 24: return new Stage_2_4();
+    case 25: return new Stage_2_5();
+    case 31: return new Stage_3_1();
+    case 32: return new Stage_3_2();
+    case 33: return new Stage_3_3();
+    case 34: return new Stage_3_4();
+    case 35: return new Stage_3_5();
+    case 36: return new Stage_3_6();
+    default: return nullptr;
     }
-    if (level == 2) {
-        if (stage == 1) {
-            return new Stage_2_1();
-        }
-        if (stage == 2) {
-            return new Stage_2_2();
-        }
-        if (stage == 3) {
-            return new Stage_2_3();
-        }
-        if (stage == 4) {
-            return new Stage_2_4();
-        }
-        if (stage == 5) {
-            return new Stage_2_5();
-        }
-    }
-    if (level == 3) {
-        if (stage == 1) {
-            return new Stage_3_1();
-        }
-        if (stage == 2) {
-            return new Stage_3_2();
-        }
-        if (stage == 3) {
-            return new Stage_3_3();
-        }
-        if (stage == 4) {
-            return new Stage_3_4();
-        }
-        if (stage == 5) {
-            return new Stage_3_5();
-        }
-        if (stage == 6) {
-            return new Stage_3_6();
-        }
-    }
-    return nullptr;
 }
