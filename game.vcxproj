@@ -1647,6 +1647,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\utils\HitBox.cpp" />
+    <ClCompile Include="Source\Game\utils\InteractiveText.cpp" />
     <ClCompile Include="Source\Game\utils\object\GameObject.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2290,6 +2291,7 @@
     <ClInclude Include="Source\Game\utils\draw\DrawTextCommand.h" />
     <ClInclude Include="Source\Game\utils\Event.hpp" />
     <ClInclude Include="Source\Game\utils\HitBox.h" />
+    <ClInclude Include="Source\Game\utils\InteractiveText.h" />
     <ClInclude Include="Source\Game\utils\object\GameObject.h" />
     <ClInclude Include="Source\Game\utils\object\GeneralObject.h" />
     <ClInclude Include="Source\Game\utils\object\InvisibleObject.h" />

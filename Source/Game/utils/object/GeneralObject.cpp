@@ -33,6 +33,7 @@ void GeneralObject::Update() {
 void GeneralObject::Show(Point screenPositoin) {
     if (!visible)
         return;
+    GameObject::Show(screenPositoin);
     double screenX = this->position.GetX() - screenPositoin.GetX();
     double screenY = this->position.GetY() - screenPositoin.GetY();
     for (auto gameObject : backGameObjects) {

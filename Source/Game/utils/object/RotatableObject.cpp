@@ -21,6 +21,7 @@ void RotatableObject::Update() {
 void RotatableObject::Show(Point screenPositoin) {
     if (!visible)
         return;
+    GameObject::Show(screenPositoin);
     SetFrameIndexOfBitmap(rotation.GetRadian());
     double screenX = this->position.GetX() - screenPositoin.GetX() + showOffset.GetX();
     double screenY = this->position.GetY() - screenPositoin.GetY() + showOffset.GetY();

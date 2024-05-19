@@ -4,6 +4,7 @@
 
 #include "../../../Library/gameutil.h"
 #include "../HitBox.h"
+#include "../InteractiveText.h"
 #include "../Point.h"
 #include "../Tag.h"
 
@@ -16,7 +17,7 @@ public:
     virtual void Start();
     virtual void Update();
     virtual void LoadResources() = 0;
-    virtual void Show(Point screenPositoin) = 0;
+    virtual void Show(Point screenPositoin);
     virtual void OnRemove() = 0;
 
     Point GetPosition();
@@ -38,6 +39,7 @@ public:
     virtual void SetHitBoxByRatio(double heightRatio, double widthRatio) = 0;
     HitBox& GetHitBox();
     virtual void Collision(GameObject* gameObject);
+    void SetInteractiveText(string displayText, InteractiveText::Rarity rarity);
 
 protected:
     Point position;
@@ -51,4 +53,5 @@ protected:
 private:
     bool resourcesIsLoaded;
     bitset<static_cast<int>(Tag::Count)> tags;
+    InteractiveText* interactiveText = nullptr;
 };

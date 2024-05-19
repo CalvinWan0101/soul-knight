@@ -19,7 +19,9 @@ Weapon* Pistol::Copy() {
 
 void Pistol::Start() {
     RangedWeapon::Start();
-    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
+    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.35);
+    SetInteractiveText("P250手槍", InteractiveText::COMMON);
+    mpCost = 0;
 }
 
 void Pistol::Update() {

@@ -21,6 +21,8 @@ Weapon* Bow::Copy() {
 void Bow::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0}, {-2, 0}, 0.8);
+    SetInteractiveText("珺之弓", InteractiveText::RARE);
+    mpCost = 3;
 }
 
 void Bow::Update() {

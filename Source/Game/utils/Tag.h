@@ -16,6 +16,7 @@ enum class Tag {
     OBSTACLE,
 
     PLAYER_ALERTABLE,
+    INTERACTABLE,
 
     DEAD,
 

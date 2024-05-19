@@ -6,7 +6,7 @@ class Point;
 class Dart : public RangedWeapon {
 public:
     Dart(Point point);
-    Dart(double damage = 3);
+    Dart(double damage = 6);
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

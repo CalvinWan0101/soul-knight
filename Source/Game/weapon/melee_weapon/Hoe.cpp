@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "Hoe.h"
 
-#include "stdafx.h"
-#include "Hammer.h"
-
 #include "../../projectile/ShockWave.h"
 #include "../../projectile/InvisibleShockWave.h"
 #include "../../manager/ObjectManager.h"
@@ -17,12 +14,14 @@ Hoe::Hoe(double damage) : MeleeWeapon(damage) {
 }
 
 Weapon* Hoe::Copy() {
-    return new Hammer(this->position);
+    return new Hoe(this->position);
 }
 
 void Hoe::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
+    SetInteractiveText("\u92e4\u982d", InteractiveText::COMMON);
+    mpCost = 0;
 }
 
 void Hoe::Update() {

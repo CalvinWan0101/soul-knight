@@ -17,6 +17,8 @@ Weapon* Dart::Copy() {
 void Dart::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0, 0, 0}, {-2, 0}, 0.5);
+    SetInteractiveText("毒飛鏢", InteractiveText::UNCOMMON);
+    mpCost = 3;
 }
 
 void Dart::Update() {

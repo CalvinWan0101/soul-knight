@@ -5,6 +5,9 @@ GameObject::GameObject() : hitBox(position), visible(true), resourcesIsLoaded(fa
 }
 
 GameObject::~GameObject() {
+    if (interactiveText) {
+        delete interactiveText;
+    }
 }
 
 void GameObject::Start() {
@@ -21,6 +24,14 @@ void GameObject::Update() {
 
 void GameObject::LoadResources() {
     
+}
+
+void GameObject::Show(Point screenPositoin) {
+    if (HasTag(Tag::INTERACTABLE)) {
+        double screenX = this->position.GetX() - screenPositoin.GetX();
+        double screenY = this->position.GetY() - screenPositoin.GetY();
+        interactiveText->Show(Point(screenX, screenY));
+    }
 }
 
 Point GameObject::GetPosition() {
@@ -94,5 +105,16 @@ HitBox& GameObject::GetHitBox() {
 }
 
 void GameObject::Collision(GameObject* gameObject) {
-    // Override by sub class
+    if (this->HasTag(Tag::INTERACTABLE) && gameObject->HasTag(Tag::PLAYER)) {
+        interactiveText->Interactive();
+    }
+}
+
+
+void GameObject::SetInteractiveText(string displayText, InteractiveText::Rarity rarity) {
+    if (interactiveText) {
+        delete interactiveText;
+    }
+    interactiveText = new InteractiveText(displayText, rarity);
+    AddTag(Tag::INTERACTABLE);
 }

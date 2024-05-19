@@ -15,7 +15,13 @@
 #include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
+#include "../weapon/melee_weapon/Hammer.h"
+#include "../weapon/melee_weapon/Hoe.h"
+#include "../weapon/melee_weapon/Spear.h"
 #include "../weapon/ranged_weapon/BadPistol.h"
+#include "../weapon/ranged_weapon/Bow.h"
+#include "../weapon/ranged_weapon/Dart.h"
+#include "../weapon/ranged_weapon/Pistol.h"
 
 ObjectManager* ObjectManager::instance = nullptr;
 
@@ -55,10 +61,18 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
-    Coin* coin = new Coin();
-    coin->SetValue(Coin::COPPER);
-    coin->SetX(320);
-    AddObject(coin);
+    Weapon* gun = new Bow();
+    gun->SetX(350);
+    AddObject(gun);
+    gun = new BadPistol();
+    gun->SetX(330);
+    AddObject(gun);
+    gun = new Hoe();
+    gun->SetX(310);
+    AddObject(gun);
+    gun = new Spear();
+    gun->SetX(370);
+    AddObject(gun);
 }
 
 void ObjectManager::Update() {
