@@ -1,7 +1,7 @@
 #pragma once
-#include "MagnetizedDrop.h"
+#include "Drop.h"
 
-class Coin : public MagnetizedDrop {
+class Coin : public Drop {
 public:
     Coin();
     enum Material {

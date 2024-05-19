@@ -490,8 +490,9 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\drop\Coin.cpp" />
+    <ClCompile Include="Source\Game\drop\DropFactory.cpp" />
     <ClCompile Include="Source\Game\drop\MagicBall.cpp" />
-    <ClCompile Include="Source\Game\drop\MagnetizedDrop.cpp" />
+    <ClCompile Include="Source\Game\drop\Drop.cpp" />
     <ClCompile Include="Source\Game\manager\ObjectManager.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -611,6 +612,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\manager\UIManager.cpp" />
+    <ClCompile Include="Source\Game\pool\DropPool.cpp" />
     <ClCompile Include="Source\Game\pool\MonsterPool.cpp" />
     <ClCompile Include="Source\Game\pool\ProjectilePool.cpp" />
     <ClCompile Include="Source\Game\projectile\Bullet.cpp">
@@ -2229,11 +2231,14 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_shaman\GoblinShaman.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\drop\Coin.h" />
+    <ClInclude Include="Source\Game\drop\DropFactory.h" />
     <ClInclude Include="Source\Game\drop\MagicBall.h" />
-    <ClInclude Include="Source\Game\drop\MagnetizedDrop.h" />
+    <ClInclude Include="Source\Game\drop\Drop.h" />
+    <ClInclude Include="Source\Game\drop\DropType.h" />
     <ClInclude Include="Source\Game\manager\ObjectManager.h" />
     <ClInclude Include="Source\Game\manager\StageManager.h" />
     <ClInclude Include="Source\Game\manager\UIManager.h" />
+    <ClInclude Include="Source\Game\pool\DropPool.h" />
     <ClInclude Include="Source\Game\pool\MonsterPool.h" />
     <ClInclude Include="Source\Game\pool\ProjectilePool.h" />
     <ClInclude Include="Source\Game\projectile\Bullet.h" />

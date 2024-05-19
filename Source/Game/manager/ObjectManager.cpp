@@ -12,6 +12,7 @@
 #include "../character/Player.h"
 #include "../character/Monster.h"
 #include "../drop/Coin.h"
+#include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
 #include "../weapon/ranged_weapon/BadPistol.h"
@@ -191,6 +192,9 @@ void ObjectManager::DeleteObsoleteElements() {
             }
             else if ((*object)->HasTag(Tag::MONSTER)) {
                 MonsterPool::Instance()->Release(dynamic_cast<Monster*>(*object));
+            }
+            else if ((*object)->HasTag(Tag::DROP)) {
+                DropPool::Instance()->Release(dynamic_cast<Drop*>(*object));
             }
             else {
                 delete *object;

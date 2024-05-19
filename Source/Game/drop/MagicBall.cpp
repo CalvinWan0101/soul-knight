@@ -2,14 +2,15 @@
 #include "MagicBall.h"
 
 MagicBall::MagicBall() {
+    SetDropType(DropType::MAGIC_BALL);
 }
 
 void MagicBall::Start() {
-    MagnetizedDrop::Start();
+    Drop::Start();
 }
 
 void MagicBall::Update() {
-    MagnetizedDrop::Update();
+    Drop::Update();
 }
 
 void MagicBall::LoadResources() {

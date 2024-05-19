@@ -1,7 +1,7 @@
 #pragma once
-#include "MagnetizedDrop.h"
+#include "Drop.h"
 
-class MagicBall : public MagnetizedDrop {
+class MagicBall : public Drop {
 public:
     MagicBall();
     void Start() override;

@@ -1,16 +1,16 @@
 #include "stdafx.h"
-#include "MagnetizedDrop.h"
+#include "Drop.h"
 
-MagnetizedDrop::MagnetizedDrop() : player(nullptr) {
+Drop::Drop() : player(nullptr) {
     AddTag(Tag::PLAYER_ALERTABLE);
 }
 
-void MagnetizedDrop::Start() {
+void Drop::Start() {
     GeneralObject::Start();
     SetHitBoxByRatio(1,1);
 }
 
-void MagnetizedDrop::Update() {
+void Drop::Update() {
     GeneralObject::Update();
     if (player) {
         Vec speed = player->GetPosition() - this->position;
@@ -19,12 +19,19 @@ void MagnetizedDrop::Update() {
     }
 }
 
-void MagnetizedDrop::Collision(GameObject* gameObject) {
+void Drop::Collision(GameObject* gameObject) {
 }
 
-void MagnetizedDrop::EnterPlayerAlertRange(Player* player) {
+void Drop::EnterPlayerAlertRange(Player* player) {
     if (!this->player) {
         this->player = player;
     }
 }
 
+DropType Drop::GetDropType() {
+    return dropType;
+}
+
+void Drop::SetDropType(DropType type) {
+    this->dropType = type;
+}

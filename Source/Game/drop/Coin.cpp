@@ -4,14 +4,15 @@
 #include "../manager/ObjectManager.h"
 
 Coin::Coin() : value(1) {
+    SetDropType(DropType::COIN);
 }
 
 void Coin::Start() {
-    MagnetizedDrop::Start();
+    Drop::Start();
 }
 
 void Coin::Update() {
-    MagnetizedDrop::Update();
+    Drop::Update();
 }
 
 void Coin::LoadResources() {

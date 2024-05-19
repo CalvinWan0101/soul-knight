@@ -4,6 +4,7 @@ enum class Tag {
     PLAYER,
     MONSTER,
     PROJECTILE,
+    DROP,
     
     PLAYER_ATTACK,
     MONSTER_ATTACK,
