@@ -17,6 +17,7 @@ public:
     virtual void Update();
     virtual void LoadResources() = 0;
     virtual void Show(Point screenPositoin) = 0;
+    virtual void OnRemove() = 0;
 
     Point GetPosition();
     void SetPosition(double x, double y);

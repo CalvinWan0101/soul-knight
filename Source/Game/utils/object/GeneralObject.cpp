@@ -46,6 +46,9 @@ void GeneralObject::Show(Point screenPositoin) {
     }
 }
 
+void GeneralObject::OnRemove() {
+}
+
 void GeneralObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
     hitBox.SetHeight(static_cast<double>(cMovingBitmaps[0].GetHeight()) * heightRatio);
     hitBox.SetWidth(static_cast<double>(cMovingBitmaps[0].GetWidth()) * widthRatio);

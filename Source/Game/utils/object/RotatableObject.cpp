@@ -31,6 +31,9 @@ void RotatableObject::Show(Point screenPositoin) {
     showOffset.SetY(0);
 }
 
+void RotatableObject::OnRemove() {
+}
+
 void RotatableObject::Rotate(double radian) {
     rotation.Rotate(radian);
 }

@@ -187,6 +187,7 @@ void ObjectManager::DeleteObsoleteElements() {
     for (vector<GameObject*>::iterator object = objects.begin(); object != objects.end();) {
         if ((*object)->HasTag(Tag::REMOVE_ON_NEXT_FRAME)) {
             (*object)->RemoveTag(Tag::REMOVE_ON_NEXT_FRAME);
+            (*object)->OnRemove();
             if ((*object)->HasTag(Tag::PROJECTILE)) {
                 ProjectilePool::Instance()->Release(dynamic_cast<Projectile*>(*object));
             }

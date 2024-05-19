@@ -18,6 +18,9 @@ void InvisibleObject::Show(Point screenPositoin) {
         return;
 }
 
+void InvisibleObject::OnRemove() {
+}
+
 void InvisibleObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
     // do nothing
 }

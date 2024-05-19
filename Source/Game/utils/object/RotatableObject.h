@@ -13,6 +13,7 @@ public:
     void Start() override;
     void Update() override;
     void Show(Point screenPositoin) override;
+    void OnRemove() override;
     void Rotate(double radian);
     void SetRotation(Vec* radian);
     void SetRotation(double radian);

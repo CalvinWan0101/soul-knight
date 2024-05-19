@@ -35,6 +35,9 @@ void OnceAnimationObject::Show(Point screenPositoin) {
     cMovingBitmap.ShowBitmap();
 }
 
+void OnceAnimationObject::OnRemove() {
+}
+
 void OnceAnimationObject::SetHitBoxByRatio(double heightRatio, double widthRatio) {
     hitBox.SetHeight(static_cast<double>(cMovingBitmap.GetHeight()) * heightRatio);
     hitBox.SetWidth(static_cast<double>(cMovingBitmap.GetWidth()) * widthRatio);

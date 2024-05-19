@@ -17,6 +17,7 @@ public:
     void Start() override;
     void Update() override;
     void Show(Point screenPositoin) override;
+    void OnRemove() override;
 
     void SetHitBoxByRatio(double heightRatio, double widthRatio) override;
 

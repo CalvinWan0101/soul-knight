@@ -10,6 +10,7 @@ public:
     Monster(double level);
     void Start() override;
     void Update() override;
+    void OnRemove() override;
     void Collision(GameObject* gameObject) override;
     virtual void AutoMation() = 0;
     virtual void InitializeWeapon() = 0;
