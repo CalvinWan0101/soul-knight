@@ -9,6 +9,7 @@
 #include "../drop/MagicBall.h"
 #include "../manager/ObjectManager.h"
 #include "../pool/DropPool.h"
+#include "../utils/Rand.h"
 
 Monster::Monster(double level): level(level), isInitializeWeapon(false) {
     AddTag(Tag::MONSTER);
@@ -44,11 +45,11 @@ void Monster::Update() {
 
 void Monster::OnRemove() {
     Coin* coin = dynamic_cast<Coin*>(DropPool::Instance()->Acquire(DropType::COIN));
-    coin->SetValue(static_cast<Coin::Material>(rand() % 3));
-    coin->SetPosition(this->position + Point(rand() % 20 - 10, rand() % 20 - 10));
+    coin->SetValue(static_cast<Coin::Material>(Rand::Instance()->Get(0, 2) * 2 + 1));
+    coin->SetPosition(this->position + Point(Rand::Instance()->Get(-10, 10), Rand::Instance()->Get(-10, 10)));
     ObjectManager::Instance()->AddObject(coin);
     MagicBall* magicBall = dynamic_cast<MagicBall*>(DropPool::Instance()->Acquire(DropType::MAGIC_BALL));
-    magicBall->SetPosition(this->position + Point(rand() % 20 - 10, rand() % 20 - 10));
+    magicBall->SetPosition(this->position + Point(Rand::Instance()->Get(-10, 10), Rand::Instance()->Get(-10, 10)));
     ObjectManager::Instance()->AddObject(magicBall);
 }
 

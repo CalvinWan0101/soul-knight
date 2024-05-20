@@ -13,12 +13,13 @@
 #include "character/player/Knight.h"
 #include "utils/draw/Draw.h"
 #include "stage/TransferGate.h"
+#include "utils/Rand.h"
 #include "wall\Wall.h"
 
 using namespace game_framework;
 
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸°õ¦æª«¥ó¡A¥D­nªº¹CÀ¸µ{¦¡³£¦b³o¸Ì
+// ï¿½oï¿½ï¿½classï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½æª«ï¿½ï¿½Aï¿½Dï¿½nï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½oï¿½ï¿½
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
@@ -31,18 +32,19 @@ CGameStateRun::~CGameStateRun() {
     delete monsterPool;
     delete dropPoll;
     delete Draw::Instance();
+    delete Rand::Instance();
 }
 
 void CGameStateRun::OnBeginState() {
 }
 
-void CGameStateRun::OnMove() // ²¾°Ê¹CÀ¸¤¸¯À
+void CGameStateRun::OnMove() // ï¿½ï¿½ï¿½Ê¹Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
     stageManager->Update();
     objectManager->Update();
 }
 
-void CGameStateRun::OnInit() // ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
+void CGameStateRun::OnInit() // ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤Î¹Ï§Î³]ï¿½w
 {
     objectManager->SetPlayer(new Knight());
     objectManager->Start();
@@ -60,26 +62,26 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags) {
     objectManager->KeyUp(nChar);
 }
 
-void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point) // ?B?z¡P?????¢X?¡±@
+void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point) // ?B?zï¿½P?????ï¿½X?ï¿½ï¿½@
 {
     objectManager->SetLButtonPress(true);
 }
 
-void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point) // ?B?z¡P?????¢X?¡±@
+void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point) // ?B?zï¿½P?????ï¿½X?ï¿½ï¿½@
 {
     objectManager->SetLButtonPress(false);
 }
 
-void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point) // ?B?z¡P?????¢X?¡±@
+void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point) // ?B?zï¿½P?????ï¿½X?ï¿½ï¿½@
 {
     objectManager->SetPlayerVision(Point(point.x, point.y) - Point(SIZE_X / 2, SIZE_Y / 2));
 }
 
-void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point) // ?B?z¡P?????¢X?¡±@
+void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point) // ?B?zï¿½P?????ï¿½X?ï¿½ï¿½@
 {
 }
 
-void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // ?B?z¡P?????¢X?¡±@
+void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point) // ?B?zï¿½P?????ï¿½X?ï¿½ï¿½@
 {
 }
 

@@ -2012,6 +2012,7 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="Source\Game\utils\Point.cpp" />
+    <ClCompile Include="Source\Game\utils\Rand.cpp" />
     <ClCompile Include="Source\Game\utils\Vec.cpp" />
     <ClCompile Include="Source\Game\utils\Wallet.cpp" />
     <ClCompile Include="Source\Game\wall\door\Door.cpp">
@@ -2378,6 +2379,7 @@
     <ClInclude Include="Source\Game\utils\object\RotatableObject.h" />
     <ClInclude Include="Source\Game\utils\PlayerAlertable.h" />
     <ClInclude Include="Source\Game\utils\Point.h" />
+    <ClInclude Include="Source\Game\utils\Rand.h" />
     <ClInclude Include="Source\Game\utils\Tag.h" />
     <ClInclude Include="Source\Game\utils\Vec.h" />
     <ClInclude Include="Source\Game\utils\Wallet.h" />
