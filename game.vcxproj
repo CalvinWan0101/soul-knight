@@ -554,6 +554,7 @@
     <ClCompile Include="Source\Game\collectable\CompositePotion.cpp" />
     <ClCompile Include="Source\Game\collectable\HealingPotion.cpp" />
     <ClCompile Include="Source\Game\collectable\MpPotion.cpp" />
+    <ClCompile Include="Source\Game\collectable\PotionFactory.cpp" />
     <ClCompile Include="Source\Game\drop\Coin.cpp" />
     <ClCompile Include="Source\Game\drop\DropFactory.cpp" />
     <ClCompile Include="Source\Game\drop\MagicBall.cpp" />
@@ -987,6 +988,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\shop\PotionVendingMachine.cpp" />
+    <ClCompile Include="Source\Game\shop\VendingMachine.cpp" />
     <ClCompile Include="Source\Game\stage\implementation\stage_1\Stage_1_1.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2303,6 +2306,7 @@
     <ClInclude Include="Source\Game\collectable\CompositePotion.h" />
     <ClInclude Include="Source\Game\collectable\HealingPotion.h" />
     <ClInclude Include="Source\Game\collectable\MpPotion.h" />
+    <ClInclude Include="Source\Game\collectable\PotionFactory.h" />
     <ClInclude Include="Source\Game\drop\Coin.h" />
     <ClInclude Include="Source\Game\drop\DropFactory.h" />
     <ClInclude Include="Source\Game\drop\MagicBall.h" />
@@ -2331,6 +2335,8 @@
     <ClInclude Include="Source\Game\projectile\ProjectileType.h" />
     <ClInclude Include="Source\Game\projectile\ShockWave.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
+    <ClInclude Include="Source\Game\shop\PotionVendingMachine.h" />
+    <ClInclude Include="Source\Game\shop\VendingMachine.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_1\Stage_1_1.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_1\Stage_1_2.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_1\Stage_1_3.h" />
@@ -3861,6 +3867,8 @@
     <Content Include="Resources\player\rogue\run\flip_3.bmp" />
     <Content Include="Resources\player\rogue\run\flip_4.bmp" />
     <Content Include="Resources\rotate.ipynb" />
+    <Content Include="Resources\shop\potion_vending_machine.bmp" />
+    <Content Include="Resources\shop\weapon_vending_machine.bmp" />
     <Content Include="Resources\sound\background.mp3" />
     <Content Include="Resources\sound\bullet.MP3" />
     <Content Include="Resources\start\first_page.bmp" />

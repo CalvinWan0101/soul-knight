@@ -22,6 +22,7 @@
 #include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
+#include "../shop/PotionVendingMachine.h"
 #include "../weapon/melee_weapon/Hammer.h"
 #include "../weapon/melee_weapon/Hoe.h"
 #include "../weapon/melee_weapon/Spear.h"
@@ -80,6 +81,10 @@ void ObjectManager::Start() {
     gun = new Spear();
     gun->SetX(370);
     AddObject(gun);
+    PotionVendingMachine* vm = new PotionVendingMachine(1,1);
+    vm->SetX(360);
+    vm->SetY(300);
+    AddObject(vm);
 }
 
 void ObjectManager::Update() {
@@ -132,9 +137,10 @@ void ObjectManager::KeyDown(char key) {
         break;
     case 'F':
         // isDisplayHitBox = !isDisplayHitBox;
-        Collectable* collectable = new BigCompositePotion();
-        collectable->SetPosition(player->GetPosition());
-        AddObject(collectable);
+        Coin* coin = new Coin();
+        coin->SetPosition(player->GetPosition());
+        coin->SetValue(Coin::GOLD);
+        AddObject(coin);
         break;
     }
 }
