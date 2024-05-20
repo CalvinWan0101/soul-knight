@@ -48,7 +48,7 @@ void Player::Attack() {
     if (weapon) {
         if (weapon->CanAttack()) {
             int mpCost = weapon->GetMpCost();
-            if (mp > mpCost) {
+            if (mp >= mpCost) {
                 mp -= mpCost;
                 Character::Attack();
             }

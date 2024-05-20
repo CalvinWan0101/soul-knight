@@ -6,6 +6,7 @@
 
 TransferGate::TransferGate() {
     AddTag(Tag::TRANSFER_GATE);
+    SetInteractiveText("Transfer ?", InteractiveText::COMMON, -80);
 }
 
 void TransferGate::Start() {
@@ -21,8 +22,6 @@ void TransferGate::LoadResources() {
     AddAnimation({"resources/object/transfer_gate/transfergate.bmp"}, RGB(255, 255, 255), 0, false);
 }
 
-void TransferGate::Collision(GameObject* gameObject) {
-    if (gameObject->HasTag(Tag::PLAYER)) {
-        StageManager::Instance()->NextStage();
-    }
+void TransferGate::Interactive(Player* player) {
+    StageManager::Instance()->NextStage();
 }

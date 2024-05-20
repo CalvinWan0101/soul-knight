@@ -111,10 +111,10 @@ void GameObject::Collision(GameObject* gameObject) {
 }
 
 
-void GameObject::SetInteractiveText(string displayText, InteractiveText::Rarity rarity) {
+void GameObject::SetInteractiveText(string displayText, InteractiveText::Rarity rarity, int verticalOffset) {
     if (interactiveText) {
         delete interactiveText;
     }
-    interactiveText = new InteractiveText(displayText, rarity);
+    interactiveText = new InteractiveText(displayText, rarity, verticalOffset);
     AddTag(Tag::INTERACTABLE);
 }

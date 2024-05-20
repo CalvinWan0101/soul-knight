@@ -39,7 +39,7 @@ public:
     virtual void SetHitBoxByRatio(double heightRatio, double widthRatio) = 0;
     HitBox& GetHitBox();
     virtual void Collision(GameObject* gameObject);
-    void SetInteractiveText(string displayText, InteractiveText::Rarity rarity);
+    void SetInteractiveText(string displayText, InteractiveText::Rarity rarity, int verticalOffset = -25);
 
 protected:
     Point position;

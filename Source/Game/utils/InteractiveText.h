@@ -14,7 +14,7 @@ public:
         MYTHIC = RGB(255,0,0)
     };
     
-    InteractiveText(std::string displayText, Rarity rarity = Rarity::COMMON);
+    InteractiveText(std::string displayText, Rarity rarity = Rarity::COMMON, int verticalOffset = -25);
     void Show(Point screenPoint);
     void Interactive();
 private:
