@@ -72,7 +72,7 @@ int Player::GetMaxMP() {
     return maxMp;
 }
 
-void Player::PickUpMP(int value) {
+void Player::RecoverMP(int value) {
     this->mp += value;
     if (this->mp > maxMp) {
         this->mp = maxMp;

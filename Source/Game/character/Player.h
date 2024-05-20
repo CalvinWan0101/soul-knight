@@ -12,7 +12,7 @@ public:
     void Attack() override;
     int GetMP();
     int GetMaxMP();
-    void PickUpMP(int value);
+    void RecoverMP(int value);
     void Healing(int value);
     double GetShield();
     double GetMaxShield();

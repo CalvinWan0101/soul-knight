@@ -11,8 +11,13 @@
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
+#include "../collectable/BigCompositePotion.h"
+#include "../collectable/BigHealingPotion.h"
+#include "../collectable/BigMpPotion.h"
 #include "../collectable/Collectable.h"
+#include "../collectable/CompositePotion.h"
 #include "../collectable/HealingPotion.h"
+#include "../collectable/MpPotion.h"
 #include "../drop/Coin.h"
 #include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
@@ -127,7 +132,7 @@ void ObjectManager::KeyDown(char key) {
         break;
     case 'F':
         // isDisplayHitBox = !isDisplayHitBox;
-        Collectable* collectable = new HealingPotion();
+        Collectable* collectable = new BigCompositePotion();
         collectable->SetPosition(player->GetPosition());
         AddObject(collectable);
         break;

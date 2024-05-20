@@ -25,6 +25,6 @@ void MagicBall::LoadResources() {
 void MagicBall::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::PLAYER)) {
         AddTag(Tag::REMOVE_ON_NEXT_FRAME);
-        dynamic_cast<Player*>(gameObject)->PickUpMP(rand() % 3 + 1);
+        dynamic_cast<Player*>(gameObject)->RecoverMP(rand() % 3 + 1);
     }
 }
