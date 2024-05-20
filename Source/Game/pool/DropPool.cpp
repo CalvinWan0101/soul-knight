@@ -3,6 +3,7 @@
 
 #include "../drop/DropFactory.h"
 #include "../drop/DropType.h"
+#include "../drop/Drop.h"
 
 #define PREALLOCATIONS 50
 
