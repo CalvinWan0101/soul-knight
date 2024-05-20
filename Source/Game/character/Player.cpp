@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Character.h"
 #include "../config.h"
+#include "../collectable/Collectable.h"
 #include "../manager/ObjectManager.h"
 #include "../utils/draw/Draw.h"
 
@@ -36,11 +37,17 @@ void Player::Collision(GameObject* gameObject) {
             Injuried(dynamic_cast<Projectile*>(gameObject)->GetDamage());
         }
     }
-    else if (gameObject->HasTag(Tag::PLAYER_WEAPON) && interactive == true) {
+    else if (gameObject->HasTag(Tag::INTERACTABLE) && interactive == true) {
         interactive = false;
-        Weapon* weapon = dynamic_cast<Weapon*>(gameObject);
-        weapon->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
-        this->ChangeWeapon(weapon->Copy());
+        if (gameObject->HasTag(Tag::PLAYER_WEAPON)) {
+            Weapon* weapon = dynamic_cast<Weapon*>(gameObject);
+            weapon->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+            this->ChangeWeapon(weapon->Copy());
+        }
+        else if (gameObject->HasTag(Tag::COLLECTABLE)) {
+            Collectable* collectable = dynamic_cast<Collectable*>(gameObject);
+            collectable->Collect(this);
+        }
     }
 }
 
@@ -69,6 +76,13 @@ void Player::PickUpMP(int value) {
     this->mp += value;
     if (this->mp > maxMp) {
         this->mp = maxMp;
+    }
+}
+
+void Player::Healing(int value) {
+    this->hp += value;
+    if (this->hp > this->maxHp) {
+        this->hp = this->maxHp;
     }
 }
 

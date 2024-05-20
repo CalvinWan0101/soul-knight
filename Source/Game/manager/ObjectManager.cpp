@@ -11,6 +11,8 @@
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
+#include "../collectable/Collectable.h"
+#include "../collectable/HealingPotion.h"
 #include "../drop/Coin.h"
 #include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
@@ -124,7 +126,10 @@ void ObjectManager::KeyDown(char key) {
         player->SetInteractive(true);
         break;
     case 'F':
-        isDisplayHitBox = !isDisplayHitBox;
+        // isDisplayHitBox = !isDisplayHitBox;
+        Collectable* collectable = new HealingPotion();
+        collectable->SetPosition(player->GetPosition());
+        AddObject(collectable);
         break;
     }
 }

@@ -17,6 +17,7 @@ enum class Tag {
 
     PLAYER_ALERTABLE,
     INTERACTABLE,
+    COLLECTABLE,
 
     DEAD,
 
