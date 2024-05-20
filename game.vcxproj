@@ -240,6 +240,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Source\Game\character\CharacterAffect.cpp" />
+    <ClCompile Include="Source\Game\character\DamageText.cpp" />
     <ClCompile Include="Source\Game\character\Monster.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2282,6 +2283,7 @@
     <ClInclude Include="Source\Core\Resource.h" />
     <ClInclude Include="Source\Core\StdAfx.h" />
     <ClInclude Include="Source\Game\character\CharacterAffect.h" />
+    <ClInclude Include="Source\Game\character\DamageText.h" />
     <ClInclude Include="Source\Game\character\Monster.h" />
     <ClInclude Include="Source\Game\character\MonsterFactory.h" />
     <ClInclude Include="Source\Game\character\MonsterType.h" />

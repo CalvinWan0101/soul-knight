@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Character.h"
+#include "DamageText.h"
 #include "MonsterType.h"
 #include "../utils/PlayerAlertable.h"
 
@@ -20,6 +21,7 @@ public:
     void SetLevel(double level);
     void Reset();
     MonsterType GetMonsterType();
+    void Injuried(double damage);
 
 protected:
     double maxSpeed;
@@ -30,4 +32,6 @@ protected:
 private:
     bool isInitializeWeapon;
     Player* player = nullptr;
+    void CreateNewDamageText();
+    DamageText* damageText;
 };

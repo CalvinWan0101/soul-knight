@@ -11,7 +11,7 @@
 #include "../pool/DropPool.h"
 #include "../utils/Rand.h"
 
-Monster::Monster(double level): level(level), isInitializeWeapon(false) {
+Monster::Monster(double level): level(level), isInitializeWeapon(false), damageText(nullptr) {
     AddTag(Tag::MONSTER);
     AddTag(Tag::PLAYER_ALERTABLE);
 }
@@ -56,7 +56,7 @@ void Monster::OnRemove() {
 void Monster::Collision(GameObject* gameObject) {
     Character::Collision(gameObject);
     if (gameObject->HasTag(Tag::PLAYER_ATTACK)) {
-        this->hp = this->hp - dynamic_cast<Projectile*>(gameObject)->GetDamage();
+        Injuried(dynamic_cast<Projectile*>(gameObject)->GetDamage());
     }
 }
 
@@ -92,6 +92,31 @@ MonsterType Monster::GetMonsterType() {
     return static_cast<MonsterType>(monsterType);
 }
 
+void Monster::Injuried(double damage) {
+    this->hp -= damage;
+    if (this->hp < 0) {
+        this->hp = 0;
+    }
+
+    if (!damageText) {
+        CreateNewDamageText();
+    }
+    
+    if (damageText->IsAlive() == false) {
+        CreateNewDamageText();
+    }
+
+    damageText->AddDamage(damage);
+}
+
+
 void Monster::SetMonsterType(MonsterType type) {
     monsterType = static_cast<int>(type);
 }
+
+void Monster::CreateNewDamageText() {
+    damageText = new DamageText();
+    damageText->SetPosition(position);
+    ObjectManager::Instance()->AddObject(damageText);
+}
+
