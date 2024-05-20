@@ -8,5 +8,5 @@ public:
     void Update() override;
     void LoadResources() override;
 
-    void Collect(Player* player) override;
+    void Interactive(Player* player) override;
 };

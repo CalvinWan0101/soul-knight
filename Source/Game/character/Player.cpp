@@ -39,15 +39,8 @@ void Player::Collision(GameObject* gameObject) {
     }
     else if (gameObject->HasTag(Tag::INTERACTABLE) && interactive == true) {
         interactive = false;
-        if (gameObject->HasTag(Tag::PLAYER_WEAPON)) {
-            Weapon* weapon = dynamic_cast<Weapon*>(gameObject);
-            weapon->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
-            this->ChangeWeapon(weapon->Copy());
-        }
-        else if (gameObject->HasTag(Tag::COLLECTABLE)) {
-            Collectable* collectable = dynamic_cast<Collectable*>(gameObject);
-            collectable->Collect(this);
-        }
+        Interactable* interactable = dynamic_cast<Interactable*>(gameObject);
+        interactable->Interactive(this);
     }
 }
 

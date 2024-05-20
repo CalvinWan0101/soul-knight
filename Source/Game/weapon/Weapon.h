@@ -1,11 +1,12 @@
 #pragma once
 #include "../projectile/InvisibleShockWave.h"
 #include "../projectile/ShockWave.h"
+#include "../utils/Interactable.h"
 #include "../utils/object/RotatableObject.h"
 
 class Bullet;
 
-class Weapon : public RotatableObject {
+class Weapon : public RotatableObject, public Interactable{
 public:
     Weapon();
     Weapon(Point point);
@@ -16,6 +17,7 @@ public:
     void DefaultAttack();
     virtual void Aim(Vec* direction);
     virtual void Attack() = 0;
+    void Interactive(Player* player) override;
     virtual void SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets,
                                     double second, double attackTiming = 0);
     double GetDamage();

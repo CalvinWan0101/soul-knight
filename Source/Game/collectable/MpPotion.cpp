@@ -17,7 +17,7 @@ void MpPotion::LoadResources() {
     AddAnimation({"Resources/collectable/mp_potion.bmp"}, RGB(255,255,255), 1000, false);
 }
 
-void MpPotion::Collect(Player* player) {
+void MpPotion::Interactive(Player* player) {
     player->RecoverMP(80);
     AddTag(Tag::REMOVE_ON_NEXT_FRAME);
 }

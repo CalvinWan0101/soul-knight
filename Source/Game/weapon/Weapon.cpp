@@ -2,6 +2,7 @@
 #include "Weapon.h"
 
 #include "../config.h"
+#include "../character/Player.h"
 #include "../projectile/Bullet.h"
 
 Weapon::Weapon(): cdCounter(0), attackTiming(0), attackRotationOffset(0), attackTranslationOffset(0) {
@@ -50,6 +51,11 @@ void Weapon::Aim(Vec* direction) {
     Vec translationOffset = this->rotation;
     translationOffset.SetLength(attackTranslationOffset);
     this->showOffset = this->showOffset + translationOffset;
+}
+
+void Weapon::Interactive(Player* player) {
+    player->ChangeWeapon(Copy());
+    AddTag(Tag::REMOVE_ON_NEXT_FRAME);
 }
 
 void Weapon::SetAttackAnimation(vector<double> attackRotationOffsets, vector<double> attackTranslationOffsets,

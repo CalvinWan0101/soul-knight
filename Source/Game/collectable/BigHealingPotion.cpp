@@ -18,7 +18,7 @@ void BigHealingPotion::LoadResources() {
     AddAnimation({"Resources/collectable/big_healing_potion.bmp"}, RGB(255,255,255), 1000, false);
 }
 
-void BigHealingPotion::Collect(Player* player) {
+void BigHealingPotion::Interactive(Player* player) {
     player->Healing(4);
     AddTag(Tag::REMOVE_ON_NEXT_FRAME);
 }
