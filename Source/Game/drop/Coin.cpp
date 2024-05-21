@@ -2,6 +2,7 @@
 #include "Coin.h"
 
 #include "../manager/ObjectManager.h"
+#include "../utils/Rand.h"
 
 Coin::Coin() : value(1) {
     SetDropType(DropType::COIN);
@@ -9,6 +10,18 @@ Coin::Coin() : value(1) {
 
 void Coin::Start() {
     Drop::Start();
+    index = Rand::Instance()->Get(0,2);
+    switch (index) {
+    case 0:
+        value = 1;
+        break;
+    case 1:
+        value = 3;
+        break;
+    case 2:
+        value = 5;
+        break;
+    }
 }
 
 void Coin::Update() {
@@ -51,21 +64,3 @@ void Coin::Collision(GameObject* gameObject) {
         ObjectManager::Instance()->MakeMoney(value);
     }
 }
-
-void Coin::SetValue(Material material) {
-    this->value = material;
-    switch (material) {
-    case(Material::COPPER):
-        index = 0;
-        break;
-    case(Material::SILVER):
-        index = 1;
-        break;
-    case(Material::GOLD):
-        index = 2;
-        break;
-    }
-}
-
-
-

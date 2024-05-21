@@ -8,6 +8,7 @@ ShockWave::ShockWave() {
 void ShockWave::Start() {
     OnceAnimationObject::Start();
     activicated = false;
+    playedAnimation = true;
     SetHitBoxByRatio(0.7, 0.7);
 }
 

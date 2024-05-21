@@ -14,10 +14,11 @@ public:
 
 
 protected:
+    bool playedAnimation;
     bool isAnimationFinished;
+    bool isAnimationStart;
     void SetAnimation(vector<string> filePaths, int delay , COLORREF color);
     void SetCenter() override;
 private:
-    bool isAnimationStart;
     game_framework::CMovingBitmap cMovingBitmap;
 };

@@ -989,6 +989,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\shop\Box.cpp" />
     <ClCompile Include="Source\Game\shop\Businessman.cpp" />
     <ClCompile Include="Source\Game\shop\DisplayStand.cpp" />
     <ClCompile Include="Source\Game\shop\PotionVendingMachine.cpp" />
@@ -2342,6 +2343,7 @@
     <ClInclude Include="Source\Game\projectile\ProjectileType.h" />
     <ClInclude Include="Source\Game\projectile\ShockWave.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
+    <ClInclude Include="Source\Game\shop\Box.h" />
     <ClInclude Include="Source\Game\shop\Businessman.h" />
     <ClInclude Include="Source\Game\shop\DisplayStand.h" />
     <ClInclude Include="Source\Game\shop\PotionVendingMachine.h" />
@@ -3790,6 +3792,20 @@
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_2.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_3.bmp" />
     <Content Include="Resources\monster\floor_3\varkolyn_guard\run\flip_4.bmp" />
+    <Content Include="Resources\object\box\animate\1.bmp" />
+    <Content Include="Resources\object\box\animate\10.bmp" />
+    <Content Include="Resources\object\box\animate\2.bmp" />
+    <Content Include="Resources\object\box\animate\3.bmp" />
+    <Content Include="Resources\object\box\animate\4.bmp" />
+    <Content Include="Resources\object\box\animate\5.bmp" />
+    <Content Include="Resources\object\box\animate\6.bmp" />
+    <Content Include="Resources\object\box\animate\7.bmp" />
+    <Content Include="Resources\object\box\animate\8.bmp" />
+    <Content Include="Resources\object\box\animate\9.bmp" />
+    <Content Include="Resources\object\box\temp\1.bmp" />
+    <Content Include="Resources\object\box\temp\2.bmp" />
+    <Content Include="Resources\object\box\temp\3.bmp" />
+    <Content Include="Resources\object\box\temp\4.bmp" />
     <Content Include="Resources\object\copper_coin\1.bmp" />
     <Content Include="Resources\object\copper_coin\2.bmp" />
     <Content Include="Resources\object\copper_coin\3.bmp" />

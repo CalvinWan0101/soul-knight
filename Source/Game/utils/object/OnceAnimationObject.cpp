@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "OnceAnimationObject.h"
 
-OnceAnimationObject::OnceAnimationObject(): isAnimationStart(false), isAnimationFinished(false) {
+OnceAnimationObject::OnceAnimationObject(): playedAnimation(false),isAnimationFinished(false) , isAnimationStart(false) {
 }
 
 OnceAnimationObject::~OnceAnimationObject() {
@@ -23,11 +23,12 @@ void OnceAnimationObject::Show(Point screenPositoin) {
     GameObject::Show(screenPositoin);
     double screenX = this->position.GetX() - screenPositoin.GetX();
     double screenY = this->position.GetY() - screenPositoin.GetY();
-    if (!isAnimationStart && !isAnimationFinished) {
+    if (!isAnimationStart && !isAnimationFinished && playedAnimation) {
+        playedAnimation = false;
         isAnimationStart = true;
         cMovingBitmap.ToggleAnimation();
     }
-    else if (cMovingBitmap.IsAnimationDone() && !isAnimationFinished) {
+    else if (cMovingBitmap.IsAnimationDone() && isAnimationStart) {
         isAnimationFinished = true;
     }
 

@@ -22,6 +22,7 @@
 #include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
+#include "../shop/Box.h"
 #include "../shop/Businessman.h"
 #include "../shop/DisplayStand.h"
 #include "../shop/PotionVendingMachine.h"
@@ -152,11 +153,16 @@ void ObjectManager::KeyDown(char key) {
         break;
     case '1':
         isDisplayHitBox = !isDisplayHitBox;
+        break;
     case '2':
-        Coin* coin = new Coin();
-        coin->SetPosition(player->GetPosition());
-        coin->SetValue(Coin::GOLD);
-        AddObject(coin);
+        // GameObject* coin = DropPool::Instance()->Acquire(DropType::COIN);
+        // coin->SetPosition(player->GetPosition());
+        // AddObject(coin);
+        break;
+    case '3':
+        GameObject* box = new Box(Box::BOSS_ROOM);
+        box->SetPosition(player->GetPosition());
+        AddObject(box);
         break;
     }
 }
