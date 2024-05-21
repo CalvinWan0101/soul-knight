@@ -4,7 +4,7 @@
 #include "../manager/ObjectManager.h"
 #include "../utils/Rand.h"
 
-VendingMachine::VendingMachine(int stage, int level) {
+VendingMachine::VendingMachine(int level, int stage) {
     price = level * 20 + Rand::Instance()->Get(stage * -3, stage * 3);
     SetInteractiveText(std::to_string(price), InteractiveText::LEGENDARY, -45);
 }

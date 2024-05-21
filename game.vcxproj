@@ -991,6 +991,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\shop\PotionVendingMachine.cpp" />
     <ClCompile Include="Source\Game\shop\VendingMachine.cpp" />
+    <ClCompile Include="Source\Game\shop\WeaponVendingMachine.cpp" />
     <ClCompile Include="Source\Game\stage\implementation\stage_1\Stage_1_1.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2271,6 +2272,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\weapon\WeaponFactory.cpp" />
     <ClCompile Include="Source\Library\audio.cpp" />
     <ClCompile Include="Source\Library\gamecore.cpp" />
     <ClCompile Include="Source\Library\gameutil.cpp" />
@@ -2340,6 +2342,7 @@
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
     <ClInclude Include="Source\Game\shop\PotionVendingMachine.h" />
     <ClInclude Include="Source\Game\shop\VendingMachine.h" />
+    <ClInclude Include="Source\Game\shop\WeaponVendingMachine.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_1\Stage_1_1.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_1\Stage_1_2.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_1\Stage_1_3.h" />
@@ -2408,6 +2411,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Shotgun.h" />
     <ClInclude Include="Source\Game\weapon\Weapon.h" />
+    <ClInclude Include="Source\Game\weapon\WeaponFactory.h" />
     <ClInclude Include="Source\Library\audio.h" />
     <ClInclude Include="Source\Library\gamecore.h" />
     <ClInclude Include="Source\Library\gameutil.h" />

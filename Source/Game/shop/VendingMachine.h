@@ -4,7 +4,7 @@
 
 class VendingMachine : public GeneralObject, public Interactable{
 public:
-    VendingMachine(int stage, int level);
+    VendingMachine(int level, int stage);
     ~VendingMachine();
     void Start() override;
     void Update() override;

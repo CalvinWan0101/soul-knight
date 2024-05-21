@@ -23,6 +23,7 @@
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
 #include "../shop/PotionVendingMachine.h"
+#include "../shop/WeaponVendingMachine.h"
 #include "../weapon/melee_weapon/Hammer.h"
 #include "../weapon/melee_weapon/Hoe.h"
 #include "../weapon/melee_weapon/Spear.h"
@@ -81,10 +82,15 @@ void ObjectManager::Start() {
     gun = new Spear();
     gun->SetX(370);
     AddObject(gun);
-    PotionVendingMachine* vm = new PotionVendingMachine(1,1);
+    VendingMachine* vm = new PotionVendingMachine(1,1);
     vm->SetX(360);
-    vm->SetY(300);
+    vm->SetY(240);
     AddObject(vm);
+    vm = new WeaponVendingMachine(1, 5);
+    vm->SetX(300);
+    vm->SetY(240);
+    AddObject(vm);
+    
 }
 
 void ObjectManager::Update() {

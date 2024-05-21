@@ -1,9 +1,9 @@
 #pragma once
 #include "VendingMachine.h"
 
-class PotionVendingMachine : public VendingMachine{
+class WeaponVendingMachine : public VendingMachine{
 public:
-    PotionVendingMachine(int level, int stage);
+    WeaponVendingMachine(int level, int stage);
     void Shipment() override;
     void LoadResources() override;
 };

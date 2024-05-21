@@ -5,12 +5,12 @@
 #include "../manager/ObjectManager.h"
 #include "../utils/Rand.h"
 
-PotionVendingMachine::PotionVendingMachine(int stage, int level) : VendingMachine(stage, level) {
+PotionVendingMachine::PotionVendingMachine(int level, int stage) : VendingMachine(level, stage) {
 }
 
 void PotionVendingMachine::Shipment() {
-    int id = Rand::Instance()->Get(0, static_cast<int>(PotionFactory::PotionType::Count));
-    Collectable* collectable = PotionFactory::Create(static_cast<PotionFactory::PotionType>(id));
+    int potionId = Rand::Instance()->Get(0, static_cast<int>(PotionFactory::PotionType::Count) - 1);
+    Collectable* collectable = PotionFactory::Create(static_cast<PotionFactory::PotionType>(potionId));
     collectable->SetPosition(this->position + Point(0, 45));
     ObjectManager::Instance()->AddObject(collectable);
 }
