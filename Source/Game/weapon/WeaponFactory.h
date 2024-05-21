@@ -8,7 +8,6 @@ public:
         BAD_PISTOL,
         BOW,
         Dart,
-        GOLBIN_STAFF,
         PISTOL,
         SHOTGUN,
 

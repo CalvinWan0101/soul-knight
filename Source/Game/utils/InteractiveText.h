@@ -10,7 +10,7 @@ public:
         UNCOMMON = RGB(0,200,0),
         RARE = RGB(0,100,255),
         EPIC = RGB(146,38,213),
-        LEGENDARY = RGB(205,131,0),
+        LEGENDARY = RGB(254, 193, 64),
         MYTHIC = RGB(255,0,0)
     };
     

@@ -22,6 +22,8 @@
 #include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
+#include "../shop/Businessman.h"
+#include "../shop/DisplayStand.h"
 #include "../shop/PotionVendingMachine.h"
 #include "../shop/WeaponVendingMachine.h"
 #include "../weapon/melee_weapon/Hammer.h"
@@ -83,14 +85,21 @@ void ObjectManager::Start() {
     gun->SetX(370);
     AddObject(gun);
     VendingMachine* vm = new PotionVendingMachine(1,1);
-    vm->SetX(360);
-    vm->SetY(240);
+    vm->SetX(420);
+    vm->SetY(180);
     AddObject(vm);
     vm = new WeaponVendingMachine(1, 5);
-    vm->SetX(300);
-    vm->SetY(240);
+    vm->SetX(260);
+    vm->SetY(180);
     AddObject(vm);
-    
+
+    Businessman* businessman = new Businessman(2, 5);
+    businessman->SetPosition(340, 280);
+    AddObject(businessman);
+
+    // DisplayStand* displayStand = new DisplayStand(2 , 5);
+    // displayStand->SetPosition(300, 320);
+    // AddObject(displayStand);
 }
 
 void ObjectManager::Update() {

@@ -20,8 +20,6 @@ Weapon* WeaponFactory::Create(Name weaponName) {
         return new Bow();
     case Dart:
         return new ::Dart();
-    case GOLBIN_STAFF:
-        return new GoblinStaff();
     case PISTOL:
         return new Pistol();
     case SHOTGUN:

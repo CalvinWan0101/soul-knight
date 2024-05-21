@@ -989,6 +989,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\shop\Businessman.cpp" />
+    <ClCompile Include="Source\Game\shop\DisplayStand.cpp" />
     <ClCompile Include="Source\Game\shop\PotionVendingMachine.cpp" />
     <ClCompile Include="Source\Game\shop\VendingMachine.cpp" />
     <ClCompile Include="Source\Game\shop\WeaponVendingMachine.cpp" />
@@ -2340,6 +2342,8 @@
     <ClInclude Include="Source\Game\projectile\ProjectileType.h" />
     <ClInclude Include="Source\Game\projectile\ShockWave.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
+    <ClInclude Include="Source\Game\shop\Businessman.h" />
+    <ClInclude Include="Source\Game\shop\DisplayStand.h" />
     <ClInclude Include="Source\Game\shop\PotionVendingMachine.h" />
     <ClInclude Include="Source\Game\shop\VendingMachine.h" />
     <ClInclude Include="Source\Game\shop\WeaponVendingMachine.h" />
@@ -3875,6 +3879,8 @@
     <Content Include="Resources\player\rogue\run\flip_3.bmp" />
     <Content Include="Resources\player\rogue\run\flip_4.bmp" />
     <Content Include="Resources\rotate.ipynb" />
+    <Content Include="Resources\shop\businessman.bmp" />
+    <Content Include="Resources\shop\display_stand.bmp" />
     <Content Include="Resources\shop\potion_vending_machine.bmp" />
     <Content Include="Resources\shop\weapon_vending_machine.bmp" />
     <Content Include="Resources\sound\background.mp3" />
