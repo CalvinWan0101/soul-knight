@@ -147,11 +147,12 @@ void ObjectManager::KeyDown(char key) {
     case 'S':
         player->SetSpeedY(player->GetSpeed().GetY() + 10);
         break;
-    case 'Q':
+    case 'F':
         player->SetInteractive(true);
         break;
-    case 'F':
-        // isDisplayHitBox = !isDisplayHitBox;
+    case '1':
+        isDisplayHitBox = !isDisplayHitBox;
+    case '2':
         Coin* coin = new Coin();
         coin->SetPosition(player->GetPosition());
         coin->SetValue(Coin::GOLD);
@@ -174,7 +175,7 @@ void ObjectManager::KeyUp(char key) {
     case 'S':
         player->SetSpeedY(player->GetSpeed().GetY() - 10);
         break;
-    case 'Q':
+    case 'F':
         player->SetInteractive(false);
         break;
     }
