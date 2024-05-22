@@ -22,7 +22,7 @@ void DisplayStand::Start() {
         product = WeaponFactory::Create(static_cast<WeaponFactory::Name>(weaponId));
         price *= 2;
     }
-    product->SetPosition(this->position);
+    product->SetPosition(this->position+ Point(0,1));
     AddFrontChild(product);
     SetInteractiveText(std::to_string(price), InteractiveText::LEGENDARY);
 }
