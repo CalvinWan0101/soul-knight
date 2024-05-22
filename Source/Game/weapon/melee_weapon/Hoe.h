@@ -3,8 +3,7 @@
 
 class Hoe : public MeleeWeapon {
 public:
-    Hoe(Point point);
-    Hoe(double damage = 5);
+    Hoe(double damage = 5, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

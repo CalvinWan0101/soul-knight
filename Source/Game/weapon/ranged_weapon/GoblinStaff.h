@@ -3,8 +3,7 @@
 
 class GoblinStaff : public RangedWeapon {
 public:
-    GoblinStaff(Point point);
-    GoblinStaff(double damage = 3);
+    GoblinStaff(double damage = 3, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

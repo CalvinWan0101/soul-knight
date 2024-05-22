@@ -3,8 +3,7 @@
 
 class BadPistol : public RangedWeapon {
 public:
-    BadPistol(Point point);
-    BadPistol(double damage = 2);
+    BadPistol(double damage = 2, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

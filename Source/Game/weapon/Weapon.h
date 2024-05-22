@@ -6,11 +6,9 @@
 
 class Bullet;
 
-class Weapon : public RotatableObject, public Interactable{
+class Weapon : public RotatableObject, public Interactable {
 public:
     Weapon();
-    Weapon(Point point);
-    Weapon(double damage);
     virtual Weapon* Copy() = 0;
     void Start() override;
     void Update() override;

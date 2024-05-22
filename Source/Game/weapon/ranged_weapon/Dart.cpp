@@ -4,21 +4,21 @@
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 
-Dart::Dart(Point point) : RangedWeapon(point) {
+Dart::Dart(double damage, Point position) {
+    this->damage = damage;
+    this->position = position;
+    this->mpCost = 3;
 }
 
-Dart::Dart(double damage) : RangedWeapon(damage) {
-}
 
 Weapon* Dart::Copy() {
-    return new Dart(this->position);
+    return new Dart(this->damage, this->position);
 }
 
 void Dart::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0, 0, 0}, {-2, 0}, 0.5);
     SetInteractiveText("poison dart", InteractiveText::UNCOMMON);
-    mpCost = 3;
 }
 
 void Dart::Update() {

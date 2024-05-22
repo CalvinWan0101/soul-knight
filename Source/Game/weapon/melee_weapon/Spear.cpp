@@ -9,21 +9,21 @@
 
 class ShockWave;
 
-Spear::Spear(Point point) : MeleeWeapon(point) {
+Spear::Spear(double damage, Point position) {
+    this->damage = damage;
+    this->position = position;
+    this->mpCost = 2;
 }
 
-Spear::Spear(double damage) : MeleeWeapon(damage) {
-}
 
 Weapon* Spear::Copy() {
-    return new Spear(this->position);
+    return new Spear(this->damage, this->position);
 }
 
 void Spear::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({}, {15, 12, 9, 6, 3, 0}, 1, 0.1);
     SetInteractiveText("goblin spear", InteractiveText::COMMON);
-    mpCost = 0;
 }
 
 void Spear::Update() {
@@ -35,7 +35,8 @@ void Spear::LoadResources() {
 }
 
 void Spear::Attack() {
-    InvisibleShockWave* shockWave = static_cast<InvisibleShockWave*>(ProjectilePool::Instance()->Acquire(ProjectileType::INVISIBLE_SHOCK_WAVE));
+    InvisibleShockWave* shockWave = static_cast<InvisibleShockWave*>(ProjectilePool::Instance()->Acquire(
+        ProjectileType::INVISIBLE_SHOCK_WAVE));
     shockWave->SetPosition(&(this->position + Vec(&rotation, 10)));
     shockWave->SetSpeed(rotation, 0.5);
     shockWave->SetSize(30);

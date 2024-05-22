@@ -3,11 +3,10 @@
 
 class Spear : public MeleeWeapon {
 public:
-    Spear(Point point);
-    Spear(double damage = 3);
+    Spear(double damage = 3, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;
-    void LoadResources() override; 
+    void LoadResources() override;
     void Attack() override;
 };

@@ -57,5 +57,5 @@ void GoblinShaman::AutoMation() {
 }
 
 void GoblinShaman::InitializeWeapon() {
-    this->SetWeapon(new GoblinStaff());
+    this->SetWeapon(new GoblinStaff(3));
 }

@@ -9,16 +9,6 @@ Weapon::Weapon(): cdCounter(0), attackTiming(0), attackRotationOffset(0), attack
     AddTag(Tag::PLAYER_WEAPON);
 }
 
-Weapon::Weapon(Point point): cdCounter(0), attackTiming(0), attackRotationOffset(0), attackTranslationOffset(0) {
-    this->position = point;
-    AddTag(Tag::PLAYER_WEAPON);
-}
-
-Weapon::Weapon(double damage): damage(damage), cdCounter(0), attackTiming(0), attackRotationOffset(0),
-                               attackTranslationOffset(0) {
-    AddTag(Tag::PLAYER_WEAPON);
-}
-
 void Weapon::Start() {
     RotatableObject::Start();
     SetHitBoxByRatio(1, 1);

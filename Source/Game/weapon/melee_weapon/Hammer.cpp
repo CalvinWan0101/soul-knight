@@ -6,21 +6,20 @@
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 
-Hammer::Hammer(Point point) : MeleeWeapon(point) {
-}
-
-Hammer::Hammer(double damage) : MeleeWeapon(damage) {
+Hammer::Hammer(double damage, Point position) {
+    this->damage = damage;
+    this->position = position;
+    this->mpCost = 5;
 }
 
 Weapon* Hammer::Copy() {
-    return new Hammer(this->position);
+    return new Hammer(this->damage, this->position);
 }
 
 void Hammer::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.835, 0.65);
     SetInteractiveText("hammer", InteractiveText::COMMON);
-    mpCost = 0;
 }
 
 void Hammer::Update() {

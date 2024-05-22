@@ -5,14 +5,15 @@
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 
-GoblinStaff::GoblinStaff(Point point) : RangedWeapon(point) {
+GoblinStaff::GoblinStaff(double damage, Point position) {
+    this->damage = damage;
+    this->position = position;
+    this->mpCost = 3;
 }
 
-GoblinStaff::GoblinStaff(double damage) : RangedWeapon(damage) {
-}
 
 Weapon* GoblinStaff::Copy() {
-    return new GoblinStaff(this->position);
+    return new GoblinStaff(this->damage, this->position);
 }
 
 void GoblinStaff::Start() {
@@ -29,7 +30,8 @@ void GoblinStaff::LoadResources() {
 }
 
 void GoblinStaff::Attack() {
-    Bullet* bullet = static_cast<RedSplinterBullet*>((ProjectilePool::Instance()->Acquire(ProjectileType::RED_SPLINTER_BULLET)));
+    Bullet* bullet = static_cast<RedSplinterBullet*>((ProjectilePool::Instance()->Acquire(
+        ProjectileType::RED_SPLINTER_BULLET)));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());

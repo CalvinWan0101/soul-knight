@@ -3,8 +3,7 @@
 
 class Hammer : public MeleeWeapon{
 public:
-    Hammer(Point point);
-    Hammer(double damage = 12);
+    Hammer(double damage = 12, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

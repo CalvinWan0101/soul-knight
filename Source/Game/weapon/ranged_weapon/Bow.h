@@ -3,10 +3,9 @@
 
 class Point;
 
-class Bow : public RangedWeapon{
+class Bow : public RangedWeapon {
 public:
-    Bow(Point point);
-    Bow(double damage = 6);
+    Bow(double damage = 6, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

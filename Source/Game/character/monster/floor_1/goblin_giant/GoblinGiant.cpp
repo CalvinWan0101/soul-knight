@@ -56,6 +56,6 @@ void GoblinGiant::AutoMation() {
 }
 
 void GoblinGiant::InitializeWeapon() {
-    this->SetWeapon(new Hammer());
+    this->SetWeapon(new Hammer(5));
 }
 

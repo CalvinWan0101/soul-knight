@@ -7,21 +7,21 @@
 
 class Bullet;
 
-Pistol::Pistol(Point point) : RangedWeapon(point) {
+Pistol::Pistol(double damage, Point position) {
+    this->damage = damage;
+    this->position = position;
+    this->mpCost = 2;
 }
 
-Pistol::Pistol(double damage) : RangedWeapon(damage) {
-}
 
 Weapon* Pistol::Copy() {
-    return new Pistol(this->position);
+    return new Pistol(this->damage, this->position);
 }
 
 void Pistol::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.35);
     SetInteractiveText("P250", InteractiveText::COMMON);
-    mpCost = 0;
 }
 
 void Pistol::Update() {

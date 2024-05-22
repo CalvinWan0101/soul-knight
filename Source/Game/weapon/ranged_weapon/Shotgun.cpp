@@ -5,14 +5,15 @@
 #include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/BadPistolBullet.h"
 
-Shotgun::Shotgun(Point point) : RangedWeapon(point) {
+Shotgun::Shotgun(double damage, Point position) {
+    this->damage = damage;
+    this->position = position;
+    this->mpCost = 5;
 }
 
-Shotgun::Shotgun(double damage) : RangedWeapon(damage) {
-}
 
 Weapon* Shotgun::Copy() {
-    return new Shotgun(this->position);
+    return new Shotgun(this->damage, this->position);
 }
 
 void Shotgun::Start() {

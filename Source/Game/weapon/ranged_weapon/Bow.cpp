@@ -6,23 +6,21 @@
 
 class Bullet;
 
-Bow::Bow(Point point) : RangedWeapon(point) {
-    damage = 4;
-    this->position = point;
+Bow::Bow(double damage, Point position) {
+    this->damage = damage;
+    this->position = position;
+    this->mpCost = 3;
 }
 
-Bow::Bow(double damage) : RangedWeapon(damage) {
-}
 
 Weapon* Bow::Copy() {
-    return new Bow(this->position);
+    return new Bow(this->damage, this->position);
 }
 
 void Bow::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0}, {-2, 0}, 0.8);
     SetInteractiveText("bow", InteractiveText::RARE);
-    mpCost = 3;
 }
 
 void Bow::Update() {
