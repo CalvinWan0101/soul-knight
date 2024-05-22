@@ -55,10 +55,6 @@ void StageManager::NextStage() {
         level++;
     }
 
-    // for testing
-    // level = 3;
-    // stage = 5;
-
     delete gameStage;
     gameStage = StageFactory::Create(level, stage);
     if (!gameStage) {

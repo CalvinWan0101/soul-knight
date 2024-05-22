@@ -22,7 +22,7 @@
 #include "../pool/DropPool.h"
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
-#include "../shop/Box.h"
+#include "../shop/TreasureChest.h"
 #include "../shop/Businessman.h"
 #include "../shop/DisplayStand.h"
 #include "../shop/PotionVendingMachine.h"
@@ -160,7 +160,7 @@ void ObjectManager::KeyDown(char key) {
         // AddObject(coin);
         break;
     case '3':
-        GameObject* box = new Box(Box::BOSS_ROOM);
+        GameObject* box = new TreasureChest(TreasureChest::BOSS_ROOM);
         box->SetPosition(player->GetPosition());
         AddObject(box);
         break;
