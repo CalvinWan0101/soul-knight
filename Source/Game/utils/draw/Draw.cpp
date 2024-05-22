@@ -6,6 +6,7 @@
 #include "Draw.h"
 
 #include "DrawCommand.h"
+#include "DrawEllipseCommand.h"
 #include "DrawEmptyRectangleCommand.h"
 #include "DrawRectangleCommand.h"
 #include "DrawTextCommand.h"
@@ -41,6 +42,10 @@ namespace game_framework {
 
     void Draw::Text(Point point, int size, COLORREF color, std::string str, std::string fontName) {
         this->drawCommands.emplace_back((new DrawTextCommand(point, size, color, str, fontName)));
+    }
+
+    void Draw::Ellipse(Point point1, Point point2, COLORREF color, int alpha) {
+        this->drawCommands.emplace_back(new DrawEllipseCommand(point1,point2,color,alpha));
     }
 
     void Draw::SwitchIsDisplay() {

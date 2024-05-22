@@ -1,39 +1,39 @@
 /////////////////////////////////////////////////////////////////////////////
-// ©w¸q¹CÀ¸¥i³]©wªºÀô¹Ò»P±ø¥ó
+// ï¿½wï¿½qï¿½Cï¿½ï¿½ï¿½iï¿½]ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½Ò»Pï¿½ï¿½ï¿½ï¿½
 /////////////////////////////////////////////////////////////////////////////
 
 #define GAME_TITLE           "Game"
-//! ³]©w¹CÀ¸µe­±ªº¸ÑªR«×¡]¼e«×¡^
+//! ï¿½]ï¿½wï¿½Cï¿½ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ÑªRï¿½×¡]ï¿½eï¿½×¡^
 #define SIZE_X				 1024
-//! ³]©w¹CÀ¸µe­±ªº¸ÑªR«×¡]°ª«×¡^
+//! ï¿½]ï¿½wï¿½Cï¿½ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ÑªRï¿½×¡]ï¿½ï¿½ï¿½×¡^
 #define SIZE_Y				 1024
-//! ¬O§_¥H¥þ¿Ã¹õ¤è¦¡¶}±Ò¹CÀ¸
+//! ï¿½Oï¿½_ï¿½Hï¿½ï¿½ï¿½Ã¹ï¿½ï¿½è¦¡ï¿½}ï¿½Ò¹Cï¿½ï¿½
 #define OPEN_AS_FULLSCREEN	 false
-//! ¬O§_Åã¥Üloading(OnInit)ªº¶i«×
+//! ï¿½Oï¿½_ï¿½ï¿½ï¿½loading(OnInit)ï¿½ï¿½ï¿½iï¿½ï¿½
 #define SHOW_LOAD_PROGRESS   true
-// ¹CÀ¸µe­±¹w³]ªº­I´ºÃC¦â(¶Â¦â)
+// ï¿½Cï¿½ï¿½ï¿½eï¿½ï¿½ï¿½wï¿½]ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½Cï¿½ï¿½(ï¿½Â¦ï¿½)
 #define DEFAULT_BG_COLOR	 RGB(45,54,85)
-//! ¨C33ms¶]¤@¦¸Move¤ÎShow(¨C¬í30¦¸)
+//! ï¿½C33msï¿½]ï¿½@ï¿½ï¿½Moveï¿½ï¿½Show(ï¿½Cï¿½ï¿½30ï¿½ï¿½)
 #define GAME_CYCLE_TIME		 20
-//! ¬O§_¦bdebug modeÅã¥Ücycle time
+//! ï¿½Oï¿½_ï¿½bdebug modeï¿½ï¿½ï¿½cycle time
 #define SHOW_GAME_CYCLE_TIME false
-//! ¬O§_¤¹³\¥H Ctrl-Q ¼È°±¹CÀ¸
+//! ï¿½Oï¿½_ï¿½ï¿½ï¿½\ï¿½H Ctrl-Q ï¿½È°ï¿½ï¿½Cï¿½ï¿½
 #define ENABLE_GAME_PAUSE	 false
-//! ±Ò°Ê­µ®Ä¤¶­±
+//! ï¿½Ò°Ê­ï¿½ï¿½Ä¤ï¿½ï¿½ï¿½
 #define ENABLE_AUDIO		 true
-//! ¬O§_Ãö³¬ toolbar
+//! ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½ toolbar
 #define ENABLE_TOOLBAR       false
-//! ¬O§_Ãö³¬ menu
+//! ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½ menu
 #define ENABLE_MENU          false
-//! ¬O§_Ãö³¬ statusbar
+//! ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½ statusbar
 #define ENABLE_STATUSBAR     false
-//! ¥þ¿Ã¹õ¥Î¡A½Ð³]©w¦¨¥Ø«eµøµ¡ªº¸ÑªR«× (width)¡C
+//! ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½Î¡Aï¿½Ð³]ï¿½wï¿½ï¿½ï¿½Ø«eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÑªRï¿½ï¿½ (width)ï¿½C
 #define RESOLUTION_X     1920
-//! ¥þ¿Ã¹õ¥Î¡A½Ð³]©w¦¨¥Ø«eµøµ¡ªº¸ÑªR«× (height)¡C
+//! ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½Î¡Aï¿½Ð³]ï¿½wï¿½ï¿½ï¿½Ø«eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÑªRï¿½ï¿½ (height)ï¿½C
 #define RESOLUTION_Y     1080
 
-// §Ú­Ì¦Û¤v³]©wªº±`¼Æ
+// ï¿½Ú­Ì¦Û¤vï¿½]ï¿½wï¿½ï¿½ï¿½`ï¿½ï¿½
 #define SIZE_X_HALF          SIZE_X / 2
 #define SIZE_Y_HALF          SIZE_Y / 2
 #define PI                   3.14159265359
-#define TRANSLUCENT_EFFECT   false
+#define TRANSLUCENT_EFFECT   true

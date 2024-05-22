@@ -14,6 +14,7 @@ namespace game_framework {
         void Rectangle(Point point1, Point point2, COLORREF color, int alpha = 255);
         void EmptyRectangle(Point point1, Point point2, COLORREF color, Point radius = Point(0, 0), int thickness = 1);
         void Text(Point point, int size, COLORREF color, std::string str, std::string fontName = "Consolas");
+        void Ellipse(Point point1, Point point2, COLORREF color, int alpha = 255);
         void Show();
         void SwitchIsDisplay();
     private:

@@ -1542,6 +1542,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\utils\draw\DrawEllipseCommand.cpp" />
     <ClCompile Include="Source\Game\utils\draw\DrawEmptyRectangleCommand.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2376,6 +2377,7 @@
     <ClInclude Include="Source\Game\ui\StageText.h" />
     <ClInclude Include="Source\Game\utils\draw\Draw.h" />
     <ClInclude Include="Source\Game\utils\draw\DrawCommand.h" />
+    <ClInclude Include="Source\Game\utils\draw\DrawEllipseCommand.h" />
     <ClInclude Include="Source\Game\utils\draw\DrawEmptyRectangleCommand.h" />
     <ClInclude Include="Source\Game\utils\draw\DrawRectangleCommand.h" />
     <ClInclude Include="Source\Game\utils\draw\DrawTextCommand.h" />
@@ -5014,6 +5016,9 @@
     <Content Include="Resources\weapon\spear\template\flip_spear.bmp" />
     <Content Include="Resources\weapon\spear\template\spear.bmp" />
     <Content Include="Resources\xml.ipynb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source\Game\projectile\effect\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
