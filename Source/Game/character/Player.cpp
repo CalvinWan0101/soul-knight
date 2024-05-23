@@ -12,7 +12,8 @@ mp(0),
 shield(0),
 interactive(false),
 damageCooldownCounter(0),
-damageCooldownFrameCD(150){
+damageCooldownFrameCD(150),
+damageEffectCounter(0){
     shieldRecoverCooldownFrameCD = 250;
     shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
     AddTag(Tag::PLAYER);
@@ -28,6 +29,7 @@ void Player::Update() {
     Character::Update();
     CalculateDamageCooldownCounter();
     CalculateShieldRecoverCounter();
+    DamageEffect();
 }
 
 void Player::Collision(GameObject* gameObject) {
@@ -120,6 +122,7 @@ void Player::SetAlertRange(double height, double width) {
 
 void Player::Injuried(double damage) {
     shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
+    damageEffectCounter = 40;
     if (damage > shield) {
         damage -= shield;
         shield = 0;
@@ -133,9 +136,6 @@ void Player::Injuried(double damage) {
 void Player::CalculateDamageCooldownCounter() {
     if (damageCooldownCounter > 0) {
         damageCooldownCounter--;
-        if (damageCooldownCounter > 100 && TRANSLUCENT_EFFECT == true) {
-            game_framework::Draw::Instance()->Rectangle(Point(0,0),Point(SIZE_X, SIZE_Y),RGB(200,0,0),(damageCooldownCounter - 100) * 2);
-        }
         visible = damageCooldownCounter / 7 % 2 == 0;
     }
 }
@@ -150,6 +150,13 @@ void Player::CalculateShieldRecoverCounter() {
     }
     else {
         shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
+    }
+}
+
+void Player::DamageEffect() {
+    if (damageEffectCounter > 0 && TRANSLUCENT_EFFECT == true) {
+        damageEffectCounter--;
+        game_framework::Draw::Instance()->Rectangle(Point(0,0),Point(SIZE_X, SIZE_Y),RGB(200,0,0),damageEffectCounter * 3);
     }
 }
 

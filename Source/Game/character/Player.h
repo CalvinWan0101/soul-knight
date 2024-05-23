@@ -31,6 +31,7 @@ protected:
     double maxShild;
     int damageCooldownCounter;
     int damageCooldownFrameCD;
+    int damageEffectCounter;
     int shieldRecoverCooldownCounter;
     int shieldRecoverCooldownFrameCD;
     HitBox alertRange;
@@ -40,4 +41,5 @@ private:
     void SetAlertRange(double height, double witdth);
     void CalculateDamageCooldownCounter();
     void CalculateShieldRecoverCounter();
+    void DamageEffect();
 };

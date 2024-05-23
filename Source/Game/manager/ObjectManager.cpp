@@ -156,7 +156,7 @@ void ObjectManager::KeyDown(char key) {
         isDisplayHitBox = !isDisplayHitBox;
         break;
     case '2': {
-        PoisonEffect* poison = new PoisonEffect(PoisonEffect::PLAYER);
+        PoisonEffect* poison = new PoisonEffect(PoisonEffect::MONSTER_PURPLE);
         poison->SetPosition(player->GetPosition());
         AddObject(poison);
         break;
