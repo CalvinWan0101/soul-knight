@@ -40,7 +40,7 @@ void DrawEllipseCommand::Execute(CDC* cdc) {
         bitmap2.CreateCompatibleBitmap(cdc, rect.Width(), rect.Height());
         CBitmap* pOldBitmap2 = alphaCDC.SelectObject(&bitmap2);
 
-        alphaCDC.FillSolidRect(src, RGB(30, 41, 120));
+        alphaCDC.FillSolidRect(src, RGB(50,50,50));
         alphaCDC.SetBkMode(TRANSPARENT);
 
         CBrush brush(color);

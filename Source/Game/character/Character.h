@@ -12,7 +12,8 @@ public:
     double GetHP();
     double GetMaxHP();
     virtual void Attack();
-    void BeAttacked(double damage);
+    virtual void Injuried(double damage) = 0;
+    void Poisoned(double poisonDamage);
 
 protected:
     double hp;
@@ -37,6 +38,12 @@ protected:
     Face face;
     State state;
 private:
+    struct Poison {
+        double damage;
+        int counter;
+        int damageRemainingTimes;
+        const int damageInterval = 50;
+    } poison;
     void CheckState();
     void CheckFace();
 };

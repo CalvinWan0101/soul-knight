@@ -868,6 +868,7 @@
     <ClCompile Include="Source\Game\projectile\bullet\RedDiamondBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedRectangleBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedSplinterBullet.cpp" />
+    <ClCompile Include="Source\Game\projectile\effect\PoisonEffect.cpp" />
     <ClCompile Include="Source\Game\projectile\Projectile.cpp" />
     <ClCompile Include="Source\Game\projectile\InvisibleShockWave.cpp" />
     <ClCompile Include="Source\Game\projectile\ProjectileFactory.cpp" />
@@ -2338,6 +2339,7 @@
     <ClInclude Include="Source\Game\projectile\bullet\RedDiamondBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedRectangleBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedSplinterBullet.h" />
+    <ClInclude Include="Source\Game\projectile\effect\PoisonEffect.h" />
     <ClInclude Include="Source\Game\projectile\Projectile.h" />
     <ClInclude Include="Source\Game\projectile\InvisibleShockWave.h" />
     <ClInclude Include="Source\Game\projectile\ProjectileFactory.h" />
@@ -5016,9 +5018,6 @@
     <Content Include="Resources\weapon\spear\template\flip_spear.bmp" />
     <Content Include="Resources\weapon\spear\template\spear.bmp" />
     <Content Include="Resources\xml.ipynb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Source\Game\projectile\effect\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,6 +5,9 @@
 #include <cmath>
 
 Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX(0), weaponOffsetY(0), weapon(nullptr) {
+    poison.damage = 0;
+    poison.counter = poison.damageInterval;
+    poison.damageRemainingTimes = 0;
 }
 
 void Character::Start() {
@@ -23,6 +26,15 @@ void Character::Update() {
     }
     else if (face == LEFT) {
         weapon->SetPosition(&(this->position + Vec(-weaponOffsetX, weaponOffsetY)));
+    }
+
+    if (poison.damageRemainingTimes > 0) {
+        poison.counter--;
+        if (poison.counter == 0) {
+            poison.counter = poison.damageInterval;
+            poison.damageRemainingTimes--;
+            Injuried(poison.damage);
+        }
     }
 }
 
@@ -65,9 +77,11 @@ void Character::Attack() {
     weapon->DefaultAttack();
 }
 
-void Character::BeAttacked(double damage) {
-    hp -= damage;
+void Character::Poisoned(double poisonDamage) {
+    poison.damage = poisonDamage;
+    poison.damageRemainingTimes = 3;
 }
+
 
 void Character::CheckState() {
     if (hp <= 0) {

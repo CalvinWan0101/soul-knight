@@ -21,7 +21,7 @@ public:
     void SetLevel(double level);
     void Reset();
     MonsterType GetMonsterType();
-    void Injuried(double damage);
+    void Injuried(double damage) override;
 
 protected:
     double maxSpeed;

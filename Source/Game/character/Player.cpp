@@ -34,6 +34,7 @@ void Player::Collision(GameObject* gameObject) {
     Character::Collision(gameObject);
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
         if (damageCooldownCounter == 0) {
+            damageCooldownCounter = damageCooldownFrameCD;
             Injuried(dynamic_cast<Projectile*>(gameObject)->GetDamage());
         }
     }
@@ -118,7 +119,6 @@ void Player::SetAlertRange(double height, double width) {
 }
 
 void Player::Injuried(double damage) {
-    damageCooldownCounter = damageCooldownFrameCD;
     shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
     if (damage > shield) {
         damage -= shield;

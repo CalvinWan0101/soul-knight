@@ -10,6 +10,7 @@ public:
     void Collision(GameObject* gameObject) override;
 
     void Attack() override;
+    void Injuried(double damage) override;
     int GetMP();
     int GetMaxMP();
     void RecoverMP(int value);
@@ -37,7 +38,6 @@ protected:
 private:
     bool interactive;
     void SetAlertRange(double height, double witdth);
-    void Injuried(double damage);
     void CalculateDamageCooldownCounter();
     void CalculateShieldRecoverCounter();
 };
