@@ -37,7 +37,9 @@ Stage::~Stage() {
     for (auto wall : walls) {
         wall->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
-    vendingMachine->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    if (vendingMachine) {
+        vendingMachine->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
 }
 
 game_framework::CMovingBitmap* Stage::GetBackground() {

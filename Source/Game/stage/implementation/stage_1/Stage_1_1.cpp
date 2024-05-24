@@ -23,7 +23,7 @@ Stage_1_1::Stage_1_1() {
     rooms.push_back(room3);
     rooms.push_back(room4);
     if (vendingMachine) {
-        vendingMachine->SetPosition(Point(1279, 671) - centerOffset);
+        vendingMachine->SetPosition(Point(1263, 671) - centerOffset);
     }
 }
 
