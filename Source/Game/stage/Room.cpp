@@ -6,6 +6,7 @@
 #include "../pool/MonsterPool.h"
 #include "../character/Monster.h"
 #include "../character/Player.h"
+#include "../utils/Rand.h"
 #include "../wall/Wall.h"
 #include "../wall/door/VerticalDoor1.h"
 #include "../wall/door/VerticalDoor2.h"
@@ -81,19 +82,14 @@ void Room::SetMonsters() {
 }
 
 void Room::PlacedMonster() {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-
-    double minX = topLeft.GetX() + 32 - centerOffset.GetX();
-    double minY = topLeft.GetY() + 32 - centerOffset.GetY();
-    double maxX = topLeft.GetX() + 16 * size - centerOffset.GetX();
-    double maxY = topLeft.GetY() + 16 * size - centerOffset.GetY();
-
-    std::uniform_int_distribution<> disX(minX, maxX - 1);
-    std::uniform_int_distribution<> disY(minY, maxY - 1);
+    double minX = topLeft.GetX() + 16 - centerOffset.GetX();
+    double minY = topLeft.GetY() + 16 - centerOffset.GetY();
+    double maxX = topLeft.GetX() + 16 * (size + 1) - centerOffset.GetX();
+    double maxY = topLeft.GetY() + 16 * (size + 1) - centerOffset.GetY();
 
     for (auto monster : monsters) {
-        monster->SetPosition(Point(disX(gen), disY(gen)));
+        monster->SetPosition(
+            Point(Rand::Instance()->Get(minX + 16, maxX - 16), Rand::Instance()->Get(minY + 16, maxY - 16)));
     }
 }
 
