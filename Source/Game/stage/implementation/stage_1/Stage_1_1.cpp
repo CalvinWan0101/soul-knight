@@ -2,7 +2,6 @@
 #include "Stage_1_1.h"
 #include "../../../manager/ObjectManager.h"
 #include "../../../manager/StageManager.h"
-#include "../../../shop/VendingMachine.h"
 #include "../../RoomSize.h"
 
 Stage_1_1::Stage_1_1() {
@@ -22,6 +21,7 @@ Stage_1_1::Stage_1_1() {
     rooms.push_back(room2);
     rooms.push_back(room3);
     rooms.push_back(room4);
+
     if (vendingMachine) {
         vendingMachine->SetPosition(Point(1263, 671) - centerOffset);
     }

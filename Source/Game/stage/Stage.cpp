@@ -4,7 +4,6 @@
 #include "../utils/Rand.h"
 #include "../manager/ObjectManager.h"
 #include "../manager/StageManager.h"
-#include "../shop/VendingMachine.h"
 #include "../shop/WeaponVendingMachine.h"
 #include "../shop/PotionVendingMachine.h"
 #include "../shop/TreasureChest.h"

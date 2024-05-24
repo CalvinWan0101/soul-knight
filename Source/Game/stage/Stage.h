@@ -2,6 +2,7 @@
 #include "Room.h"
 #include "../../Library/gameutil.h"
 #include "../utils/Point.h"
+#include "../shop/VendingMachine.h"
 #include "../utils/object/GameObject.h"
 
 class Monster;
