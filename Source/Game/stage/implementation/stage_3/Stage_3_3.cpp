@@ -2,22 +2,22 @@
 #include "Stage_3_3.h"
 #include "../../../manager/ObjectManager.h"
 #include "../../../manager/StageManager.h"
-#include "../../RoomSize.h"
+#include "../../../room/RoomSize.h"
 
 Stage_3_3::Stage_3_3() {
     background.LoadBitmapByString({"resources/map/3-3.bmp"}, RGB(255, 255, 255));
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
     MonsterRoom* room1 = new MonsterRoom(Point(32, 32), centerOffset, RoomSize::SMALL_SIZE, 4,
-                           std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     MonsterRoom* room2 = new MonsterRoom(Point(640, 0), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                           std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     MonsterRoom* room3 = new MonsterRoom(Point(0, 640), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                           std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     MonsterRoom* room4 = new MonsterRoom(Point(592, 592), centerOffset, RoomSize::LARGE_SIZE, 4,
-                           std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     MonsterRoom* room5 = new MonsterRoom(Point(1280, 640), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                           std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
 
     rooms.push_back(room1);
     rooms.push_back(room2);
