@@ -1,14 +1,7 @@
 #include "stdafx.h"
 #include "Knight.h"
 
-#include "../../weapon/melee_weapon/Hammer.h"
-#include "../../weapon/melee_weapon/Hoe.h"
-#include "../../weapon/melee_weapon/Spear.h"
-#include "../../weapon/ranged_weapon/BadPistol.h"
-#include "../../weapon/ranged_weapon/Bow.h"
-#include "../../weapon/ranged_weapon/GoblinStaff.h"
-#include "../../weapon/ranged_weapon/Pistol.h"
-#include "../../weapon/ranged_weapon/Shotgun.h"
+#include "../../../weapon/ranged_weapon/Shotgun.h"
 
 Knight::Knight() {
 }
