@@ -1,8 +1,8 @@
 #pragma once
-#include "../utils/Interactable.h"
+#include "../utils/InteractableDevice.h"
 #include "../utils/object/OnceAnimationObject.h"
 
-class TreasureChest : public OnceAnimationObject, public Interactable{
+class TreasureChest : public OnceAnimationObject, public InteractableDevice{
 public:
     enum Type {
         NORMAL_ROOM,

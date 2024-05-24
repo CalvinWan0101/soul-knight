@@ -1,9 +1,9 @@
 #pragma once
 #include "../character/Player.h"
-#include "../utils/Interactable.h"
+#include "../utils/InteractableDevice.h"
 #include "../utils/object/GeneralObject.h"
 
-class Collectable : public  GeneralObject, public Interactable{
+class Collectable : public  GeneralObject, public InteractableDevice{
 public:
     Collectable();
     void Start() override;

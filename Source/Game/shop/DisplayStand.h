@@ -1,8 +1,8 @@
 #pragma once
-#include "../utils/Interactable.h"
+#include "../utils/InteractableDevice.h"
 #include "../utils/object/GeneralObject.h"
 
-class DisplayStand : public GeneralObject, public Interactable {
+class DisplayStand : public GeneralObject, public InteractableDevice {
 public:
     DisplayStand(int level, int stage);
     void Start() override;

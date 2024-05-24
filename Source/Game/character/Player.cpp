@@ -50,7 +50,7 @@ void Player::Collision(GameObject* gameObject) {
     }
     else if (gameObject->HasTag(Tag::INTERACTABLE) && interactive == true) {
         interactive = false;
-        Interactable* interactable = dynamic_cast<Interactable*>(gameObject);
+        InteractableDevice* interactable = dynamic_cast<InteractableDevice*>(gameObject);
         interactable->Interactive(this);
     }
 }

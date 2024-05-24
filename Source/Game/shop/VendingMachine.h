@@ -1,8 +1,8 @@
 #pragma once
-#include "../utils/Interactable.h"
+#include "../utils/InteractableDevice.h"
 #include "../utils/object/GeneralObject.h"
 
-class VendingMachine : public GeneralObject, public Interactable{
+class VendingMachine : public GeneralObject, public InteractableDevice{
 public:
     VendingMachine(int level, int stage);
     ~VendingMachine();

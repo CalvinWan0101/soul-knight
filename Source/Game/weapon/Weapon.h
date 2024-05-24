@@ -1,12 +1,12 @@
 #pragma once
 #include "../projectile/InvisibleShockWave.h"
 #include "../projectile/ShockWave.h"
-#include "../utils/Interactable.h"
+#include "../utils/InteractableDevice.h"
 #include "../utils/object/RotatableObject.h"
 
 class Bullet;
 
-class Weapon : public RotatableObject, public Interactable {
+class Weapon : public RotatableObject, public InteractableDevice {
 public:
     Weapon();
     virtual Weapon* Copy() = 0;

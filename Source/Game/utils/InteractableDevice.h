@@ -2,7 +2,8 @@
 
 
 class Player;
-class Interactable {
+
+class InteractableDevice {
 public:
     virtual void Interactive(Player* player) = 0;
 };

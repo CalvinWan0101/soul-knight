@@ -2387,7 +2387,7 @@
     <ClInclude Include="Source\Game\utils\draw\DrawTextCommand.h" />
     <ClInclude Include="Source\Game\utils\Event.hpp" />
     <ClInclude Include="Source\Game\utils\HitBox.h" />
-    <ClInclude Include="Source\Game\utils\Interactable.h" />
+    <ClInclude Include="Source\Game\utils\InteractableDevice.h" />
     <ClInclude Include="Source\Game\utils\InteractiveText.h" />
     <ClInclude Include="Source\Game\utils\object\GameObject.h" />
     <ClInclude Include="Source\Game\utils\object\GeneralObject.h" />

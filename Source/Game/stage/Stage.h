@@ -26,4 +26,5 @@ protected:
     virtual void GenerateObstacle() = 0;
     std::vector<Room*> rooms;
     std::vector<Wall*> walls;
+    
 };
