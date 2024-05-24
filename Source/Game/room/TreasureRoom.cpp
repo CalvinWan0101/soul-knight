@@ -7,7 +7,7 @@
 #include "../shop/TreasureChest.h"
 #include "../utils/Rand.h"
 
-TreasureRoom::TreasureRoom(Point leftTop, Vec centerOffset): Room(leftTop, RoomSize::MEDIUM_SIZE, centerOffset) {
+TreasureRoom::TreasureRoom(Point leftTop, Vec centerOffset): Room(leftTop, RoomSize::SMALL_SIZE, centerOffset) {
     switch (Rand::Instance()->Get(0, 2)) {
     case 0:
         treasure = new Businessman(StageManager::Instance()->GetLevelNumber(),

@@ -30,9 +30,10 @@ Stage::Stage() {
 }
 
 Stage::~Stage() {
-    for (auto room : rooms) {
+    for (auto room : monsterRooms) {
         delete room;
     }
+    delete treasureRoom;
     for (auto wall : walls) {
         wall->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
@@ -65,13 +66,13 @@ void Stage::AddWall(Point point1, Point point2) {
 }
 
 void Stage::IsInsideRoom() {
-    for (auto room : rooms) {
+    for (auto room : monsterRooms) {
         room->IsInside();
     }
 }
 
 void Stage::IsRoomCleared() {
-    for (auto room : rooms) {
+    for (auto room : monsterRooms) {
         room->IsCleared();
     }
 }

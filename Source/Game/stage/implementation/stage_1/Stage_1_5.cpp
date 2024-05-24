@@ -21,12 +21,12 @@ Stage_1_5::Stage_1_5() {
     MonsterRoom* room6 = new MonsterRoom(Point(1328, 1232), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                                          std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
 
-    rooms.push_back(room1);
-    rooms.push_back(room2);
-    rooms.push_back(room3);
-    rooms.push_back(room4);
-    rooms.push_back(room5);
-    rooms.push_back(room6);
+    monsterRooms.push_back(room1);
+    monsterRooms.push_back(room2);
+    monsterRooms.push_back(room3);
+    monsterRooms.push_back(room4);
+    monsterRooms.push_back(room5);
+    monsterRooms.push_back(room6);
 
     if (vendingMachine) {
         vendingMachine->SetPosition(Point(735, 31) - centerOffset);
