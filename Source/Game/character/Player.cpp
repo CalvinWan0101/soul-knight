@@ -133,6 +133,12 @@ void Player::SwitchWeapon() {
     }
 }
 
+void Player::UseSkill() {
+    if (skillCounter == 0) {
+        skillCounter = skillFrameCD;
+        Skill();
+    }
+}
 
 void Player::SetInteractive(bool interactive) {
     this->interactive = interactive;

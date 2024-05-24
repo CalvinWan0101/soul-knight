@@ -30,6 +30,10 @@ void Knight::Update() {
     Player::Update();
 }
 
+void Knight::Skill() {
+    
+}
+
 void Knight::LoadResources() {
     this->AddAnimation({
                            "resources/player/knight/idle/1.bmp",

@@ -23,6 +23,8 @@ public:
     void ChangeWeapon(Weapon* newWeapon);
     void SwitchWeapon();
 
+    void UseSkill();
+
     void SetInteractive(bool interactive);
 
 protected:
@@ -37,6 +39,10 @@ protected:
     int shieldRecoverCooldownFrameCD;
     HitBox alertRange;
     Weapon* weapon2;
+
+    int skillCounter;
+    int skillFrameCD;
+    virtual void Skill() = 0;
 
 private:
     bool interactive;

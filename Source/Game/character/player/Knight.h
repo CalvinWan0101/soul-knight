@@ -6,5 +6,8 @@ public:
     Knight();
     void Start() override;
     void Update() override;
+    
+    void Skill() override;
+    
     void LoadResources() override;
 };
