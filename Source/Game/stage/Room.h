@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include "../character/MonsterType.h"
+#include "../shop/TreasureChest.h"
 #include "../utils/Point.h"
 
 class Door;
@@ -12,6 +13,7 @@ class Monster;
 class Room {
 public:
     Room(Point leftTop, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap, bool isBossRoom = false);
+    ~Room();
     void IsInside();
     void IsCleared();
 
@@ -23,6 +25,7 @@ private:
     Vec centerOffset;
     bool isInside = false;
     bool isCleared = false;
+    TreasureChest* treasureChest = nullptr;
     std::vector<Wall*> invisibleDoors;
     std::vector<Door*> doors;
     std::map<MonsterType, int> monsterMap;

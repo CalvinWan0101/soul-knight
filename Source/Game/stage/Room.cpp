@@ -27,6 +27,12 @@ Room::Room(Point topLeft, Vec centerOffset, RoomSize size, int level, std::map<M
     isBossRoom(isBossRoom) {
 }
 
+Room::~Room() {
+    if (treasureChest) {
+        treasureChest->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
+}
+
 void Room::IsInside() {
     double x = ObjectManager::Instance()->GetPlayer()->GetPosition().GetX() + centerOffset.GetX();
     double y = ObjectManager::Instance()->GetPlayer()->GetPosition().GetY() + centerOffset.GetY();
@@ -55,6 +61,15 @@ void Room::IsCleared() {
         StageManager::Instance()->SetTransferGatePosition(
             topLeft + Point((size + 2) * 8, (size + 2) * 8) - centerOffset);
     }
+
+    if (isBossRoom) {
+        treasureChest = new TreasureChest(TreasureChest::BOSS_ROOM);
+    }
+    else {
+        treasureChest = new TreasureChest(TreasureChest::NORMAL_ROOM);
+    }
+    treasureChest->SetPosition(topLeft + Point((size + 2) * 8, (size + 2) * 8) - centerOffset);
+    ObjectManager::Instance()->AddObject(treasureChest);
 
     for (auto door : invisibleDoors) {
         door->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
