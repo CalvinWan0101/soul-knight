@@ -8,8 +8,6 @@ Stage_2_1::Stage_2_1() {
     background.LoadBitmapByString({"resources/map/2-1.bmp"}, RGB(255, 255, 255));
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
-    MonsterRoom* room1 = new MonsterRoom(Point(688, 0), centerOffset, RoomSize::SMALL_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     MonsterRoom* room2 = new MonsterRoom(Point(16, 576), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                                          std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     MonsterRoom* room3 = new MonsterRoom(Point(608, 528), centerOffset, RoomSize::LARGE_SIZE, 4,
@@ -17,10 +15,11 @@ Stage_2_1::Stage_2_1() {
     MonsterRoom* room4 = new MonsterRoom(Point(1296, 576), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                                          std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
 
-    monsterRooms.push_back(room1);
     monsterRooms.push_back(room2);
     monsterRooms.push_back(room3);
     monsterRooms.push_back(room4);
+
+    treasureRoom = new TreasureRoom(Point(688, 0), centerOffset);
 
     if (vendingMachine) {
         vendingMachine->SetPosition(Point(703, 1247) - centerOffset);
