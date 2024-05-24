@@ -64,11 +64,18 @@ void Room::IsCleared() {
 
     if (isBossRoom) {
         treasureChest = new TreasureChest(TreasureChest::BOSS_ROOM);
+        treasureChest->SetPosition(topLeft + Point((size + 2) * 8, (size + 12) * 8) - centerOffset);
     }
     else {
         treasureChest = new TreasureChest(TreasureChest::NORMAL_ROOM);
+        double minX = topLeft.GetX() + 16 - centerOffset.GetX();
+        double minY = topLeft.GetY() + 16 - centerOffset.GetY();
+        double maxX = topLeft.GetX() + 16 * (size + 1) - centerOffset.GetX();
+        double maxY = topLeft.GetY() + 16 * (size + 1) - centerOffset.GetY();
+
+        treasureChest->SetPosition(
+            Point(Rand::Instance()->Get(minX + 16, maxX - 16), Rand::Instance()->Get(minY + 16, maxY - 16)));
     }
-    treasureChest->SetPosition(topLeft + Point((size + 2) * 8, (size + 2) * 8) - centerOffset);
     ObjectManager::Instance()->AddObject(treasureChest);
 
     for (auto door : invisibleDoors) {
