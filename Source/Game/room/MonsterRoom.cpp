@@ -20,10 +20,9 @@
 MonsterRoom::MonsterRoom(Point topLeft, Vec centerOffset, RoomSize size, int level,
                          std::map<MonsterType, int> monsterMap,
                          bool isBossRoom):
-    Room(topLeft, centerOffset, size, level),
-    monsterMap(monsterMap),
-    isBossRoom(isBossRoom) {
+    Room(topLeft, size, centerOffset), level(level), monsterMap(monsterMap), isBossRoom(isBossRoom) {
 }
+
 
 MonsterRoom::~MonsterRoom() {
     if (treasureChest) {

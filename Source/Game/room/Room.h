@@ -4,11 +4,10 @@
 
 class Room {
 public:
-    Room(Point leftTop, Vec centerOffset, RoomSize size, int level);
+    Room(Point leftTop, RoomSize size, Vec centerOffset);
 
 protected:
     Point topLeft; // Outter position
     int size;
-    int level;
     Vec centerOffset;
 };

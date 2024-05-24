@@ -21,6 +21,7 @@ public:
     void IsCleared();
 
 private:
+    int level;
     bool isBossRoom = false;
     bool isInside = false;
     bool isCleared = false;
