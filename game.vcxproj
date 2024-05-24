@@ -1245,6 +1245,7 @@
     <ClCompile Include="Source\Game\stage\implementation\stage_3\Stage_3_4.cpp" />
     <ClCompile Include="Source\Game\stage\implementation\stage_3\Stage_3_5.cpp" />
     <ClCompile Include="Source\Game\stage\implementation\stage_3\Stage_3_6.cpp" />
+    <ClCompile Include="Source\Game\stage\MonsterRoom.cpp" />
     <ClCompile Include="Source\Game\stage\Room.cpp" />
     <ClCompile Include="Source\Game\stage\Stage.cpp" />
     <ClCompile Include="Source\Game\stage\StageFactory.cpp">
@@ -2370,6 +2371,7 @@
     <ClInclude Include="Source\Game\stage\implementation\stage_3\Stage_3_4.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_3\Stage_3_5.h" />
     <ClInclude Include="Source\Game\stage\implementation\stage_3\Stage_3_6.h" />
+    <ClInclude Include="Source\Game\stage\MonsterRoom.h" />
     <ClInclude Include="Source\Game\stage\Room.h" />
     <ClInclude Include="Source\Game\stage\RoomSize.h" />
     <ClInclude Include="Source\Game\stage\Stage.h" />

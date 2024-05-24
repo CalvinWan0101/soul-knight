@@ -1,5 +1,5 @@
 #pragma once
-#include "Room.h"
+#include "MonsterRoom.h"
 #include "../../Library/gameutil.h"
 #include "../utils/Point.h"
 #include "../shop/VendingMachine.h"
@@ -27,7 +27,7 @@ protected:
     virtual void SetPlayerPosition() = 0;
     virtual void SetTransferGate() = 0;
     virtual void GenerateObstacle() = 0;
-    std::vector<Room*> rooms;
+    std::vector<MonsterRoom*> rooms;
     std::vector<Wall*> walls;
     VendingMachine* vendingMachine;
 };
