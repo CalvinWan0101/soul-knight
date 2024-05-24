@@ -2,9 +2,11 @@
 #include "Room.h"
 #include "../../Library/gameutil.h"
 #include "../utils/Point.h"
+#include "../utils/object/GameObject.h"
 
 class Monster;
 class Wall;
+class VendingMachine;
 
 class Stage {
 public:
@@ -26,5 +28,5 @@ protected:
     virtual void GenerateObstacle() = 0;
     std::vector<Room*> rooms;
     std::vector<Wall*> walls;
-    
+    VendingMachine* vendingMachine;
 };

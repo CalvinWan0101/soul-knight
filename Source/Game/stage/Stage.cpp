@@ -1,10 +1,33 @@
 #include "stdafx.h"
 #include "Stage.h"
 
+#include "../utils/Rand.h"
 #include "../manager/ObjectManager.h"
+#include "../manager/StageManager.h"
+#include "../shop/VendingMachine.h"
+#include "../shop/WeaponVendingMachine.h"
+#include "../shop/PotionVendingMachine.h"
+#include "../shop/TreasureChest.h"
 #include "../wall/Wall.h"
 
 Stage::Stage() {
+    int level = StageManager::Instance()->GetLevelNumber();
+    int stage = StageManager::Instance()->GetStageNumber();
+
+    // vending machine
+    switch (Rand::Instance()->Get(0, 2)) {
+    case 0:
+        vendingMachine = new WeaponVendingMachine(level, stage);
+        break;
+    case 1:
+        vendingMachine = new PotionVendingMachine(level, stage);
+        break;
+    default:
+        vendingMachine = nullptr;
+    }
+    if (vendingMachine) {
+        ObjectManager::Instance()->AddObject(vendingMachine);
+    }
 }
 
 Stage::~Stage() {
@@ -14,6 +37,7 @@ Stage::~Stage() {
     for (auto wall : walls) {
         wall->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
+    vendingMachine->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
 }
 
 game_framework::CMovingBitmap* Stage::GetBackground() {
