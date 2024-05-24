@@ -155,6 +155,9 @@ void ObjectManager::KeyDown(char key) {
     case 'F':
         player->SetInteractive(true);
         break;
+    case 'Q':
+        player->UseSkill();
+        break;
     case '1':
         isDisplayHitBox = !isDisplayHitBox;
         break;

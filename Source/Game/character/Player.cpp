@@ -14,7 +14,8 @@ interactive(false),
 damageCooldownCounter(0),
 damageCooldownFrameCD(150),
 damageEffectCounter(0),
-weapon2(nullptr){
+weapon2(nullptr),
+skillCounter(0){
     shieldRecoverCooldownFrameCD = 250;
     shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
     AddTag(Tag::PLAYER);
@@ -33,6 +34,9 @@ void Player::Update() {
     DamageEffect();
     if (weapon2) {
         weapon2->SetPosition(GetPosition());
+    }
+    if (skillCounter > 0) {
+        skillCounter--;
     }
 }
 

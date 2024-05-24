@@ -490,6 +490,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\player\knight\KinghtSkillEffect.cpp" />
     <ClCompile Include="Source\Game\character\player\knight\Knight.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2309,6 +2310,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardPistol.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_shaman\GoblinShaman.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
+    <ClInclude Include="Source\Game\character\player\knight\KinghtSkillEffect.h" />
     <ClInclude Include="Source\Game\character\player\knight\Knight.h" />
     <ClInclude Include="Source\Game\collectable\BigCompositePotion.h" />
     <ClInclude Include="Source\Game\collectable\BigHealingPotion.h" />

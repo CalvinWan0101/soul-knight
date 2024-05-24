@@ -3,7 +3,11 @@
 
 #include "../../../weapon/ranged_weapon/Shotgun.h"
 
-Knight::Knight() {
+Knight::Knight() : skillKeepMaxFrame(250) {
+    skillKeepCounter = 0;
+    skillEffect = new KinghtSkillEffect(&position);
+    AddBackChild(skillEffect);
+    skillFrameCD = 750;
 }
 
 void Knight::Start() {
@@ -21,10 +25,42 @@ void Knight::Start() {
 
 void Knight::Update() {
     Player::Update();
+    if (skillKeepCounter > 0) {
+        skillKeepCounter--;
+        skillEffect->SetVisible(true);
+        if (weapon2) {
+            weapon2->Aim(&vision);
+            if (face == RIGHT) {
+                weapon2->SetPosition(&(this->position + Vec(weaponOffsetX, weaponOffsetY)));
+            }
+            else if (face == LEFT) {
+                weapon2->SetPosition(&(this->position + Vec(-weaponOffsetX, weaponOffsetY)));
+            }
+        }
+    }
+    else {
+        skillEffect->SetVisible(false);
+    }
 }
 
+void Knight::Attack() {
+    Player::Attack();
+    if (skillKeepCounter > 0) {
+        if (weapon2) {
+            if (weapon2->CanAttack()) {
+                int mpCost = weapon2->GetMpCost();
+                if (mp >= mpCost) {
+                    mp -= mpCost;
+                    weapon2->DefaultAttack();
+                }
+            }
+        }
+    }
+}
+
+
 void Knight::Skill() {
-    
+    skillKeepCounter = skillKeepMaxFrame;
 }
 
 void Knight::LoadResources() {
