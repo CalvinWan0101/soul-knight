@@ -30,6 +30,10 @@ Stage_3_5::Stage_3_5() {
     rooms.push_back(room5);
     rooms.push_back(room6);
     rooms.push_back(room7);
+
+    if (vendingMachine) {
+        vendingMachine->SetPosition(Point(687, 31) - centerOffset);
+    }
 }
 
 void Stage_3_5::GenerateWall() {
