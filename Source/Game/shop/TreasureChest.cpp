@@ -103,14 +103,14 @@ void TreasureChest::CreatePotion() {
     GameObject* contents;
     int potionId = Rand::Instance()->Get(0, static_cast<int>(PotionFactory::PotionType::Count) - 1);
     contents = PotionFactory::Create(static_cast<PotionFactory::PotionType>(potionId));
-    contents->SetPosition(this->position + Point(0,1));
+    contents->SetPosition(this->position + Point(0, 1));
     ObjectManager::Instance()->AddObject(contents);
 }
 
 void TreasureChest::CreateWeapon() {
     GameObject* contents;
-    int weaponId = Rand::Instance()->Get(0, WeaponFactory::Name::Count - 1);
-    contents = WeaponFactory::Create(static_cast<WeaponFactory::Name>(weaponId));
-    contents->SetPosition(this->position + Point(0,1));
+    int weaponId = Rand::Instance()->Get(0, static_cast<int>(WeaponType::Count) - 1);
+    contents = WeaponFactory::Create(static_cast<WeaponType>(weaponId));
+    contents->SetPosition(this->position + Point(0, 1));
     ObjectManager::Instance()->AddObject(contents);
 }

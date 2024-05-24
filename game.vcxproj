@@ -2544,6 +2544,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Shotgun.h" />
     <ClInclude Include="Source\Game\weapon\Weapon.h" />
     <ClInclude Include="Source\Game\weapon\WeaponFactory.h" />
+    <ClInclude Include="Source\Game\weapon\WeaponType.h" />
     <ClInclude Include="Source\Library\audio.h" />
     <ClInclude Include="Source\Library\gamecore.h" />
     <ClInclude Include="Source\Library\gameutil.h" />

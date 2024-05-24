@@ -10,8 +10,8 @@ WeaponVendingMachine::WeaponVendingMachine(int level, int stage) : VendingMachin
 }
 
 void WeaponVendingMachine::Shipment() {
-    int weaponId = Rand::Instance()->Get(0, WeaponFactory::Name::Count - 1);
-    Weapon* weapon = WeaponFactory::Create(static_cast<WeaponFactory::Name>(weaponId));
+    int weaponId = Rand::Instance()->Get(0, static_cast<int>(WeaponType::Count) - 1);
+    Weapon* weapon = WeaponFactory::Create(static_cast<WeaponType>(weaponId));
     weapon->SetPosition(this->position + Point(0, 45));
     ObjectManager::Instance()->AddObject(weapon);
 }

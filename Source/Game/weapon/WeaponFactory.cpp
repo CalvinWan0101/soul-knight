@@ -11,27 +11,25 @@
 #include "ranged_weapon/Pistol.h"
 #include "ranged_weapon/Shotgun.h"
 
-
-Weapon* WeaponFactory::Create(Name weaponName) {
-    switch (weaponName) {
-    case BAD_PISTOL:
+Weapon* WeaponFactory::Create(WeaponType weaponType) {
+    switch (weaponType) {
+    case WeaponType::BAD_PISTOL:
         return new BadPistol();
-    case BOW:
+    case WeaponType::BOW:
         return new Bow();
-    case Dart:
-        return new ::Dart();
-    case PISTOL:
+    case WeaponType::Dart:
+        return new Dart();
+    case WeaponType::PISTOL:
         return new Pistol();
-    case SHOTGUN:
+    case WeaponType::SHOTGUN:
         return new Shotgun();
-    case HAMMER:
+    case WeaponType::HAMMER:
         return new Hammer();
-    case HOE:
+    case WeaponType::HOE:
         return new Hoe();
-    case SPEAR:
+    case WeaponType::SPEAR:
         return new Spear();
     default:
         return nullptr;
-        
     }
 }
