@@ -9,6 +9,7 @@
 BadPistol::BadPistol(double damage, Point position) {
     this->damage = damage;
     this->position = position;
+    this->mpCost = 0;
 }
 
 Weapon* BadPistol::Copy() {
