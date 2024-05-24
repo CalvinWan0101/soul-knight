@@ -1109,6 +1109,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\room\TreasureRoom.cpp" />
     <ClCompile Include="Source\Game\shop\TreasureChest.cpp" />
     <ClCompile Include="Source\Game\shop\Businessman.cpp" />
     <ClCompile Include="Source\Game\shop\DisplayStand.cpp" />
@@ -2468,6 +2469,7 @@
     <ClInclude Include="Source\Game\room\MonsterRoom.h" />
     <ClInclude Include="Source\Game\room\Room.h" />
     <ClInclude Include="Source\Game\room\RoomSize.h" />
+    <ClInclude Include="Source\Game\room\TreasureRoom.h" />
     <ClInclude Include="Source\Game\shop\TreasureChest.h" />
     <ClInclude Include="Source\Game\shop\Businessman.h" />
     <ClInclude Include="Source\Game\shop\DisplayStand.h" />
