@@ -48,5 +48,10 @@ Projectile* ProjectilePool::Acquire(ProjectileType type) {
 }
 
 void ProjectilePool::Release(Projectile* projectile) {
+    Refresh(projectile);
     pool[static_cast<int>(projectile->GetProjectileType())].push_back(projectile);
+}
+
+void ProjectilePool::Refresh(Projectile* projectile) {
+    projectile->SetPoison(false);
 }

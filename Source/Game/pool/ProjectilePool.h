@@ -13,6 +13,7 @@ public:
     void Release(Projectile* projectile);
 
 private:
+    void Refresh(Projectile* projectile);
     static ProjectilePool* instance;
     std::vector<std::vector<Projectile*>> pool;
 };

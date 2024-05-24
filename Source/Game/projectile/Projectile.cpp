@@ -22,3 +22,11 @@ ProjectileType Projectile::GetProjectileType() {
 void Projectile::SetProjectileType(ProjectileType type) {
     projectileType = static_cast<int>(type);
 }
+
+void Projectile::SetPoison(bool isPoison) {
+    this->isPoison = isPoison;
+}
+
+bool Projectile::GetPoison() {
+    return isPoison;
+}
