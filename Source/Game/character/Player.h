@@ -21,6 +21,7 @@ public:
 
     void SetVision(Vec vision);
     void ChangeWeapon(Weapon* newWeapon);
+    void SwitchWeapon();
 
     void SetInteractive(bool interactive);
 
@@ -35,6 +36,7 @@ protected:
     int shieldRecoverCooldownCounter;
     int shieldRecoverCooldownFrameCD;
     HitBox alertRange;
+    Weapon* weapon2;
 
 private:
     bool interactive;

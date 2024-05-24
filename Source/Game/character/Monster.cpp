@@ -66,14 +66,14 @@ void Monster::EnterPlayerAlertRange(Player* player) {
 }
 
 void Monster::SetWeapon(Weapon* weapon) {
-    if (this->weapon) {
-        RemoveFrontChile(this->weapon);
-        delete this->weapon;
-        this->weapon = nullptr;
+    if (this->weapon1) {
+        RemoveFrontChile(this->weapon1);
+        delete this->weapon1;
+        this->weapon1 = nullptr;
     }
-    this->weapon = weapon;
-    this->weapon->RemoveTag(Tag::PLAYER_WEAPON);
-    this->weapon->AddTag(Tag::MONSTER_WEAPON);
+    this->weapon1 = weapon;
+    this->weapon1->RemoveTag(Tag::PLAYER_WEAPON);
+    this->weapon1->AddTag(Tag::MONSTER_WEAPON);
     this->AddFrontChild(weapon);
 }
 

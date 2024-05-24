@@ -13,7 +13,8 @@ shield(0),
 interactive(false),
 damageCooldownCounter(0),
 damageCooldownFrameCD(150),
-damageEffectCounter(0){
+damageEffectCounter(0),
+weapon2(nullptr){
     shieldRecoverCooldownFrameCD = 250;
     shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
     AddTag(Tag::PLAYER);
@@ -30,6 +31,9 @@ void Player::Update() {
     CalculateDamageCooldownCounter();
     CalculateShieldRecoverCounter();
     DamageEffect();
+    if (weapon2) {
+        weapon2->SetPosition(GetPosition());
+    }
 }
 
 void Player::Collision(GameObject* gameObject) {
@@ -48,9 +52,9 @@ void Player::Collision(GameObject* gameObject) {
 }
 
 void Player::Attack() {
-    if (weapon) {
-        if (weapon->CanAttack()) {
-            int mpCost = weapon->GetMpCost();
+    if (weapon1) {
+        if (weapon1->CanAttack()) {
+            int mpCost = weapon1->GetMpCost();
             if (mp >= mpCost) {
                 mp -= mpCost;
                 Character::Attack();
@@ -100,16 +104,35 @@ void Player::SetVision(Vec vision) {
 }
 
 void Player::ChangeWeapon(Weapon* newWeapon) {
-    if (this->weapon != nullptr) {
-        this->weapon->SetPosition(&this->position);
-        RemoveFrontChile(this->weapon);
-        ObjectManager::Instance()->AddObject(this->weapon);
+    if (weapon2 == nullptr && weapon1 != nullptr) {
+        weapon2 = weapon1;
+        weapon1 = nullptr;
+        RemoveFrontChile(weapon2);
+        AddBackChild(weapon2);
     }
-    this->weapon = newWeapon;
-    this->weapon->RemoveTag(Tag::MONSTER_WEAPON);
-    this->weapon->AddTag(Tag::PLAYER_WEAPON);
+    if (this->weapon1 != nullptr) {
+        this->weapon1->SetPosition(&this->position);
+        RemoveFrontChile(this->weapon1);
+        ObjectManager::Instance()->AddObject(this->weapon1);
+    }
+    this->weapon1 = newWeapon;
+    this->weapon1->RemoveTag(Tag::MONSTER_WEAPON);
+    this->weapon1->AddTag(Tag::PLAYER_WEAPON);
     this->AddFrontChild(newWeapon);
 }
+
+void Player::SwitchWeapon() {
+    if (weapon2 != nullptr) {
+        RemoveFrontChile(weapon1);
+        AddBackChild(weapon1);
+        RemoveBackChild(weapon2);
+        AddFrontChild(weapon2);
+        Weapon* tmpWeapon = weapon1;
+        weapon1 = weapon2;
+        weapon2 = tmpWeapon;
+    }
+}
+
 
 void Player::SetInteractive(bool interactive) {
     this->interactive = interactive;

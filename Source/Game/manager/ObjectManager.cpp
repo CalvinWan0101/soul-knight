@@ -149,6 +149,9 @@ void ObjectManager::KeyDown(char key) {
     case 'S':
         player->SetSpeedY(player->GetSpeed().GetY() + 10);
         break;
+    case 'E':
+        player->SwitchWeapon();
+        break;
     case 'F':
         player->SetInteractive(true);
         break;
@@ -165,6 +168,10 @@ void ObjectManager::KeyDown(char key) {
         GameObject* box = new TreasureChest(TreasureChest::BOSS_ROOM);
         box->SetPosition(player->GetPosition());
         AddObject(box);
+        break;
+    }
+    case '4': {
+        MakeMoney(100);
         break;
     }
     }

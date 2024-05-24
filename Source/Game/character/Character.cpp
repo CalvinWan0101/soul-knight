@@ -4,7 +4,7 @@
 
 #include <cmath>
 
-Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX(0), weaponOffsetY(0), weapon(nullptr) {
+Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX(0), weaponOffsetY(0), weapon1(nullptr) {
     poison.damage = 0;
     poison.counter = poison.damageInterval;
     poison.damageRemainingTimes = 0;
@@ -20,12 +20,12 @@ void Character::Update() {
     CheckState();
     CheckFace();
     index = state * 2 + face;
-    weapon->Aim(&vision);
+    weapon1->Aim(&vision);
     if (face == RIGHT) {
-        weapon->SetPosition(&(this->position + Vec(weaponOffsetX, weaponOffsetY)));
+        weapon1->SetPosition(&(this->position + Vec(weaponOffsetX, weaponOffsetY)));
     }
     else if (face == LEFT) {
-        weapon->SetPosition(&(this->position + Vec(-weaponOffsetX, weaponOffsetY)));
+        weapon1->SetPosition(&(this->position + Vec(-weaponOffsetX, weaponOffsetY)));
     }
 
     if (poison.damageRemainingTimes > 0) {
@@ -71,10 +71,10 @@ double Character::GetMaxHP() {
 }
 
 void Character::Attack() {
-    if (weapon == nullptr) {
+    if (weapon1 == nullptr) {
         throw exception("Do not have weapon.");
     }
-    weapon->DefaultAttack();
+    weapon1->DefaultAttack();
 }
 
 void Character::Poisoned(double poisonDamage) {

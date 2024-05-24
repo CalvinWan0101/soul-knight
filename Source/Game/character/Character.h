@@ -20,7 +20,7 @@ protected:
     double maxHp;
     
     Vec vision;
-    Weapon* weapon;
+    Weapon* weapon1;
     double weaponOffsetX;
     double weaponOffsetY;
     enum Face {
