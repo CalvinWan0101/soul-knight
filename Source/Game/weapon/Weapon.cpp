@@ -110,35 +110,13 @@ void Weapon::UpdateTranslationOffset() {
     }
 }
 
-void Weapon::UpdateTag(Bullet* bullet) {
+void Weapon::UpdateTag(GameObject* gameObject) {
     if (HasTag(Tag::PLAYER_WEAPON)) {
-        bullet->AddTag(Tag::PLAYER_ATTACK);
-        bullet->RemoveTag(Tag::MONSTER_ATTACK);
+        gameObject->AddTag(Tag::PLAYER_ATTACK);
+        gameObject->RemoveTag(Tag::MONSTER_ATTACK);
     }
     else {
-        bullet->AddTag(Tag::MONSTER_ATTACK);
-        bullet->RemoveTag(Tag::PLAYER_ATTACK);
-    }
-}
-
-void Weapon::UpdateTag(ShockWave* shockWave) {
-    if (HasTag(Tag::PLAYER_WEAPON)) {
-        shockWave->AddTag(Tag::PLAYER_ATTACK);
-        shockWave->RemoveTag(Tag::MONSTER_ATTACK);
-    }
-    else {
-        shockWave->AddTag(Tag::MONSTER_ATTACK);
-        shockWave->RemoveTag(Tag::PLAYER_ATTACK);
-    }
-}
-
-void Weapon::UpdateTag(InvisibleShockWave* invisibleShockWave) {
-    if (HasTag(Tag::PLAYER_WEAPON)) {
-        invisibleShockWave->AddTag(Tag::PLAYER_ATTACK);
-        invisibleShockWave->RemoveTag(Tag::MONSTER_ATTACK);
-    }
-    else {
-        invisibleShockWave->AddTag(Tag::MONSTER_ATTACK);
-        invisibleShockWave->RemoveTag(Tag::PLAYER_ATTACK);
+        gameObject->AddTag(Tag::MONSTER_ATTACK);
+        gameObject->RemoveTag(Tag::PLAYER_ATTACK);
     }
 }

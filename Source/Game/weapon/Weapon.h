@@ -27,9 +27,7 @@ protected:
     int frameCd; // how many frames to wait for next attack
     double damage;
     int mpCost;
-    void UpdateTag(Bullet* bullet);
-    void UpdateTag(ShockWave* shockWave);
-    void UpdateTag(InvisibleShockWave* invisibleShockWave);
+    void UpdateTag(GameObject* gameObject);
 
 private:
     int cdCounter; // minus 1 per frame
