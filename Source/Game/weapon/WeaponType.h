@@ -6,10 +6,13 @@ enum class WeaponType {
     Dart,
     PISTOL,
     SHOTGUN,
+    RIFLE,
 
     HAMMER,
     HOE,
     SPEAR,
+    CURVED_SWORD,
+    
 
     Count
 };
