@@ -2338,6 +2338,7 @@
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Dart.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinStaff.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Pistol.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\Rifle.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Shotgun.cpp" />
     <ClCompile Include="Source\Game\weapon\Weapon.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -2545,6 +2546,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Dart.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinStaff.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\Rifle.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Shotgun.h" />
     <ClInclude Include="Source\Game\weapon\Weapon.h" />
     <ClInclude Include="Source\Game\weapon\WeaponFactory.h" />

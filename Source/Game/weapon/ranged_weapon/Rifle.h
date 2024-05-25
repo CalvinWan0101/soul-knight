@@ -1,11 +1,9 @@
 ﻿#pragma once
 #include "../RangedWeapon.h"
 
-class Bullet;
-
-class Shotgun : public RangedWeapon {
+class Rifle : public RangedWeapon {
 public:
-    Shotgun(double damage = 3, Point position = {0, 0});
+    Rifle(double damage = 3, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;
@@ -13,6 +11,5 @@ public:
     void Attack() override;
 
 private:
-    void GeneratePlayerBullet();
-    void GenerateMonsterBullet();
+    void GenerateBullets(bool isPlayer);
 };

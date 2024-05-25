@@ -3,6 +3,7 @@
 
 #include "../../../weapon/melee_weapon/CurvedSword.h"
 #include "../../../weapon/ranged_weapon/Dart.h"
+#include "../../../weapon/ranged_weapon/Rifle.h"
 #include "../../../weapon/ranged_weapon/Shotgun.h"
 
 Knight::Knight() : skillKeepMaxFrame(250) {
@@ -16,7 +17,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new Shotgun());
+    ChangeWeapon(new Rifle());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
