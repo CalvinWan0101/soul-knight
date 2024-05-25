@@ -2209,6 +2209,7 @@
     <ClCompile Include="Source\Game\wall\door\VerticalDoor3.cpp" />
     <ClCompile Include="Source\Game\wall\door\VerticalDoor4.cpp" />
     <ClCompile Include="Source\Game\wall\Wall.cpp" />
+    <ClCompile Include="Source\Game\weapon\melee_weapon\CurvedSword.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\FakeWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\Hammer.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -2530,6 +2531,7 @@
     <ClInclude Include="Source\Game\wall\door\VerticalDoor3.h" />
     <ClInclude Include="Source\Game\wall\door\VerticalDoor4.h" />
     <ClInclude Include="Source\Game\wall\Wall.h" />
+    <ClInclude Include="Source\Game\weapon\melee_weapon\CurvedSword.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\FakeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hammer.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hoe.h" />

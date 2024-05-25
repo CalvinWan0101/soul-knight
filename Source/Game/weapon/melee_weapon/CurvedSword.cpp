@@ -1,36 +1,34 @@
-#include "stdafx.h"
-#include "Hoe.h"
+﻿#include "stdafx.h"
+#include "CurvedSword.h"
 
-#include "../../projectile/ShockWave.h"
-#include "../../projectile/InvisibleShockWave.h"
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 
-Hoe::Hoe(double damage, Point position) {
+CurvedSword::CurvedSword(double damage, Point position) {
     this->damage = damage;
     this->position = position;
     this->mpCost = 0;
 }
 
-Weapon* Hoe::Copy() {
-    return new Hoe(this->damage, this->position);
+Weapon* CurvedSword::Copy() {
+    return new CurvedSword(this->damage, this->position);
 }
 
-void Hoe::Start() {
+void CurvedSword::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
-    SetInteractiveText("hoe", InteractiveText::COMMON);
+    SetInteractiveText("curved sword", InteractiveText::COMMON);
 }
 
-void Hoe::Update() {
+void CurvedSword::Update() {
     MeleeWeapon::Update();
 }
 
-void Hoe::LoadResources() {
-    SetImages("Resources/weapon/hoe/", 3, RGB(255, 255, 255));
+void CurvedSword::LoadResources() {
+    SetImages("Resources/weapon/curved_sword/", 3, RGB(255, 255, 255));
 }
 
-void Hoe::Attack() {
+void CurvedSword::Attack() {
     InvisibleShockWave* shockWave = static_cast<InvisibleShockWave*>(ProjectilePool::Instance()->Acquire(
         ProjectileType::INVISIBLE_SHOCK_WAVE));
     shockWave->SetPosition(&(this->position + Vec(&rotation, 10)));
