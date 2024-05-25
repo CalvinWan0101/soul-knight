@@ -1,4 +1,5 @@
 #pragma once
+#include "PoisonedIcon.h"
 #include "../utils/object/GeneralObject.h"
 #include "../weapon/Weapon.h"
 
@@ -38,6 +39,7 @@ protected:
     Face face;
     State state;
 private:
+    PoisonedIcon* poisonedIcon;
     struct Poison {
         double damage;
         int counter;

@@ -4,7 +4,7 @@
 
 #include <cmath>
 
-Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX(0), weaponOffsetY(0), weapon1(nullptr) {
+Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX(0), weaponOffsetY(0), weapon1(nullptr), poisonedIcon(nullptr) {
     poison.damage = 0;
     poison.counter = poison.damageInterval;
     poison.damageRemainingTimes = 0;
@@ -12,6 +12,10 @@ Character::Character(): hp(1), maxHp(1), face(RIGHT), state(IDLE), weaponOffsetX
 
 void Character::Start() {
     GeneralObject::Start();
+    if (!poisonedIcon) {
+        poisonedIcon = new PoisonedIcon();
+        AddFrontChild(poisonedIcon);
+    }
     this->hp = maxHp;
 }
 
@@ -29,12 +33,17 @@ void Character::Update() {
     }
 
     if (poison.damageRemainingTimes > 0) {
+        poisonedIcon->SetPosition(this->position + Point(0, -hitBox.GetHalfHeight() - 10));
+        poisonedIcon->SetVisible(true);
         poison.counter--;
         if (poison.counter == 0) {
             poison.counter = poison.damageInterval;
             poison.damageRemainingTimes--;
             Injuried(poison.damage);
         }
+    }
+    else {
+        poisonedIcon->SetVisible(false);
     }
 }
 

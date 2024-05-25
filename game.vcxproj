@@ -550,6 +550,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\PoisonedIcon.cpp" />
     <ClCompile Include="Source\Game\collectable\BigCompositePotion.cpp" />
     <ClCompile Include="Source\Game\collectable\BigHealingPotion.cpp" />
     <ClCompile Include="Source\Game\collectable\BigMpPotion.cpp" />
@@ -2431,6 +2432,7 @@
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\knight\KinghtSkillEffect.h" />
     <ClInclude Include="Source\Game\character\player\knight\Knight.h" />
+    <ClInclude Include="Source\Game\character\PoisonedIcon.h" />
     <ClInclude Include="Source\Game\collectable\BigCompositePotion.h" />
     <ClInclude Include="Source\Game\collectable\BigHealingPotion.h" />
     <ClInclude Include="Source\Game\collectable\BigMpPotion.h" />
@@ -2563,6 +2565,7 @@
     <Content Include="Resources\affect\monster\boar_affect\flip_2.bmp" />
     <Content Include="Resources\affect\monster\boar_affect\flip_3.bmp" />
     <Content Include="Resources\affect\monster\boar_affect\flip_4.bmp" />
+    <Content Include="Resources\affect\poisoned_icon.bmp" />
     <Content Include="Resources\affect\weapon\wave\1.bmp" />
     <Content Include="Resources\affect\weapon\wave\2.bmp" />
     <Content Include="Resources\affect\weapon\wave\3.bmp" />
