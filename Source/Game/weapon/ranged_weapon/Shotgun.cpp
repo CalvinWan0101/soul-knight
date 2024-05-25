@@ -47,95 +47,31 @@ void Shotgun::GeneratePlayerBullet() {
     Vec currentRotation = this->rotation;
     currentRotation.Rotate(0.4);
 
-    Bullet* bullet1 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
-    bullet1->SetSpeed(currentRotation, 7);
-    bullet1->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet1->SetDamage(this->GetDamage());
-    UpdateTag(bullet1);
-    objectManager->AddObject(bullet1);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet2 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
-    bullet2->SetSpeed(currentRotation, 7);
-    bullet2->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet2->SetDamage(this->GetDamage());
-    UpdateTag(bullet2);
-    objectManager->AddObject(bullet2);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet3 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
-    bullet3->SetSpeed(currentRotation, 7);
-    bullet3->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet3->SetDamage(this->GetDamage());
-    UpdateTag(bullet3);
-    objectManager->AddObject(bullet3);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet4 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
-    bullet4->SetSpeed(currentRotation, 7);
-    bullet4->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet4->SetDamage(this->GetDamage());
-    UpdateTag(bullet4);
-    objectManager->AddObject(bullet4);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet5 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
-    bullet5->SetSpeed(currentRotation, 7);
-    bullet5->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet5->SetDamage(this->GetDamage());
-    UpdateTag(bullet5);
-    objectManager->AddObject(bullet5);
+    for (int i = 0; i < 5; ++i) {
+        Bullet* bullet = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
+        bullet->SetSpeed(currentRotation, 7);
+        bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
+        bullet->SetDamage(this->GetDamage());
+        UpdateTag(bullet);
+        objectManager->AddObject(bullet);
+        currentRotation.Rotate(-0.2);
+    }
 }
 
 void Shotgun::GenerateMonsterBullet() {
     ProjectilePool* projectilePool = ProjectilePool::Instance();
+    ObjectManager* objectManager = ObjectManager::Instance();
+
     Vec currentRotation = this->rotation;
     currentRotation.Rotate(0.4);
 
-    Bullet* bullet1 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::RED_DIAMOND_BULLET));
-    bullet1->SetSpeed(currentRotation, 7);
-    bullet1->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet1->SetDamage(this->GetDamage());
-    UpdateTag(bullet1);
-    ObjectManager::Instance()->AddObject(bullet1);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet2 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::RED_DIAMOND_BULLET));
-    bullet2->SetSpeed(currentRotation, 7);
-    bullet2->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet2->SetDamage(this->GetDamage());
-    UpdateTag(bullet2);
-    ObjectManager::Instance()->AddObject(bullet2);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet3 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::RED_DIAMOND_BULLET));
-    bullet3->SetSpeed(currentRotation, 7);
-    bullet3->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet3->SetDamage(this->GetDamage());
-    UpdateTag(bullet3);
-    ObjectManager::Instance()->AddObject(bullet3);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet4 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::RED_DIAMOND_BULLET));
-    bullet4->SetSpeed(currentRotation, 7);
-    bullet4->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet4->SetDamage(this->GetDamage());
-    UpdateTag(bullet4);
-    ObjectManager::Instance()->AddObject(bullet4);
-
-    currentRotation.Rotate(-0.2);
-
-    Bullet* bullet5 = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::RED_DIAMOND_BULLET));
-    bullet5->SetSpeed(currentRotation, 7);
-    bullet5->SetPosition(&(this->position + Vec(&rotation, 7)));
-    bullet5->SetDamage(this->GetDamage());
-    UpdateTag(bullet5);
-    ObjectManager::Instance()->AddObject(bullet5);
+    for (int i = 0; i < 5; ++i) {
+        Bullet* bullet = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::RED_DIAMOND_BULLET));
+        bullet->SetSpeed(currentRotation, 7);
+        bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
+        bullet->SetDamage(this->GetDamage());
+        UpdateTag(bullet);
+        objectManager->AddObject(bullet);
+        currentRotation.Rotate(-0.2);
+    }
 }
