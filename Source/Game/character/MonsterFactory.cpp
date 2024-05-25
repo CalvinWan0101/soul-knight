@@ -11,6 +11,8 @@
 #include "monster/floor_1/goblin_guard/GoblinGuardPistol.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardSpear.h"
 #include "monster/floor_1/goblin_shaman/GoblinShaman.h"
+#include "monster/floor_2/skeleton/SkeletonBow.h"
+#include "monster/floor_2/skeleton/SkeletonCurvedSword.h"
 #include "monster/floor_2/skeleton/SkeletonRifle.h"
 
 Monster* MonsterFactory::Create(MonsterType type, double level) {
@@ -42,6 +44,10 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new DireBoar(level);
 
     // level 2
+    case MonsterType::SKELETON_BOW:
+        return new SkeletonBow(level);
+    case MonsterType::SKELETON_CURVED_SWORD:
+        return new SkeletonCurvedSword(level);
     case MonsterType::SKELETON_RIFLE:
         return new SkeletonRifle(level);
     default:

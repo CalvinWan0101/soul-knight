@@ -23,11 +23,10 @@ enum class MonsterType {
     // floor 2
     C6H8O6,
 
-    SKELETON_CURVED_SWORD,
     SKELETON_BOW,
+    SKELETON_CURVED_SWORD,
     SKELETON_RIFLE,
-
-
+    
     ELITE_SKELETON,
     SKELETON_SHAMAN,
     BIG_SKELETON,

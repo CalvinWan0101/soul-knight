@@ -11,7 +11,10 @@ Stage_1_1::Stage_1_1() {
     MonsterRoom* room1 = new MonsterRoom(Point(528, 0), centerOffset, RoomSize::LARGE_SIZE, 4,
                                          std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
     MonsterRoom* room2 = new MonsterRoom(Point(1216, 48), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::SKELETON_RIFLE, 1}});
+                                         std::map<MonsterType, int>{
+                                             {MonsterType::SKELETON_RIFLE, 1}, {MonsterType::SKELETON_CURVED_SWORD, 1},
+                                             {MonsterType::SKELETON_BOW, 1}
+                                         });
     MonsterRoom* room4 = new MonsterRoom(Point(576, 688), centerOffset, RoomSize::MEDIUM_SIZE, 4,
                                          std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
 
