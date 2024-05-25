@@ -17,6 +17,7 @@ void Character::Start() {
         AddFrontChild(poisonedIcon);
     }
     this->hp = maxHp;
+    poison.damageRemainingTimes = 0;
 }
 
 void Character::Update() {
