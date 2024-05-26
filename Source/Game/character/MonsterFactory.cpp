@@ -16,7 +16,7 @@
 #include "monster/floor_2/elite_skeleton/EliteSkeletonShotgun.h"
 #include "monster/floor_2/skeleton/SkeletonBow.h"
 #include "monster/floor_2/skeleton/SkeletonCurvedSword.h"
-#include "monster/floor_2/skeleton/SkeletonRifle.h"
+#include "monster/floor_2/skeleton/SkeletonShotgun.h"
 
 Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
@@ -51,8 +51,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new SkeletonBow(level);
     case MonsterType::SKELETON_CURVED_SWORD:
         return new SkeletonCurvedSword(level);
-    case MonsterType::SKELETON_RIFLE:
-        return new SkeletonRifle(level);
+    case MonsterType::SKELETON_SHOTGUN:
+        return new SkeletonShotgun(level);
     case MonsterType::ELITE_SKELETON_CURVED_SWORD:
         return new EliteSkeletonCurvedSword(level);
     case MonsterType::ELITE_SKELETON_RIFLE:

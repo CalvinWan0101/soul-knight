@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include "Skeleton.h"
 
-class SkeletonRifle : public Skeleton {
+class SkeletonShotgun : public Skeleton {
 public:
-    SkeletonRifle(double level);
+    SkeletonShotgun(double level);
     void Start() override;
     void InitializeWeapon() override;
 };

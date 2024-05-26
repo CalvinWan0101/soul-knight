@@ -438,7 +438,7 @@
     <ClCompile Include="Source\Game\character\monster\floor_2\skeleton\Skeleton.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_2\skeleton\SkeletonBow.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_2\skeleton\SkeletonCurvedSword.cpp" />
-    <ClCompile Include="Source\Game\character\monster\floor_2\skeleton\SkeletonRifle.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_2\skeleton\SkeletonShotgun.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2445,7 +2445,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\Skeleton.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\SkeletonBow.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\SkeletonCurvedSword.h" />
-    <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\SkeletonRifle.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\SkeletonShotgun.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\knight\KinghtSkillEffect.h" />
     <ClInclude Include="Source\Game\character\player\knight\Knight.h" />
