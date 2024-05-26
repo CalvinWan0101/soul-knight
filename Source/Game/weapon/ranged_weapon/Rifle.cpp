@@ -51,7 +51,7 @@ void Rifle::GenerateBullets(bool isPlayer) {
             bullet = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
         }
         else {
-            bullet = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
+            bullet = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::RED_CIRCLE_BULLET));
         }
         bullet->SetSpeed(currentRotation, 7);
         bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
