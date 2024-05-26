@@ -874,6 +874,7 @@
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />
     <ClCompile Include="Source\Game\mygame_over.cpp" />
     <ClCompile Include="Source\Game\mygame_run.cpp" />
+    <ClCompile Include="Source\Game\projectile\bullet\GasBlasterBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedCircleBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedDiamondBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedRectangleBullet.cpp" />
@@ -2344,6 +2345,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Bow.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Dart.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\GasBlaster.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinStaff.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Rifle.cpp" />
@@ -2475,6 +2477,7 @@
     <ClInclude Include="Source\Game\character\Character.h" />
     <ClInclude Include="Source\Game\config.h" />
     <ClInclude Include="Source\Game\mygame.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\GasBlasterBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedCircleBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedDiamondBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedRectangleBullet.h" />
@@ -2560,6 +2563,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Bow.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Dart.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\GasBlaster.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinStaff.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Rifle.h" />
