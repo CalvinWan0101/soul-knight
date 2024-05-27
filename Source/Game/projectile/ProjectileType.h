@@ -9,6 +9,7 @@ enum class ProjectileType {
     RED_CIRCLE_BULLET,
     RED_SPLINTER_BULLET,
     GAS_BLASTER_BULLET,
+    RED_SQUARE_BULLET,
 
     // shock wave
     HAMMER_WAVE,
