@@ -17,7 +17,7 @@ Weapon* SkeletonStaff::Copy() {
 
 void SkeletonStaff::Start() {
     RangedWeapon::Start();
-    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 2, 0.65);
+    SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 2);
 }
 
 void SkeletonStaff::Update() {

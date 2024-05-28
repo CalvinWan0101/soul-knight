@@ -18,6 +18,7 @@
 #include "monster/floor_2/skeleton/SkeletonBow.h"
 #include "monster/floor_2/skeleton/SkeletonCurvedSword.h"
 #include "monster/floor_2/skeleton/SkeletonShotgun.h"
+#include "monster/floor_2/skeleton_shaman/SkeletonShaman.h"
 
 Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
@@ -62,6 +63,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new EliteSkeletonShotgun(level);
     case MonsterType::BIG_SKELETON:
         return new BigSkeleton(level);
+    case MonsterType::SKELETON_SHAMAN:
+        return new SkeletonShaman(level);
     default:
         return nullptr;
     }

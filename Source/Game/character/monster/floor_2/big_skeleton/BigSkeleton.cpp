@@ -57,5 +57,5 @@ void BigSkeleton::AutoMation() {
 }
 
 void BigSkeleton::InitializeWeapon() {
-    this->SetWeapon(new SkeletonHammer(5));
+    this->SetWeapon(new SkeletonHammer(3));
 }
