@@ -2353,6 +2353,7 @@
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Rifle.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Shotgun.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\SkeletonHammer.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\SkeletonStaff.cpp" />
     <ClCompile Include="Source\Game\weapon\Weapon.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2574,6 +2575,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Rifle.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Shotgun.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\SkeletonHammer.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\SkeletonStaff.h" />
     <ClInclude Include="Source\Game\weapon\Weapon.h" />
     <ClInclude Include="Source\Game\weapon\WeaponFactory.h" />
     <ClInclude Include="Source\Game\weapon\WeaponType.h" />

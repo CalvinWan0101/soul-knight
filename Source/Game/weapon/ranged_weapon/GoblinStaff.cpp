@@ -11,7 +11,6 @@ GoblinStaff::GoblinStaff(double damage, Point position) {
     this->mpCost = 3;
 }
 
-
 Weapon* GoblinStaff::Copy() {
     return new GoblinStaff(this->damage, this->position);
 }

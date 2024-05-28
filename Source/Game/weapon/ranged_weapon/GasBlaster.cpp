@@ -30,7 +30,7 @@ void GasBlaster::LoadResources() {
 
 void GasBlaster::Attack() {
     Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::GAS_BLASTER_BULLET));
-    bullet->SetSpeed(rotation, 7);
+    bullet->SetSpeed(rotation, 9);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
     bullet->SetPoison(true);

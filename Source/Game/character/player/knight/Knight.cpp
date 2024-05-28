@@ -7,6 +7,7 @@
 #include "../../../weapon/ranged_weapon/Rifle.h"
 #include "../../../weapon/ranged_weapon/Shotgun.h"
 #include "../../../weapon/ranged_weapon/SkeletonHammer.h"
+#include "../../../weapon/ranged_weapon/SkeletonStaff.h"
 
 Knight::Knight() : skillKeepMaxFrame(250) {
     skillKeepCounter = 0;
@@ -19,7 +20,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new SkeletonHammer());
+    ChangeWeapon(new SkeletonStaff());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
