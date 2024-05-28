@@ -18,7 +18,7 @@ Weapon* SkeletonHammer::Copy() {
 
 void SkeletonHammer::Start() {
     RangedWeapon::Start();
-    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.835, 0.65);
+    SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 2, 0.65);
     SetInteractiveText("skeleton hammer", InteractiveText::UNCOMMON);
 }
 
@@ -38,7 +38,7 @@ void SkeletonHammer::Attack() {
 
     for (int i = 0; i < 18; ++i) {
         Bullet* bullet = static_cast<RedCircleBullet*>(projectilePool->Acquire(ProjectileType::RED_CIRCLE_BULLET));
-        bullet->SetSpeed(currentRotation, 7);
+        bullet->SetSpeed(currentRotation, 5);
         bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
         bullet->SetDamage(this->GetDamage());
         UpdateTag(bullet);

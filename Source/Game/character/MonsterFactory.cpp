@@ -11,6 +11,7 @@
 #include "monster/floor_1/goblin_guard/GoblinGuardPistol.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardSpear.h"
 #include "monster/floor_1/goblin_shaman/GoblinShaman.h"
+#include "monster/floor_2/big_skeleton/BigSkeleton.h"
 #include "monster/floor_2/elite_skeleton/EliteSkeletonCurvedSword.h"
 #include "monster/floor_2/elite_skeleton/EliteSkeletonRifle.h"
 #include "monster/floor_2/elite_skeleton/EliteSkeletonShotgun.h"
@@ -59,6 +60,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new EliteSkeletonRifle(level);
     case MonsterType::ELITE_SKELETON_SHOTGUN:
         return new EliteSkeletonShotgun(level);
+    case MonsterType::BIG_SKELETON:
+        return new BigSkeleton(level);
     default:
         return nullptr;
     }
