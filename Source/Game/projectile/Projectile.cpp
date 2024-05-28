@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Projectile.h"
 
-Projectile::Projectile(): damage(0) {
+Projectile::Projectile(): isPoison(false), damage(0) {
 }
 
 Projectile::~Projectile() {
