@@ -20,8 +20,7 @@ void Weapon::Update() {
         cdCounter--;
         UpdateRotationOffset();
         UpdateTranslationOffset();
-        if (static_cast<double>(frameCd - cdCounter) / static_cast<double>(frameCd) >= attackTiming && isAttack ==
-            false) {
+        if (static_cast<double>(frameCd - cdCounter) / static_cast<double>(frameCd) >= attackTiming && isAttack == false) {
             isAttack = true;
             Attack();
         }

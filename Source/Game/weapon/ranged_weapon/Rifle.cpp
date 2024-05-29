@@ -1,13 +1,11 @@
 ﻿#include "stdafx.h"
 #include "Rifle.h"
 
-#include <thread>
-
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/BadPistolBullet.h"
 
-Rifle::Rifle(double damage, Point position) {
+Rifle::Rifle(double damage, Point position) : isPlayer(false), generateBulletCounter(0), bulletNumber(0) {
     this->damage = damage;
     this->position = position;
     this->mpCost = 9;
@@ -25,6 +23,9 @@ void Rifle::Start() {
 
 void Rifle::Update() {
     RangedWeapon::Update();
+    if (bulletNumber > 0) {
+        GenerateBullets();   
+    }
 }
 
 void Rifle::LoadResources() {
@@ -32,20 +33,16 @@ void Rifle::LoadResources() {
 }
 
 void Rifle::Attack() {
-    if (HasTag(Tag::PLAYER_WEAPON)) {
-        std::thread(&Rifle::GenerateBullets, this, true).detach();
-    }
-    else {
-        std::thread(&Rifle::GenerateBullets, this, false).detach();
-    }
+    isPlayer = HasTag(Tag::PLAYER_ATTACK);
+    bulletNumber = 9;
 }
 
-void Rifle::GenerateBullets(bool isPlayer) {
-    Vec* currentRotation = new Vec(this->rotation);
+void Rifle::GenerateBullets() {
+    if (generateBulletCounter == 0) {
+        Vec* currentRotation = new Vec(this->rotation);
 
-    ProjectilePool* projectilePool = ProjectilePool::Instance();
-    ObjectManager* objectManager = ObjectManager::Instance();
-    for (int i = 0; i < 9; ++i) {
+        ProjectilePool* projectilePool = ProjectilePool::Instance();
+        ObjectManager* objectManager = ObjectManager::Instance();
         Bullet* bullet;
         if (isPlayer) {
             bullet = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
@@ -58,7 +55,11 @@ void Rifle::GenerateBullets(bool isPlayer) {
         bullet->SetDamage(this->GetDamage());
         UpdateTag(bullet);
         objectManager->AddObject(bullet);
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        
+        delete currentRotation;
+
+        generateBulletCounter = 5;
+        bulletNumber--;
     }
-    delete currentRotation;
+    generateBulletCounter--;
 }
