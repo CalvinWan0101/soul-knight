@@ -618,6 +618,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\player\priestess\HealingCircle.cpp" />
+    <ClCompile Include="Source\Game\character\player\priestess\Priestess.cpp" />
     <ClCompile Include="Source\Game\character\PoisonedIcon.cpp" />
     <ClCompile Include="Source\Game\collectable\BigCompositePotion.cpp" />
     <ClCompile Include="Source\Game\collectable\BigHealingPotion.cpp" />
@@ -2517,6 +2519,8 @@
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\knight\KinghtSkillEffect.h" />
     <ClInclude Include="Source\Game\character\player\knight\Knight.h" />
+    <ClInclude Include="Source\Game\character\player\priestess\HealingCircle.h" />
+    <ClInclude Include="Source\Game\character\player\priestess\Priestess.h" />
     <ClInclude Include="Source\Game\character\PoisonedIcon.h" />
     <ClInclude Include="Source\Game\collectable\BigCompositePotion.h" />
     <ClInclude Include="Source\Game\collectable\BigHealingPotion.h" />
@@ -4336,8 +4340,7 @@
     <Content Include="Resources\player\priestess\run\flip_2.bmp" />
     <Content Include="Resources\player\priestess\run\flip_3.bmp" />
     <Content Include="Resources\player\priestess\run\flip_4.bmp" />
-    <Content Include="Resources\player\priestess\skill\1.bmp" />
-    <Content Include="Resources\player\priestess\skill\flip_1.bmp" />
+    <Content Include="Resources\player\priestess\skill\priestess_skill_effect.bmp" />
     <Content Include="Resources\player\rogue\dead.bmp" />
     <Content Include="Resources\player\rogue\flip_dead.bmp" />
     <Content Include="Resources\player\rogue\idle\1.bmp" />

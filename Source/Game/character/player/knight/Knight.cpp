@@ -14,7 +14,7 @@ Knight::Knight() : skillKeepMaxFrame(250) {
     skillKeepCounter = 0;
     skillEffect = new KinghtSkillEffect(&position);
     AddBackChild(skillEffect);
-    skillFrameCD = 750;
+    skillFrameCD = 650;
 }
 
 void Knight::Start() {

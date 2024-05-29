@@ -11,6 +11,7 @@
 #include "../Library/gamecore.h"
 #include "mygame.h"
 #include "character/player/knight/Knight.h"
+#include "character/player/priestess/Priestess.h"
 #include "utils/draw/Draw.h"
 #include "stage/TransferGate.h"
 #include "utils/Rand.h"
@@ -46,7 +47,7 @@ void CGameStateRun::OnMove() // ���ʹC������
 
 void CGameStateRun::OnInit() // �C������Ȥιϧγ]�w
 {
-    objectManager->SetPlayer(new Knight());
+    objectManager->SetPlayer(new Priestess());
     objectManager->Start();
     stageManager->Initiliaze();
     uiManager.Start();
