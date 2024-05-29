@@ -5,7 +5,7 @@
 #include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/BadPistolBullet.h"
 
-Rifle::Rifle(double damage, Point position) : isPlayer(false), generateBulletCounter(0), bulletNumber(0) {
+Rifle::Rifle(double damage, Point position) : generateBulletCounter(0), bulletNumber(0) {
     this->damage = damage;
     this->position = position;
     this->mpCost = 9;
@@ -33,7 +33,6 @@ void Rifle::LoadResources() {
 }
 
 void Rifle::Attack() {
-    isPlayer = HasTag(Tag::PLAYER_ATTACK);
     bulletNumber = 9;
 }
 
@@ -44,7 +43,7 @@ void Rifle::GenerateBullets() {
         ProjectilePool* projectilePool = ProjectilePool::Instance();
         ObjectManager* objectManager = ObjectManager::Instance();
         Bullet* bullet;
-        if (isPlayer) {
+        if (HasTag(Tag::PLAYER_ATTACK)) {
             bullet = static_cast<BadPistolBullet*>(projectilePool->Acquire(ProjectileType::BAD_PISTOL_BULLET));
         }
         else {

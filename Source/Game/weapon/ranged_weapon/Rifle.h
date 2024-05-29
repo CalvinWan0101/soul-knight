@@ -11,7 +11,6 @@ public:
     void Attack() override;
 
 private:
-    bool isPlayer;
     int generateBulletCounter;
     int bulletNumber;
     void GenerateBullets();
