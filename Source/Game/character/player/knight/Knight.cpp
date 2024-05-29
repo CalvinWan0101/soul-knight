@@ -2,6 +2,7 @@
 #include "Knight.h"
 
 #include "../../../weapon/melee_weapon/CurvedSword.h"
+#include "../../../weapon/melee_weapon/LongBlade40m.h"
 #include "../../../weapon/ranged_weapon/Dart.h"
 #include "../../../weapon/ranged_weapon/GasBlaster.h"
 #include "../../../weapon/ranged_weapon/Rifle.h"
@@ -20,7 +21,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new SkeletonStaff());
+    ChangeWeapon(new LongBlade40m());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
