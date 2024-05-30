@@ -2410,6 +2410,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\BatteryHead.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Bow.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Dart.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GasBlaster.cpp" />
@@ -2639,6 +2640,7 @@
     <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />
     <ClInclude Include="Source\Game\weapon\MeleeWeapon.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\BatteryHead.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Bow.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Dart.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GasBlaster.h" />

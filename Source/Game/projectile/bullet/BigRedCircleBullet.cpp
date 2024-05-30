@@ -2,6 +2,7 @@
 #include "BigRedCircleBullet.h"
 
 #include "RedCircleBullet.h"
+#include "../../character/Character.h"
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 
@@ -23,10 +24,19 @@ void BigRedCircleBullet::LoadResources() {
 }
 
 void BigRedCircleBullet::Collision(GameObject* gameObject) {
-    Bullet::Collision(gameObject);
     if ((gameObject->HasTag(Tag::PLAYER) && this->HasTag(Tag::MONSTER_ATTACK)) ||
         (gameObject->HasTag(Tag::MONSTER) && !gameObject->HasTag(Tag::DEAD) && this->HasTag(Tag::PLAYER_ATTACK)) ||
         gameObject->HasTag(Tag::OBSTACLE)) {
+        this->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+        if (GetPoison()) {
+            if (gameObject->HasTag(Tag::PLAYER)) {
+                dynamic_cast<Character*>(gameObject)->Poisoned(1);
+            }
+            else if (gameObject->HasTag(Tag::MONSTER)) {
+                dynamic_cast<Character*>(gameObject)->Poisoned(5);
+            }
+        }
+
         ProjectilePool* projectilePool = ProjectilePool::Instance();
         ObjectManager* objectManager = ObjectManager::Instance();
 
@@ -34,12 +44,12 @@ void BigRedCircleBullet::Collision(GameObject* gameObject) {
 
         for (int i = 0; i < 12; ++i) {
             Bullet* bullet = static_cast<RedCircleBullet*>(projectilePool->Acquire(ProjectileType::RED_CIRCLE_BULLET));
-            bullet->SetSpeed(currentRotation, 7);
-            bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
-            bullet->SetDamage(this->GetDamage());
+            bullet->SetSpeed(currentRotation, 4);
+            bullet->SetPosition(&(this->position + Vec(&rotation, 7) - this->rotation * 2));
+            bullet->SetDamage(2);
             UpdateTag(bullet);
             objectManager->AddObject(bullet);
-            currentRotation.Rotate(-0.2);
+            currentRotation.Rotate(-0.625);
         }
     }
 }

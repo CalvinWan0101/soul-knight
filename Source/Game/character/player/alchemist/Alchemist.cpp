@@ -4,6 +4,7 @@
 #include "PoisonBottle.h"
 #include "../../../manager/ObjectManager.h"
 #include "../../../weapon/ranged_weapon/BadPistol.h"
+#include "../../../weapon/ranged_weapon/BatteryHead.h"
 
 Alchemist::Alchemist() {
     skillFrameCD = 200;
@@ -13,7 +14,7 @@ void Alchemist::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new BadPistol());
+    ChangeWeapon(new BatteryHead());
     maxHp = 6;
     hp = maxHp;
     maxMp = 200;
@@ -30,7 +31,7 @@ void Alchemist::Skill() {
     PoisonBottle* poisonBottle;
     Vec direction = this->vision;
     direction.Rotate(-0.5);
-    for (int i = 0 ; i < 3 ; i++) {
+    for (int i = 0; i < 3; i++) {
         poisonBottle = new PoisonBottle();
         poisonBottle->SetPosition(this->position);
         poisonBottle->SetSpeed(direction, 6);
@@ -41,11 +42,11 @@ void Alchemist::Skill() {
 
 void Alchemist::LoadResources() {
     this->AddAnimation({
-                   "resources/player/alchemist/idle/1.bmp",
-                   "resources/player/alchemist/idle/2.bmp",
-                   "resources/player/alchemist/idle/3.bmp",
-                   "resources/player/alchemist/idle/4.bmp"
-               }, RGB(255, 255, 255), 100, false);
+                           "resources/player/alchemist/idle/1.bmp",
+                           "resources/player/alchemist/idle/2.bmp",
+                           "resources/player/alchemist/idle/3.bmp",
+                           "resources/player/alchemist/idle/4.bmp"
+                       }, RGB(255, 255, 255), 100, false);
 
     this->AddAnimation({
                            "resources/player/alchemist/idle/flip_1.bmp",
@@ -76,6 +77,3 @@ void Alchemist::LoadResources() {
                            "resources/player/alchemist/flip_dead.bmp",
                        }, RGB(255, 255, 255), 100, true);
 }
-
-
-
