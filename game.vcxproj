@@ -431,6 +431,7 @@
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardSpear.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardPistol.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\goblin_shaman\GoblinShaman.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_2\battery\Battery.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_2\big_skeleton\BigSkeleton.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_2\elite_skeleton\EliteSkeleton.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_2\elite_skeleton\EliteSkeletonCurvedSword.cpp" />
@@ -2510,6 +2511,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardSpear.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_guard\GoblinGuardPistol.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\goblin_shaman\GoblinShaman.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_2\battery\Battery.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\big_skeleton\BigSkeleton.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\elite_skeleton\EliteSkeleton.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\elite_skeleton\EliteSkeletonCurvedSword.h" />
