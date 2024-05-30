@@ -5,6 +5,7 @@
 #include "ProjectileType.h"
 #include "bullet/Arrow.h"
 #include "bullet/BadPistolBullet.h"
+#include "bullet/BigRedCircleBullet.h"
 #include "bullet/GasBlasterBullet.h"
 #include "bullet/RedCircleBullet.h"
 #include "bullet/RedDiamondBullet.h"
@@ -32,6 +33,8 @@ Projectile* ProjectileFactory::Create(ProjectileType type) {
         return new GasBlasterBullet();
     case ProjectileType::RED_SQUARE_BULLET:
         return new RedSquareBullet();
+    case ProjectileType::BIG_RED_CIRCLE_BULLET:
+        return new BigRedCircleBullet();
     // shock wave
     case ProjectileType::HAMMER_WAVE:
         return new HammerWave();
