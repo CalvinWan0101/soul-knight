@@ -558,6 +558,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\player\alchemist\Alchemist.cpp" />
+    <ClCompile Include="Source\Game\character\player\alchemist\PoisonBottle.cpp" />
     <ClCompile Include="Source\Game\character\player\knight\KinghtSkillEffect.cpp" />
     <ClCompile Include="Source\Game\character\player\knight\Knight.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -2517,6 +2519,8 @@
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\SkeletonShotgun.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton_shaman\SkeletonShaman.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
+    <ClInclude Include="Source\Game\character\player\alchemist\Alchemist.h" />
+    <ClInclude Include="Source\Game\character\player\alchemist\PoisonBottle.h" />
     <ClInclude Include="Source\Game\character\player\knight\KinghtSkillEffect.h" />
     <ClInclude Include="Source\Game\character\player\knight\Knight.h" />
     <ClInclude Include="Source\Game\character\player\priestess\HealingCircle.h" />
@@ -4292,6 +4296,25 @@
     <Content Include="Resources\object\silver_coin\2.bmp" />
     <Content Include="Resources\object\silver_coin\3.bmp" />
     <Content Include="Resources\object\silver_coin\4.bmp" />
+    <Content Include="Resources\player\alchemist\dead.bmp" />
+    <Content Include="Resources\player\alchemist\flip_dead.bmp" />
+    <Content Include="Resources\player\alchemist\idle\1.bmp" />
+    <Content Include="Resources\player\alchemist\idle\2.bmp" />
+    <Content Include="Resources\player\alchemist\idle\3.bmp" />
+    <Content Include="Resources\player\alchemist\idle\4.bmp" />
+    <Content Include="Resources\player\alchemist\idle\flip_1.bmp" />
+    <Content Include="Resources\player\alchemist\idle\flip_2.bmp" />
+    <Content Include="Resources\player\alchemist\idle\flip_3.bmp" />
+    <Content Include="Resources\player\alchemist\idle\flip_4.bmp" />
+    <Content Include="Resources\player\alchemist\run\1.bmp" />
+    <Content Include="Resources\player\alchemist\run\2.bmp" />
+    <Content Include="Resources\player\alchemist\run\3.bmp" />
+    <Content Include="Resources\player\alchemist\run\4.bmp" />
+    <Content Include="Resources\player\alchemist\run\flip_1.bmp" />
+    <Content Include="Resources\player\alchemist\run\flip_2.bmp" />
+    <Content Include="Resources\player\alchemist\run\flip_3.bmp" />
+    <Content Include="Resources\player\alchemist\run\flip_4.bmp" />
+    <Content Include="Resources\player\alchemist\skill\poison_bottle.bmp" />
     <Content Include="Resources\player\knight\dead.bmp" />
     <Content Include="Resources\player\knight\flip_dead.bmp" />
     <Content Include="Resources\player\knight\idle\1.bmp" />
