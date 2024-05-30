@@ -10,6 +10,7 @@ PoisonBottle::PoisonBottle() {
 
 void PoisonBottle::Start() {
     GeneralObject::Start();
+    SetHitBoxByRatio(0.9, 0.9);
 }
 
 void PoisonBottle::Update() {
@@ -17,7 +18,7 @@ void PoisonBottle::Update() {
 }
 
 void PoisonBottle::Collision(GameObject* gameObject) {
-    if (gameObject->HasTag(Tag::MONSTER)) {
+    if (gameObject->HasTag(Tag::MONSTER) && !gameObject->HasTag(Tag::DEAD)) {
         dynamic_cast<Monster*>(gameObject)->Poisoned(5);
         AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }

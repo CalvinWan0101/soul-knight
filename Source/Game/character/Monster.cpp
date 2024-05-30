@@ -92,6 +92,9 @@ MonsterType Monster::GetMonsterType() {
 }
 
 void Monster::Injuried(double damage) {
+    if (this->HasTag(Tag::DEAD)) {
+        return;
+    }
     this->hp -= damage;
     if (this->hp < 0) {
         this->hp = 0;

@@ -33,7 +33,7 @@ void Character::Update() {
         weapon1->SetPosition(&(this->position + Vec(-weaponOffsetX, weaponOffsetY)));
     }
 
-    if (poison.damageRemainingTimes > 0) {
+    if (poison.damageRemainingTimes > 0 && !this->HasTag(Tag::DEAD)) {
         poisonedIcon->SetPosition(this->position + Point(0, -hitBox.GetHalfHeight() - 10));
         poisonedIcon->SetVisible(true);
         poison.counter--;
