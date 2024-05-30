@@ -8,7 +8,4 @@ public:
     void Update() override;
     void LoadResources() override;
     void Collision(GameObject* gameObject) override;
-
-private:
-    void UpdateTag(Bullet* bullet);
 };

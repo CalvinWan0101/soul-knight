@@ -31,3 +31,14 @@ void Bullet::Collision(GameObject* gameObject) {
         }
     }
 }
+
+void Bullet::UpdateTag(GameObject* gameObject) {
+    if (HasTag(Tag::PLAYER_ATTACK)) {
+        gameObject->AddTag(Tag::PLAYER_ATTACK);
+        gameObject->RemoveTag(Tag::MONSTER_ATTACK);
+    }
+    else if (HasTag(Tag::MONSTER_ATTACK)) {
+        gameObject->AddTag(Tag::MONSTER_ATTACK);
+        gameObject->RemoveTag(Tag::PLAYER_ATTACK);
+    }
+}

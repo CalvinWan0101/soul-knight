@@ -37,14 +37,3 @@ void RedSplinterBullet::Update() {
 void RedSplinterBullet::LoadResources() {
     SetImages("Resources/bullet/red_splinter_bullet/", 3, RGB(255, 255, 255));
 }
-
-void RedSplinterBullet::UpdateTag(Bullet* bullet) {
-    if (HasTag(Tag::PLAYER_ATTACK)) {
-        bullet->AddTag(Tag::PLAYER_ATTACK);
-        bullet->RemoveTag(Tag::MONSTER_ATTACK);
-    }
-    else {
-        bullet->AddTag(Tag::MONSTER_ATTACK);
-        bullet->RemoveTag(Tag::PLAYER_ATTACK);
-    }
-}

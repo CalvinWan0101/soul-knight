@@ -9,5 +9,4 @@ public:
     void LoadResources() override;
 private:
     Point startPoint;
-    void UpdateTag(Bullet* bullet);
 };
