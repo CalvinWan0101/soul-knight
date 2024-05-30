@@ -12,6 +12,7 @@ enum class WeaponType {
     HOE,
     SPEAR,
     CURVED_SWORD,
+    LONG_BLADE_40M,
     
 
     Count

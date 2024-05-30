@@ -10,7 +10,9 @@
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
 #include "mygame.h"
+#include "character/player/alchemist/Alchemist.h"
 #include "character/player/knight/Knight.h"
+#include "character/player/priestess/Priestess.h"
 #include "utils/draw/Draw.h"
 #include "stage/TransferGate.h"
 #include "utils/Rand.h"
@@ -46,7 +48,7 @@ void CGameStateRun::OnMove() // ���ʹC������
 
 void CGameStateRun::OnInit() // �C������Ȥιϧγ]�w
 {
-    objectManager->SetPlayer(new Knight());
+    objectManager->SetPlayer(new Alchemist());
     objectManager->Start();
     stageManager->Initiliaze();
     uiManager.Start();

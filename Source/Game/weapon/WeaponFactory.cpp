@@ -4,6 +4,7 @@
 #include "melee_weapon/CurvedSword.h"
 #include "melee_weapon/Hammer.h"
 #include "melee_weapon/Hoe.h"
+#include "melee_weapon/LongBlade40m.h"
 #include "melee_weapon/Spear.h"
 #include "ranged_weapon/BadPistol.h"
 #include "ranged_weapon/Bow.h"
@@ -37,6 +38,8 @@ Weapon* WeaponFactory::Create(WeaponType weaponType) {
         return new Spear();
     case WeaponType::CURVED_SWORD:
         return new CurvedSword();
+    case WeaponType::LONG_BLADE_40M:
+        return new LongBlade40m();
     default:
         return nullptr;
     }

@@ -11,5 +11,7 @@ public:
     void Attack() override;
 
 private:
-    void GenerateBullets(bool isPlayer);
+    int generateBulletCounter;
+    int bulletNumber;
+    void GenerateBullets();
 };
