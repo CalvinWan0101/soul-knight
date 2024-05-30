@@ -26,7 +26,7 @@ void LongBlade40m::Update() {
 }
 
 void LongBlade40m::LoadResources() {
-    SetImages("Resources/weapon/40m_Long_Blade/", 3, RGB(255,255,255));
+    SetImages("Resources/weapon/40m_long_blade/", 3, RGB(255,255,255));
 }
 
 void LongBlade40m::Attack() {
