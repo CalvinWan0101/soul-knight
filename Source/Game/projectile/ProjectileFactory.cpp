@@ -12,6 +12,7 @@
 #include "bullet/RedRectangleBullet.h"
 #include "bullet/RedSplinterBullet.h"
 #include "bullet/RedSquareBullet.h"
+#include "shock_wave/BlowUp.h"
 #include "shock_wave/HammerWave.h"
 
 Projectile* ProjectileFactory::Create(ProjectileType type) {
@@ -38,6 +39,8 @@ Projectile* ProjectileFactory::Create(ProjectileType type) {
     // shock wave
     case ProjectileType::HAMMER_WAVE:
         return new HammerWave();
+    case ProjectileType::BLOW_UP:
+        return new BlowUp();
     // other
     case ProjectileType::INVISIBLE_SHOCK_WAVE:
         return new InvisibleShockWave();

@@ -14,6 +14,7 @@ enum class ProjectileType {
 
     // shock wave
     HAMMER_WAVE,
+    BLOW_UP,
 
     // other
     INVISIBLE_SHOCK_WAVE,

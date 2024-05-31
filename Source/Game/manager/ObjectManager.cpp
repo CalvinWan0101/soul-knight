@@ -23,6 +23,7 @@
 #include "../pool/MonsterPool.h"
 #include "../pool/ProjectilePool.h"
 #include "../projectile/effect/PoisonEffect.h"
+#include "../projectile/shock_wave/BlowUp.h"
 #include "../shop/TreasureChest.h"
 #include "../shop/Businessman.h"
 #include "../shop/DisplayStand.h"
@@ -134,9 +135,11 @@ void ObjectManager::KeyDown(char key) {
         isDisplayHitBox = !isDisplayHitBox;
         break;
     case '2': {
-        PoisonEffect* poison = new PoisonEffect(PoisonEffect::MONSTER_PURPLE);
-        poison->SetPosition(player->GetPosition());
-        AddObject(poison);
+        BlowUp* blowUp = dynamic_cast<BlowUp*>(ProjectilePool::Instance()->Acquire(ProjectileType::BLOW_UP));
+        blowUp->SetPosition(player->GetPosition());
+        blowUp->SetDamage(10);
+        blowUp->AddTag(Tag::MONSTER_ATTACK);
+        AddObject(blowUp);
         break;
     }
     case '3': {

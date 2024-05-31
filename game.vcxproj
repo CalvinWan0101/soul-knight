@@ -1008,6 +1008,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\projectile\shock_wave\BlowUp.cpp" />
     <ClCompile Include="Source\Game\projectile\shock_wave\HammerWave.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2566,6 +2567,7 @@
     <ClInclude Include="Source\Game\projectile\ProjectileFactory.h" />
     <ClInclude Include="Source\Game\projectile\ProjectileType.h" />
     <ClInclude Include="Source\Game\projectile\ShockWave.h" />
+    <ClInclude Include="Source\Game\projectile\shock_wave\BlowUp.h" />
     <ClInclude Include="Source\Game\projectile\shock_wave\HammerWave.h" />
     <ClInclude Include="Source\Game\room\MonsterRoom.h" />
     <ClInclude Include="Source\Game\room\Room.h" />
