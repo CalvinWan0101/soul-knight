@@ -19,6 +19,7 @@ Monster::Monster(double level): level(level), isInitializeWeapon(false), damageT
 void Monster::Start() {
     Character::Start();
     SetHitBoxByRatio(1, 1);
+    isOnDeadTrigger = false;
     if (!isInitializeWeapon) {
         isInitializeWeapon = true;
         InitializeWeapon();
@@ -40,10 +41,22 @@ void Monster::Update() {
     else {
         this->vision = this->speed;
     }
+
+    if (!isOnDeadTrigger && HasTag(Tag::DEAD)) {
+        isOnDeadTrigger = true;
+        OnDead();
+    }
     Character::Update();
 }
 
 void Monster::OnRemove() {
+    if (!isOnDeadTrigger) {
+        isOnDeadTrigger = true;
+        OnDead();
+    }
+}
+
+void Monster::OnDead() {
     Coin* coin = dynamic_cast<Coin*>(DropPool::Instance()->Acquire(DropType::COIN));
     coin->SetPosition(this->position + Point(Rand::Instance()->Get(-10, 10), Rand::Instance()->Get(-10, 10)));
     ObjectManager::Instance()->AddObject(coin);

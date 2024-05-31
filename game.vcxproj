@@ -499,6 +499,9 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\monster\floor_2\spider\BaseSpider.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_2\spider\PoisonSpider.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_2\spider\Spider.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2521,6 +2524,9 @@
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\SkeletonCurvedSword.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton\SkeletonShotgun.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\skeleton_shaman\SkeletonShaman.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_2\spider\BaseSpider.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_2\spider\PoisonSpider.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_2\spider\Spider.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\Alchemist.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\PoisonBottle.h" />

@@ -19,6 +19,8 @@
 #include "monster/floor_2/skeleton/SkeletonCurvedSword.h"
 #include "monster/floor_2/skeleton/SkeletonShotgun.h"
 #include "monster/floor_2/skeleton_shaman/SkeletonShaman.h"
+#include "monster/floor_2/spider/PoisonSpider.h"
+#include "monster/floor_2/spider/Spider.h"
 
 Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
@@ -65,6 +67,10 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new BigSkeleton(level);
     case MonsterType::SKELETON_SHAMAN:
         return new SkeletonShaman(level);
+    case MonsterType::SPIDER:
+        return new Spider(level);
+    case MonsterType::POISON_SPIDER:
+        return new PoisonSpider(level);
     default:
         return nullptr;
     }
