@@ -53,14 +53,3 @@ void BigRedCircleBullet::Collision(GameObject* gameObject) {
         }
     }
 }
-
-void BigRedCircleBullet::UpdateTag(Bullet* bullet) {
-    if (HasTag(Tag::PLAYER_ATTACK)) {
-        bullet->AddTag(Tag::PLAYER_ATTACK);
-        bullet->RemoveTag(Tag::MONSTER_ATTACK);
-    }
-    else {
-        bullet->AddTag(Tag::MONSTER_ATTACK);
-        bullet->RemoveTag(Tag::PLAYER_ATTACK);
-    }
-}

@@ -11,6 +11,7 @@
 #include "monster/floor_1/goblin_guard/GoblinGuardPistol.h"
 #include "monster/floor_1/goblin_guard/GoblinGuardSpear.h"
 #include "monster/floor_1/goblin_shaman/GoblinShaman.h"
+#include "monster/floor_2/battery/Battery.h"
 #include "monster/floor_2/big_skeleton/BigSkeleton.h"
 #include "monster/floor_2/elite_skeleton/EliteSkeletonCurvedSword.h"
 #include "monster/floor_2/elite_skeleton/EliteSkeletonRifle.h"
@@ -71,6 +72,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new Spider(level);
     case MonsterType::POISON_SPIDER:
         return new PoisonSpider(level);
+    case MonsterType::BATTERY:
+        return new Battery(level);
     default:
         return nullptr;
     }

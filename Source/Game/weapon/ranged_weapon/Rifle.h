@@ -11,7 +11,7 @@ public:
     void Attack() override;
 
 private:
-    int generateBulletCounter;
+    int fireCooldown;
     int bulletNumber;
     void GenerateBullets();
 };
