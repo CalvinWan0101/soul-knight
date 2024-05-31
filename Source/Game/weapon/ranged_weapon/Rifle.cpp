@@ -5,7 +5,7 @@
 #include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/BadPistolBullet.h"
 
-Rifle::Rifle(double damage, Point position) : generateBulletCounter(0), bulletNumber(0) {
+Rifle::Rifle(double damage, Point position) : fireCooldown(0), bulletNumber(0) {
     this->damage = damage;
     this->position = position;
     this->mpCost = 9;
@@ -37,7 +37,7 @@ void Rifle::Attack() {
 }
 
 void Rifle::GenerateBullets() {
-    if (generateBulletCounter == 0) {
+    if (fireCooldown == 0) {
         Vec* currentRotation = new Vec(this->rotation);
 
         ProjectilePool* projectilePool = ProjectilePool::Instance();
@@ -57,8 +57,8 @@ void Rifle::GenerateBullets() {
         
         delete currentRotation;
 
-        generateBulletCounter = 5;
+        fireCooldown = 5;
         bulletNumber--;
     }
-    generateBulletCounter--;
+    fireCooldown--;
 }
