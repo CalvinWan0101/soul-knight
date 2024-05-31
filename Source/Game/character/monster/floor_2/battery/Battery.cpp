@@ -11,7 +11,9 @@ void Battery::Start() {
     this->maxHp = 15 * level;
     hp = maxHp;
     this->speed.SetVec(0.0, 0.0);
-    this->maxSpeed = 3;
+    this->maxSpeed = 0.0000001;
+    this->weaponOffsetX = 0;
+    this->weaponOffsetY = -7;
     SetMonsterType(MonsterType::BATTERY);
 }
 
