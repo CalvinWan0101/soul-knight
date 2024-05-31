@@ -2,6 +2,7 @@
 #include "../ui/CoinText.h"
 #include "../ui/StageText.h"
 #include "../ui/PlayerState.h"
+#include "../ui/SkillCDBar.h"
 
 class UIManager {
 public:
@@ -12,4 +13,5 @@ private:
     PlayerState playerState;
     StageText stageText;
     CoinText coinText;
+    SkillCDBar skillCDBar;
 };

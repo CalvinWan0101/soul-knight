@@ -1625,6 +1625,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\ui\CoinText.cpp" />
     <ClCompile Include="Source\Game\ui\PlayerState.cpp" />
+    <ClCompile Include="Source\Game\ui\SkillCDBar.cpp" />
     <ClCompile Include="Source\Game\ui\StageText.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2610,6 +2611,7 @@
     <ClInclude Include="Source\Game\ui\Bar.h" />
     <ClInclude Include="Source\Game\ui\CoinText.h" />
     <ClInclude Include="Source\Game\ui\PlayerState.h" />
+    <ClInclude Include="Source\Game\ui\SkillCDBar.h" />
     <ClInclude Include="Source\Game\ui\StageText.h" />
     <ClInclude Include="Source\Game\utils\draw\Draw.h" />
     <ClInclude Include="Source\Game\utils\draw\DrawCommand.h" />
