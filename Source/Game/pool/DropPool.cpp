@@ -35,7 +35,7 @@ void DropPool::Initialize() {
         std::vector<Drop*> drops;
         for (int j = 0; j < PREALLOCATIONS; j++) {
             Drop* drop = DropFactory::Create(static_cast<DropType>(i));
-            drop->Start();
+            // drop->Start();
             drops.emplace_back(drop);
         }
         pool.emplace_back(drops);

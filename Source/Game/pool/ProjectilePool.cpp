@@ -36,7 +36,7 @@ void ProjectilePool::Initialize() {
         for (int j = 0; j < PREALLOCATIONS; j++) {
             GameObject* gameObject = dynamic_cast<GameObject*>(
                 ProjectileFactory::Create(static_cast<ProjectileType>(i)));
-            gameObject->Start();
+            // gameObject->Start();
             projectiles.push_back(dynamic_cast<Projectile*>(gameObject));
         }
         pool.push_back(projectiles);
