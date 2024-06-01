@@ -9,6 +9,7 @@ public:
     static ProjectilePool* Instance();
     ProjectilePool();
     ~ProjectilePool();
+    void Initialize();
     Projectile* Acquire(ProjectileType type);
     void Release(Projectile* projectile);
 

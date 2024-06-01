@@ -2,7 +2,7 @@
 
 enum class MonsterType {
     // floor 1
-    DEVEL_S_SNARE,
+    // DEVEL_S_SNARE,
 
     GOBLIN_GUARD_SPEAR,
     GOBLIN_GUARD_PISTOL,
@@ -15,13 +15,13 @@ enum class MonsterType {
     GOBLIN_SHAMAN,
     GOBLIN_GIANT,
 
-    TRUMPET_FLOWER,
+    // TRUMPET_FLOWER,
 
     NORMAL_BOAR,
     DIRE_BOAR,
 
     // floor 2
-    C6H8O6,
+    // C6H8O6,
 
     SKELETON_BOW,
     SKELETON_CURVED_SWORD,
@@ -39,16 +39,16 @@ enum class MonsterType {
     BATTERY,
 
     // floor 3
-    ANUBIS,
+    // ANUBIS,
 
-    ALIEN,
-    UFO,
+    // ALIEN,
+    // UFO,
 
-    GOBLIN,
-    GOBLIN_FLY,
+    // GOBLIN,
+    // GOBLIN_FLY,
 
-    VARKOLYN_GUARD,
-    VARKOLYN,
+    // VARKOLYN_GUARD,
+    // VARKOLYN,
 
     COUNT
 };

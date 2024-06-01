@@ -4,7 +4,7 @@
 #include "../character/Monster.h"
 #include "../character/MonsterFactory.h"
 
-#define PREALLOCATIONS 20
+#define PREALLOCATIONS 10
 
 MonsterPool* MonsterPool::instance = nullptr;
 
@@ -17,13 +17,6 @@ MonsterPool* MonsterPool::Instance() {
 
 MonsterPool::MonsterPool() {
     pool = std::vector<std::vector<Monster*>>(static_cast<int>(MonsterType::COUNT));
-    for (int i = 0; i < static_cast<int>(MonsterType::COUNT); i++) {
-        std::vector<Monster*> monsters;
-        for (int j = 0; j < PREALLOCATIONS; j++) {
-            monsters.push_back(MonsterFactory::Create(static_cast<MonsterType>(i)));
-        }
-        pool.push_back(monsters);
-    }
 }
 
 MonsterPool::~MonsterPool() {
@@ -34,6 +27,18 @@ MonsterPool::~MonsterPool() {
         vector.clear();
     }
     pool.clear();
+}
+
+void MonsterPool::Initialize() {
+    for (int i = 0; i < static_cast<int>(MonsterType::COUNT); i++) {
+        std::vector<Monster*> monsters;
+        for (int j = 0; j < PREALLOCATIONS; j++) {
+            Monster *monster = MonsterFactory::Create(static_cast<MonsterType>(i));
+            monster->Start();
+            monsters.push_back(monster);
+        }
+        pool.push_back(monsters);
+    }
 }
 
 Monster* MonsterPool::Acquire(MonsterType type, double level) {

@@ -3,6 +3,7 @@
 
 #include "../projectile/Projectile.h"
 #include "../projectile/ProjectileFactory.h"
+#include "../utils/object/GameObject.h"
 
 #define PREALLOCATIONS 50
 
@@ -17,13 +18,6 @@ ProjectilePool* ProjectilePool::Instance() {
 
 ProjectilePool::ProjectilePool() {
     pool = std::vector<std::vector<Projectile*>>(static_cast<int>(ProjectileType::COUNT));
-    for (int i = 0; i < static_cast<int>(ProjectileType::COUNT); i++) {
-        std::vector<Projectile*> projectiles;
-        for (int j = 0; j < PREALLOCATIONS; j++) {
-            projectiles.push_back(ProjectileFactory::Create(static_cast<ProjectileType>(i)));
-        }
-        pool.push_back(projectiles);
-    }
 }
 
 ProjectilePool::~ProjectilePool() {
@@ -36,6 +30,18 @@ ProjectilePool::~ProjectilePool() {
     pool.clear();
 }
 
+void ProjectilePool::Initialize() {
+    for (int i = 0; i < static_cast<int>(ProjectileType::COUNT); i++) {
+        std::vector<Projectile*> projectiles;
+        for (int j = 0; j < PREALLOCATIONS; j++) {
+            GameObject* gameObject = dynamic_cast<GameObject*>(
+                ProjectileFactory::Create(static_cast<ProjectileType>(i)));
+            gameObject->Start();
+            projectiles.push_back(dynamic_cast<Projectile*>(gameObject));
+        }
+        pool.push_back(projectiles);
+    }
+}
 
 Projectile* ProjectilePool::Acquire(ProjectileType type) {
     int index = static_cast<int>(type);

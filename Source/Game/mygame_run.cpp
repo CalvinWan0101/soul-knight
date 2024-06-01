@@ -48,6 +48,9 @@ void CGameStateRun::OnMove() // ���ʹC������
 
 void CGameStateRun::OnInit() // �C������Ȥιϧγ]�w
 {
+    projectilePool->Initialize();
+    monsterPool->Initialize();
+    dropPoll->Initialize();
     objectManager->SetPlayer(new Alchemist());
     objectManager->Start();
     stageManager->Initiliaze();
