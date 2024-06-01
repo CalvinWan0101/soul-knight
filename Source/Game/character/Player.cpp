@@ -98,6 +98,16 @@ double Player::GetMaxShield() {
     return maxShild;
 }
 
+int Player::GetSkillFrameCD() {
+    return skillFrameCD;
+}
+
+
+int Player::GetSkillCD() {
+    return skillCounter;
+}
+
+
 HitBox& Player::GetAlertRange() {
     return alertRange;
 }

@@ -17,6 +17,8 @@ public:
     void Healing(int value);
     double GetShield();
     double GetMaxShield();
+    int GetSkillFrameCD();
+    int GetSkillCD();
     HitBox& GetAlertRange();
 
     void SetVision(Vec vision);
