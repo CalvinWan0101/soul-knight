@@ -505,6 +505,7 @@
     <ClCompile Include="Source\Game\character\monster\floor_2\spider\Spider.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\alien\Alien.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_3\alien\AlienRedLightsaber.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2536,6 +2537,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_2\spider\Spider.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\alien\Alien.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_3\alien\AlienRedLightsaber.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\Alchemist.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\PoisonBottle.h" />

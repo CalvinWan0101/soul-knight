@@ -12,5 +12,5 @@ void AlienMachineGun::Start() {
 }
 
 void AlienMachineGun::InitializeWeapon() {
-    this->SetWeapon(new MachineGun(3));
+    this->SetWeapon(new MachineGun(4));
 }

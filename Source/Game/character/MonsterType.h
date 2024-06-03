@@ -43,6 +43,7 @@ enum class MonsterType {
 
     // ALIEN,
     ALIEN_MACHINE_GUN,
+    ALIEN_RED_LIGHTSABER,
     // UFO,
 
     // GOBLIN,
