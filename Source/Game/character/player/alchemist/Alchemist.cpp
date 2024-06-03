@@ -3,7 +3,7 @@
 
 #include "PoisonBottle.h"
 #include "../../../manager/ObjectManager.h"
-#include "../../../weapon/ranged_weapon/AlienMachineGun.h"
+#include "../../../weapon/ranged_weapon/MachineGun.h"
 #include "../../../weapon/ranged_weapon/BadPistol.h"
 #include "../../../weapon/ranged_weapon/BatteryHead.h"
 
@@ -15,7 +15,7 @@ void Alchemist::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new AlienMachineGun());
+    ChangeWeapon(new MachineGun());
     maxHp = 6;
     hp = maxHp;
     maxMp = 200;

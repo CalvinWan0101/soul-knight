@@ -503,6 +503,8 @@
     <ClCompile Include="Source\Game\character\monster\floor_2\spider\BaseSpider.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_2\spider\PoisonSpider.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_2\spider\Spider.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_3\alien\Alien.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2358,7 +2360,7 @@
     <ClCompile Include="Source\Game\weapon\melee_weapon\Spear.cpp" />
     <ClCompile Include="Source\Game\weapon\RangedWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\MeleeWeapon.cpp" />
-    <ClCompile Include="Source\Game\weapon\ranged_weapon\AlienMachineGun.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\MachineGun.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\BadPistol.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2532,6 +2534,8 @@
     <ClInclude Include="Source\Game\character\monster\floor_2\spider\BaseSpider.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\spider\PoisonSpider.h" />
     <ClInclude Include="Source\Game\character\monster\floor_2\spider\Spider.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_3\alien\Alien.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\Alchemist.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\PoisonBottle.h" />
@@ -2654,7 +2658,7 @@
     <ClInclude Include="Source\Game\weapon\melee_weapon\Spear.h" />
     <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />
     <ClInclude Include="Source\Game\weapon\MeleeWeapon.h" />
-    <ClInclude Include="Source\Game\weapon\ranged_weapon\AlienMachineGun.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\MachineGun.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BatteryHead.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Bow.h" />

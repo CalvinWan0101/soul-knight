@@ -1,42 +1,42 @@
 ﻿#include "stdafx.h"
-#include "AlienMachineGun.h"
+#include "MachineGun.h"
 
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/RedRectangleBullet.h"
 
-AlienMachineGun::AlienMachineGun(double damage, Point position) : fireCooldown(0), bulletNumber(0) {
+MachineGun::MachineGun(double damage, Point position) : fireCooldown(0), bulletNumber(0) {
     this->damage = damage;
     this->position = position;
     this->mpCost = 3;
 }
 
-Weapon* AlienMachineGun::Copy() {
-    return new AlienMachineGun(this->damage, this->position);
+Weapon* MachineGun::Copy() {
+    return new MachineGun(this->damage, this->position);
 }
 
-void AlienMachineGun::Start() {
+void MachineGun::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0, 0, 0}, {-8, 0}, 2);
     SetInteractiveText("alien machine gun", InteractiveText::COMMON);
 }
 
-void AlienMachineGun::Update() {
+void MachineGun::Update() {
     RangedWeapon::Update();
     if (bulletNumber > 0) {
         GenerateBullets();
     }
 }
 
-void AlienMachineGun::LoadResources() {
+void MachineGun::LoadResources() {
     SetImages("Resources/weapon/alien_machine_gun/", 3, RGB(255, 255, 255));
 }
 
-void AlienMachineGun::Attack() {
+void MachineGun::Attack() {
     bulletNumber = 2;
 }
 
-void AlienMachineGun::GenerateBullets() {
+void MachineGun::GenerateBullets() {
     if (fireCooldown == 0) {
         Vec currentRotation = new Vec(this->rotation);
         currentRotation.Rotate(0.2);
