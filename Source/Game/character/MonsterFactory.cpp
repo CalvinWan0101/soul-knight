@@ -24,6 +24,7 @@
 #include "monster/floor_2/spider/Spider.h"
 #include "monster/floor_3/alien/AlienMachineGun.h"
 #include "monster/floor_3/alien/AlienRedLightsaber.h"
+#include "monster/floor_3/ufo/UFO.h"
 
 Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
@@ -80,6 +81,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new AlienMachineGun(level);
     case MonsterType::ALIEN_RED_LIGHTSABER:
         return new AlienRedLightsaber(level);
+    case MonsterType::UFO:
+        return new UFO(level);
     default:
         return nullptr;
     }
