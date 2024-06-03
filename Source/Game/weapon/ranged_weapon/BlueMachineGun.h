@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include "../RangedWeapon.h"
 
-class MachineGun : public RangedWeapon {
+class BlueMachineGun : public RangedWeapon {
 public:
-    MachineGun(double damage = 4, Point position = {0, 0});
+    BlueMachineGun(double damage = 4, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

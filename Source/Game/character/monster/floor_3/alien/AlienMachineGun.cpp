@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "AlienMachineGun.h"
 
-#include "../../../../weapon/ranged_weapon/MachineGun.h"
+#include "../../../../weapon/ranged_weapon/BlueMachineGun.h"
 
 AlienMachineGun::AlienMachineGun(double level) : Alien(level) {
 }
@@ -12,5 +12,5 @@ void AlienMachineGun::Start() {
 }
 
 void AlienMachineGun::InitializeWeapon() {
-    this->SetWeapon(new MachineGun(4));
+    this->SetWeapon(new BlueMachineGun(4));
 }

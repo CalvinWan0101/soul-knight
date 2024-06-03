@@ -2362,7 +2362,7 @@
     <ClCompile Include="Source\Game\weapon\melee_weapon\Spear.cpp" />
     <ClCompile Include="Source\Game\weapon\RangedWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\MeleeWeapon.cpp" />
-    <ClCompile Include="Source\Game\weapon\ranged_weapon\MachineGun.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\BlueMachineGun.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\BadPistol.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2663,7 +2663,7 @@
     <ClInclude Include="Source\Game\weapon\melee_weapon\Spear.h" />
     <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />
     <ClInclude Include="Source\Game\weapon\MeleeWeapon.h" />
-    <ClInclude Include="Source\Game\weapon\ranged_weapon\MachineGun.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\BlueMachineGun.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BadPistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\BatteryHead.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Bow.h" />
