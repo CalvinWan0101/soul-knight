@@ -2358,6 +2358,7 @@
     </ClCompile>
     <ClCompile Include="Source\Game\weapon\melee_weapon\Hoe.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\LongBlade40m.cpp" />
+    <ClCompile Include="Source\Game\weapon\melee_weapon\PurpleAxe.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\RedLightsaber.cpp" />
     <ClCompile Include="Source\Game\weapon\melee_weapon\Spear.cpp" />
     <ClCompile Include="Source\Game\weapon\RangedWeapon.cpp" />
@@ -2659,6 +2660,7 @@
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hammer.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Hoe.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\LongBlade40m.h" />
+    <ClInclude Include="Source\Game\weapon\melee_weapon\PurpleAxe.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\RedLightsaber.h" />
     <ClInclude Include="Source\Game\weapon\melee_weapon\Spear.h" />
     <ClInclude Include="Source\Game\weapon\RangedWeapon.h" />
