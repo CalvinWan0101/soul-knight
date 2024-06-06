@@ -507,6 +507,8 @@
     <ClCompile Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\alien\AlienRedLightsaber.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\ufo\UFO.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuard.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuardAxe.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2542,6 +2544,8 @@
     <ClInclude Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\alien\AlienRedLightsaber.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\ufo\UFO.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuard.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuardAxe.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\Alchemist.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\PoisonBottle.h" />

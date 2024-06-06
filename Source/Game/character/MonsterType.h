@@ -41,7 +41,6 @@ enum class MonsterType {
     // floor 3
     // ANUBIS,
 
-    // ALIEN,
     ALIEN_MACHINE_GUN,
     ALIEN_RED_LIGHTSABER,
     UFO,
@@ -49,7 +48,7 @@ enum class MonsterType {
     // GOBLIN,
     // GOBLIN_FLY,
 
-    // VARKOLYN_GUARD,
+    VARKOLYN_GUARD_AXE,
     // VARKOLYN,
 
     COUNT
