@@ -4369,24 +4369,24 @@
     <Content Include="Resources\monster\floor_1\boar\run\flip_2.bmp" />
     <Content Include="Resources\monster\floor_1\boar\run\flip_3.bmp" />
     <Content Include="Resources\monster\floor_1\boar\run\flip_4.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_1\1.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_1\flip_1.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\1.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\2.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\3.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\4.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\flip_1.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\flip_2.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\flip_3.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_1\flip_4.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\1.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\2.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\3.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\4.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\flip_1.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\flip_2.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\flip_3.bmp" />
-    <Content Include="Resources\monster\floor_1\devil_snare\section_2\animation_2\flip_4.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_1\1.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_1\flip_1.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\1.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\2.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\3.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\4.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\flip_1.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\flip_2.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\flip_3.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_1\flip_4.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\1.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\2.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\3.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\4.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\flip_1.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\flip_2.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\flip_3.bmp" />
+    <Content Include="Resources\monster\floor_1\devils_snare\section_2\animation_2\flip_4.bmp" />
     <Content Include="Resources\monster\floor_1\dire_boar\dead.bmp" />
     <Content Include="Resources\monster\floor_1\dire_boar\flip_dead.bmp" />
     <Content Include="Resources\monster\floor_1\dire_boar\idle\1.bmp" />
@@ -7403,6 +7403,9 @@
     <Content Include="Resources\weapon\ufo_weapon\template\flip_ufo_weapon.bmp" />
     <Content Include="Resources\weapon\ufo_weapon\template\ufo_weapon.bmp" />
     <Content Include="Resources\xml.ipynb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source\Game\character\monster\floor_1\devils_snare\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
