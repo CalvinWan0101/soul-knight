@@ -19,3 +19,11 @@ protected:
 
     virtual void GenerageBullet() = 0;
 };
+
+class DevilsSnareSkill2 : public DevilsSnareSkill {
+public:
+    DevilsSnareSkill2(Point* position);
+
+private:
+    void GenerageBullet() override;
+};

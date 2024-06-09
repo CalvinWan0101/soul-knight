@@ -6,6 +6,7 @@
 #include "../../../../projectile/bullet/RedRectangleBullet.h"
 #include "../../../../weapon/melee_weapon/Hammer.h"
 #include "../../../../weapon/ranged_weapon/UfoWeapon.h"
+#include "skill/DevilsSnareSkill.h"
 
 DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
     skill2 = new DevilsSnareSkill2(&position);

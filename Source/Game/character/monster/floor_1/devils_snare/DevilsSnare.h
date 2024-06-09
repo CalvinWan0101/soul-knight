@@ -2,7 +2,8 @@
 #include "../../../Monster.h"
 #include "../../../../manager/ObjectManager.h"
 #include "../../../../pool/ProjectilePool.h"
-#include "skill/DevilsSnareSkill2.h"
+
+class DevilsSnareSkill;
 
 class DevilsSnare : public Monster {
 public:
@@ -19,5 +20,5 @@ private:
     ObjectManager* objectManager = ObjectManager::Instance();
     bool isAngry = false;
     int timer;
-    DevilsSnareSkill2* skill2;
+    DevilsSnareSkill* skill2;
 };
