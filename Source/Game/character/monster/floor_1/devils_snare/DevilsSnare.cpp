@@ -7,7 +7,8 @@
 #include "../../../../weapon/melee_weapon/Hammer.h"
 #include "../../../../weapon/ranged_weapon/UfoWeapon.h"
 
-DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0), poisonNeedleCoolDown(0), poisonNeedleNumber(0) {
+DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
+    skill2 = new DevilsSnareSkill2(&position);
 }
 
 DevilsSnare::~DevilsSnare() {
@@ -24,13 +25,10 @@ void DevilsSnare::Start() {
 
 void DevilsSnare::Update() {
     Monster::Update();
+    skill2->Update();
     if (timer == 0) {
-        poisonNeedleNumber = 5;
-        timer = 20;
-    }
-
-    if (poisonNeedleNumber > 0) {
-        PoisonNeedleStrike();
+        skill2->Activate();
+        timer = 100;
     }
     timer--;
 }
@@ -55,27 +53,4 @@ void DevilsSnare::AutoMation() {
 
 void DevilsSnare::InitializeWeapon() {
     this->SetWeapon(new UfoWeapon(5));
-}
-
-void DevilsSnare::PoisonNeedleStrike() {
-    if (poisonNeedleCoolDown == 0) {
-        Vec rotation{1.0, 1.0};
-
-        for (int i = 0; i < 18; ++i) {
-            Bullet* bullet = static_cast<RedRectangleBullet*>(projectilePool->
-                Acquire(ProjectileType::RED_RECTANGLE_BULLET));
-            bullet->SetSpeed(rotation, 5);
-            bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
-            bullet->SetDamage(3);
-            bullet->AddTag(Tag::MONSTER_ATTACK);
-            bullet->RemoveTag(Tag::PLAYER_ATTACK);
-            bullet->SetPoison(true);
-            objectManager->AddObject(bullet);
-            rotation.Rotate(-0.35);
-        }
-
-        poisonNeedleCoolDown = 5;
-        poisonNeedleNumber--;
-    }
-    poisonNeedleCoolDown--;
 }
