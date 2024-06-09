@@ -1,5 +1,7 @@
 ﻿#include "stdafx.h"
 #include "MonsterRoom.h"
+
+#include <iostream>
 #include <random>
 #include "../manager/ObjectManager.h"
 #include "../manager/StageManager.h"
@@ -91,7 +93,9 @@ void MonsterRoom::IsCleared() {
 void MonsterRoom::SetMonsters() {
     for (auto monster : monsterMap) {
         for (int i = 0; i < monster.second; i++) {
-            monsters.push_back(MonsterPool::Instance()->Acquire(monster.first, 1));
+            Monster* monsterInstance = MonsterPool::Instance()->Acquire(monster.first, 1);
+            monsterInstance->Start();
+            monsters.push_back(monsterInstance);
         }
     }
     PlacedMonster();
@@ -107,6 +111,10 @@ void MonsterRoom::PlacedMonster() {
     double maxY = topLeft.GetY() + 16 * (size + 1) - centerOffset.GetY();
 
     for (auto monster : monsters) {
+        if (monster->GetMonsterType() == MonsterType::DEVELS_SNARE) {
+            monster->SetPosition(topLeft + Point((size + 2) * 8, (size + 2) * 8) - centerOffset);
+            continue;
+        }
         monster->SetPosition(
             Point(Rand::Instance()->Get(minX + 16, maxX - 16), Rand::Instance()->Get(minY + 16, maxY - 16)));
     }
