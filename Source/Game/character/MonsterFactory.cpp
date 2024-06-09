@@ -4,6 +4,7 @@
 #include "monster/floor_1/goblin_giant/GoblinGiant.h"
 #include "monster/floor_1/boar/DireBoar.h"
 #include "monster/floor_1/boar/NormalBoar.h"
+#include "monster/floor_1/devils_snare/DevilsSnare.h"
 #include "monster/floor_1/elite_goblin_guard/EliteGoblinGuardDart.h"
 #include "monster/floor_1/elite_goblin_guard/EliteGoblinGuardHoe.h"
 #include "monster/floor_1/elite_goblin_guard/EliteGoblinGuardShotgun.h"
@@ -30,6 +31,8 @@
 Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
     // level 1
+    case MonsterType::DEVELS_SNARE:
+        return new DevilsSnare(level);
     case MonsterType::GOBLIN_GIANT:
         return new GoblinGiant(level);
 

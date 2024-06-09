@@ -2,7 +2,7 @@
 
 enum class MonsterType {
     // floor 1
-    // DEVEL_S_SNARE,
+    DEVELS_SNARE,
 
     GOBLIN_GUARD_SPEAR,
     GOBLIN_GUARD_PISTOL,
