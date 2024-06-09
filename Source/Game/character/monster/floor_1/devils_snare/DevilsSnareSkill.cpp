@@ -1,6 +1,9 @@
 ﻿#include "stdafx.h"
 #include "DevilsSnareSkill.h"
 
+#include <iostream>
+
+#include "../../../Player.h"
 #include "../../../../projectile/bullet/RedCircleBullet.h"
 #include "../../../../projectile/bullet/RedConicalBullet.h"
 #include "../../../../projectile/bullet/RedHollowCircleBullet.h"
@@ -113,6 +116,31 @@ void DevilsSnareSkill3::GenerageBullet() {
         objectManager->AddObject(bullet);
         rotation.Rotate(-0.35);
     }
+}
+
+// ---------- skill 4 ----------
+
+DevilsSnareSkill4::DevilsSnareSkill4(Point* position) : DevilsSnareSkill(position, 10, 1) {
+}
+
+void DevilsSnareSkill4::GenerageBullet() {
+    Player* player = ObjectManager::Instance()->GetPlayer();
+
+    if (isPlayerAttacked) {
+        if (player->GetPosition().Distance(playerPosition) > 5) {
+            player->SetSpeed(playerSpeed, 1);
+            isPlayerAttacked = false;
+        }
+        return;
+    }
+
+    isPlayerAttacked = true;
+
+    playerPosition = player->GetPosition();
+    playerSpeed = player->GetSpeed();
+
+    player->SetSpeed(Vec(position->GetX() - player->GetPosition().GetX(),
+                         position->GetY() - player->GetPosition().GetY()), 0.8);
 }
 
 // ---------- skill 5 ----------

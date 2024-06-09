@@ -54,6 +54,17 @@ private:
     void GenerageBullet() override;
 };
 
+class DevilsSnareSkill4 : public DevilsSnareSkill {
+public:
+    DevilsSnareSkill4(Point* position);
+
+private:
+    void GenerageBullet() override;
+    Point playerPosition;
+    Vec playerSpeed;
+    bool isPlayerAttacked = false;
+};
+
 class DevilsSnareSkill5 : public DevilsSnareSkill {
 public:
     DevilsSnareSkill5(Point* position);
