@@ -6,6 +6,7 @@
 #include "../../../weapon/ranged_weapon/BlueMachineGun.h"
 #include "../../../weapon/ranged_weapon/BadPistol.h"
 #include "../../../weapon/ranged_weapon/BatteryHead.h"
+#include "../../../weapon/ranged_weapon/GasBlaster.h"
 
 Alchemist::Alchemist() {
     skillFrameCD = 200;
@@ -15,7 +16,7 @@ void Alchemist::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new BlueMachineGun());
+    ChangeWeapon(new GasBlaster(200));
     maxHp = 6;
     hp = maxHp;
     maxMp = 200;

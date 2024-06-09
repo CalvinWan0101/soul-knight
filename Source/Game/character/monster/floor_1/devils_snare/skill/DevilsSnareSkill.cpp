@@ -7,8 +7,14 @@ DevilsSnareSkill::DevilsSnareSkill(Point* position, int bulletCoolDown, int bull
 }
 
 void DevilsSnareSkill::Update() {
-    if (bulletNumberCounter > 0) {
+    if (bulletNumberCounter == 0) {
+        return;
+    }
+    bulletCoolDownCounter--;
+    if (bulletCoolDownCounter == 0) {
         GenerageBullet();
+        bulletCoolDownCounter = bulletCoolDown;
+        bulletNumberCounter--;
     }
 }
 
