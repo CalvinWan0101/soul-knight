@@ -1,11 +1,11 @@
 ﻿#pragma once
-#include "../../../../../manager/ObjectManager.h"
-#include "../../../../../pool/ProjectilePool.h"
+#include "../../../../manager/ObjectManager.h"
+#include "../../../../pool/ProjectilePool.h"
 
 class DevilsSnareSkill {
 public:
     DevilsSnareSkill(Point* position, int bulletCoolDown, int bulletNumber);
-    void Update();
+    virtual void Update();
     void Activate();
 
 protected:
@@ -20,10 +20,20 @@ protected:
     virtual void GenerageBullet() = 0;
 };
 
+class DevilsSnareSkill1 : public DevilsSnareSkill {
+public:
+    DevilsSnareSkill1(Point* position);
+
+private:
+    void GenerageBullet() override;
+};
+
 class DevilsSnareSkill2 : public DevilsSnareSkill {
 public:
     DevilsSnareSkill2(Point* position);
+    void Update() override;
 
 private:
+    Vec rotation = Vec(1.0, 1.0);
     void GenerageBullet() override;
 };
