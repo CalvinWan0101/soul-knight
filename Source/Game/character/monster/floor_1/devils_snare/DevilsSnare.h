@@ -2,6 +2,7 @@
 #include "../../../Monster.h"
 #include "../../../../manager/ObjectManager.h"
 #include "../../../../pool/ProjectilePool.h"
+#include "../../../../ui/Bar.h"
 
 class DevilsSnareSkill;
 
@@ -11,6 +12,8 @@ public:
     ~DevilsSnare();
     void Start() override;
     void Update() override;
+    void Show(Point screenPositoin) override;
+    void OnDead() override;
     void LoadResources() override;
     void AutoMation() override;
     void InitializeWeapon() override;
@@ -21,4 +24,5 @@ private:
     bool isAngry = false;
     int timer;
     DevilsSnareSkill* skills[5];
+    Bar hpBar;
 };

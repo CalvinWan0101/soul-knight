@@ -7,9 +7,14 @@
 #include "../../../../weapon/melee_weapon/Hammer.h"
 #include "../../../../weapon/ranged_weapon/UfoWeapon.h"
 #include "DevilsSnareSkill.h"
+#include "../../../../drop/Coin.h"
+#include "../../../../drop/DropType.h"
+#include "../../../../pool/DropPool.h"
 #include "../../../../utils/Rand.h"
 
-DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
+DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0),
+                                             hpBar(500, 20, RGB(77, 0, 124), RGB(226, 55, 44), RGB(17, 0, 64),
+                                                   Point(280, 30)) {
     skills[0] = new DevilsSnareSkill0(&position);
     skills[1] = new DevilsSnareSkill1(&position);
     skills[2] = new DevilsSnareSkill2(&position);
@@ -78,6 +83,27 @@ void DevilsSnare::Update() {
         timer = 100;
     }
     timer--;
+}
+
+void DevilsSnare::Show(Point screenPositoin) {
+    Monster::Show(screenPositoin);
+    hpBar.Show(hp, maxHp);
+}
+
+void DevilsSnare::OnDead() {
+    GameObject* drop;
+    for (int i = 0; i < Rand::Instance()->Get(10, 30); i++) {
+        drop = DropPool::Instance()->Acquire(DropType::COIN);
+        drop->SetPosition(
+            this->position + Point(Rand::Instance()->Get(-30, 30), Rand::Instance()->Get(-30, 30)));
+        ObjectManager::Instance()->AddObject(drop);
+    }
+    for (int i = 0; i < Rand::Instance()->Get(10, 30); i++) {
+        drop = DropPool::Instance()->Acquire(DropType::MAGIC_BALL);
+        drop->SetPosition(
+            this->position + Point(Rand::Instance()->Get(-30, 30), Rand::Instance()->Get(-30, 30)));
+        ObjectManager::Instance()->AddObject(drop);
+    }
 }
 
 void DevilsSnare::LoadResources() {
