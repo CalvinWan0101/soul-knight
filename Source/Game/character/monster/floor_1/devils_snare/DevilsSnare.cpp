@@ -25,6 +25,7 @@ DevilsSnare::~DevilsSnare() {
 
 void DevilsSnare::Start() {
     Monster::Start();
+    isAngry = false;
     this->maxHp = 552 * level;
     hp = maxHp;
     this->speed.SetVec(0.0, 0.0);
@@ -34,6 +35,29 @@ void DevilsSnare::Start() {
 
 void DevilsSnare::Update() {
     Monster::Update();
+    if (face == Face::RIGHT) {
+        if (state == State::DEAD) {
+            index = 4;
+        }
+        else if (!isAngry) {
+            index = 0;
+        }
+        else {
+            index = 2;
+        }
+    }
+    else {
+        if (state == State::DEAD) {
+            index = 5;
+        }
+        else if (!isAngry) {
+            index = 1;
+        }
+        else {
+            index = 3;
+        }
+    }
+
     if (hp <= maxHp / 2 && !isAngry) {
         isAngry = true;
     }
@@ -64,10 +88,16 @@ void DevilsSnare::LoadResources() {
                            "resources/monster/floor_1/devils_snare/section_1/flip_1.bmp"
                        }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
-                           "resources/monster/floor_1/devils_snare/section_1/1.bmp"
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/1.bmp",
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/2.bmp",
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/3.bmp",
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/4.bmp"
                        }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
-                           "resources/monster/floor_1/devils_snare/section_1/flip_1.bmp"
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/flip_1.bmp",
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/flip_2.bmp",
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/flip_3.bmp",
+                           "resources/monster/floor_1/devils_snare/section_2/animation_1/flip_4.bmp"
                        }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
                            "resources/monster/floor_1/devils_snare/dead.bmp"
