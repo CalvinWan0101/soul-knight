@@ -239,6 +239,7 @@
     <ClCompile Include="Source\Core\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\ZulanTheColossus.cpp" />
     <ClCompile Include="Source\Game\character\CharacterAffect.cpp" />
     <ClCompile Include="Source\Game\character\DamageText.cpp" />
     <ClCompile Include="Source\Game\character\Monster.cpp">
@@ -2507,6 +2508,7 @@
     <ClInclude Include="Source\Core\MainFrm.h" />
     <ClInclude Include="Source\Core\Resource.h" />
     <ClInclude Include="Source\Core\StdAfx.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\ZulanTheColossus.h" />
     <ClInclude Include="Source\Game\character\CharacterAffect.h" />
     <ClInclude Include="Source\Game\character\DamageText.h" />
     <ClInclude Include="Source\Game\character\Monster.h" />
@@ -2959,6 +2961,8 @@
     <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\angry\2.bmp" />
     <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\angry\flip_1.bmp" />
     <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\angry\flip_2.bmp" />
+    <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\dead.bmp" />
+    <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\flip_dead.bmp" />
     <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\normal\1.bmp" />
     <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\normal\2.bmp" />
     <Content Include="Resources\boss\zulan_the_colossus\zulan_the_colossus\normal\flip_1.bmp" />
