@@ -20,10 +20,5 @@ private:
     ObjectManager* objectManager = ObjectManager::Instance();
     bool isAngry = false;
     int timer;
-    DevilsSnareSkill* skill0;
-    DevilsSnareSkill* skill1;
-    DevilsSnareSkill* skill2;
-    DevilsSnareSkill* skill3;
-    DevilsSnareSkill* skill4;
-    DevilsSnareSkill* skill5;
+    DevilsSnareSkill* skills[6];
 };

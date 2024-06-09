@@ -7,23 +7,21 @@
 #include "../../../../weapon/melee_weapon/Hammer.h"
 #include "../../../../weapon/ranged_weapon/UfoWeapon.h"
 #include "DevilsSnareSkill.h"
+#include "../../../../utils/Rand.h"
 
 DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
-    skill0 = new DevilsSnareSkill0(&position);
-    skill1 = new DevilsSnareSkill1(&position);
-    skill2 = new DevilsSnareSkill2(&position);
-    skill3 = new DevilsSnareSkill3(&position);
-    skill4 = new DevilsSnareSkill4(&position);
-    skill5 = new DevilsSnareSkill5(&position);
+    skills[0] = new DevilsSnareSkill0(&position);
+    skills[1] = new DevilsSnareSkill1(&position);
+    skills[2] = new DevilsSnareSkill2(&position);
+    skills[3] = new DevilsSnareSkill3(&position);
+    skills[4] = new DevilsSnareSkill4(&position);
+    skills[5] = new DevilsSnareSkill5(&position);
 }
 
 DevilsSnare::~DevilsSnare() {
-    delete skill0;
-    delete skill1;
-    delete skill2;
-    delete skill3;
-    delete skill4;
-    delete skill5;
+    for (int i = 0; i < 6; i++) {
+        delete skills[i];
+    }
 }
 
 void DevilsSnare::Start() {
@@ -37,19 +35,23 @@ void DevilsSnare::Start() {
 
 void DevilsSnare::Update() {
     Monster::Update();
-    skill0->Update();
-    skill1->Update();
-    skill2->Update();
-    skill3->Update();
-    skill4->Update();
-    skill5->Update();
+    if (hp <= maxHp / 2 && !isAngry) {
+        isAngry = true;
+    }
+    
+    for (int i = 0; i < 6; i++) {
+        skills[i]->Update();
+    }
     if (timer == 0) {
-        // skill0->Activate();
-        // skill1->Activate();
-        // skill2->Activate();
-        // skill3->Activate();
-        skill4->Activate();
-        // skill5->Activate();
+        if (isAngry) {
+            skills[Rand::Instance()->Get(0, 5)]->Activate();
+            skills[Rand::Instance()->Get(0, 5)]->Activate();
+            skills[Rand::Instance()->Get(0, 5)]->Activate();
+        }
+        else {
+            skills[Rand::Instance()->Get(0, 3)]->Activate();
+            skills[Rand::Instance()->Get(0, 3)]->Activate();
+        }
         timer = 100;
     }
     timer--;

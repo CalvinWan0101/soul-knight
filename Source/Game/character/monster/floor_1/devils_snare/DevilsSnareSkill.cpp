@@ -12,7 +12,7 @@
 
 DevilsSnareSkill::DevilsSnareSkill(Point* position, int bulletCoolDown, int bulletNumber) : position(position),
     bulletCoolDown(bulletCoolDown), bulletNumber(bulletNumber), bulletCoolDownCounter(bulletCoolDown),
-    bulletNumberCounter(bulletNumber) {
+    bulletNumberCounter(0) {
 }
 
 void DevilsSnareSkill::Update() {
@@ -33,7 +33,7 @@ void DevilsSnareSkill::Activate() {
 
 // ---------- skill 0 ----------
 
-DevilsSnareSkill0::DevilsSnareSkill0(Point* position) : DevilsSnareSkill(position, 30, 1) {
+DevilsSnareSkill0::DevilsSnareSkill0(Point* position) : DevilsSnareSkill(position, 50, 1) {
 }
 
 void DevilsSnareSkill0::GenerageBullet() {
@@ -128,7 +128,7 @@ void DevilsSnareSkill4::GenerageBullet() {
 
     if (isPlayerAttacked) {
         if (player->GetPosition().Distance(playerPosition) > 5) {
-            player->SetSpeed(playerSpeed, 1);
+            player->SetSpeed(playerSpeed, 0);
             isPlayerAttacked = false;
         }
         return;
