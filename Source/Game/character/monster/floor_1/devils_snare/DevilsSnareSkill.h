@@ -53,3 +53,11 @@ public:
 private:
     void GenerageBullet() override;
 };
+
+class DevilsSnareSkill5 : public DevilsSnareSkill {
+public:
+    DevilsSnareSkill5(Point* position);
+
+private:
+    void GenerageBullet() override;
+};

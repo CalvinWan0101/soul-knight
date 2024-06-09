@@ -13,6 +13,7 @@ DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
     skill1 = new DevilsSnareSkill1(&position);
     skill2 = new DevilsSnareSkill2(&position);
     skill3 = new DevilsSnareSkill3(&position);
+    skill5 = new DevilsSnareSkill5(&position);
 }
 
 DevilsSnare::~DevilsSnare() {
@@ -20,6 +21,7 @@ DevilsSnare::~DevilsSnare() {
     delete skill1;
     delete skill2;
     delete skill3;
+    delete skill5;
 }
 
 void DevilsSnare::Start() {
@@ -37,11 +39,13 @@ void DevilsSnare::Update() {
     skill1->Update();
     skill2->Update();
     skill3->Update();
+    skill5->Update();
     if (timer == 0) {
         skill0->Activate();
         skill1->Activate();
         skill2->Activate();
         skill3->Activate();
+        skill5->Activate();
         timer = 100;
     }
     timer--;
@@ -59,6 +63,12 @@ void DevilsSnare::LoadResources() {
                        }, RGB(255, 255, 255), 100, false);
     this->AddAnimation({
                            "resources/monster/floor_1/devils_snare/section_1/flip_1.bmp"
+                       }, RGB(255, 255, 255), 100, false);
+    this->AddAnimation({
+                           "resources/monster/floor_1/devils_snare/dead.bmp"
+                       }, RGB(255, 255, 255), 100, false);
+    this->AddAnimation({
+                           "resources/monster/floor_1/devils_snare/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
 }
 

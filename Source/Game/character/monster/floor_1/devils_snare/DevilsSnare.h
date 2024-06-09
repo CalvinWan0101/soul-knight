@@ -24,4 +24,5 @@ private:
     DevilsSnareSkill* skill1;
     DevilsSnareSkill* skill2;
     DevilsSnareSkill* skill3;
+    DevilsSnareSkill* skill5;
 };
