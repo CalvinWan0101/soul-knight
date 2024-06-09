@@ -15,11 +15,10 @@ DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
     skills[2] = new DevilsSnareSkill2(&position);
     skills[3] = new DevilsSnareSkill3(&position);
     skills[4] = new DevilsSnareSkill4(&position);
-    skills[5] = new DevilsSnareSkill5(&position);
 }
 
 DevilsSnare::~DevilsSnare() {
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
         delete skills[i];
     }
 }
@@ -38,15 +37,15 @@ void DevilsSnare::Update() {
     if (hp <= maxHp / 2 && !isAngry) {
         isAngry = true;
     }
-    
-    for (int i = 0; i < 6; i++) {
+
+    for (int i = 0; i < 5; i++) {
         skills[i]->Update();
     }
     if (timer == 0) {
         if (isAngry) {
-            skills[Rand::Instance()->Get(0, 5)]->Activate();
-            skills[Rand::Instance()->Get(0, 5)]->Activate();
-            skills[Rand::Instance()->Get(0, 5)]->Activate();
+            skills[Rand::Instance()->Get(0, 4)]->Activate();
+            skills[Rand::Instance()->Get(0, 4)]->Activate();
+            skills[Rand::Instance()->Get(0, 4)]->Activate();
         }
         else {
             skills[Rand::Instance()->Get(0, 3)]->Activate();

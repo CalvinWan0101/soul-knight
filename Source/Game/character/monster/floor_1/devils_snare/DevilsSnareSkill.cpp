@@ -120,35 +120,10 @@ void DevilsSnareSkill3::GenerageBullet() {
 
 // ---------- skill 4 ----------
 
-DevilsSnareSkill4::DevilsSnareSkill4(Point* position) : DevilsSnareSkill(position, 10, 1) {
+DevilsSnareSkill4::DevilsSnareSkill4(Point* position) : DevilsSnareSkill(position, 5, 1) {
 }
 
 void DevilsSnareSkill4::GenerageBullet() {
-    Player* player = ObjectManager::Instance()->GetPlayer();
-
-    if (isPlayerAttacked) {
-        if (player->GetPosition().Distance(playerPosition) > 5) {
-            player->SetSpeed(playerSpeed, 0);
-            isPlayerAttacked = false;
-        }
-        return;
-    }
-
-    isPlayerAttacked = true;
-
-    playerPosition = player->GetPosition();
-    playerSpeed = player->GetSpeed();
-
-    player->SetSpeed(Vec(position->GetX() - player->GetPosition().GetX(),
-                         position->GetY() - player->GetPosition().GetY()), 0.8);
-}
-
-// ---------- skill 5 ----------
-
-DevilsSnareSkill5::DevilsSnareSkill5(Point* position) : DevilsSnareSkill(position, 5, 1) {
-}
-
-void DevilsSnareSkill5::GenerageBullet() {
     Vec rotationTemp{1.0, 1.0};
     for (int i = 0; i < 4; ++i) {
         Bullet* bullet = static_cast<RedConicalBullet*>(projectilePool->
