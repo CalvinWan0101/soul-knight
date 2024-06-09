@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "ZulanTheColossus.h"
 
+#include "FloatingGun.h"
 #include "../../../drop/DropType.h"
 #include "../../../manager/ObjectManager.h"
 #include "../../../pool/DropPool.h"
@@ -16,6 +17,16 @@ void ZulanTheColossus::Start() {
     this->maxHp = 883;
     this->maxSpeed = 1;
     this->hp = maxHp;
+    floatingGun = new FloatingGun(this, 0);
+    ObjectManager::Instance()->AddObject(floatingGun);
+    floatingGun = new FloatingGun(this, 1);
+    ObjectManager::Instance()->AddObject(floatingGun);
+    floatingGun = new FloatingGun(this, 2);
+    ObjectManager::Instance()->AddObject(floatingGun);
+    floatingGun = new FloatingGun(this, 3);
+    ObjectManager::Instance()->AddObject(floatingGun);
+    floatingGun = new FloatingGun(this, 4);
+    ObjectManager::Instance()->AddObject(floatingGun);
 }
 
 void ZulanTheColossus::Update() {

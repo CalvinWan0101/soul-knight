@@ -2,6 +2,8 @@
 #include "../../Monster.h"
 #include "../../../ui/Bar.h"
 
+class FloatingGun;
+
 class ZulanTheColossus : public Monster {
 public:
     ZulanTheColossus();
@@ -17,4 +19,5 @@ private:
     bool CheckAngry();
     void CheckState() override;
     Bar hpBar;
+    FloatingGun* floatingGun;
 };
