@@ -37,3 +37,11 @@ private:
     Vec rotation = Vec(1.0, 1.0);
     void GenerageBullet() override;
 };
+
+class DevilsSnareSkill3 : public DevilsSnareSkill {
+public:
+    DevilsSnareSkill3(Point* position);
+
+private:
+    void GenerageBullet() override;
+};

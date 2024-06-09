@@ -11,6 +11,7 @@
 DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
     skill1 = new DevilsSnareSkill1(&position);
     skill2 = new DevilsSnareSkill2(&position);
+    skill3 = new DevilsSnareSkill3(&position);
 }
 
 DevilsSnare::~DevilsSnare() {
@@ -29,9 +30,11 @@ void DevilsSnare::Update() {
     Monster::Update();
     skill1->Update();
     skill2->Update();
+    skill3->Update();
     if (timer == 0) {
         skill1->Activate();
         skill2->Activate();
+        skill3->Activate();
         timer = 100;
     }
     timer--;

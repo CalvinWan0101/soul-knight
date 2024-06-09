@@ -1076,6 +1076,7 @@
     <ClCompile Include="Source\Game\projectile\bullet\GasBlasterBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedCircleBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedDiamondBullet.cpp" />
+    <ClCompile Include="Source\Game\projectile\bullet\RedHollowCircleBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedRectangleBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedSplinterBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedSquareBullet.cpp" />
@@ -2715,6 +2716,7 @@
     <ClInclude Include="Source\Game\projectile\bullet\GasBlasterBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedCircleBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedDiamondBullet.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\RedHollowCircleBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedRectangleBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedSplinterBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedSquareBullet.h" />

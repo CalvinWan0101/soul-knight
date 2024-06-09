@@ -2,6 +2,7 @@
 #include "DevilsSnareSkill.h"
 
 #include "../../../../projectile/bullet/RedCircleBullet.h"
+#include "../../../../projectile/bullet/RedHollowCircleBullet.h"
 #include "../../../../projectile/bullet/RedRectangleBullet.h"
 
 DevilsSnareSkill::DevilsSnareSkill(Point* position, int bulletCoolDown, int bulletNumber) : position(position),
@@ -27,7 +28,7 @@ void DevilsSnareSkill::Activate() {
 
 // ---------- skill 1 ----------
 
-DevilsSnareSkill1::DevilsSnareSkill1(Point* position) : DevilsSnareSkill(position, 5, 5) {
+DevilsSnareSkill1::DevilsSnareSkill1(Point* position) : DevilsSnareSkill(position, 5, 1) {
 }
 
 void DevilsSnareSkill1::GenerageBullet() {
@@ -76,5 +77,26 @@ void DevilsSnareSkill2::GenerageBullet() {
         bullet->RemoveTag(Tag::PLAYER_ATTACK);
         objectManager->AddObject(bullet);
         rotationTemp.Rotate(-1.57);
+    }
+}
+
+// ---------- skill 3 ----------
+
+DevilsSnareSkill3::DevilsSnareSkill3(Point* position) : DevilsSnareSkill(position, 10, 1) {
+}
+
+void DevilsSnareSkill3::GenerageBullet() {
+    Vec rotation{1.0, 1.0};
+    for (int i = 0; i < 18; ++i) {
+        Bullet* bullet = static_cast<RedHollowCircleBullet*>(projectilePool->
+            Acquire(ProjectileType::RED_HOLLOW_CIRCLE_BULLET));
+        bullet->SetSpeed(rotation, 5);
+        bullet->SetPosition(&(*(this->position) + Vec(&rotation, 7)));
+        bullet->SetDamage(3);
+        bullet->AddTag(Tag::MONSTER_ATTACK);
+        bullet->RemoveTag(Tag::PLAYER_ATTACK);
+        bullet->SetPoison(true);
+        objectManager->AddObject(bullet);
+        rotation.Rotate(-0.35);
     }
 }
