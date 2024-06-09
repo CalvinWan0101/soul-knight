@@ -38,7 +38,7 @@ void BlueMachineGun::Attack() {
 
 void BlueMachineGun::GenerateBullets() {
     if (fireCooldown == 0) {
-        Vec currentRotation = new Vec(this->rotation);
+        Vec currentRotation = this->rotation;
         currentRotation.Rotate(0.2);
 
         for (int i = 0; i < 3; ++i) {

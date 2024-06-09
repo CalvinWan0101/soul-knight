@@ -17,16 +17,12 @@ void ZulanTheColossus::Start() {
     this->maxHp = 883;
     this->maxSpeed = 1;
     this->hp = maxHp;
-    floatingGun = new FloatingGun(this, 0);
-    ObjectManager::Instance()->AddObject(floatingGun);
-    floatingGun = new FloatingGun(this, 1);
-    ObjectManager::Instance()->AddObject(floatingGun);
-    floatingGun = new FloatingGun(this, 2);
-    ObjectManager::Instance()->AddObject(floatingGun);
-    floatingGun = new FloatingGun(this, 3);
-    ObjectManager::Instance()->AddObject(floatingGun);
-    floatingGun = new FloatingGun(this, 4);
-    ObjectManager::Instance()->AddObject(floatingGun);
+    for(int i = 0 ; i < 5 ; i++)
+    {
+        floatingGuns.emplace_back(new FloatingGun(this, i));
+        floatingGuns[i]->SetPosition(this->position + floatingGuns[i]->GetIdleOffset());
+        ObjectManager::Instance()->AddObject(floatingGuns[i]);
+    }
 }
 
 void ZulanTheColossus::Update() {

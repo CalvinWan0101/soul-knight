@@ -23,7 +23,7 @@ void FloatingGunIdleState::Update()
     }
     else
     {
-        floatingGun->SetSpeed(floatingGun->GetAuthor()->GetPosition() + floatingGun->GetIdleOffset() - floatingGun->GetPosition(), 3);
+        floatingGun->SetSpeed(floatingGun->GetAuthor()->GetPosition() + floatingGun->GetIdleOffset() - floatingGun->GetPosition(), floatingGun->GetMaxSpeed());
     }
 }
 

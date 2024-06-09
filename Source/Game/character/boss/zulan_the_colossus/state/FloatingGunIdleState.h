@@ -6,6 +6,4 @@ class FloatingGunIdleState : public FloatingGunState
 public:
     FloatingGunIdleState(FloatingGun* floatingGun);
     void Update() override;
-private:
-    int counter;
 };

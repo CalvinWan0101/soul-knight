@@ -4,13 +4,16 @@
 #include "../../../manager/ObjectManager.h"
 #include "../../../pool/ProjectilePool.h"
 #include "../../../projectile/bullet/RedRectangleBullet.h"
+#include "state/FloatingGunAttackState.h"
 #include "state/FloatingGunIdleState.h"
 
 FloatingGun::FloatingGun(Monster* author, int id)
 {
     this->author = author;
     this->idleState = new FloatingGunIdleState(this);
-    this->state = idleState;
+    this->attackState = new FloatingGunAttackState(this);
+    this->state = attackState;
+    this->maxSpeed = 3;
     this->idleOffset = Vec(0.0, -30);
     this->idleOffset.Rotate((2 - id) * 1.25);
 }
@@ -18,6 +21,7 @@ FloatingGun::FloatingGun(Monster* author, int id)
 FloatingGun::~FloatingGun()
 {
     delete idleState;
+    delete attackState;
 }
 
 void FloatingGun::Start()
@@ -34,6 +38,11 @@ void FloatingGun::Update()
 void FloatingGun::LoadResources()
 {
     SetImages("Resources/boss/zulan_the_colossus/floating_gun/",3, RGB(255,255,255));
+}
+
+double FloatingGun::GetMaxSpeed()
+{
+    return maxSpeed;
 }
 
 bool FloatingGun::IsIdle()
@@ -59,7 +68,7 @@ void FloatingGun::Attack()
     for (int i = 0 ; i < 5 ; i++)
     {
         bullet = static_cast<RedRectangleBullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::RED_RECTANGLE_BULLET));
-        bullet->SetSpeed(currentRotation, 2);
+        bullet->SetSpeed(currentRotation, 1);
         bullet->SetPosition(&this->position);
         bullet->SetDamage(3);
         bullet->RemoveTag(Tag::PLAYER_ATTACK);
