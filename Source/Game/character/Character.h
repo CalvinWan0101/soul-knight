@@ -46,6 +46,6 @@ private:
         int damageRemainingTimes;
         const int damageInterval = 50;
     } poison;
-    void CheckState();
+    virtual void CheckState();
     void CheckFace();
 };

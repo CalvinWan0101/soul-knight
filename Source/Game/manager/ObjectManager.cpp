@@ -11,6 +11,7 @@
 #include "../config.h"
 #include "../character/Player.h"
 #include "../character/Monster.h"
+#include "../character/boss/zulan_the_colossus/ZulanTheColossus.h"
 #include "../collectable/BigCompositePotion.h"
 #include "../collectable/BigHealingPotion.h"
 #include "../collectable/BigMpPotion.h"
@@ -75,6 +76,9 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
+    ZulanTheColossus* zulan = new ZulanTheColossus();
+    zulan->SetPosition(300, 300);
+    AddObject(zulan);
 }
 
 void ObjectManager::Update() {
