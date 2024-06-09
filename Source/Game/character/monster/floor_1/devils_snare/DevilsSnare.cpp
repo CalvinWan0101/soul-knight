@@ -9,12 +9,14 @@
 #include "DevilsSnareSkill.h"
 
 DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
+    skill0 = new DevilsSnareSkill0(&position);
     skill1 = new DevilsSnareSkill1(&position);
     skill2 = new DevilsSnareSkill2(&position);
     skill3 = new DevilsSnareSkill3(&position);
 }
 
 DevilsSnare::~DevilsSnare() {
+    delete skill0;
     delete skill1;
     delete skill2;
     delete skill3;
@@ -31,10 +33,12 @@ void DevilsSnare::Start() {
 
 void DevilsSnare::Update() {
     Monster::Update();
+    skill0->Update();
     skill1->Update();
     skill2->Update();
     skill3->Update();
     if (timer == 0) {
+        skill0->Activate();
         skill1->Activate();
         skill2->Activate();
         skill3->Activate();

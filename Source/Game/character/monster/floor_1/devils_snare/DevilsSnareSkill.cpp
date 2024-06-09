@@ -4,6 +4,7 @@
 #include "../../../../projectile/bullet/RedCircleBullet.h"
 #include "../../../../projectile/bullet/RedHollowCircleBullet.h"
 #include "../../../../projectile/bullet/RedRectangleBullet.h"
+#include "../../../../projectile/effect/PoisonEffect.h"
 
 DevilsSnareSkill::DevilsSnareSkill(Point* position, int bulletCoolDown, int bulletNumber) : position(position),
     bulletCoolDown(bulletCoolDown), bulletNumber(bulletNumber), bulletCoolDownCounter(bulletCoolDown),
@@ -25,6 +26,18 @@ void DevilsSnareSkill::Update() {
 void DevilsSnareSkill::Activate() {
     bulletNumberCounter = bulletNumber;
 }
+
+// ---------- skill 0 ----------
+
+DevilsSnareSkill0::DevilsSnareSkill0(Point* position) : DevilsSnareSkill(position, 30, 1) {
+}
+
+void DevilsSnareSkill0::GenerageBullet() {
+    PoisonEffect* poisonEffect = new PoisonEffect(PoisonEffect::MONSTER_GREEN);
+    poisonEffect->SetPosition(this->position);
+    ObjectManager::Instance()->AddObject(poisonEffect);
+}
+
 
 // ---------- skill 1 ----------
 
