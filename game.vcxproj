@@ -306,6 +306,7 @@
     <ClCompile Include="Source\Game\character\monster\floor_1\boar\DireBoar.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\boar\NormalBoar.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\devils_snare\DevilsSnare.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_1\devils_snare\skill\DevilsSnareSkill.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\devils_snare\skill\DevilsSnareSkill2.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuard.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardHoe.cpp" />
@@ -2519,6 +2520,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_1\boar\DireBoar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\boar\NormalBoar.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\devils_snare\DevilsSnare.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_1\devils_snare\skill\DevilsSnareSkill.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\devils_snare\skill\DevilsSnareSkill2.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuard.h" />
     <ClInclude Include="Source\Game\character\monster\floor_1\elite_goblin_guard\EliteGoblinGuardHoe.h" />
