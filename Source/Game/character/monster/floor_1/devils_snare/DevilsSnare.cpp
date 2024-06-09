@@ -15,6 +15,9 @@ DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0) {
 }
 
 DevilsSnare::~DevilsSnare() {
+    delete skill1;
+    delete skill2;
+    delete skill3;
 }
 
 void DevilsSnare::Start() {
