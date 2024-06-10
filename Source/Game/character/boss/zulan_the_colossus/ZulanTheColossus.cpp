@@ -8,6 +8,7 @@
 #include "../../../utils/Rand.h"
 #include "../../../weapon/melee_weapon/FakeWeapon.h"
 #include "../../../drop/Drop.h"
+#include "skill/ZulanAngrySkill.h"
 #include "skill/ZulanSkill1.h"
 #include "skill/ZulanSkill2.h"
 #include "skill/ZulanSkill3.h"
@@ -19,6 +20,7 @@ isAngry(false),
 collideOnObstacle(false),
 hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)),
 skill(nullptr) {
+    this->skill = new ZulanAngrySkill(this);
 }
 
 ZulanTheColossus::~ZulanTheColossus()
@@ -32,7 +34,7 @@ ZulanTheColossus::~ZulanTheColossus()
 
 void ZulanTheColossus::Start() {
     Monster::Start();
-    this->skill = new ZulanSkill4(this);
+    // this->skill = new ZulanAngrySkill(this);
     this->maxHp = 883;
     this->maxSpeed = 1;
     this->hp = maxHp;

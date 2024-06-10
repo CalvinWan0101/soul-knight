@@ -14,6 +14,7 @@ enum class ProjectileType {
     RED_HOLLOW_CIRCLE_BULLET,
     RED_CONICAL_BULLET,
     SPIRAL_BULLET,
+    ZULAN_ANGRY_BULLET,
 
     // shock wave
     HAMMER_WAVE,
