@@ -21,14 +21,23 @@ Monster(1),
 isAngry(false),
 collideOnObstacle(false),
 hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)),
-skill(nullptr) {
+normalSkill(nullptr),
+floatingGunSkill(nullptr){
+    skillColdDown = 75;
+    normalSkillColdDownCounter = Rand::Instance()->Get(skillColdDown, skillColdDown * 2);
+    floatingGunSkillColdDownCounter = Rand::Instance()->Get(skillColdDown, skillColdDown * 2);
 }
 
 ZulanTheColossus::~ZulanTheColossus()
 {
-    if (skill)
+    if (normalSkill)
     {
-        delete skill;
+        delete normalSkill;
+    }
+
+    if (floatingGunSkill)
+    {
+        delete floatingGunSkill;
     }
 }
 
@@ -44,24 +53,97 @@ void ZulanTheColossus::Start() {
 
 void ZulanTheColossus::Update() {
     Monster::Update();
-    if (skill)
-    {
-        if (skill->Update())
-        {
-            delete skill;
-            skill = nullptr;
-        }
-    }
-    else
-    {
-        skill = new ZulanFloatingGunSkill2(this);
-    }
+    SkillControl();
 }
 
 void ZulanTheColossus::Show(Point screenPositoin) {
     Monster::Show(screenPositoin);
     hpBar.Show(hp, maxHp);
 }
+
+void ZulanTheColossus::SkillControl()
+{
+    if (CheckAngry())
+    {
+        skillColdDown = 45;
+    }
+    
+    if (normalSkill)
+    {
+        if (normalSkill->Update())
+        {
+            delete normalSkill;
+            normalSkill = nullptr;
+        }
+    }
+    else
+    {
+        normalSkillColdDownCounter--;
+        if (normalSkillColdDownCounter == 0)
+        {
+            RandomNormalSkills();
+            normalSkillColdDownCounter = Rand::Instance()->Get(skillColdDown * 2, skillColdDown * 3);
+        }
+    }
+
+    if (floatingGunSkill)
+    {
+        if (floatingGunSkill->Update())
+        {
+            delete floatingGunSkill;
+            floatingGunSkill = nullptr;
+        }
+    }
+    else
+    {
+        floatingGunSkillColdDownCounter--;
+        if (floatingGunSkillColdDownCounter == 0)
+        {
+            RandomFloatingGunSkills();
+            floatingGunSkillColdDownCounter = Rand::Instance()->Get(skillColdDown, skillColdDown * 2);
+        }
+    }
+}
+
+void ZulanTheColossus::RandomNormalSkills()
+{
+    switch(Rand::Instance()->Get(0, CheckAngry() ? 4 : 3))
+    {
+    case 0:
+        this->normalSkill = new ZulanSkill1(this);
+        break;
+    case 1:
+        this->normalSkill = new ZulanSkill2(this);
+        break;
+    case 2:
+        this->normalSkill = new ZulanSkill3(this);
+        break;
+    case 3:
+        this->normalSkill = new ZulanSkill4(this);
+        break;
+    case 4:
+        this->normalSkill = new ZulanAngrySkill(this);
+        break;
+    default:
+        this->normalSkill = nullptr;        
+    }
+}
+
+void ZulanTheColossus::RandomFloatingGunSkills()
+{
+    switch(Rand::Instance()->Get(0, 1))
+    {
+    case 0:
+        this->floatingGunSkill = new ZulanFloatingGunSkill1(this);
+        break;
+    case 1:
+        this->floatingGunSkill = new ZulanFloatingGunSkill2(this);
+        break;
+    default:
+        this->floatingGunSkill = nullptr;        
+    }
+}
+
 
 void ZulanTheColossus::OnDead() {
     GameObject* drop;

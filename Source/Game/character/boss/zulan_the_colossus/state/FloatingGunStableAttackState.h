@@ -1,10 +1,10 @@
 #pragma once
 #include "FloatingGunState.h"
 
-class FloatingStableAttackState : public FloatingGunState
+class FloatingGunStableAttackState : public FloatingGunState
 {
 public:
-    FloatingStableAttackState(FloatingGun* floatingGun);
+    FloatingGunStableAttackState(FloatingGun* floatingGun);
     void Initialize();
     void Update() override;
 private:

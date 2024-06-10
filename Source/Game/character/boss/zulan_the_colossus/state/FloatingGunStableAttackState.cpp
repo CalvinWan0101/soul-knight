@@ -1,22 +1,22 @@
 #include "stdafx.h"
-#include "FloatingStableAttackState.h"
+#include "FloatingGunStableAttackState.h"
 #include "../FloatingGun.h"
 #include "../../../Player.h"
 #include "../../../../manager/ObjectManager.h"
 #include "../../../../utils/Rand.h"
 
-FloatingStableAttackState::FloatingStableAttackState(FloatingGun* floatingGun) : FloatingGunState(floatingGun)
+FloatingGunStableAttackState::FloatingGunStableAttackState(FloatingGun* floatingGun) : FloatingGunState(floatingGun)
 {
     Initialize();
 }
 
-void FloatingStableAttackState::Initialize()
+void FloatingGunStableAttackState::Initialize()
 {
-    keepTimes = 300;
+    keepTimes = 200;
 }
 
 
-void FloatingStableAttackState::Update()
+void FloatingGunStableAttackState::Update()
 {
     floatingGun->SetPosition(floatingGun->GetAuthor()->GetPosition() + floatingGun->GetIdleOffset());
     floatingGun->SetSpeed(0);

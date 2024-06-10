@@ -12,12 +12,16 @@ public:
     void Start() override;
     void Update() override;
     void Show(Point screenPositoin) override;
+    void SkillControl();
+    void RandomNormalSkills();
+    void RandomFloatingGunSkills();
     void OnDead() override;
     void LoadResources() override;
     void Collision(GameObject* gameObject) override;
     void AutoMationMove() override;
     void AutoMation() override;
     void InitializeWeapon() override;
+    
     vector<FloatingGun*> GetFloatingGuns();
 private:
     bool isAngry;
@@ -26,5 +30,9 @@ private:
     void CheckState() override;
     Bar hpBar;
     vector<FloatingGun*> floatingGuns;
-    BossSkill* skill;
+    BossSkill* normalSkill;
+    BossSkill* floatingGunSkill;
+    int normalSkillColdDownCounter;
+    int floatingGunSkillColdDownCounter;
+    int skillColdDown;
 };
