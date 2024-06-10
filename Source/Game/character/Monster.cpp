@@ -32,11 +32,7 @@ void Monster::Update() {
         this->speed.SetVec(0.0, 0.0);
     }
     else if (player) {
-        Vec playerOrientation = (player->GetPosition() - this->position);
-        playerOrientation.SetLength(maxSpeed);
-        this->speed = playerOrientation;
-        this->vision = playerOrientation;
-        AutoMation();
+        AutoMationMove();
     }
     else {
         this->vision = this->speed;
@@ -71,6 +67,16 @@ void Monster::Collision(GameObject* gameObject) {
         Injuried(dynamic_cast<Projectile*>(gameObject)->GetDamage());
     }
 }
+
+void Monster::AutoMationMove()
+{
+    Vec playerOrientation = (player->GetPosition() - this->position);
+    playerOrientation.SetLength(maxSpeed);
+    this->speed = playerOrientation;
+    this->vision = playerOrientation;
+    AutoMation();
+}
+
 
 void Monster::EnterPlayerAlertRange(Player* player) {
     if (!this->player) {

@@ -241,7 +241,18 @@
     </ClCompile>
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\FloatingGun.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\BossSkill.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanAngrySkill.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill1.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill2.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill1.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill2.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill3.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill3Launcher.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill4.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunStableAttackState.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunAttackState.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunCircleAttackState.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunControlState.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunIdleState.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunState.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -1081,6 +1092,8 @@
     <ClCompile Include="Source\Game\projectile\bullet\RedRectangleBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedSplinterBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\bullet\RedSquareBullet.cpp" />
+    <ClCompile Include="Source\Game\projectile\bullet\SpiralBullet.cpp" />
+    <ClCompile Include="Source\Game\projectile\bullet\ZulanAngryBullet.cpp" />
     <ClCompile Include="Source\Game\projectile\effect\PoisonEffect.cpp" />
     <ClCompile Include="Source\Game\projectile\Projectile.cpp" />
     <ClCompile Include="Source\Game\projectile\InvisibleShockWave.cpp" />
@@ -2635,7 +2648,18 @@
     <ClInclude Include="Source\Core\StdAfx.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\FloatingGun.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\BossSkill.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanAngrySkill.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill1.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill2.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill1.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill2.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill3.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill3Launcher.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill4.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunStableAttackState.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunAttackState.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunCircleAttackState.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunControlState.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunIdleState.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunState.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\ZulanTheColossus.h" />
@@ -2722,6 +2746,8 @@
     <ClInclude Include="Source\Game\projectile\bullet\RedRectangleBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedSplinterBullet.h" />
     <ClInclude Include="Source\Game\projectile\bullet\RedSquareBullet.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\SpiralBullet.h" />
+    <ClInclude Include="Source\Game\projectile\bullet\ZulanAngryBullet.h" />
     <ClInclude Include="Source\Game\projectile\effect\PoisonEffect.h" />
     <ClInclude Include="Source\Game\projectile\Projectile.h" />
     <ClInclude Include="Source\Game\projectile\InvisibleShockWave.h" />

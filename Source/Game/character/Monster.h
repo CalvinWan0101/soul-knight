@@ -14,6 +14,7 @@ public:
     void OnRemove() override;
     virtual void OnDead();
     void Collision(GameObject* gameObject) override;
+    virtual void AutoMationMove();
     virtual void AutoMation() = 0;
     virtual void InitializeWeapon() = 0;
     void EnterPlayerAlertRange(Player* player) override;
