@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "MonsterFactory.h"
 
+#include "boss/zulan_the_colossus/ZulanTheColossus.h"
 #include "monster/floor_1/goblin_giant/GoblinGiant.h"
 #include "monster/floor_1/boar/DireBoar.h"
 #include "monster/floor_1/boar/NormalBoar.h"
@@ -81,6 +82,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new PoisonSpider(level);
     case MonsterType::BATTERY:
         return new Battery(level);
+    case MonsterType::ZULAN:
+        return new ZulanTheColossus();
     case MonsterType::ALIEN_MACHINE_GUN:
         return new AlienMachineGun(level);
     case MonsterType::ALIEN_RED_LIGHTSABER:

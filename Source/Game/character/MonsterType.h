@@ -39,7 +39,7 @@ enum class MonsterType {
     BATTERY,
 
     // floor 3
-    // ANUBIS,
+    ZULAN,
 
     ALIEN_MACHINE_GUN,
     ALIEN_RED_LIGHTSABER,

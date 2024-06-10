@@ -111,7 +111,7 @@ void MonsterRoom::PlacedMonster() {
     double maxY = topLeft.GetY() + 16 * (size + 1) - centerOffset.GetY();
 
     for (auto monster : monsters) {
-        if (monster->GetMonsterType() == MonsterType::DEVELS_SNARE) {
+        if (monster->GetMonsterType() == MonsterType::DEVELS_SNARE || monster->GetMonsterType() == MonsterType::ZULAN) {
             monster->SetPosition(topLeft + Point((size + 2) * 8, (size + 2) * 8) - centerOffset);
             continue;
         }

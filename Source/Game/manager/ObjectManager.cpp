@@ -76,9 +76,6 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
-    ZulanTheColossus* zulan = new ZulanTheColossus();
-    zulan->SetPosition(300, 300);
-    AddObject(zulan);
 }
 
 void ObjectManager::Update() {

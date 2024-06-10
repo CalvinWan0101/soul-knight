@@ -8,6 +8,7 @@ class FloatingGun;
 class ZulanTheColossus : public Monster {
 public:
     ZulanTheColossus();
+    ~ZulanTheColossus() override;
     void Start() override;
     void Update() override;
     void Show(Point screenPositoin) override;

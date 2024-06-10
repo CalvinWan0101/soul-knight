@@ -18,18 +18,22 @@ hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)),
 skill(nullptr) {
 }
 
+ZulanTheColossus::~ZulanTheColossus()
+{
+    if (skill)
+    {
+        delete skill;
+    }
+}
+
+
 void ZulanTheColossus::Start() {
     Monster::Start();
     this->skill = new ZulanSkill1(this);
     this->maxHp = 883;
     this->maxSpeed = 1;
     this->hp = maxHp;
-    for(int i = 0 ; i < 5 ; i++)
-    {
-        floatingGuns.emplace_back(new FloatingGun(this, i));
-        floatingGuns[i]->SetPosition(this->position + floatingGuns[i]->GetIdleOffset());
-        ObjectManager::Instance()->AddObject(floatingGuns[i]);
-    }
+    SetMonsterType(MonsterType::ZULAN);
 }
 
 void ZulanTheColossus::Update() {
@@ -89,6 +93,13 @@ void ZulanTheColossus::LoadResources() {
     this->AddAnimation({
                            "Resources/boss/zulan_the_colossus/zulan_the_colossus/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
+    for(int i = 0 ; i < 5 ; i++)
+    {
+        FloatingGun* floatingGun = new FloatingGun(this, i); 
+        floatingGuns.emplace_back(floatingGun);
+        floatingGun->SetPosition(this->position + floatingGun->GetIdleOffset());
+        ObjectManager::Instance()->AddObject(floatingGun);
+    }
 }
 
 void ZulanTheColossus::Collision(GameObject* gameObject)
