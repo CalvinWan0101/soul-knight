@@ -11,6 +11,7 @@
 #include "skill/ZulanSkill1.h"
 #include "skill/ZulanSkill2.h"
 #include "skill/ZulanSkill3.h"
+#include "skill/ZulanSkill4.h"
 
 ZulanTheColossus::ZulanTheColossus() :
 Monster(1),
@@ -31,7 +32,7 @@ ZulanTheColossus::~ZulanTheColossus()
 
 void ZulanTheColossus::Start() {
     Monster::Start();
-    this->skill = new ZulanSkill3(this);
+    this->skill = new ZulanSkill4(this);
     this->maxHp = 883;
     this->maxSpeed = 1;
     this->hp = maxHp;
