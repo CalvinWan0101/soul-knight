@@ -242,6 +242,8 @@
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\FloatingGun.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\BossSkill.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanAngrySkill.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill1.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill2.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill1.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill2.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill3.cpp" />
@@ -2646,6 +2648,8 @@
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\FloatingGun.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\BossSkill.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanAngrySkill.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill1.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanFloatingGunSkill2.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill1.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill2.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\ZulanSkill3.h" />

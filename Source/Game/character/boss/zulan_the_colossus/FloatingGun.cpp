@@ -78,6 +78,12 @@ void FloatingGun::SwitchControlState()
     idleFlag = false;
 }
 
+void FloatingGun::SwitchCircleAttackState()
+{
+    this->state = circleAttackState;
+    idleFlag = false;
+}
+
 
 void FloatingGun::Attack()
 {

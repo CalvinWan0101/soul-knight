@@ -18,6 +18,7 @@ public:
     void AutoMationMove() override;
     void AutoMation() override;
     void InitializeWeapon() override;
+    vector<FloatingGun*> GetFloatingGuns();
 private:
     bool isAngry;
     bool collideOnObstacle;

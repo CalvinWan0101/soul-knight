@@ -20,6 +20,7 @@ public:
     void SwitchIdleState();
     void SwitchAttackState();
     void SwitchControlState();
+    void SwitchCircleAttackState();
 
     void Attack();
     void AttackFast();
