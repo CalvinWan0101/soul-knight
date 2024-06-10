@@ -49,6 +49,10 @@ void ZulanTheColossus::Start() {
     this->maxSpeed = 1;
     this->hp = maxHp;
     SetMonsterType(MonsterType::ZULAN);
+    for(int i = 0 ; i < 5 ; i++)
+    {
+        floatingGuns[i]->SetPosition(this->position);
+    }
 }
 
 void ZulanTheColossus::Update() {
@@ -189,7 +193,7 @@ void ZulanTheColossus::LoadResources() {
     {
         FloatingGun* floatingGun = new FloatingGun(this, i); 
         floatingGuns.emplace_back(floatingGun);
-        floatingGun->SetPosition(this->position + floatingGun->GetIdleOffset());
+        floatingGun->SetPosition(this->position);
         ObjectManager::Instance()->AddObject(floatingGun);
     }
 }

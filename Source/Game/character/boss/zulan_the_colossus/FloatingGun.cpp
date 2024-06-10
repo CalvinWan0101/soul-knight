@@ -18,7 +18,7 @@ FloatingGun::FloatingGun(Monster* author, int id)
     this->controlState = new FloatingGunControlState(this);
     this->circleAttackState = new FloatingGunCircleAttackState(this);
     this->stableAttackState = new FloatingGunStableAttackState(this);
-    this->state = circleAttackState;
+    this->state = idleState;
     this->maxSpeed = 3;
     this->idleOffset = Vec(0.0, -30);
     this->idleOffset.Rotate((2 - id) * 1.25);
@@ -30,6 +30,7 @@ FloatingGun::~FloatingGun()
     delete attackState;
     delete controlState;
     delete circleAttackState;
+    delete stableAttackState;
 }
 
 void FloatingGun::Start()
