@@ -21,6 +21,7 @@ public:
     void SwitchAttackState();
     void SwitchControlState();
     void SwitchCircleAttackState();
+    void SwitchStableAttackState();
 
     void Attack();
     void AttackFast();
@@ -34,6 +35,7 @@ private:
     FloatingGunState* attackState;
     FloatingGunState* controlState;
     FloatingGunState* circleAttackState;
+    FloatingGunState* stableAttackState;
     Vec idleOffset;
     Monster* author;
     double maxSpeed;

@@ -8,6 +8,7 @@
 #include "state/FloatingGunCircleAttackState.h"
 #include "state/FloatingGunControlState.h"
 #include "state/FloatingGunIdleState.h"
+#include "state/FloatingStableAttackState.h"
 
 FloatingGun::FloatingGun(Monster* author, int id)
 {
@@ -16,6 +17,7 @@ FloatingGun::FloatingGun(Monster* author, int id)
     this->attackState = new FloatingGunAttackState(this);
     this->controlState = new FloatingGunControlState(this);
     this->circleAttackState = new FloatingGunCircleAttackState(this);
+    this->stableAttackState = new FloatingStableAttackState(this);
     this->state = circleAttackState;
     this->maxSpeed = 3;
     this->idleOffset = Vec(0.0, -30);
@@ -84,6 +86,11 @@ void FloatingGun::SwitchCircleAttackState()
     idleFlag = false;
 }
 
+void FloatingGun::SwitchStableAttackState()
+{
+    this->state = stableAttackState;
+    idleFlag = false;
+}
 
 void FloatingGun::Attack()
 {

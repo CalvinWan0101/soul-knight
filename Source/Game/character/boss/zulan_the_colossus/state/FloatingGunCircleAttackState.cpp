@@ -35,7 +35,7 @@ void FloatingGunCircleAttackState::Update()
     if (attackTimes == 0)
     {
         Initialize();
-        floatingGun->SwitchIdleState();
+        floatingGun->SwitchStableAttackState();
     }
 }
 
