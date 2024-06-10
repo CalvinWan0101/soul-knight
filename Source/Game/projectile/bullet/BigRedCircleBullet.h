@@ -8,4 +8,8 @@ public:
     void Update() override;
     void LoadResources() override;
     void Collision(GameObject* gameObject) override;
+    void SetSplit(bool isSplit);
+    void OnRemove() override;
+private:
+    bool isSplit;
 };

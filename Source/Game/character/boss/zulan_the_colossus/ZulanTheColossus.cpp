@@ -8,12 +8,19 @@
 #include "../../../utils/Rand.h"
 #include "../../../weapon/melee_weapon/FakeWeapon.h"
 #include "../../../drop/Drop.h"
+#include "skill/ZulanSkill1.h"
 
-ZulanTheColossus::ZulanTheColossus() : Monster(1), isAngry(false), collideOnObstacle(false), hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)) {
+ZulanTheColossus::ZulanTheColossus() :
+Monster(1),
+isAngry(false),
+collideOnObstacle(false),
+hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)),
+skill(nullptr) {
 }
 
 void ZulanTheColossus::Start() {
     Monster::Start();
+    this->skill = new ZulanSkill1(this);
     this->maxHp = 883;
     this->maxSpeed = 1;
     this->hp = maxHp;
@@ -27,6 +34,14 @@ void ZulanTheColossus::Start() {
 
 void ZulanTheColossus::Update() {
     Monster::Update();
+    if (skill)
+    {
+        if (skill->Update())
+        {
+            delete skill;
+            skill = nullptr;
+        }
+    }
 }
 
 void ZulanTheColossus::Show(Point screenPositoin) {
@@ -47,6 +62,11 @@ void ZulanTheColossus::OnDead() {
         drop->SetPosition(
             this->position + Point(Rand::Instance()->Get(-30, 30), Rand::Instance()->Get(-30, 30)));
         ObjectManager::Instance()->AddObject(drop);
+    }
+
+    for (int i = 0 ; i < 5 ; i++)
+    {
+        floatingGuns[i]->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
 }
 

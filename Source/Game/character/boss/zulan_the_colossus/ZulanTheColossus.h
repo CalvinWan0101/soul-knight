@@ -1,6 +1,7 @@
 #pragma once
 #include "../../Monster.h"
 #include "../../../ui/Bar.h"
+#include "skill/BossSkill.h"
 
 class FloatingGun;
 
@@ -23,4 +24,5 @@ private:
     void CheckState() override;
     Bar hpBar;
     vector<FloatingGun*> floatingGuns;
+    BossSkill* skill;
 };

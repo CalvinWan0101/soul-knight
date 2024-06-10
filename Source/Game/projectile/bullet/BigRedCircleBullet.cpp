@@ -36,7 +36,18 @@ void BigRedCircleBullet::Collision(GameObject* gameObject) {
                 dynamic_cast<Character*>(gameObject)->Poisoned(5);
             }
         }
+    }
+}
 
+void BigRedCircleBullet::SetSplit(bool isSplit)
+{
+    this->isSplit = isSplit;
+}
+
+void BigRedCircleBullet::OnRemove()
+{
+    if (isSplit)
+    {
         ProjectilePool* projectilePool = ProjectilePool::Instance();
         ObjectManager* objectManager = ObjectManager::Instance();
 
@@ -52,4 +63,5 @@ void BigRedCircleBullet::Collision(GameObject* gameObject) {
             currentRotation.Rotate(-0.625);
         }
     }
+    isSplit = true;
 }
