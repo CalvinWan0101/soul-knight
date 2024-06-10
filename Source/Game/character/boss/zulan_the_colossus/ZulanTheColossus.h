@@ -12,10 +12,13 @@ public:
     void Show(Point screenPositoin) override;
     void OnDead() override;
     void LoadResources() override;
+    void Collision(GameObject* gameObject) override;
+    void AutoMationMove() override;
     void AutoMation() override;
     void InitializeWeapon() override;
 private:
     bool isAngry;
+    bool collideOnObstacle;
     bool CheckAngry();
     void CheckState() override;
     Bar hpBar;

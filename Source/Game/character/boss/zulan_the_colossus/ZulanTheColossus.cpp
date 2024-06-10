@@ -9,7 +9,7 @@
 #include "../../../weapon/melee_weapon/FakeWeapon.h"
 #include "../../../drop/Drop.h"
 
-ZulanTheColossus::ZulanTheColossus() : Monster(1), isAngry(false), hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)) {
+ZulanTheColossus::ZulanTheColossus() : Monster(1), isAngry(false), collideOnObstacle(false), hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)) {
 }
 
 void ZulanTheColossus::Start() {
@@ -70,6 +70,27 @@ void ZulanTheColossus::LoadResources() {
                            "Resources/boss/zulan_the_colossus/zulan_the_colossus/flip_dead.bmp"
                        }, RGB(255, 255, 255), 100, false);
 }
+
+void ZulanTheColossus::Collision(GameObject* gameObject)
+{
+    Monster::Collision(gameObject);
+    if (gameObject->HasTag(Tag::OBSTACLE))
+    {
+        collideOnObstacle = true;
+    }
+}
+
+void ZulanTheColossus::AutoMationMove()
+{
+    if (Rand::Instance()->Get(0,99) == 0 || collideOnObstacle)
+    {
+        collideOnObstacle = false;
+        this->speed = Vec(Rand::Instance()->Get(-9,9), Rand::Instance()->Get(-9,9));
+        this->speed.SetLength(maxSpeed);
+        this->vision = this->speed;
+    }
+}
+
 
 void ZulanTheColossus::AutoMation() {
     
