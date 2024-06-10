@@ -242,6 +242,8 @@
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\FloatingGun.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\skill\BossSkill.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunAttackState.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunCircleAttackState.cpp" />
+    <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunControlState.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunIdleState.cpp" />
     <ClCompile Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunState.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -2636,6 +2638,8 @@
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\FloatingGun.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\skill\BossSkill.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunAttackState.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunCircleAttackState.h" />
+    <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunControlState.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunIdleState.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\state\FloatingGunState.h" />
     <ClInclude Include="Source\Game\character\boss\zulan_the_colossus\ZulanTheColossus.h" />

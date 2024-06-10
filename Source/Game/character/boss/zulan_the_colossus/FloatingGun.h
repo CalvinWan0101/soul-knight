@@ -18,8 +18,11 @@ public:
     bool IsIdle();
     void SetIsIdle();
     void SwitchIdleState();
+    void SwitchAttackState();
+    void SwitchControlState();
 
     void Attack();
+    void AttackFast();
     
     Monster* GetAuthor();
     Vec GetIdleOffset();
@@ -28,6 +31,8 @@ private:
     FloatingGunState* state;
     FloatingGunState* idleState;
     FloatingGunState* attackState;
+    FloatingGunState* controlState;
+    FloatingGunState* circleAttackState;
     Vec idleOffset;
     Monster* author;
     double maxSpeed;
