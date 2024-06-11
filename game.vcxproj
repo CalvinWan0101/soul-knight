@@ -644,6 +644,7 @@
     <ClCompile Include="Source\Game\character\monster\floor_3\ufo\UFO.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuard.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuardAxe.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuardMachinGun.cpp" />
     <ClCompile Include="Source\Game\character\Player.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
@@ -2571,6 +2572,7 @@
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinStaff.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\PurpleAxe.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\PurpleMachineGun.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Rifle.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Shotgun.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\SkeletonHammer.cpp" />
@@ -2705,6 +2707,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_3\ufo\UFO.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuard.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuardAxe.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuardMachinGun.h" />
     <ClInclude Include="Source\Game\character\Player.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\Alchemist.h" />
     <ClInclude Include="Source\Game\character\player\alchemist\PoisonBottle.h" />
@@ -2842,6 +2845,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinStaff.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\PurpleAxe.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\PurpleMachineGun.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Rifle.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Shotgun.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\SkeletonHammer.h" />

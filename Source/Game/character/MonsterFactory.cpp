@@ -28,6 +28,7 @@
 #include "monster/floor_3/alien/AlienRedLightsaber.h"
 #include "monster/floor_3/ufo/UFO.h"
 #include "monster/floor_3/varkolyn_guard/VarkolynGuardAxe.h"
+#include "monster/floor_3/varkolyn_guard/VarkolynGuardMachinGun.h"
 
 Monster* MonsterFactory::Create(MonsterType type, double level) {
     switch (type) {
@@ -92,6 +93,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new UFO(level);
     case MonsterType::VARKOLYN_GUARD_AXE:
         return new VarkolynGuardAxe(level);
+    case MonsterType::VARKOLYN_GUARD_MACHINE_GUN:
+        return new VarkolynGuardMachinGun(level);
     default:
         return nullptr;
     }

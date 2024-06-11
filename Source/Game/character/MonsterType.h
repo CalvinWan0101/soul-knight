@@ -49,6 +49,7 @@ enum class MonsterType {
     // GOBLIN_FLY,
 
     VARKOLYN_GUARD_AXE,
+    VARKOLYN_GUARD_MACHINE_GUN,
     // VARKOLYN,
 
     COUNT
