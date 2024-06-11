@@ -121,6 +121,10 @@ void ObjectManager::Show() {
 }
 
 void ObjectManager::KeyDown(char key) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     switch (key) {
     case 'A':
         player->SetSpeedX(player->GetSpeed().GetX() - 5);
@@ -168,6 +172,10 @@ void ObjectManager::KeyDown(char key) {
 }
 
 void ObjectManager::KeyUp(char key) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     switch (key) {
     case 'A':
         player->SetSpeedX(player->GetSpeed().GetX() + 5);
@@ -188,10 +196,18 @@ void ObjectManager::KeyUp(char key) {
 }
 
 void ObjectManager::SetLButtonPress(bool isPress) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     LButtonPressed = isPress;
 }
 
 void ObjectManager::SetPlayerVision(Vec vision) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     player->SetVision(vision);
 }
 

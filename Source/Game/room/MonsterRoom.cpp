@@ -185,7 +185,6 @@ void MonsterRoom::SetDoors() {
 }
 
 void MonsterRoom::RelocatePlayerToNearestEdge() {
-    printf("%d\n",size / 2);
     Point roomCenterPoint = topLeft - centerOffset + Vec(size / 2 * 16, size / 2 * 16);
     Vec transferPlayerDistance = roomCenterPoint - ObjectManager::Instance()->GetPlayer()->GetPosition();
     transferPlayerDistance.SetLength(25);
