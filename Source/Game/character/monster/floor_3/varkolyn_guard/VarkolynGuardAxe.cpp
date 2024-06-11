@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "VarkolynGuardAxe.h"
 
-#include "../../../../weapon/melee_weapon/PurpleAxe.h"
+#include "../../../../weapon/ranged_weapon/PurpleAxe.h"
 
 VarkolynGuardAxe::VarkolynGuardAxe(double level) : VarkolynGuard(level) {
 }
