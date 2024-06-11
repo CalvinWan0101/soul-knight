@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <vector>
 
+#include "../character/player/PlayerType.h"
 #include "../utils/object/GeneralObject.h"
 #include "../projectile/Bullet.h"
 #include "../utils/Wallet.h"
@@ -15,7 +16,6 @@ public:
     static ObjectManager* Instance();
     ObjectManager();
     ~ObjectManager();
-    void SetPlayer(Player* player);
     Player* GetPlayer();
     Point* GetScreenPoint();
     void AddObject(GameObject* object);
@@ -31,6 +31,9 @@ public:
     bool SpendMoney(int money);
     int GetMoney();
 
+    PlayerType GetPlayerType();
+    void SetPlayerType(PlayerType playerType);
+
 private:
     int screenX = 0;
     int screenY = 0;
@@ -41,6 +44,7 @@ private:
     vector<GameObject*> objects;
     vector<GameObject*> newObjects;
     Wallet wallet;
+    PlayerType playerType;
 
     void DeleteObsoleteElements();
     void PushNewObjectsToList();

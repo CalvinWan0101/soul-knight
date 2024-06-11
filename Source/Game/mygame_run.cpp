@@ -38,6 +38,12 @@ CGameStateRun::~CGameStateRun() {
 }
 
 void CGameStateRun::OnBeginState() {
+    objectManager->Start();
+    projectilePool->Initialize();
+    monsterPool->Initialize();
+    dropPoll->Initialize();
+    stageManager->Initiliaze();
+    uiManager.Start();
 }
 
 void CGameStateRun::OnMove() // ���ʹC������
@@ -48,14 +54,7 @@ void CGameStateRun::OnMove() // ���ʹC������
 
 void CGameStateRun::OnInit() // �C������Ȥιϧγ]�w
 {
-    projectilePool->Initialize();
-    monsterPool->Initialize();
-    dropPoll->Initialize();
-    objectManager->SetPlayer(new Alchemist());
-    objectManager->Start();
-    stageManager->Initiliaze();
-    uiManager.Start();
-    CAudio::Instance()->Load(1, "Resources/sound/bullet.mp3");
+    // CAudio::Instance()->Load(1, "Resources/sound/bullet.mp3");
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
