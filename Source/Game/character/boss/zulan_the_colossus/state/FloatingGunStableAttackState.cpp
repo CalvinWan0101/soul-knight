@@ -12,7 +12,7 @@ FloatingGunStableAttackState::FloatingGunStableAttackState(FloatingGun* floating
 
 void FloatingGunStableAttackState::Initialize()
 {
-    keepTimes = 200;
+    keepTimes = 100;
 }
 
 

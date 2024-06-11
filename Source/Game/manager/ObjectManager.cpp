@@ -112,16 +112,16 @@ void ObjectManager::Show() {
 void ObjectManager::KeyDown(char key) {
     switch (key) {
     case 'A':
-        player->SetSpeedX(player->GetSpeed().GetX() - 10);
+        player->SetSpeedX(player->GetSpeed().GetX() - 5);
         break;
     case 'D':
-        player->SetSpeedX(player->GetSpeed().GetX() + 10);
+        player->SetSpeedX(player->GetSpeed().GetX() + 5);
         break;
     case 'W':
-        player->SetSpeedY(player->GetSpeed().GetY() - 10);
+        player->SetSpeedY(player->GetSpeed().GetY() - 5);
         break;
     case 'S':
-        player->SetSpeedY(player->GetSpeed().GetY() + 10);
+        player->SetSpeedY(player->GetSpeed().GetY() + 5);
         break;
     case 'E':
         player->SwitchWeapon();
@@ -159,16 +159,16 @@ void ObjectManager::KeyDown(char key) {
 void ObjectManager::KeyUp(char key) {
     switch (key) {
     case 'A':
-        player->SetSpeedX(player->GetSpeed().GetX() + 10);
+        player->SetSpeedX(player->GetSpeed().GetX() + 5);
         break;
     case 'D':
-        player->SetSpeedX(player->GetSpeed().GetX() - 10);
+        player->SetSpeedX(player->GetSpeed().GetX() - 5);
         break;
     case 'W':
-        player->SetSpeedY(player->GetSpeed().GetY() + 10);
+        player->SetSpeedY(player->GetSpeed().GetY() + 5);
         break;
     case 'S':
-        player->SetSpeedY(player->GetSpeed().GetY() - 10);
+        player->SetSpeedY(player->GetSpeed().GetY() - 5);
         break;
     case 'F':
         player->SetInteractive(false);

@@ -36,3 +36,12 @@ void InvisibleShockWave::SetAliveTime(double second) {
 void InvisibleShockWave::SetSize(double size) {
     SetHitBox(size, size);
 }
+
+void InvisibleShockWave::Collision(GameObject* gameObject)
+{
+    if (gameObject->HasTag(Tag::MONSTER_ATTACK) && this->HasTag(Tag::PLAYER_ATTACK))
+    {
+        gameObject->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
+}
+

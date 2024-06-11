@@ -16,7 +16,7 @@ Weapon* LongBlade40m::Copy() {
 
 void LongBlade40m::Start() {
     MeleeWeapon::Start();
-    SetAttackAnimation({-0.3 , -0.7 , -1.4, 1.4, 0.7 , 0.3, 0}, {}, 1.5, 0.423);
+    SetAttackAnimation({-0.3 , -0.7 , -1.4, 1.4, 0.7 , 0.3, 0}, {}, 2, 0.423);
     SetInteractiveText("40m-Long-Blade", InteractiveText::LEGENDARY);
     SetHitBoxByRatio(0.1, 0.1);
 }

@@ -25,4 +25,13 @@ void HammerWave::LoadResources() {
     }, 100, RGB(255, 255, 255));
 }
 
+void HammerWave::Collision(GameObject* gameObject)
+{
+    if (gameObject->HasTag(Tag::MONSTER_ATTACK) && this->HasTag(Tag::PLAYER_ATTACK))
+    {
+        gameObject->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
+}
+
+
 

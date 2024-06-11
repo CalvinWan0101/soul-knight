@@ -9,6 +9,7 @@ public:
     void Update() override;
     void SetAliveTime(double second);
     void SetSize(double size);
+    void Collision(GameObject* gameObject) override;
 private:
     int aliveFrame;
     bool activicated;
