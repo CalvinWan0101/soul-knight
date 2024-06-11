@@ -50,7 +50,7 @@ enum class MonsterType {
 
     VARKOLYN_GUARD_AXE,
     VARKOLYN_GUARD_MACHINE_GUN,
-    // VARKOLYN,
+    VARKOLYN,
 
     COUNT
 };

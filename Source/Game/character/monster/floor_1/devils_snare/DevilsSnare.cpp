@@ -11,6 +11,7 @@
 #include "../../../../drop/DropType.h"
 #include "../../../../pool/DropPool.h"
 #include "../../../../utils/Rand.h"
+#include "../../../../weapon/melee_weapon/FakeWeapon.h"
 
 DevilsSnare::DevilsSnare(double level = 1) : Monster(level), timer(0),
                                              hpBar(500, 20, RGB(77, 0, 124), RGB(226, 55, 44), RGB(17, 0, 64),
@@ -137,5 +138,5 @@ void DevilsSnare::AutoMation() {
 }
 
 void DevilsSnare::InitializeWeapon() {
-    this->SetWeapon(new UfoWeapon(5));
+    this->SetWeapon(new FakeWeapon());
 }
