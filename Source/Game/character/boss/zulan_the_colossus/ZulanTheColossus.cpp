@@ -23,7 +23,7 @@ collideOnObstacle(false),
 hpBar(500, 20, RGB(77,0,124), RGB(226,55,44), RGB(17,0,64), Point(280, 30)),
 normalSkill(nullptr),
 floatingGunSkill(nullptr){
-    skillColdDown = 75;
+    skillColdDown = 100;
     normalSkillColdDownCounter = Rand::Instance()->Get(skillColdDown, skillColdDown * 2);
     floatingGunSkillColdDownCounter = Rand::Instance()->Get(skillColdDown, skillColdDown * 2);
 }
@@ -69,7 +69,7 @@ void ZulanTheColossus::SkillControl()
 {
     if (CheckAngry())
     {
-        skillColdDown = 45;
+        skillColdDown = 75;
     }
     
     if (normalSkill)

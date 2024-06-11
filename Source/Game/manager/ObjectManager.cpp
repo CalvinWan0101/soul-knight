@@ -12,6 +12,9 @@
 #include "../character/Player.h"
 #include "../character/Monster.h"
 #include "../character/boss/zulan_the_colossus/ZulanTheColossus.h"
+#include "../character/player/alchemist/Alchemist.h"
+#include "../character/player/knight/Knight.h"
+#include "../character/player/priestess/Priestess.h"
 #include "../collectable/BigCompositePotion.h"
 #include "../collectable/BigHealingPotion.h"
 #include "../collectable/BigMpPotion.h"
@@ -47,19 +50,13 @@ ObjectManager* ObjectManager::Instance() {
     return instance;
 }
 
-ObjectManager::ObjectManager() : isDisplayHitBox(false) {
+ObjectManager::ObjectManager() : LButtonPressed(false) , isDisplayHitBox(false), playerType(PlayerType::KNIGHT) {
 }
 
 ObjectManager::~ObjectManager() {
     for (auto object : objects) {
         delete object;
     }
-}
-
-void ObjectManager::SetPlayer(Player* player) {
-    player->Start();
-    this->player = player;
-    objects.emplace_back(player);
 }
 
 Player* ObjectManager::GetPlayer() {
@@ -76,6 +73,20 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
+    switch (playerType)
+    {
+    case PlayerType::KNIGHT:
+        this->player = new Knight();
+        break;
+    case PlayerType::ALCHEMIST:
+        this->player = new Alchemist();
+        break;
+    case PlayerType::PRIESTESS:
+        this->player = new Priestess();
+        break;
+    }
+    this->player->Start();
+    objects.emplace_back(this->player);
 }
 
 void ObjectManager::Update() {
@@ -110,18 +121,22 @@ void ObjectManager::Show() {
 }
 
 void ObjectManager::KeyDown(char key) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     switch (key) {
     case 'A':
-        player->SetSpeedX(player->GetSpeed().GetX() - 10);
+        player->SetSpeedX(player->GetSpeed().GetX() - 5);
         break;
     case 'D':
-        player->SetSpeedX(player->GetSpeed().GetX() + 10);
+        player->SetSpeedX(player->GetSpeed().GetX() + 5);
         break;
     case 'W':
-        player->SetSpeedY(player->GetSpeed().GetY() - 10);
+        player->SetSpeedY(player->GetSpeed().GetY() - 5);
         break;
     case 'S':
-        player->SetSpeedY(player->GetSpeed().GetY() + 10);
+        player->SetSpeedY(player->GetSpeed().GetY() + 5);
         break;
     case 'E':
         player->SwitchWeapon();
@@ -157,18 +172,22 @@ void ObjectManager::KeyDown(char key) {
 }
 
 void ObjectManager::KeyUp(char key) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     switch (key) {
     case 'A':
-        player->SetSpeedX(player->GetSpeed().GetX() + 10);
+        player->SetSpeedX(player->GetSpeed().GetX() + 5);
         break;
     case 'D':
-        player->SetSpeedX(player->GetSpeed().GetX() - 10);
+        player->SetSpeedX(player->GetSpeed().GetX() - 5);
         break;
     case 'W':
-        player->SetSpeedY(player->GetSpeed().GetY() + 10);
+        player->SetSpeedY(player->GetSpeed().GetY() + 5);
         break;
     case 'S':
-        player->SetSpeedY(player->GetSpeed().GetY() - 10);
+        player->SetSpeedY(player->GetSpeed().GetY() - 5);
         break;
     case 'F':
         player->SetInteractive(false);
@@ -177,10 +196,18 @@ void ObjectManager::KeyUp(char key) {
 }
 
 void ObjectManager::SetLButtonPress(bool isPress) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     LButtonPressed = isPress;
 }
 
 void ObjectManager::SetPlayerVision(Vec vision) {
+    if (player->GetHP() <= 0)
+    {
+        return;
+    }
     player->SetVision(vision);
 }
 
@@ -252,3 +279,14 @@ void ObjectManager::PushNewObjectsToList() {
     objects.insert(objects.end(), newObjects.begin(), newObjects.end());
     newObjects.clear();
 }
+
+void ObjectManager::SetPlayerType(PlayerType playerType)
+{
+    this->playerType = playerType;
+}
+
+PlayerType ObjectManager::GetPlayerType()
+{
+    return playerType;
+}
+

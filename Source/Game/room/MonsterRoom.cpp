@@ -185,22 +185,8 @@ void MonsterRoom::SetDoors() {
 }
 
 void MonsterRoom::RelocatePlayerToNearestEdge() {
-    double x = topLeft.GetX() - centerOffset.GetX();
-    double y = topLeft.GetY() - centerOffset.GetY();
-    Point left = Point(x + 16, y + 16 * (size / 2 + 1));
-    Point top = Point(x + 16 * (size / 2 + 1), y + 16);
-    Point right = Point(x + 16 * (size + 1), y + 16 * (size / 2 + 1));
-    Point bottom = Point(x + 16 * (size / 2 + 1), y + 16 * (size + 1));
-
-    std::vector<Point> middlePoints = {left, top, right, bottom};
-    Point playerPosition = ObjectManager::Instance()->GetPlayer()->GetPosition();
-    Point result;
-    double minDistance = 100000;
-    for (auto point : middlePoints) {
-        if (playerPosition.Distance(point) < minDistance) {
-            minDistance = playerPosition.Distance(point);
-            result = point;
-        }
-    }
-    ObjectManager::Instance()->GetPlayer()->SetPosition(result);
+    Point roomCenterPoint = topLeft - centerOffset + Vec(size / 2 * 16, size / 2 * 16);
+    Vec transferPlayerDistance = roomCenterPoint - ObjectManager::Instance()->GetPlayer()->GetPosition();
+    transferPlayerDistance.SetLength(25);
+    ObjectManager::Instance()->GetPlayer()->SetPosition(ObjectManager::Instance()->GetPlayer()->GetPosition() + transferPlayerDistance);
 }

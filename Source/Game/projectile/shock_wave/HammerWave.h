@@ -7,4 +7,5 @@ public:
     void Start() override;
     void Update() override;
     void LoadResources() override;
+    void Collision(GameObject* gameObject) override;
 };

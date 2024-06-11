@@ -23,7 +23,7 @@ skillCounter(0){
 
 void Player::Start() {
     Character::Start();
-    SetHitBoxByRatio(0.8, 0.3);
+    SetHitBoxByRatio(0.5, 0.3);
     SetAlertRange(200, 200);
 }
 

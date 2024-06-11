@@ -2709,6 +2709,7 @@
     <ClInclude Include="Source\Game\character\player\alchemist\PoisonBottle.h" />
     <ClInclude Include="Source\Game\character\player\knight\KinghtSkillEffect.h" />
     <ClInclude Include="Source\Game\character\player\knight\Knight.h" />
+    <ClInclude Include="Source\Game\character\player\PlayerType.h" />
     <ClInclude Include="Source\Game\character\player\priestess\HealingCircle.h" />
     <ClInclude Include="Source\Game\character\player\priestess\Priestess.h" />
     <ClInclude Include="Source\Game\character\PoisonedIcon.h" />
@@ -7692,6 +7693,9 @@
     <Content Include="Resources\weapon\ufo_weapon\template\flip_ufo_weapon.bmp" />
     <Content Include="Resources\weapon\ufo_weapon\template\ufo_weapon.bmp" />
     <Content Include="Resources\xml.ipynb" />
+    <Content Include="Source\Game\ui\character_frame\alchemist_frame.bmp" />
+    <Content Include="Source\Game\ui\character_frame\knight_frame.bmp" />
+    <Content Include="Source\Game\ui\character_frame\priestess_frame.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
