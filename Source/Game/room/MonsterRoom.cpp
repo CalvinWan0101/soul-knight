@@ -25,6 +25,11 @@ MonsterRoom::MonsterRoom(Point topLeft, Vec centerOffset, RoomSize size, int lev
     Room(topLeft, size, centerOffset), level(level), monsterMap(monsterMap), isBossRoom(isBossRoom) {
 }
 
+MonsterRoom::MonsterRoom(Point topLeft, Vec centerOffset, RoomSize size, int level, int stage, bool isBossRoom):
+    Room(topLeft, size, centerOffset), level(level), isBossRoom(isBossRoom) {
+    GenerateMonsterMapRandomly(stage);
+}
+
 
 MonsterRoom::~MonsterRoom() {
     if (treasureChest) {
@@ -188,5 +193,27 @@ void MonsterRoom::RelocatePlayerToNearestEdge() {
     Point roomCenterPoint = topLeft - centerOffset + Vec(size / 2 * 16, size / 2 * 16);
     Vec transferPlayerDistance = roomCenterPoint - ObjectManager::Instance()->GetPlayer()->GetPosition();
     transferPlayerDistance.SetLength(25);
-    ObjectManager::Instance()->GetPlayer()->SetPosition(ObjectManager::Instance()->GetPlayer()->GetPosition() + transferPlayerDistance);
+    ObjectManager::Instance()->GetPlayer()->SetPosition(
+        ObjectManager::Instance()->GetPlayer()->GetPosition() + transferPlayerDistance);
+}
+
+void MonsterRoom::GenerateMonsterMapRandomly(int stage) {
+    int monsterAmount = size == static_cast<int>(RoomSize::MEDIUM_SIZE) ? 8 : 16;
+    switch (stage) {
+    case 1:
+        for (int i = 0; i < monsterAmount; i++) {
+            monsterMap[static_cast<MonsterType>(Rand::Instance()->Get(1, 10))] += 1;
+        }
+        break;
+    case 2:
+        for (int i = 0; i < monsterAmount; i++) {
+            monsterMap[static_cast<MonsterType>(Rand::Instance()->Get(11, 21))] += 1;
+        }
+        break;
+    case 3:
+        for (int i = 0; i < monsterAmount; i++) {
+            monsterMap[static_cast<MonsterType>(Rand::Instance()->Get(23, 30))] += 1;
+        }
+        break;
+    }
 }

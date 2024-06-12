@@ -8,40 +8,10 @@ Stage_1_3::Stage_1_3() {
     background.LoadBitmapByString({"resources/map/1-3.bmp"}, RGB(255, 255, 255));
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
-    MonsterRoom* room1 = new MonsterRoom(Point(592, 0), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{
-                                             {MonsterType::GOBLIN_GUARD_BOW, 2},
-                                             {MonsterType::GOBLIN_GUARD_PISTOL, 2},
-                                             {MonsterType::GOBLIN_GUARD_SPEAR, 2},
-                                             {MonsterType::ELITE_GOBLIN_GUARD_HOE, 1},
-                                             {MonsterType::ELITE_GOBLIN_GUARD_DART, 1},
-                                             {MonsterType::ELITE_GOBLIN_GUARD_SHOTGUN, 1},
-                                             {MonsterType::NORMAL_BOAR, 2},
-                                             {MonsterType::DIRE_BOAR, 1}
-                                         });
-    MonsterRoom* room2 = new MonsterRoom(Point(640, 688), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{
-                                             {MonsterType::GOBLIN_GUARD_BOW, 2},
-                                             {MonsterType::GOBLIN_GUARD_PISTOL, 2},
-                                             {MonsterType::GOBLIN_GUARD_SPEAR, 2}
-                                         });
-    MonsterRoom* room3 = new MonsterRoom(Point(0, 1328), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{
-                                             {MonsterType::GOBLIN_GUARD_BOW, 2},
-                                             {MonsterType::GOBLIN_GUARD_PISTOL, 2},
-                                             {MonsterType::GOBLIN_GUARD_SPEAR, 2}
-                                         });
-    MonsterRoom* room4 = new MonsterRoom(Point(592, 1280), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{
-                                             {MonsterType::GOBLIN_GUARD_BOW, 2},
-                                             {MonsterType::GOBLIN_GUARD_PISTOL, 2},
-                                             {MonsterType::GOBLIN_GUARD_SPEAR, 2},
-                                             {MonsterType::ELITE_GOBLIN_GUARD_HOE, 1},
-                                             {MonsterType::ELITE_GOBLIN_GUARD_DART, 1},
-                                             {MonsterType::ELITE_GOBLIN_GUARD_SHOTGUN, 1},
-                                             {MonsterType::NORMAL_BOAR, 2},
-                                             {MonsterType::DIRE_BOAR, 1}
-                                         });
+    MonsterRoom* room1 = new MonsterRoom(Point(592, 0), centerOffset, RoomSize::LARGE_SIZE, 4, 1);
+    MonsterRoom* room2 = new MonsterRoom(Point(640, 688), centerOffset, RoomSize::MEDIUM_SIZE, 4, 1);
+    MonsterRoom* room3 = new MonsterRoom(Point(0, 1328), centerOffset, RoomSize::MEDIUM_SIZE, 4, 1);
+    MonsterRoom* room4 = new MonsterRoom(Point(592, 1280), centerOffset, RoomSize::LARGE_SIZE, 4, 1);
 
     monsterRooms.push_back(room1);
     monsterRooms.push_back(room2);

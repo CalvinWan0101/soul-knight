@@ -16,6 +16,7 @@ class MonsterRoom : public Room {
 public:
     MonsterRoom(Point leftTop, Vec centerOffset, RoomSize size, int level, std::map<MonsterType, int> monsterMap,
                 bool isBossRoom = false);
+    MonsterRoom(Point leftTop, Vec centerOffset, RoomSize size, int level, int stage, bool isBossRoom = false);
     ~MonsterRoom();
     void IsInside();
     void IsCleared();
@@ -34,4 +35,5 @@ private:
     void PlacedMonster();
     void SetDoors();
     void RelocatePlayerToNearestEdge();
+    void GenerateMonsterMapRandomly(int stage);
 };

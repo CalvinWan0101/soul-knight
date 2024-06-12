@@ -8,14 +8,10 @@ Stage_3_1::Stage_3_1() {
     background.LoadBitmapByString({"resources/map/3-1.bmp"}, RGB(255, 255, 255));
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
-    MonsterRoom* room1 = new MonsterRoom(Point(576, 0), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
-    MonsterRoom* room3 = new MonsterRoom(Point(528, 592), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
-    MonsterRoom* room4 = new MonsterRoom(Point(1216, 640), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
-    MonsterRoom* room5 = new MonsterRoom(Point(1808, 592), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+    MonsterRoom* room1 = new MonsterRoom(Point(576, 0), centerOffset, RoomSize::MEDIUM_SIZE, 4, 3);
+    MonsterRoom* room3 = new MonsterRoom(Point(528, 592), centerOffset, RoomSize::LARGE_SIZE, 4, 3);
+    MonsterRoom* room4 = new MonsterRoom(Point(1216, 640), centerOffset, RoomSize::MEDIUM_SIZE, 4, 3);
+    MonsterRoom* room5 = new MonsterRoom(Point(1808, 592), centerOffset, RoomSize::LARGE_SIZE, 4, 3);
 
     monsterRooms.push_back(room1);
     monsterRooms.push_back(room3);

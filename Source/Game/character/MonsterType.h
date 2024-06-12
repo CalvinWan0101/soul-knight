@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 enum class MonsterType {
-    // floor 1
+    // floor 1: 0 ~ 10
     DEVELS_SNARE,
 
     GOBLIN_GUARD_SPEAR,
@@ -15,14 +15,10 @@ enum class MonsterType {
     GOBLIN_SHAMAN,
     GOBLIN_GIANT,
 
-    // TRUMPET_FLOWER,
-
     NORMAL_BOAR,
     DIRE_BOAR,
 
-    // floor 2
-    // C6H8O6,
-
+    // floor 2: 11 ~ 21
     SKELETON_BOW,
     SKELETON_CURVED_SWORD,
     SKELETON_SHOTGUN,
@@ -38,7 +34,7 @@ enum class MonsterType {
     POISON_SPIDER,
     BATTERY,
 
-    // floor 3
+    // floor 3: 22 ~ 30
     ZULAN,
 
     ALIEN_MACHINE_GUN,

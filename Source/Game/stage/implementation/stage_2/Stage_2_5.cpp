@@ -8,18 +8,12 @@ Stage_2_5::Stage_2_5() {
     background.LoadBitmapByString({"resources/map/2-5.bmp"}, RGB(255, 255, 255));
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
-    MonsterRoom* room1 = new MonsterRoom(Point(688, 48), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
-    MonsterRoom* room2 = new MonsterRoom(Point(1280, 0), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}}, true);
-    MonsterRoom* room3 = new MonsterRoom(Point(0, 592), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
-    MonsterRoom* room4 = new MonsterRoom(Point(688, 640), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
-    MonsterRoom* room5 = new MonsterRoom(Point(48, 1280), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
-    MonsterRoom* room6 = new MonsterRoom(Point(640, 1232), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+    MonsterRoom* room1 = new MonsterRoom(Point(688, 48), centerOffset, RoomSize::MEDIUM_SIZE, 4, 2);
+    MonsterRoom* room2 = new MonsterRoom(Point(1280, 0), centerOffset, RoomSize::LARGE_SIZE, 4, 2, true);
+    MonsterRoom* room3 = new MonsterRoom(Point(0, 592), centerOffset, RoomSize::LARGE_SIZE, 4, 2);
+    MonsterRoom* room4 = new MonsterRoom(Point(688, 640), centerOffset, RoomSize::MEDIUM_SIZE, 4, 2);
+    MonsterRoom* room5 = new MonsterRoom(Point(48, 1280), centerOffset, RoomSize::MEDIUM_SIZE, 4, 2);
+    MonsterRoom* room6 = new MonsterRoom(Point(640, 1232), centerOffset, RoomSize::LARGE_SIZE, 4, 2);
 
     monsterRooms.push_back(room1);
     monsterRooms.push_back(room2);
