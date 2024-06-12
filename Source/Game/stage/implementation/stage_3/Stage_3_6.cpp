@@ -6,6 +6,11 @@
 Stage_3_6::Stage_3_6() {
     background.LoadBitmapByString({"resources/map/3-6.bmp"}, RGB(255, 255, 255));
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
+
+    if (vendingMachine) {
+        vendingMachine->SetPosition(10000,10000);
+        vendingMachine->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
 }
 
 void Stage_3_6::GenerateWall() {
@@ -24,7 +29,7 @@ void Stage_3_6::SetPlayerPosition() {
 }
 
 void Stage_3_6::SetTransferGate() {
-    StageManager::Instance()->SetTransferGatePosition(Point(695, 135) - centerOffset);
+    StageManager::Instance()->SetTransferGatePosition(Point(-1000, 0));
 }
 
 void Stage_3_6::GenerateObstacle() {

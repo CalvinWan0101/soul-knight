@@ -9,7 +9,7 @@
 #include "../shop/TreasureChest.h"
 #include "../wall/Wall.h"
 
-Stage::Stage() {
+Stage::Stage() : treasureRoom(nullptr), vendingMachine(nullptr) {
     int level = StageManager::Instance()->GetLevelNumber();
     int stage = StageManager::Instance()->GetStageNumber();
 
@@ -33,7 +33,9 @@ Stage::~Stage() {
     for (auto room : monsterRooms) {
         delete room;
     }
-    delete treasureRoom;
+    if (treasureRoom) {
+        delete treasureRoom;   
+    }
     for (auto wall : walls) {
         wall->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
