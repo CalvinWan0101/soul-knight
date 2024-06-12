@@ -30,6 +30,7 @@ public:
     void MakeMoney(int money);
     bool SpendMoney(int money);
     int GetMoney();
+    void Clear();
 
     PlayerType GetPlayerType();
     void SetPlayerType(PlayerType playerType);
