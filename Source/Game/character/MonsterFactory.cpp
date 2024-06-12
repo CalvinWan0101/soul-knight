@@ -26,6 +26,7 @@
 #include "monster/floor_2/spider/Spider.h"
 #include "monster/floor_3/alien/AlienMachineGun.h"
 #include "monster/floor_3/alien/AlienRedLightsaber.h"
+#include "monster/floor_3/goblin/Goblin.h"
 #include "monster/floor_3/ufo/UFO.h"
 #include "monster/floor_3/varkolyn/Varkolyn.h"
 #include "monster/floor_3/varkolyn_guard/VarkolynGuardAxe.h"
@@ -98,6 +99,8 @@ Monster* MonsterFactory::Create(MonsterType type, double level) {
         return new VarkolynGuardMachinGun(level);
     case MonsterType::VARKOLYN:
         return new Varkolyn(level);
+    case MonsterType::GOBLIN:
+        return new Goblin(level);
     default:
         return nullptr;
     }

@@ -641,6 +641,7 @@
     <ClCompile Include="Source\Game\character\monster\floor_3\alien\Alien.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\alien\AlienRedLightsaber.cpp" />
+    <ClCompile Include="Source\Game\character\monster\floor_3\goblin\Goblin.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\ufo\UFO.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\varkolyn\Varkolyn.cpp" />
     <ClCompile Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuard.cpp" />
@@ -2571,6 +2572,7 @@
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Dart.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GasBlaster.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinStaff.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Pistol.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\PurpleAxe.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\PurpleMachineGun.cpp" />
@@ -2705,6 +2707,7 @@
     <ClInclude Include="Source\Game\character\monster\floor_3\alien\Alien.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\alien\AlienMachineGun.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\alien\AlienRedLightsaber.h" />
+    <ClInclude Include="Source\Game\character\monster\floor_3\goblin\Goblin.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\ufo\UFO.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\varkolyn\Varkolyn.h" />
     <ClInclude Include="Source\Game\character\monster\floor_3\varkolyn_guard\VarkolynGuard.h" />
@@ -2845,6 +2848,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Dart.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GasBlaster.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinStaff.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinWeapon.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\PurpleAxe.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\PurpleMachineGun.h" />
