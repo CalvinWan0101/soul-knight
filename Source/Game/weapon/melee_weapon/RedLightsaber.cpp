@@ -17,7 +17,7 @@ Weapon* RedLightsaber::Copy() {
 void RedLightsaber::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
-    SetInteractiveText("red lightsaber", InteractiveText::COMMON);
+    SetInteractiveText("Red lightsaber", InteractiveText::EPIC);
 }
 
 void RedLightsaber::Update() {

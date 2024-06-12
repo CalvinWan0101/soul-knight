@@ -5,6 +5,7 @@
 #include "melee_weapon/Hammer.h"
 #include "melee_weapon/Hoe.h"
 #include "melee_weapon/LongBlade40m.h"
+#include "melee_weapon/RedLightsaber.h"
 #include "melee_weapon/Spear.h"
 #include "ranged_weapon/BadPistol.h"
 #include "ranged_weapon/Bow.h"
@@ -26,8 +27,6 @@ Weapon* WeaponFactory::Create(WeaponType weaponType) {
         return new Pistol();
     case WeaponType::SHOTGUN:
         return new Shotgun();
-    case WeaponType::RIFLE:
-        return new Rifle();
 
     // melee weapons
     case WeaponType::HAMMER:
@@ -40,6 +39,8 @@ Weapon* WeaponFactory::Create(WeaponType weaponType) {
         return new CurvedSword();
     case WeaponType::LONG_BLADE_40M:
         return new LongBlade40m();
+    case WeaponType::RED_LIGHT_SABER:
+        return new RedLightsaber();
     default:
         return nullptr;
     }

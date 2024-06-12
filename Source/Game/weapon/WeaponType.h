@@ -6,13 +6,13 @@ enum class WeaponType {
     Dart,
     PISTOL,
     SHOTGUN,
-    RIFLE,
 
     HAMMER,
     HOE,
     SPEAR,
     CURVED_SWORD,
     LONG_BLADE_40M,
+    RED_LIGHT_SABER,
     
 
     Count

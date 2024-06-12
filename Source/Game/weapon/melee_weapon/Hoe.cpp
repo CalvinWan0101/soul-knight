@@ -19,7 +19,7 @@ Weapon* Hoe::Copy() {
 void Hoe::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
-    SetInteractiveText("hoe", InteractiveText::COMMON);
+    SetInteractiveText("hoe", InteractiveText::UNCOMMON);
 }
 
 void Hoe::Update() {
