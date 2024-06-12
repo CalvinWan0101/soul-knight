@@ -49,6 +49,7 @@ void StageManager::Initiliaze() {
 }
 
 void StageManager::NextStage() {
+    ObjectManager::Instance()->Clear();
     stage++;
     if (stage > 5 && level != 3) {
         stage = 1;

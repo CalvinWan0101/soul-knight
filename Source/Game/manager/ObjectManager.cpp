@@ -50,7 +50,7 @@ ObjectManager* ObjectManager::Instance() {
     return instance;
 }
 
-ObjectManager::ObjectManager() : LButtonPressed(false) , isDisplayHitBox(false), playerType(PlayerType::KNIGHT) {
+ObjectManager::ObjectManager() : LButtonPressed(false), isDisplayHitBox(false), playerType(PlayerType::KNIGHT) {
 }
 
 ObjectManager::~ObjectManager() {
@@ -73,8 +73,7 @@ void ObjectManager::AddObject(GameObject* object) {
 }
 
 void ObjectManager::Start() {
-    switch (playerType)
-    {
+    switch (playerType) {
     case PlayerType::KNIGHT:
         this->player = new Knight();
         break;
@@ -121,8 +120,7 @@ void ObjectManager::Show() {
 }
 
 void ObjectManager::KeyDown(char key) {
-    if (player->GetHP() <= 0)
-    {
+    if (player->GetHP() <= 0) {
         return;
     }
     switch (key) {
@@ -172,8 +170,7 @@ void ObjectManager::KeyDown(char key) {
 }
 
 void ObjectManager::KeyUp(char key) {
-    if (player->GetHP() <= 0)
-    {
+    if (player->GetHP() <= 0) {
         return;
     }
     switch (key) {
@@ -196,16 +193,14 @@ void ObjectManager::KeyUp(char key) {
 }
 
 void ObjectManager::SetLButtonPress(bool isPress) {
-    if (player->GetHP() <= 0)
-    {
+    if (player->GetHP() <= 0) {
         return;
     }
     LButtonPressed = isPress;
 }
 
 void ObjectManager::SetPlayerVision(Vec vision) {
-    if (player->GetHP() <= 0)
-    {
+    if (player->GetHP() <= 0) {
         return;
     }
     player->SetVision(vision);
@@ -225,6 +220,15 @@ bool ObjectManager::SpendMoney(int money) {
 
 int ObjectManager::GetMoney() {
     return wallet.GetMoney();
+}
+
+void ObjectManager::Clear() {
+    for (auto object : objects) {
+        if (object->HasTag(Tag::PLAYER) || object->HasTag(Tag::TRANSFER_GATE)) {
+            continue;
+        }
+        object->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
+    }
 }
 
 void ObjectManager::CollisionDetection() {
@@ -280,13 +284,10 @@ void ObjectManager::PushNewObjectsToList() {
     newObjects.clear();
 }
 
-void ObjectManager::SetPlayerType(PlayerType playerType)
-{
+void ObjectManager::SetPlayerType(PlayerType playerType) {
     this->playerType = playerType;
 }
 
-PlayerType ObjectManager::GetPlayerType()
-{
+PlayerType ObjectManager::GetPlayerType() {
     return playerType;
 }
-
