@@ -15,7 +15,9 @@ damageCooldownCounter(0),
 damageCooldownFrameCD(150),
 damageEffectCounter(0),
 weapon2(nullptr),
-skillCounter(0){
+skillCounter(0),
+invincible(false),
+throughWall(false){
     shieldRecoverCooldownFrameCD = 250;
     shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
     AddTag(Tag::PLAYER);
@@ -41,7 +43,9 @@ void Player::Update() {
 }
 
 void Player::Collision(GameObject* gameObject) {
-    Character::Collision(gameObject);
+    if (!throughWall) {
+        Character::Collision(gameObject);   
+    }
     if (gameObject->HasTag(Tag::MONSTER_ATTACK)) {
         if (damageCooldownCounter == 0) {
             damageCooldownCounter = damageCooldownFrameCD;
@@ -164,6 +168,9 @@ void Player::SetAlertRange(double height, double width) {
 }
 
 void Player::Injuried(double damage) {
+    if (invincible) {
+        return;
+    }
     shieldRecoverCooldownCounter = shieldRecoverCooldownFrameCD;
     damageEffectCounter = 40;
     if (damage > shield) {
@@ -203,3 +210,10 @@ void Player::DamageEffect() {
     }
 }
 
+void Player::SwitchInvincibleMode() {
+    this->invincible = !this->invincible;
+}
+
+void Player::SwitchThroughWallMode() {
+    this->throughWall = !this->throughWall;
+}
