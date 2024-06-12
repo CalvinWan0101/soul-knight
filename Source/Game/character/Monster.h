@@ -6,9 +6,9 @@
 
 class Player;
 
-class Monster : public Character, public PlayerAlertable{
+class Monster : public Character, public PlayerAlertable {
 public:
-    Monster(double level);
+    Monster(double level, bool isMeleeAttackMonster = false);
     void Start() override;
     void Update() override;
     void OnRemove() override;
@@ -30,6 +30,7 @@ protected:
     double level;
     int monsterType;
     void SetMonsterType(MonsterType type);
+    void SetOnDeadTrigger(bool isOnDeadTrigger);
 
 private:
     bool isInitializeWeapon;
@@ -37,4 +38,6 @@ private:
     Player* player = nullptr;
     void CreateNewDamageText();
     DamageText* damageText;
+    bool isMeleeAttackMonster;
+    bool collideOnObstacle;
 };

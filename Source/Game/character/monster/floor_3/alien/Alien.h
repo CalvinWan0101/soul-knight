@@ -3,7 +3,7 @@
 
 class Alien : public Monster {
 public:
-    Alien(double level);
+    Alien(double level, bool isMeleeAttackMonster = false);
     void Start() override;
     void Update() override;
     void LoadResources() override;

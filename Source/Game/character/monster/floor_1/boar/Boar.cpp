@@ -3,7 +3,7 @@
 
 #include "../../../../weapon/melee_weapon/FakeWeapon.h"
 
-Boar::Boar(double level = 1) : Monster(level) {
+Boar::Boar(double level = 1) : Monster(level, true) {
 }
 
 void Boar::Start() {
@@ -65,6 +65,3 @@ void Boar::DumpState(bool isDump) {
 void Boar::InitializeWeapon() {
     this->SetWeapon(new FakeWeapon());
 }
-
-
-

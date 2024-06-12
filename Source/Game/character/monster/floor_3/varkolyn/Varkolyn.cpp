@@ -5,7 +5,7 @@
 #include "../../../../projectile/effect/PoisonEffect.h"
 #include "../../../../weapon/melee_weapon/FakeWeapon.h"
 
-Varkolyn::Varkolyn(double level) : Monster(level) {
+Varkolyn::Varkolyn(double level) : Monster(level, true) {
     SetDamage(5);
 }
 

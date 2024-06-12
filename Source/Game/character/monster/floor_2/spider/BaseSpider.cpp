@@ -3,7 +3,7 @@
 
 #include "../../../../weapon/melee_weapon/FakeWeapon.h"
 
-BaseSpider::BaseSpider(double level) : Monster(level) {
+BaseSpider::BaseSpider(double level) : Monster(level, true) {
     SetDamage(3);
 }
 

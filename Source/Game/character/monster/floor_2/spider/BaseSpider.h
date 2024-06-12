@@ -1,6 +1,7 @@
 #pragma once
 #include "../../../Monster.h"
 
+// TODO: BUG FIXING
 class BaseSpider : public Monster, public Projectile{
 public:
     BaseSpider(double level);

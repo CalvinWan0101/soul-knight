@@ -3,7 +3,7 @@
 
 class EliteGoblinGuard : public Monster {
 public:
-    EliteGoblinGuard(double level);
+    EliteGoblinGuard(double level, bool isMeleeAttackMonster = false);
     void Start();
     void Update();
     void LoadResources();

@@ -3,7 +3,7 @@
 
 #include "../../../../weapon/melee_weapon/RedLightsaber.h"
 
-AlienRedLightsaber::AlienRedLightsaber(double level) : Alien(level) {
+AlienRedLightsaber::AlienRedLightsaber(double level) : Alien(level, true) {
 }
 
 void AlienRedLightsaber::Start() {

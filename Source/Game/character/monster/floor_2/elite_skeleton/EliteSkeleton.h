@@ -3,7 +3,7 @@
 
 class EliteSkeleton : public Monster {
 public:
-    EliteSkeleton(double level);
+    EliteSkeleton(double level, bool isMeleeAttackMonster = false);
     void Start() override;
     void Update() override;
     void LoadResources() override;

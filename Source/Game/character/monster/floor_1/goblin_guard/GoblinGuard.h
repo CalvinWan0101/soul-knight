@@ -3,7 +3,7 @@
 
 class GoblinGuard : public Monster {
 public:
-    GoblinGuard(double level);
+    GoblinGuard(double level, bool isMeleeAttackMonster = false);
     void Start() override;
     void Update() override;
     void LoadResources() override;

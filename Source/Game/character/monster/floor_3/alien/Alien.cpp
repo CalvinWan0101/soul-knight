@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Alien.h"
 
-Alien::Alien(double level = 1) : Monster(level) {
+Alien::Alien(double level = 1, bool isMeleeAttackMonster) : Monster(level, isMeleeAttackMonster) {
 }
 
 void Alien::Start() {

@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "GoblinGuard.h"
 
-GoblinGuard::GoblinGuard(double level = 1) : Monster(level) {
+GoblinGuard::GoblinGuard(double level = 1, bool isMeleeAttackMonster) : Monster(level, isMeleeAttackMonster) {
 }
 
 void GoblinGuard::Start() {

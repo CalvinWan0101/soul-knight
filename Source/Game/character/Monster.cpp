@@ -11,7 +11,10 @@
 #include "../pool/DropPool.h"
 #include "../utils/Rand.h"
 
-Monster::Monster(double level): level(level), isInitializeWeapon(false), damageText(nullptr) {
+Monster::Monster(double level, bool isMeleeAttackMonster): level(level), isInitializeWeapon(false),
+                                                           damageText(nullptr),
+                                                           isMeleeAttackMonster(isMeleeAttackMonster),
+                                                           collideOnObstacle(false) {
     AddTag(Tag::MONSTER);
     AddTag(Tag::PLAYER_ALERTABLE);
 }
@@ -66,15 +69,26 @@ void Monster::Collision(GameObject* gameObject) {
     if (gameObject->HasTag(Tag::PLAYER_ATTACK)) {
         Injuried(dynamic_cast<Projectile*>(gameObject)->GetDamage());
     }
+    if (gameObject->HasTag(Tag::OBSTACLE)) {
+        collideOnObstacle = true;
+    }
 }
 
-void Monster::AutoMationMove()
-{
+void Monster::AutoMationMove() {
     Vec playerOrientation = (player->GetPosition() - this->position);
     playerOrientation.SetLength(maxSpeed);
-    this->speed = playerOrientation;
     this->vision = playerOrientation;
     AutoMation();
+    if (isMeleeAttackMonster) {
+        this->speed = playerOrientation;
+        return;
+    }
+    if (Rand::Instance()->Get(0, 99) == 0 || collideOnObstacle) {
+        collideOnObstacle = false;
+        this->speed = Vec(Rand::Instance()->Get(-9, 9), Rand::Instance()->Get(-9, 9));
+        this->speed.SetLength(maxSpeed);
+        this->vision = this->speed;
+    }
 }
 
 
@@ -122,7 +136,7 @@ void Monster::Injuried(double damage) {
     if (!damageText) {
         CreateNewDamageText();
     }
-    
+
     if (damageText->IsAlive() == false) {
         CreateNewDamageText();
     }
@@ -140,4 +154,3 @@ void Monster::CreateNewDamageText() {
     damageText->SetPosition(position);
     ObjectManager::Instance()->AddObject(damageText);
 }
-

@@ -17,15 +17,12 @@ public:
     void RandomFloatingGunSkills();
     void OnDead() override;
     void LoadResources() override;
-    void Collision(GameObject* gameObject) override;
-    void AutoMationMove() override;
     void AutoMation() override;
     void InitializeWeapon() override;
     
     vector<FloatingGun*> GetFloatingGuns();
 private:
     bool isAngry;
-    bool collideOnObstacle;
     bool CheckAngry();
     void CheckState() override;
     Bar hpBar;

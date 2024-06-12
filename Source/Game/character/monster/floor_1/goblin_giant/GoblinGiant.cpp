@@ -2,7 +2,7 @@
 #include "GoblinGiant.h"
 #include "../../../../weapon/melee_weapon/Hammer.h"
 
-GoblinGiant::GoblinGiant(double level = 1) : Monster(level) {
+GoblinGiant::GoblinGiant(double level = 1) : Monster(level, true) {
 }
 
 void GoblinGiant::Start() {

@@ -3,7 +3,7 @@
 
 #include "../../../../weapon/melee_weapon/CurvedSword.h"
 
-EliteSkeletonCurvedSword::EliteSkeletonCurvedSword(double level) : EliteSkeleton(level) {
+EliteSkeletonCurvedSword::EliteSkeletonCurvedSword(double level) : EliteSkeleton(level, true) {
 }
 
 void EliteSkeletonCurvedSword::Start() {

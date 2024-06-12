@@ -1,14 +1,7 @@
 #include "stdafx.h"
 #include "Knight.h"
 
-#include "../../../weapon/melee_weapon/CurvedSword.h"
-#include "../../../weapon/melee_weapon/LongBlade40m.h"
-#include "../../../weapon/ranged_weapon/Dart.h"
 #include "../../../weapon/ranged_weapon/GasBlaster.h"
-#include "../../../weapon/ranged_weapon/Rifle.h"
-#include "../../../weapon/ranged_weapon/Shotgun.h"
-#include "../../../weapon/ranged_weapon/SkeletonHammer.h"
-#include "../../../weapon/ranged_weapon/SkeletonStaff.h"
 
 Knight::Knight() : skillKeepMaxFrame(250) {
     skillKeepCounter = 0;
@@ -21,7 +14,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new LongBlade40m());
+    ChangeWeapon(new GasBlaster(200));
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;

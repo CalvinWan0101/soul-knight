@@ -2,7 +2,7 @@
 #include "EliteGoblinGuard.h"
 
 
-EliteGoblinGuard::EliteGoblinGuard(double level = 1) : Monster(level) {
+EliteGoblinGuard::EliteGoblinGuard(double level = 1, bool isMeleeAttackMonster) : Monster(level, isMeleeAttackMonster) {
 }
 
 void EliteGoblinGuard::Start() {

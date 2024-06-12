@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Skeleton.h"
 
-Skeleton::Skeleton(double level = 1) : Monster(level) {
+Skeleton::Skeleton(double level = 1, bool isMeleeAttackMonster) : Monster(level, isMeleeAttackMonster) {
 }
 
 void Skeleton::Start() {

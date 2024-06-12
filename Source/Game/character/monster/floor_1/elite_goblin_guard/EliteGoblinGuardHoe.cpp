@@ -3,7 +3,7 @@
 
 #include "../../../../weapon/melee_weapon/Hoe.h"
 
-EliteGoblinGuardHoe::EliteGoblinGuardHoe(double level) : EliteGoblinGuard(level) {
+EliteGoblinGuardHoe::EliteGoblinGuardHoe(double level) : EliteGoblinGuard(level, true) {
 }
 
 void EliteGoblinGuardHoe::Start() {
