@@ -29,6 +29,9 @@ public:
 
     void SetInteractive(bool interactive);
 
+    void SwitchInvincibleMode();
+    void SwitchThroughWallMode();
+
 protected:
     int mp;
     int maxMp;
@@ -48,6 +51,8 @@ protected:
 
 private:
     bool interactive;
+    bool invincible;
+    bool throughWall;
     void SetAlertRange(double height, double witdth);
     void CalculateDamageCooldownCounter();
     void CalculateShieldRecoverCounter();

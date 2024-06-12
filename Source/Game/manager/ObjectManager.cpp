@@ -151,21 +151,29 @@ void ObjectManager::KeyDown(char key) {
         isDisplayHitBox = !isDisplayHitBox;
         break;
     case '2': {
-        BlowUp* blowUp = dynamic_cast<BlowUp*>(ProjectilePool::Instance()->Acquire(ProjectileType::BLOW_UP));
-        blowUp->SetPosition(player->GetPosition());
-        blowUp->SetDamage(10);
-        blowUp->AddTag(Tag::MONSTER_ATTACK);
-        AddObject(blowUp);
+        player->RecoverMP(100);
         break;
     }
     case '3': {
-        GameObject* box = new TreasureChest(TreasureChest::BOSS_ROOM);
-        box->SetPosition(player->GetPosition());
-        AddObject(box);
+        player->Healing(1);
         break;
     }
     case '4': {
         MakeMoney(100);
+        break;
+    }
+    case '5': {
+        player->SwitchInvincibleMode();
+        break;
+    }
+    case '6': {
+        player->SwitchThroughWallMode();
+        break;
+    }
+    case '7': {
+        GameObject* box = new TreasureChest(TreasureChest::BOSS_ROOM);
+        box->SetPosition(player->GetPosition());
+        AddObject(box);
         break;
     }
     }
