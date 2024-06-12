@@ -24,7 +24,7 @@ using namespace game_framework;
 // �o��class���C�����C�����檫��A�D�n���C���{�����b�o��
 /////////////////////////////////////////////////////////////////////////////
 
-CGameStateRun::CGameStateRun(CGame* g) : CGameState(g) {
+CGameStateRun::CGameStateRun(CGame* g) : CGameState(g), gameFinishCounter(150) {
 }
 
 CGameStateRun::~CGameStateRun() {
@@ -46,10 +46,20 @@ void CGameStateRun::OnBeginState() {
     uiManager.Start();
 }
 
-void CGameStateRun::OnMove() // ���ʹC������
-{
+void CGameStateRun::OnMove() {
     stageManager->Update();
     objectManager->Update();
+    if (objectManager->GetPlayer()->GetHP() <= 0) {
+        CGameStateOver::result = CGameStateOver::FAILED;
+        gameFinishCounter--;
+        if (gameFinishCounter == 0) {
+            GotoGameState(GAME_STATE_OVER);
+        }
+    }
+    else if (stageManager->GetSuccess()) {
+        CGameStateOver::result = CGameStateOver::SUCCESS;
+        GotoGameState(GAME_STATE_OVER);
+    }
 }
 
 void CGameStateRun::OnInit() // �C������Ȥιϧγ]�w

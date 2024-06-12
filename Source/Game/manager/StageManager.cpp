@@ -17,7 +17,7 @@ StageManager* StageManager::Instance() {
     return instance;
 }
 
-StageManager::StageManager(): level(0), stage(5) {
+StageManager::StageManager(): level(0), stage(5), success(false) {
 }
 
 StageManager::~StageManager() {
@@ -55,15 +55,25 @@ void StageManager::NextStage() {
         stage = 1;
         level++;
     }
-
-    delete gameStage;
-    gameStage = StageFactory::Create(level, stage);
-    if (!gameStage) {
-        gameStage = new Stage_1_1();
+    if (level == 3 && stage == 7) {
+        success = true;
     }
-    gameStage->Initialize();
+    else {
+        delete gameStage;
+        gameStage = StageFactory::Create(level, stage);
+        if (!gameStage) {
+            gameStage = new Stage_1_1();
+        }
+        gameStage->Initialize();
+    }
+    
 }
 
 void StageManager::SetTransferGatePosition(Point position) {
     transferGate->SetPosition(position);
 }
+
+bool StageManager::GetSuccess() {
+    return success;
+}
+

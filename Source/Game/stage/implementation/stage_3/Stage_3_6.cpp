@@ -29,7 +29,7 @@ void Stage_3_6::SetPlayerPosition() {
 }
 
 void Stage_3_6::SetTransferGate() {
-    StageManager::Instance()->SetTransferGatePosition(Point(-1000, 0));
+    StageManager::Instance()->SetTransferGatePosition(Point(695, 135) - centerOffset);
 }
 
 void Stage_3_6::GenerateObstacle() {

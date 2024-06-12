@@ -15,6 +15,7 @@ public:
     void Initiliaze();
     void NextStage();
     void SetTransferGatePosition(Point position);
+    bool GetSuccess();
 
 private:
     static StageManager* instance;
@@ -22,4 +23,5 @@ private:
     int stage;
     Stage* gameStage = nullptr;
     TransferGate* transferGate = nullptr;
+    bool success;
 };

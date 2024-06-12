@@ -110,6 +110,7 @@ namespace game_framework {
         MonsterPool* monsterPool = MonsterPool::Instance();
         DropPool* dropPoll = DropPool::Instance(); 
         UIManager uiManager;
+        int gameFinishCounter;
     };
 
     /////////////////////////////////////////////////////////////////////////////
@@ -119,6 +120,10 @@ namespace game_framework {
 
     class CGameStateOver : public CGameState {
     public:
+        static enum Result {
+            SUCCESS,
+            FAILED
+        } result;
         CGameStateOver(CGame* g);
         void OnBeginState(); // ?]?w?C?????????????????
         void OnInit();
