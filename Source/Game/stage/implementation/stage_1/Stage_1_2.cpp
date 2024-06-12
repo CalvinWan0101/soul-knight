@@ -9,9 +9,18 @@ Stage_1_2::Stage_1_2() {
     centerOffset = Vec(static_cast<double>(background.GetWidth()) / 2, static_cast<double>(background.GetHeight()) / 2);
 
     MonsterRoom* room1 = new MonsterRoom(Point(592, 0), centerOffset, RoomSize::LARGE_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                                         std::map<MonsterType, int>{
+                                             {MonsterType::GOBLIN_GUARD_BOW, 3},
+                                             {MonsterType::GOBLIN_GUARD_PISTOL, 3},
+                                             {MonsterType::GOBLIN_GUARD_SPEAR, 3},
+                                             {MonsterType::NORMAL_BOAR, 3}
+                                         });
     MonsterRoom* room3 = new MonsterRoom(Point(640, 688), centerOffset, RoomSize::MEDIUM_SIZE, 4,
-                                         std::map<MonsterType, int>{{MonsterType::GOBLIN_GIANT, 1}});
+                                         std::map<MonsterType, int>{
+                                             {MonsterType::GOBLIN_GUARD_BOW, 2},
+                                             {MonsterType::GOBLIN_GUARD_PISTOL, 2},
+                                             {MonsterType::GOBLIN_GUARD_SPEAR, 2}
+                                         });
 
     monsterRooms.push_back(room1);
     monsterRooms.push_back(room3);
