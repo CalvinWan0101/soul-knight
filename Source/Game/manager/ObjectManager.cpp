@@ -171,6 +171,17 @@ void ObjectManager::KeyDown(char key) {
         break;
     }
     case '7': {
+        InvisibleShockWave* shockWave = dynamic_cast<InvisibleShockWave*>(ProjectilePool::Instance()->Acquire(ProjectileType::INVISIBLE_SHOCK_WAVE));
+        shockWave->SetPosition(player->GetPosition());
+        shockWave->SetDamage(50);
+        shockWave->SetSize(1000);
+        
+        shockWave->AddTag(Tag::PLAYER_ATTACK);
+        shockWave->RemoveTag(Tag::MONSTER_ATTACK);
+        AddObject(shockWave);
+        break;
+    }
+    case '8': {
         GameObject* box = new TreasureChest(TreasureChest::BOSS_ROOM);
         box->SetPosition(player->GetPosition());
         AddObject(box);
