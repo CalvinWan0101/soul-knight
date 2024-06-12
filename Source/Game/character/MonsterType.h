@@ -46,7 +46,7 @@ enum class MonsterType {
     UFO,
 
     GOBLIN,
-    // GOBLIN_FLY,
+    GOBLIN_FLY,
 
     VARKOLYN_GUARD_AXE,
     VARKOLYN_GUARD_MACHINE_GUN,
