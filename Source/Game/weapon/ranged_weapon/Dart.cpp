@@ -30,6 +30,25 @@ void Dart::LoadResources() {
 }
 
 void Dart::Attack() {
+    if (HasTag(Tag::PLAYER_WEAPON)) {
+        GeneratePlayerBullet();
+    }
+    else {
+        GenerateMonsterBullet();
+    }
+}
+
+void Dart::GeneratePlayerBullet() {
+    Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::GAS_BLASTER_BULLET));
+    bullet->SetSpeed(rotation, 7);
+    bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
+    bullet->SetDamage(this->GetDamage());
+    bullet->SetPoison(true);
+    UpdateTag(bullet);
+    ObjectManager::Instance()->AddObject(bullet);
+}
+
+void Dart::GenerateMonsterBullet() {
     Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::RED_RECTANGLE_BULLET));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));

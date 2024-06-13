@@ -4,6 +4,7 @@
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 #include "../../projectile/bullet/BadPistolBullet.h"
+#include "../../projectile/bullet/RedCircleBullet.h"
 
 class Bullet;
 
@@ -33,7 +34,26 @@ void Pistol::LoadResources() {
 }
 
 void Pistol::Attack() {
+    if (HasTag(Tag::PLAYER_WEAPON)) {
+        GeneratePlayerBullet();
+    }
+    else {
+        GenerateMonsterBullet();
+    }
+}
+
+
+void Pistol::GeneratePlayerBullet() {
     Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::BAD_PISTOL_BULLET));
+    bullet->SetSpeed(rotation, 7);
+    bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
+    bullet->SetDamage(this->GetDamage());
+    UpdateTag(bullet);
+    ObjectManager::Instance()->AddObject(bullet);
+}
+
+void Pistol::GenerateMonsterBullet() {
+    Bullet* bullet = static_cast<RedCircleBullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::RED_CIRCLE_BULLET));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());

@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "Knight.h"
 
+#include "../../../weapon/ranged_weapon/Dart.h"
 #include "../../../weapon/ranged_weapon/GasBlaster.h"
+#include "../../../weapon/ranged_weapon/Pistol.h"
 
 Knight::Knight() : skillKeepMaxFrame(250) {
     skillKeepCounter = 0;
@@ -14,7 +16,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new GasBlaster(200));
+    ChangeWeapon(new Dart());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
