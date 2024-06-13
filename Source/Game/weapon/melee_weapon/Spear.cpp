@@ -23,7 +23,7 @@ Weapon* Spear::Copy() {
 void Spear::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({}, {15, 12, 9, 6, 3, 0}, 1, 0.1);
-    SetInteractiveText("goblin spear", InteractiveText::UNCOMMON);
+    SetInteractiveText("Spear", InteractiveText::UNCOMMON);
 }
 
 void Spear::Update() {

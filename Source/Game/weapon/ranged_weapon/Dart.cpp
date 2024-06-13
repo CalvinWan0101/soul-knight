@@ -18,7 +18,7 @@ Weapon* Dart::Copy() {
 void Dart::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0, 0, 0}, {-2, 0}, 0.5);
-    SetInteractiveText("poison dart", InteractiveText::RARE);
+    SetInteractiveText("Dart", InteractiveText::RARE);
 }
 
 void Dart::Update() {

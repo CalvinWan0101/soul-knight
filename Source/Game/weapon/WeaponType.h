@@ -1,19 +1,28 @@
 ﻿#pragma once
 
 enum class WeaponType {
+    // common: white
+    CURVED_SWORD,
     BAD_PISTOL,
-    BOW,
-    Dart,
-    PISTOL,
-    SHOTGUN,
 
-    HAMMER,
+    // uncommon: green
     HOE,
     SPEAR,
-    CURVED_SWORD,
-    LONG_BLADE_40M,
+    PISTOL,
+
+    // rare: blue
+    HAMMER,
+    BOW,
+    Dart,
+
+    // epic: purple
     RED_LIGHT_SABER,
-    
+
+    // legendary: orange
+    SHOTGUN,
+
+    // mythic: red
+    LONG_BLADE_40M,
 
     Count
 };

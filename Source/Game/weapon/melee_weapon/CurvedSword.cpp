@@ -17,7 +17,7 @@ Weapon* CurvedSword::Copy() {
 void CurvedSword::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.6, 0.65);
-    SetInteractiveText("curved sword", InteractiveText::COMMON);
+    SetInteractiveText("Curved Sword", InteractiveText::COMMON);
 }
 
 void CurvedSword::Update() {
