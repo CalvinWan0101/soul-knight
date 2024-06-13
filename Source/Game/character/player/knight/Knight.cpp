@@ -17,7 +17,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new GatlingGun());
+    ChangeWeapon(new Blowpipe());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
