@@ -18,6 +18,7 @@
 #include "bullet/RedSquareBullet.h"
 #include "bullet/RedTriangleBullet.h"
 #include "bullet/RPG.h"
+#include "bullet/Shit.h"
 #include "bullet/SmallYellowCircleBullet.h"
 #include "bullet/SpiralBullet.h"
 #include "bullet/SplitterCannonBullet.h"
@@ -69,6 +70,8 @@ Projectile* ProjectileFactory::Create(ProjectileType type) {
         return new SplitterCannonBullet();
     case ProjectileType::RPG:
         return new RPG();
+    case ProjectileType::SHIT:
+        return new Shit();
     // shock wave
     case ProjectileType::HAMMER_WAVE:
         return new HammerWave();

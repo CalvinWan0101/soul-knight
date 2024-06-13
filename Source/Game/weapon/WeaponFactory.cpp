@@ -13,6 +13,7 @@
 #include "ranged_weapon/Blowpipe.h"
 #include "ranged_weapon/GatlingGun.h"
 #include "ranged_weapon/P250.h"
+#include "ranged_weapon/PlungerPlus.h"
 #include "ranged_weapon/Rifle.h"
 #include "ranged_weapon/Shotgun.h"
 #include "ranged_weapon/SnowFoxVintage.h"
@@ -42,6 +43,8 @@ Weapon* WeaponFactory::Create(WeaponType weaponType) {
         return new SnowFoxVintage();
     case WeaponType::BAZOOKA:
         return new Bazooka();
+    case WeaponType::PLUNGER_PLUS:
+        return new PlungerPlus();
 
     // melee weapons
     case WeaponType::HAMMER:
