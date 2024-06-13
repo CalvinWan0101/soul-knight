@@ -11,6 +11,7 @@ enum class WeaponType {
     P250,
     STAFF_OF_LIGHT,
     SPLITTER_CANNON,
+    BAZOOKA,
 
     // rare: blue
     HAMMER,

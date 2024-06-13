@@ -17,6 +17,7 @@
 #include "bullet/RedSplinterBullet.h"
 #include "bullet/RedSquareBullet.h"
 #include "bullet/RedTriangleBullet.h"
+#include "bullet/RPG.h"
 #include "bullet/SmallYellowCircleBullet.h"
 #include "bullet/SpiralBullet.h"
 #include "bullet/SplitterCannonBullet.h"
@@ -66,6 +67,8 @@ Projectile* ProjectileFactory::Create(ProjectileType type) {
         return new BigYellowCircleBullet();
     case ProjectileType::SPLITTER_CANNON_BULLET:
         return new SplitterCannonBullet();
+    case ProjectileType::RPG:
+        return new RPG();
     // shock wave
     case ProjectileType::HAMMER_WAVE:
         return new HammerWave();

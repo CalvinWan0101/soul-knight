@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Knight.h"
 
+#include "../../../weapon/ranged_weapon/Bazooka.h"
 #include "../../../weapon/ranged_weapon/Blowpipe.h"
 #include "../../../weapon/ranged_weapon/GasBlaster.h"
 #include "../../../weapon/ranged_weapon/GatlingGun.h"
@@ -20,7 +21,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new SnowFoxVintage());
+    ChangeWeapon(new Bazooka());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
