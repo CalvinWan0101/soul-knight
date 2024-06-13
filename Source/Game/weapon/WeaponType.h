@@ -23,6 +23,7 @@ enum class WeaponType {
 
     // legendary: orange
     SHOTGUN,
+    SNOW_FOX_VINTAGE,
 
     // mythic: red
     LONG_BLADE_40M,
