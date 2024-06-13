@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "Pistol.h"
+#include "P250.h"
 
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
@@ -8,32 +8,32 @@
 
 class Bullet;
 
-Pistol::Pistol(double damage, Point position) {
+P250::P250(double damage, Point position) {
     this->damage = damage;
     this->position = position;
     this->mpCost = 2;
 }
 
 
-Weapon* Pistol::Copy() {
-    return new Pistol(this->damage, this->position);
+Weapon* P250::Copy() {
+    return new P250(this->damage, this->position);
 }
 
-void Pistol::Start() {
+void P250::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.35);
     SetInteractiveText("P250", InteractiveText::UNCOMMON);
 }
 
-void Pistol::Update() {
+void P250::Update() {
     RangedWeapon::Update();
 }
 
-void Pistol::LoadResources() {
+void P250::LoadResources() {
     SetImages("Resources/weapon/pistol/", 3, RGB(255, 255, 255));
 }
 
-void Pistol::Attack() {
+void P250::Attack() {
     if (HasTag(Tag::PLAYER_WEAPON)) {
         GeneratePlayerBullet();
     }
@@ -43,7 +43,7 @@ void Pistol::Attack() {
 }
 
 
-void Pistol::GeneratePlayerBullet() {
+void P250::GeneratePlayerBullet() {
     Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::BAD_PISTOL_BULLET));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
@@ -52,7 +52,7 @@ void Pistol::GeneratePlayerBullet() {
     ObjectManager::Instance()->AddObject(bullet);
 }
 
-void Pistol::GenerateMonsterBullet() {
+void P250::GenerateMonsterBullet() {
     Bullet* bullet = static_cast<RedCircleBullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::RED_CIRCLE_BULLET));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));

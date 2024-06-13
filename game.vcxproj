@@ -2575,7 +2575,7 @@
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinFlyWeapon.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinStaff.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\GoblinWeapon.cpp" />
-    <ClCompile Include="Source\Game\weapon\ranged_weapon\Pistol.cpp" />
+    <ClCompile Include="Source\Game\weapon\ranged_weapon\P250.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\PurpleAxe.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\PurpleMachineGun.cpp" />
     <ClCompile Include="Source\Game\weapon\ranged_weapon\Rifle.cpp" />
@@ -2853,7 +2853,7 @@
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinFlyWeapon.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinStaff.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\GoblinWeapon.h" />
-    <ClInclude Include="Source\Game\weapon\ranged_weapon\Pistol.h" />
+    <ClInclude Include="Source\Game\weapon\ranged_weapon\P250.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\PurpleAxe.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\PurpleMachineGun.h" />
     <ClInclude Include="Source\Game\weapon\ranged_weapon\Rifle.h" />

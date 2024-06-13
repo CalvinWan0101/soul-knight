@@ -10,7 +10,7 @@
 #include "ranged_weapon/BadPistol.h"
 #include "ranged_weapon/Bow.h"
 #include "ranged_weapon/Dart.h"
-#include "ranged_weapon/Pistol.h"
+#include "ranged_weapon/P250.h"
 #include "ranged_weapon/Rifle.h"
 #include "ranged_weapon/Shotgun.h"
 
@@ -23,8 +23,8 @@ Weapon* WeaponFactory::Create(WeaponType weaponType) {
         return new Bow();
     case WeaponType::Dart:
         return new Dart();
-    case WeaponType::PISTOL:
-        return new Pistol();
+    case WeaponType::P250:
+        return new P250();
     case WeaponType::SHOTGUN:
         return new Shotgun();
 

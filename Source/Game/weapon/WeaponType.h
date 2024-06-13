@@ -8,7 +8,7 @@ enum class WeaponType {
     // uncommon: green
     HOE,
     SPEAR,
-    PISTOL,
+    P250,
 
     // rare: blue
     HAMMER,

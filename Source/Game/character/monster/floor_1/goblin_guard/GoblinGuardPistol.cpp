@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "GoblinGuardPistol.h"
 
-#include "../../../../weapon/ranged_weapon/Pistol.h"
+#include "../../../../weapon/ranged_weapon/P250.h"
 
 GoblinGuardPistol::GoblinGuardPistol(double level) : GoblinGuard(level) {
 }
@@ -12,5 +12,5 @@ void GoblinGuardPistol::Start() {
 }
 
 void GoblinGuardPistol::InitializeWeapon() {
-    this->SetWeapon(new Pistol(2));
+    this->SetWeapon(new P250(2));
 }
