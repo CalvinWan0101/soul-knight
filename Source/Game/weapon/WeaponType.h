@@ -10,6 +10,7 @@ enum class WeaponType {
     SPEAR,
     P250,
     STAFF_OF_LIGHT,
+    SPLITTER_CANNON,
 
     // rare: blue
     HAMMER,

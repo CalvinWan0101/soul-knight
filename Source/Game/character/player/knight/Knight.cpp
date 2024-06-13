@@ -5,6 +5,7 @@
 #include "../../../weapon/ranged_weapon/GasBlaster.h"
 #include "../../../weapon/ranged_weapon/GatlingGun.h"
 #include "../../../weapon/ranged_weapon/P250.h"
+#include "../../../weapon/ranged_weapon/SplitterCannon.h"
 #include "../../../weapon/ranged_weapon/StaffOfLight.h"
 
 Knight::Knight() : skillKeepMaxFrame(250) {
@@ -18,7 +19,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new StaffOfLight());
+    ChangeWeapon(new SplitterCannon());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
