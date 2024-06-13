@@ -3,9 +3,9 @@
 
 class Point;
 
-class Dart : public RangedWeapon {
+class Blowpipe : public RangedWeapon {
 public:
-    Dart(double damage = 6, Point position = {0, 0});
+    Blowpipe(double damage = 6, Point position = {0, 0});
     Weapon* Copy() override;
     void Start() override;
     void Update() override;

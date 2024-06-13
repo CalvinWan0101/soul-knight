@@ -1,35 +1,35 @@
 ﻿#include "stdafx.h"
-#include "Dart.h"
+#include "Blowpipe.h"
 
 #include "../../manager/ObjectManager.h"
 #include "../../pool/ProjectilePool.h"
 
-Dart::Dart(double damage, Point position) {
+Blowpipe::Blowpipe(double damage, Point position) {
     this->damage = damage;
     this->position = position;
     this->mpCost = 3;
 }
 
 
-Weapon* Dart::Copy() {
-    return new Dart(this->damage, this->position);
+Weapon* Blowpipe::Copy() {
+    return new Blowpipe(this->damage, this->position);
 }
 
-void Dart::Start() {
+void Blowpipe::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0, 0, 0}, {-2, 0}, 0.5);
-    SetInteractiveText("Dart", InteractiveText::RARE);
+    SetInteractiveText("Blowpipe", InteractiveText::RARE);
 }
 
-void Dart::Update() {
+void Blowpipe::Update() {
     RangedWeapon::Update();
 }
 
-void Dart::LoadResources() {
+void Blowpipe::LoadResources() {
     SetImages("Resources/weapon/dart/", 3, RGB(255, 255, 255));
 }
 
-void Dart::Attack() {
+void Blowpipe::Attack() {
     if (HasTag(Tag::PLAYER_WEAPON)) {
         GeneratePlayerBullet();
     }
@@ -38,8 +38,8 @@ void Dart::Attack() {
     }
 }
 
-void Dart::GeneratePlayerBullet() {
-    Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::GAS_BLASTER_BULLET));
+void Blowpipe::GeneratePlayerBullet() {
+    Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::GREEN_RECTANGLE_BULLET));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));
     bullet->SetDamage(this->GetDamage());
@@ -48,7 +48,7 @@ void Dart::GeneratePlayerBullet() {
     ObjectManager::Instance()->AddObject(bullet);
 }
 
-void Dart::GenerateMonsterBullet() {
+void Blowpipe::GenerateMonsterBullet() {
     Bullet* bullet = static_cast<Bullet*>(ProjectilePool::Instance()->Acquire(ProjectileType::RED_RECTANGLE_BULLET));
     bullet->SetSpeed(rotation, 7);
     bullet->SetPosition(&(this->position + Vec(&rotation, 7)));

@@ -13,7 +13,7 @@ enum class WeaponType {
     // rare: blue
     HAMMER,
     BOW,
-    Dart,
+    BLOWPIPE,
 
     // epic: purple
     RED_LIGHT_SABER,

@@ -38,7 +38,7 @@
 #include "../weapon/melee_weapon/Spear.h"
 #include "../weapon/ranged_weapon/BadPistol.h"
 #include "../weapon/ranged_weapon/Bow.h"
-#include "../weapon/ranged_weapon/Dart.h"
+#include "../weapon/ranged_weapon/Blowpipe.h"
 #include "../weapon/ranged_weapon/P250.h"
 
 ObjectManager* ObjectManager::instance = nullptr;

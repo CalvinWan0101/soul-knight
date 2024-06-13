@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Knight.h"
 
-#include "../../../weapon/ranged_weapon/Dart.h"
+#include "../../../weapon/ranged_weapon/Blowpipe.h"
 #include "../../../weapon/ranged_weapon/GasBlaster.h"
 #include "../../../weapon/ranged_weapon/P250.h"
 
@@ -16,7 +16,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new P250());
+    ChangeWeapon(new Blowpipe());
     maxHp = 7;
     hp = maxHp;
     maxMp = 200;
