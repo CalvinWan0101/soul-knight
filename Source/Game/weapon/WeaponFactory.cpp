@@ -14,6 +14,7 @@
 #include "ranged_weapon/P250.h"
 #include "ranged_weapon/Rifle.h"
 #include "ranged_weapon/Shotgun.h"
+#include "ranged_weapon/StaffOfLight.h"
 
 Weapon* WeaponFactory::Create(WeaponType weaponType) {
     switch (weaponType) {
@@ -30,6 +31,8 @@ Weapon* WeaponFactory::Create(WeaponType weaponType) {
         return new Shotgun();
     case WeaponType::GATLING_GUN:
         return new GatlingGun();
+    case WeaponType::STAFF_OF_LIGHT:
+        return new StaffOfLight();
 
     // melee weapons
     case WeaponType::HAMMER:

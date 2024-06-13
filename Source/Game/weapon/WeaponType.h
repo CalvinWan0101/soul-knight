@@ -9,6 +9,7 @@ enum class WeaponType {
     HOE,
     SPEAR,
     P250,
+    STAFF_OF_LIGHT,
 
     // rare: blue
     HAMMER,
