@@ -17,6 +17,7 @@
 #include "bullet/RedSquareBullet.h"
 #include "bullet/RedTriangleBullet.h"
 #include "bullet/SpiralBullet.h"
+#include "bullet/YellowRectangleBullet.h"
 #include "bullet/ZulanAngryBullet.h"
 #include "shock_wave/BlowUp.h"
 #include "shock_wave/HammerWave.h"
@@ -54,6 +55,8 @@ Projectile* ProjectileFactory::Create(ProjectileType type) {
         return new RedTriangleBullet();
     case ProjectileType::GREEN_RECTANGLE_BULLET:
         return new GreenRectangleBullet();
+    case ProjectileType::YELLOW_RECTANGLE_BULLET:
+        return new YellowRectangleBullet();
     // shock wave
     case ProjectileType::HAMMER_WAVE:
         return new HammerWave();

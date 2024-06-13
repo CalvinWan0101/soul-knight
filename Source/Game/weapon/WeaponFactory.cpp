@@ -10,6 +10,7 @@
 #include "ranged_weapon/BadPistol.h"
 #include "ranged_weapon/Bow.h"
 #include "ranged_weapon/Blowpipe.h"
+#include "ranged_weapon/GatlingGun.h"
 #include "ranged_weapon/P250.h"
 #include "ranged_weapon/Rifle.h"
 #include "ranged_weapon/Shotgun.h"
@@ -27,6 +28,8 @@ Weapon* WeaponFactory::Create(WeaponType weaponType) {
         return new P250();
     case WeaponType::SHOTGUN:
         return new Shotgun();
+    case WeaponType::GATLING_GUN:
+        return new GatlingGun();
 
     // melee weapons
     case WeaponType::HAMMER:

@@ -17,6 +17,7 @@ enum class WeaponType {
 
     // epic: purple
     RED_LIGHT_SABER,
+    GATLING_GUN,
 
     // legendary: orange
     SHOTGUN,
