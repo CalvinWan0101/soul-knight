@@ -13,6 +13,8 @@ Displaying translucent objects can cause lag; some computers handle it normally 
 - "Left mouse button" : Use weapon to attack.
 
 ## Debug Mode
+If you want to make the game easier, you can change the weapon of `Knight` from `BadPistol` to `GatlingGun` in `Knight.cpp` (line 26).
+
 **The number keys**
 1. Display / Hide hitbox
 2. Restore 100 MP

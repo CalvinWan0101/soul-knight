@@ -23,6 +23,7 @@ void Knight::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
+    // ChangeWeapon(new GatlingGun());
     ChangeWeapon(new BadPistol());
     maxHp = 7;
     hp = maxHp;
