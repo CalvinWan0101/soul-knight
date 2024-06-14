@@ -8,6 +8,7 @@ HealingCircle::HealingCircle() : aliveTime(85), isHealing(true) {
 
 void HealingCircle::Start() {
     GeneralObject::Start();
+    SetHitBoxByRatio(1,1);
 }
 
 void HealingCircle::Update() {
