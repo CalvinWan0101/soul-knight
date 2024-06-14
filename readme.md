@@ -1,24 +1,24 @@
-# Leistungsstarkes Game Framework
+# Soul Knight
 
-LGF (Leistungsstarkes Game Framework) 是一款基於陳偉凱老師的 Game Framework 加上些許功能的 Powerful Game Framework。
-
-專案不保證長期維護，有任何問題或者任何其他想要的 feature，請丟 issue，祝使用愉快 :D
-
+## Warning (Please read before playing)
+Displaying translucent objects can cause lag; some computers handle it normally while others experience severe lag (currently, it seems that 40 series graphics cards all experience lag). Therefore, if displaying the red damage effect when taking damage causes the entire game to freeze, please go to config.h and change the last item, `TRANSLUCENT_EFFECT`, to `false`. This will cause the poison circle to become a solid green circle and obstruct the view.
 
 
-## 使用手冊與函式庫
+## Game Controls
+- "W", "A", "S", "D" : Move.
+- "Q" : Activate character skill. There is a skill cooldown progress bar at the bottom right of the screen. The skill can only be used again once the cooldown is complete.
+- "E" : Switch weapon (effective only when holding two weapons).
+- "F" : Interact with interactive items, e.g., enter portals, purchase items, pick up weapons or potions, open chests, etc. A prompt will appear above when near an interactive item.
+- "Move mouse" : Aim at enemies.
+- "Left mouse button" : Use weapon to attack.
 
-你可以在這裡找到這份專案的使用手冊與函式庫。
-
-| 資源 | 連結 |
-| ---- | ---- |
-| 使用手冊 | https://lgf-readthedocs.readthedocs.io/zh_TW/latest/index.html |
-| 函式庫 | https://ntut-xuan.github.io/LeistungsstarkesGameFramework |
-
-
-
-## 銘謝
-
-謝謝 國立臺北科技大學 陳偉凱教授 開發了這個遊戲框架
-
-並且謝謝 國立臺北科技大學 陳碩漢教授 同意這個框架能夠公開使用。
+## Debug Mode
+**The number keys**
+1. Display / Hide hitbox
+2. Restore 100 MP
+3. Restore 1 HP
+4. Obtain 100 gold coins
+5. Invincibility mode
+6. Wallhack mode (Please do not ignore monsters and use wallhack to enter the portal to the next level after the room starts)
+7. All monsters on the field receive 50 damage and all bullets are cleared
+8. Obtain a weapon chest (can open to get a random weapon)
