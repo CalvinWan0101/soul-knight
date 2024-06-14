@@ -31,6 +31,7 @@ DevilsSnare::~DevilsSnare() {
 
 void DevilsSnare::Start() {
     Monster::Start();
+    SetHitBoxByRatio(0.5, 0.5);
     isAngry = false;
     this->maxHp = 552 * level;
     hp = maxHp;
