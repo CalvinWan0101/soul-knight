@@ -26,7 +26,7 @@ void Shit::OnRemove() {
     BlowUp* blowUp = new BlowUp();
     blowUp->SetPosition(this->position);
     blowUp->SetDamage(5);
-    blowUp->AddTag(Tag::MONSTER_ATTACK);
+    blowUp->RemoveTag(Tag::MONSTER_ATTACK);
     blowUp->AddTag(Tag::PLAYER_ATTACK);
     ObjectManager::Instance()->AddObject(blowUp);
 }

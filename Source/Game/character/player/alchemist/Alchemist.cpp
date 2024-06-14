@@ -16,7 +16,7 @@ void Alchemist::Start() {
     Player::Start();
     weaponOffsetX = 7;
     weaponOffsetY = 7;
-    ChangeWeapon(new GasBlaster(200));
+    ChangeWeapon(new BadPistol());
     maxHp = 6;
     hp = maxHp;
     maxMp = 200;

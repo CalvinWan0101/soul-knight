@@ -27,7 +27,7 @@ void HammerWave::LoadResources() {
 
 void HammerWave::Collision(GameObject* gameObject)
 {
-    if (gameObject->HasTag(Tag::MONSTER_ATTACK) && this->HasTag(Tag::PLAYER_ATTACK))
+    if (gameObject->HasTag(Tag::PROJECTILE) && this->HasTag(Tag::PLAYER_ATTACK))
     {
         gameObject->AddTag(Tag::REMOVE_ON_NEXT_FRAME);
     }
