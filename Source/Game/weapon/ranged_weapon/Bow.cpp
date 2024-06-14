@@ -20,7 +20,7 @@ Weapon* Bow::Copy() {
 void Bow::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({0}, {-2, 0}, 0.8);
-    SetInteractiveText("bow", InteractiveText::RARE);
+    SetInteractiveText("Bow", InteractiveText::RARE);
 }
 
 void Bow::Update() {

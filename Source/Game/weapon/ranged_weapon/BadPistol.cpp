@@ -19,7 +19,7 @@ Weapon* BadPistol::Copy() {
 void BadPistol::Start() {
     RangedWeapon::Start();
     SetAttackAnimation({-0.8, -0.4, 0}, {-2, 0}, 0.5);
-    SetInteractiveText("bad pistol", InteractiveText::COMMON);
+    SetInteractiveText("Bad Pistol", InteractiveText::COMMON);
 }
 
 void BadPistol::Update() {

@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "EliteGoblinGuardDart.h"
 
-#include "../../../../weapon/ranged_weapon/Dart.h"
+#include "../../../../weapon/ranged_weapon/Blowpipe.h"
 
 EliteGoblinGuardDart::EliteGoblinGuardDart(double level) : EliteGoblinGuard(level) {
 }
@@ -12,5 +12,5 @@ void EliteGoblinGuardDart::Start() {
 }
 
 void EliteGoblinGuardDart::InitializeWeapon() {
-    this->SetWeapon(new Dart(3));
+    this->SetWeapon(new Blowpipe(3));
 }

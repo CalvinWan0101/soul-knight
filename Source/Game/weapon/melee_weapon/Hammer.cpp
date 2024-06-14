@@ -19,7 +19,7 @@ Weapon* Hammer::Copy() {
 void Hammer::Start() {
     MeleeWeapon::Start();
     SetAttackAnimation({-0.7, -1.4, 1.4, 0.7, 0}, {}, 0.835, 0.65);
-    SetInteractiveText("hammer", InteractiveText::RARE);
+    SetInteractiveText("Hammer", InteractiveText::RARE);
 }
 
 void Hammer::Update() {

@@ -39,15 +39,12 @@ void BigRedCircleBullet::Collision(GameObject* gameObject) {
     }
 }
 
-void BigRedCircleBullet::SetSplit(bool isSplit)
-{
+void BigRedCircleBullet::SetSplit(bool isSplit) {
     this->isSplit = isSplit;
 }
 
-void BigRedCircleBullet::OnRemove()
-{
-    if (isSplit)
-    {
+void BigRedCircleBullet::OnRemove() {
+    if (isSplit) {
         ProjectilePool* projectilePool = ProjectilePool::Instance();
         ObjectManager* objectManager = ObjectManager::Instance();
 
