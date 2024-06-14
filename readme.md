@@ -1,5 +1,7 @@
 # Soul Knight
 
+The boss shows up in 1-5 and 3-5, so please fight until the end.
+
 ## Warning (Please read before playing)
 Displaying translucent objects can cause lag; some computers handle it normally while others experience severe lag (currently, it seems that 40 series graphics cards all experience lag). Therefore, if displaying the red damage effect when taking damage causes the entire game to freeze, please go to config.h and change the last item, `TRANSLUCENT_EFFECT`, to `false`. This will cause the poison circle to become a solid green circle and obstruct the view.
 
