@@ -34,7 +34,7 @@ void GoblinFlyWeapon::Attack() {
 }
 
 void GoblinFlyWeapon::GenerateBullets() {
-    Vec currentRotation = new Vec(this->rotation);
+    Vec currentRotation {this->rotation};
 
     for (int i = 0; i < 18; ++i) {
         RedCircleBullet* bullet = static_cast<RedCircleBullet*>(ProjectilePool::Instance()->Acquire(

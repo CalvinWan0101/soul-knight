@@ -39,7 +39,8 @@ void GoblinWeapon::Attack() {
 
 void GoblinWeapon::GenerateBullets() {
     if (fireCooldown == 0) {
-        Vec currentRotation = new Vec(this->rotation);
+        Vec currentRotation{this->rotation};
+
         currentRotation.Rotate(Rand::Instance()->Get(-785, 785) / 1000.0);
 
         RedCircleBullet* bullet = static_cast<RedCircleBullet*>(ProjectilePool::Instance()->Acquire(
