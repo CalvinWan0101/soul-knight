@@ -1,5 +1,5 @@
-# 元氣騎士
-
+# 元氣騎士復刻
+國立臺北科技大學物件導向程式設計實習（2024）
 - [Demo Video](https://www.youtube.com/watch?v=uLHkTPGW0ko)
 - [English README](./readme_en.md)
 

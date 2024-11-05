@@ -1,5 +1,5 @@
-# Soul Knight
-
+# Soul Knight Remake
+National Taipei University of Technology Object-Oriented Programming Labs (2024)
 - [Demo Video](https://www.youtube.com/watch?v=uLHkTPGW0ko)
 
 ![](./screenshot.png)
